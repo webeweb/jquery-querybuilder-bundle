@@ -3,22 +3,22 @@
 /*
  * This file is part of the WBWJQueryQueryBuilderBundle package.
  *
- * (c) 2017 WBW
+ * (c) 2017 NdC/WBW
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace WBW\JQuery\QueryBuilderBundle\Tests\Exception;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Exception;
 
 use PHPUnit_Framework_TestCase;
-use WBW\JQuery\QueryBuilderBundle\Exception\QueryBuilderFileNotFoundException;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Exception\QueryBuilderFileNotFoundException;
 
 /**
  * jQuery QueryBuilder file not found exception test.
  *
- * @author WBW <https://github.com/webeweb/WBWJQueryQueryBuilderBundle>
- * @package WBW\JQuery\QueryBuilderBundle\Exception
+ * @author NdC/WBW <https://github.com/webeweb/>
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Exception
  * @version 2.4.3
  * @final
  */

@@ -3,24 +3,24 @@
 /*
  * This file is part of the WBWJQueryQueryBuilderBundle package.
  *
- * (c) 2017 WBW
+ * (c) 2017 NdC/WBW
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace WBW\JQuery\QueryBuilderBundle\Twig\Extension;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Twig\Extension;
 
 use Twig_Extension;
 use Twig_SimpleFunction;
-use WBW\JQuery\QueryBuilderBundle\API\JQueryQueryBuilderOptions;
-use WBW\JQuery\QueryBuilderBundle\Exception\JQueryQueryBuilderFileNotFoundException;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\JQueryQueryBuilderOptions;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Exception\JQueryQueryBuilderFileNotFoundException;
 
 /**
  * jQuery QueryBuilder Twig extension.
  *
- * @author WBW <https://github.com/webeweb/WBWJQueryQueryBuilderBundle>
- * @package WBW\JQuery\QueryBuilderBundle\Twig\Extension
+ * @author NdC/WBW <https://github.com/webeweb/>
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Twig\Extension
  * @version 2.4.3
  * @final
  */

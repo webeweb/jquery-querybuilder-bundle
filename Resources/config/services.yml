@@ -2,7 +2,7 @@
 services:
 
     webeweb.jquery-querybuilder-bundle.twig.extension.querybuilder:
-        class: WBW\JQuery\QueryBuilderBundle\Twig\Extension\QueryBuilderTwigExtension
+        class: WBW\Bundle\JQuery\QueryBuilderBundle\Twig\Extension\QueryBuilderTwigExtension
         arguments: ["@=service('kernel').locateResource('@WBWJQueryQueryBuilderBundle')", "%kernel.environment%"]
         tags:
           - { name: twig.extension }

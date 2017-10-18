@@ -8,7 +8,7 @@
     "authors": [
         {
             "name": "webeweb",
-            "homepage": "http://github.com/webeweb/WBWJQueryQueryBuilderBundle"
+            "homepage": "http://github.com/webeweb/"
         }
     ],
     "require": {
@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "WBW\\JQuery\\QueryBuilderBundle\\": ""
+            "WBW\\Bundle\\JQuery\\QueryBuilderBundle\\": ""
         }
     },
     "extra": {

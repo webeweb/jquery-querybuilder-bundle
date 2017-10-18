@@ -3,13 +3,13 @@
 /*
  * This file is part of the WBWJQueryQueryBuilderBundle package.
  *
- * (c) 2017 WBW
+ * (c) 2017 NdC/WBW
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace WBW\JQuery\QueryBuilderBundle\DependencyInjection;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -19,8 +19,8 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 /**
  * jQuery QueryBuilder extension.
  *
- * @author WBW <https://github.com/webeweb/WBWJQueryQueryBuilderBundle>
- * @package WBW\JQuery\QueryBuilderBundle\DependencyInjection
+ * @author NdC/WBW <https://github.com/webeweb/>
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection
  * @version 2.4.3
  * @final
  */

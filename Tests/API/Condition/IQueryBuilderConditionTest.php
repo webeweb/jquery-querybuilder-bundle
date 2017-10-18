@@ -3,22 +3,22 @@
 /*
  * This file is part of the WBWJQueryQueryBuilderBundle package.
  *
- * (c) 2017 WBW
+ * (c) 2017 NdC/WBW
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace WBW\JQuery\QueryBuilderBundle\Tests\API\Condition;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Condition;
 
 use PHPUnit_Framework_TestCase;
-use WBW\JQuery\QueryBuilderBundle\API\Condition\IQueryBuilderCondition;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\Condition\IQueryBuilderCondition;
 
 /**
  * QueryBuilder condition interface.
  *
- * @author WBW <https://github.com/webeweb/WBWJQueryQueryBuilderBundle>
- * @package WBW\JQuery\QueryBuilderBundle\Tests\API\Condition
+ * @author NdC/WBW <https://github.com/webeweb/>
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Condition
  * @version 2.4.3
  * @final
  */
