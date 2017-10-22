@@ -9,7 +9,7 @@ WBWJQueryQueryBuilderBundle
 
 ## Installation
 
-Edit `composer.json` file to add this library package:
+Edit `composer.json` file to add this bundle package:
 
 ```yml
 "require": {
