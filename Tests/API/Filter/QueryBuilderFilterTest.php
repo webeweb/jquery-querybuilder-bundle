@@ -37,14 +37,14 @@ final class QueryBuilderFilterTest extends PHPUnit_Framework_TestCase {
             new QueryBuilderFilter("id", "exception", []);
         } catch (Exception $ex) {
             $this->assertInstanceOf(IllegalArgumentException::class, $ex, "The method __construct() does not throw the expecetd exception");
-            $this->assertEquals("The type \"exception\" is invalid", $ex->getMessage(), "The method getMessage() does not return the expected string");
+            $this->assertEquals("The type \"exception\" is invalid", $ex->getMessage(), "The method getMessage() does not return the expected value");
         }
 
         try {
             new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, ["exception"]);
         } catch (Exception $ex) {
             $this->assertInstanceOf(IllegalArgumentException::class, $ex, "The method __construct() does not throw the expecetd exception");
-            $this->assertEquals("The operator \"exception\" is invalid", $ex->getMessage(), "The method getMessage() does not return the expected string");
+            $this->assertEquals("The operator \"exception\" is invalid", $ex->getMessage(), "The method getMessage() does not return the expected value");
         }
 
         $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
@@ -53,7 +53,7 @@ final class QueryBuilderFilterTest extends PHPUnit_Framework_TestCase {
             $obj->setInput("exception");
         } catch (Exception $ex) {
             $this->assertInstanceOf(IllegalArgumentException::class, $ex, "The method __construct() does not throw the expecetd exception");
-            $this->assertEquals("The input \"exception\" is invalid", $ex->getMessage(), "The method getMessage() does not return the expected string");
+            $this->assertEquals("The input \"exception\" is invalid", $ex->getMessage(), "The method getMessage() does not return the expected value");
         }
 
         $this->assertEquals("id", $obj->getId(), "The method getId() does not return the expected value");
