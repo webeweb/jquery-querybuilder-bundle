@@ -11,9 +11,11 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Rule;
 
+use Exception;
 use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Rule\QueryBuilderRule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Rule\QueryBuilderRuleSet;
+use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
 /**
  * jQuery QueryBuilder rule set test.
@@ -31,11 +33,19 @@ final class QueryBuilderRuleSetTest extends PHPUnit_Framework_TestCase {
      */
     public function testConstruct() {
 
+        try {
+            new QueryBuilderRuleSet(["condition" => "exception"], null);
+        } catch (Exception $ex) {
+            $this->assertInstanceOf(IllegalArgumentException::class, $ex, "The method __construct() does not throw the expecetd exception");
+            $this->assertEquals("The condition \"exception\" is invalid", $ex->getMessage(), "The method getMessage() does not return the expected string");
+        }
+
         $obj = new QueryBuilderRuleSet([], null);
 
         $this->assertEquals(null, $obj->getCondition(), "The method getCondition() does not return the expected value");
         $this->assertEquals([], $obj->getRules(), "The method getRules() does not return the expected value");
         $this->assertEquals(false, $obj->getValid(), "The method getRules() does not return the expected value");
+        $this->assertEquals("", $obj->toSQL(), "The method toSQL() does not return the expecetd value");
     }
 
     /**
@@ -63,7 +73,7 @@ final class QueryBuilderRuleSetTest extends PHPUnit_Framework_TestCase {
         $obj = new QueryBuilderRuleSet($rules, null);
 
         $res = "(age > 21 OR (firstname = 'John' AND lastname = 'DOE'))";
-        $this->assertEquals($res, $obj->toSQL(), "The method toSQL() does not return the expected string");
+        $this->assertEquals($res, $obj->toSQL(), "The method toSQL() does not return the expected value");
     }
 
 }
