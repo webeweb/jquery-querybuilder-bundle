@@ -23,8 +23,8 @@ interface QueryBuilderConditionInterface {
      * Conditions.
      */
     const CONDITIONS = [
-        self::CONDITION_AND => self::CONDITION_AND,
-        self::CONDITION_OR  => self::CONDITION_OR,
+        self::CONDITION_AND,
+        self::CONDITION_OR,
     ];
 
     /**
