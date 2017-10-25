@@ -23,12 +23,12 @@ interface QueryBuilderInputInterface {
      * Inputs.
      */
     const INPUTS = [
-        self::INPUT_CHECKBOX => self::INPUT_CHECKBOX,
-        self::INPUT_NUMBER   => self::INPUT_NUMBER,
-        self::INPUT_RADIO    => self::INPUT_RADIO,
-        self::INPUT_SELECT   => self::INPUT_SELECT,
-        self::INPUT_TEXT     => self::INPUT_TEXT,
-        self::INPUT_TEXTAREA => self::INPUT_TEXTAREA,
+        self::INPUT_CHECKBOX,
+        self::INPUT_NUMBER,
+        self::INPUT_RADIO,
+        self::INPUT_SELECT,
+        self::INPUT_TEXT,
+        self::INPUT_TEXTAREA,
     ];
 
     /**
