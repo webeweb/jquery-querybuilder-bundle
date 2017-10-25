@@ -154,7 +154,7 @@ final class QueryBuilderValidation implements JsonSerializable {
      * Set the allow empty value.
      *
      * @param boolean $allowEmptyValue The allow empty value.
-     * @return QueryBuilderValidation Returns the QueryBuilder validation.
+     * @return QueryBuilderValidation Returns the jQuery QueryBuilder validation.
      */
     public function setAllowEmptyValue($allowEmptyValue) {
         $this->allowEmptyValue = $allowEmptyValue;
@@ -165,7 +165,7 @@ final class QueryBuilderValidation implements JsonSerializable {
      * Set the callback.
      *
      * @param string $callback The callback.
-     * @return QueryBuilderValidation Returns the QueryBuilder validation.
+     * @return QueryBuilderValidation Returns the jQuery QueryBuilder validation.
      */
     public function setCallback($callback) {
         $this->callback = $callback;
@@ -176,7 +176,7 @@ final class QueryBuilderValidation implements JsonSerializable {
      * Set the format.
      *
      * @param string|array $format The format.
-     * @return QueryBuilderValidation Returns the QueryBuilder validation.
+     * @return QueryBuilderValidation Returns the jQuery QueryBuilder validation.
      */
     public function setFormat($format) {
         $this->format = $format;
@@ -187,7 +187,7 @@ final class QueryBuilderValidation implements JsonSerializable {
      * Set the max.
      *
      * @param integer|float|string $max The max.
-     * @return QueryBuilderValidation Returns the QueryBuilder validation.
+     * @return QueryBuilderValidation Returns the jQuery QueryBuilder validation.
      */
     public function setMax($max) {
         $this->max = $max;
@@ -198,7 +198,7 @@ final class QueryBuilderValidation implements JsonSerializable {
      * Set the messages.
      *
      * @param array $messages The messages.
-     * @return QueryBuilderValidation Returns the QueryBuilder validation.
+     * @return QueryBuilderValidation Returns the jQuery QueryBuilder validation.
      */
     public function setMessages(array $messages = []) {
         $this->messages = $messages;
@@ -209,7 +209,7 @@ final class QueryBuilderValidation implements JsonSerializable {
      * Set the min.
      *
      * @param integer|float|string $min The min.
-     * @return QueryBuilderValidation Returns the QueryBuilder validation.
+     * @return QueryBuilderValidation Returns the jQuery QueryBuilder validation.
      */
     public function setMin($min) {
         $this->min = $min;
@@ -220,7 +220,7 @@ final class QueryBuilderValidation implements JsonSerializable {
      * Set the step.
      *
      * @param integer|float $step The step.
-     * @return QueryBuilderValidation Returns the QueryBuilder validation.
+     * @return QueryBuilderValidation Returns the jQuery QueryBuilder validation.
      */
     public function setStep($step) {
         $this->step = $step;
