@@ -17,7 +17,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Condition;
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Condition
  */
-interface IQueryBuilderCondition {
+interface QueryBuilderConditionInterface {
 
     /**
      * Conditions.
