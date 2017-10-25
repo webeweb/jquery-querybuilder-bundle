@@ -129,7 +129,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
      * @throws IllegalArgumentException Throws an illegal argument exception if the input is not invalid.
      */
     public final function setInput($input) {
-        if (array_key_exists($input, self::INPUTS) === false) {
+        if (in_array($input, self::INPUTS) === false) {
             throw new IllegalArgumentException("The input \"" . $input . "\" is invalid");
         }
         $this->input = $input;
@@ -144,7 +144,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
      * @throws IllegalArgumentException Throws an illegal argument exception if the type is not invalid.
      */
     public final function setType($type) {
-        if (array_key_exists($type, self::TYPES) === false) {
+        if (in_array($type, self::TYPES) === false) {
             throw new IllegalArgumentException("The type \"" . $type . "\" is invalid");
         }
         $this->type = $type;
