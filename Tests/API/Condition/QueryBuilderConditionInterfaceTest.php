@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\Condition\QueryBuilderConditionInte
 final class QueryBuilderConditionInterfaceTest extends PHPUnit_Framework_TestCase {
 
     /**
-     * Test the __construct() method.
+     * Tests the __construct() method.
      *
      * @return void
      */

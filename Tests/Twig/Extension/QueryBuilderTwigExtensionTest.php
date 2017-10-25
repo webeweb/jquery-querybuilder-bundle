@@ -55,7 +55,7 @@ final class QueryBuilderTwigExtensionTest extends PHPUnit_Framework_TestCase {
      *
      * @return void
      */
-    public function testQueryBuilerScriptFunction() {
+    public function testQueryBuilderScriptFunction() {
 
         $obj = new QueryBuilderTwigExtension(getcwd(), "");
 

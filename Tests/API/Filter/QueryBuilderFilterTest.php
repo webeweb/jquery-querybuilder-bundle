@@ -27,7 +27,7 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 final class QueryBuilderFilterTest extends PHPUnit_Framework_TestCase {
 
     /**
-     * Test the __construct() method.
+     * Tests the __construct() method.
      *
      * @return void
      */
@@ -66,7 +66,7 @@ final class QueryBuilderFilterTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Test the jsonSerialize() method.
+     * Tests the jsonSerialize() method.
      *
      * @return void
      */

@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\Validation\QueryBuilderValidation;
 final class QueryBuilderValidationTest extends PHPUnit_Framework_TestCase {
 
     /**
-     * Test the __construct() method.
+     * Tests the __construct() method.
      *
      * @return void
      */
@@ -55,7 +55,7 @@ final class QueryBuilderValidationTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Test the jsonSerialize() method.
+     * Tests the jsonSerialize() method.
      *
      * @return void
      */
@@ -67,7 +67,7 @@ final class QueryBuilderValidationTest extends PHPUnit_Framework_TestCase {
     }
 
     /**
-     * Test the toArray() method.
+     * Tests the toArray() method.
      *
      * @return void
      */

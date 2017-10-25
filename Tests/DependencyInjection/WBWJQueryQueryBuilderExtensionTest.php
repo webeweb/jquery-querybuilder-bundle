@@ -38,7 +38,7 @@ final class WBWJQueryQueryBuilderExtensionTest extends PHPUnit_Framework_TestCas
     }
 
     /**
-     * Test the load() method.
+     * Tests the load() method.
      *
      * @return void
      */
