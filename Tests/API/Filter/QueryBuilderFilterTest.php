@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Filter;
 use Exception;
 use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\Filter\QueryBuilderFilter;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\Validation\QueryBuilderValidation;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
 /**
@@ -53,6 +54,8 @@ final class QueryBuilderFilterTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(false, $obj->getMultiple(), "The method getMultiple() does not return the expected value");
         $this->assertEquals([QueryBuilderFilter::OPERATOR_EQUAL], $obj->getOperators(), "The method getOperators() does not return the expected value");
         $this->assertEquals(QueryBuilderFilter::TYPE_INTEGER, $obj->getType(), "The method getType() does not return the expected value");
+        $this->assertEquals(null, $obj->getValidation(), "The method getValidation() does not return the expected value");
+        $this->assertEquals(null, $obj->getValues(), "The method getValues() does not return the expected value");
     }
 
     /**
@@ -64,8 +67,28 @@ final class QueryBuilderFilterTest extends PHPUnit_Framework_TestCase {
 
         $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
 
-        $res = ["id" => "id", "label" => "", "type" => QueryBuilderFilter::TYPE_INTEGER, "operators" => [QueryBuilderFilter::OPERATOR_EQUAL]];
-        $this->assertEquals($res, $obj->jsonSerialize(), "The method jsonSerialize does not return the expected array");
+        $res0 = ["id" => "id", "label" => "", "type" => QueryBuilderFilter::TYPE_INTEGER, "operators" => [QueryBuilderFilter::OPERATOR_EQUAL]];
+        $this->assertEquals($res0, $obj->jsonSerialize(), "The method jsonSerialize does not return the expected array");
+
+        $obj->setField("id");
+        $res1 = ["id" => "id", "field" => "id", "label" => "", "type" => QueryBuilderFilter::TYPE_INTEGER, "operators" => [QueryBuilderFilter::OPERATOR_EQUAL]];
+        $this->assertEquals($res1, $obj->jsonSerialize(), "The method jsonSerialize does not return the expected array");
+
+        $obj->setInput(QueryBuilderFilter::INPUT_NUMBER);
+        $res2 = ["id" => "id", "field" => "id", "label" => "", "type" => QueryBuilderFilter::TYPE_INTEGER, "input" => QueryBuilderFilter::INPUT_NUMBER, "operators" => [QueryBuilderFilter::OPERATOR_EQUAL]];
+        $this->assertEquals($res2, $obj->jsonSerialize(), "The method jsonSerialize does not return the expected array");
+
+        $obj->setValues([1, 2, 3]);
+        $res3 = ["id" => "id", "field" => "id", "label" => "", "type" => QueryBuilderFilter::TYPE_INTEGER, "input" => QueryBuilderFilter::INPUT_NUMBER, "values" => [1, 2, 3], "operators" => [QueryBuilderFilter::OPERATOR_EQUAL]];
+        $this->assertEquals($res3, $obj->jsonSerialize(), "The method jsonSerialize does not return the expected array");
+
+        $obj->setMultiple(true);
+        $res4 = ["id" => "id", "field" => "id", "label" => "", "type" => QueryBuilderFilter::TYPE_INTEGER, "input" => QueryBuilderFilter::INPUT_NUMBER, "values" => [1, 2, 3], "multiple" => true, "operators" => [QueryBuilderFilter::OPERATOR_EQUAL]];
+        $this->assertEquals($res4, $obj->jsonSerialize(), "The method jsonSerialize does not return the expected array");
+
+        $obj->setValidation(new QueryBuilderValidation());
+        $res5 = ["id" => "id", "field" => "id", "label" => "", "type" => QueryBuilderFilter::TYPE_INTEGER, "input" => QueryBuilderFilter::INPUT_NUMBER, "values" => [1, 2, 3], "multiple" => true, "validation" => [], "operators" => [QueryBuilderFilter::OPERATOR_EQUAL]];
+        $this->assertEquals($res5, $obj->jsonSerialize(), "The method jsonSerialize does not return the expected array");
     }
 
 }

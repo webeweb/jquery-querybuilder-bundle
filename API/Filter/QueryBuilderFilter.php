@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Filter;
 
 use JsonSerializable;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\Operator\QueryBuilderOperatorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\Validation\QueryBuilderValidation;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Data\AbstractQueryBuilderData;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
@@ -48,7 +49,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
     /**
      * Validation.
      *
-     * @var array
+     * @var QueryBuilderValidation
      */
     private $validation;
 
@@ -101,7 +102,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
     /**
      * Get the validation.
      *
-     * @return array Returns the validation.
+     * @return QueryBuilderValidation Returns the validation.
      */
     public final function getValidation() {
         return $this->validation;
@@ -166,10 +167,10 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
     /**
      * Set the validation.
      *
-     * @param array $validation The validation.
+     * @param QueryBuilderValidation $validation The validation.
      * @return QueryBuilderFilter Returns the jQuery QueryBuilder filter.
      */
-    public final function setValidation(array $validation = []) {
+    public final function setValidation(QueryBuilderValidation $validation = null) {
         $this->validation = $validation;
         return $this;
     }
@@ -217,7 +218,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
         }
 
         if (!is_null($this->validation)) {
-            $output["validation"] = $this->validation;
+            $output["validation"] = $this->validation->toArray();
         }
 
         $output["operators"] = $this->operators;
