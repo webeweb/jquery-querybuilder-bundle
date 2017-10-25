@@ -17,7 +17,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Type;
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Type
  */
-interface IQueryBuilderType {
+interface QueryBuilderTypeInterface {
 
     /**
      * Types.
