@@ -27,6 +27,8 @@ final class QueryBuilderRuleTest extends PHPUnit_Framework_TestCase {
 
     /**
      * Tests the __construct() method.
+     *
+     * @return void
      */
     public function testConstruct() {
 
