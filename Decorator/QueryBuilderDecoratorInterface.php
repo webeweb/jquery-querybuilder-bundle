@@ -19,7 +19,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Rule\QueryBuilderRule;
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Decorator
  */
-interface QueryBuilerDecoratorInterface {
+interface QueryBuilderDecoratorInterface {
 
     /**
      * Convert into a SQL string representing this jQuery QueryBuilder rule.

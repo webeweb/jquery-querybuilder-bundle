@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Filter;
 
 use JsonSerializable;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorInterface;
 
 /**
  * jQuery QueryBuilder filter set.
