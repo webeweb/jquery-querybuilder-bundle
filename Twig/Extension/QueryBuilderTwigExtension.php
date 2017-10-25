@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Twig\Extension;
 
 use Twig_Extension;
 use Twig_SimpleFunction;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Exception\QueryBuilderFileNotFoundException;
+use WBW\Library\Core\Exception\File\FileNotFoundException;
 
 /**
  * jQuery QueryBuilder Twig extension.
@@ -81,14 +81,14 @@ final class QueryBuilderTwigExtension extends Twig_Extension {
      * @param string $open The open.
      * @param string $filename The filename.
      * @param string $close The close.
-     * @throws QueryBuilderFileNotFoundException Throws a QueryBuilder file not found exception if the resource is not found.
+     * @throws FileNotFoundException Throws a QueryBuilder file not found exception if the resource is not found.
      */
     private function queryBuilderResourceFunction($open, $filename, $close) {
 
         // Initialize and check the filepath.
         $filepath = $this->getResourcesDirectory() . "/public/" . $filename;
         if (!file_exists($filepath)) {
-            throw new QueryBuilderFileNotFoundException($filename);
+            throw new FileNotFoundException($filename);
         }
 
         // Return the output.
@@ -101,7 +101,7 @@ final class QueryBuilderTwigExtension extends Twig_Extension {
      * @param string $script The script name.
      * @param string $subdirectory The sub directory.
      * @return string Returns the jQuery QueryBuilder script.
-     * @throws QueryBuilderFileNotFoundException Throws a QueryBuilder file not found exception if the script is not found.
+     * @throws FileNotFoundException Throws a file not found exception if the script is not found.
      */
     public function queryBuilderScriptFunction($script, $subdirectory = "js") {
 
@@ -117,7 +117,7 @@ final class QueryBuilderTwigExtension extends Twig_Extension {
      *
      * @param string $css The CSS name.
      * @return string Returns the jQuery QueryBuilder style.
-     * @throws QueryBuilderFileNotFoundException Throws a QueryBuilder file not found exception if the CSS is not found.
+     * @throws FileNotFoundException Throws a file not found exception if the CSS is not found.
      */
     public function queryBuilderStyleFunction($css) {
 

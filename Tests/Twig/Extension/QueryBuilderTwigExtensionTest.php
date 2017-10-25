@@ -15,8 +15,8 @@ use Exception;
 use PHPUnit_Framework_TestCase;
 use Twig_Node;
 use Twig_SimpleFunction;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Exception\QueryBuilderFileNotFoundException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Twig\Extension\QueryBuilderTwigExtension;
+use WBW\Library\Core\Exception\File\FileNotFoundException;
 
 /**
  * jQuery QueryBuilder Twig extension test.
@@ -62,8 +62,8 @@ final class QueryBuilderTwigExtensionTest extends PHPUnit_Framework_TestCase {
         try {
             $obj->queryBuilderScriptFunction("inexistant-script");
         } catch (Exception $ex) {
-            $this->assertInstanceOf(QueryBuilderFileNotFoundException::class, $ex, "The method queryBuilderScriptFunction() does not throw the expected exception");
-            $this->assertEquals("The file \"js/inexistant-script.js\" was not found", $ex->getMessage(), "The method getMessage() does not return the expected string");
+            $this->assertInstanceOf(FileNotFoundException::class, $ex, "The method queryBuilderScriptFunction() does not throw the expected exception");
+            $this->assertEquals("The file \"js/inexistant-script.js\" is not found", $ex->getMessage(), "The method getMessage() does not return the expected string");
         }
 
         $res1 = "<script src=\"/bundles/wbwjquery-querybuilder/js/query-builder.js\" type=\"text/javascript\"></script>";
@@ -94,8 +94,8 @@ final class QueryBuilderTwigExtensionTest extends PHPUnit_Framework_TestCase {
         try {
             $obj->queryBuilderStyleFunction("inexistant-style");
         } catch (Exception $ex) {
-            $this->assertInstanceOf(QueryBuilderFileNotFoundException::class, $ex, "The method queryBuilderStyleFunction() does not throw the expected exception");
-            $this->assertEquals("The file \"css/inexistant-style.css\" was not found", $ex->getMessage(), "The method getMessage() does not return the expected string");
+            $this->assertInstanceOf(FileNotFoundException::class, $ex, "The method queryBuilderStyleFunction() does not throw the expected exception");
+            $this->assertEquals("The file \"css/inexistant-style.css\" is not found", $ex->getMessage(), "The method getMessage() does not return the expected string");
         }
 
         $res1 = "<link href=\"/bundles/wbwjquery-querybuilder/css/query-builder.default.css\" rel=\"stylesheet\" type=\"text/css\">";
