@@ -57,9 +57,10 @@ final class QueryBuilderRuleSet implements QueryBuilderConditionInterface, Query
      *
      * @param array $rules The rules.
      * @param QueryBuilderFilterSet The query builder filter set.
+     * @throws IllegalArgumentException Throws an illegal argument exception if an argument is invalid.
      */
-    public function __construct(array $rules = [], QueryBuilderFilterSet $queryBuilderFilterSet = null) {
-        $this->filterSet = $queryBuilderFilterSet;
+    public function __construct(array $rules = [], QueryBuilderFilterSet $filterSet = null) {
+        $this->filterSet = $filterSet;
         $this->parse($rules);
     }
 
@@ -94,6 +95,7 @@ final class QueryBuilderRuleSet implements QueryBuilderConditionInterface, Query
      * Parse.
      *
      * @param array $rules The rules.
+     * @throws IllegalArgumentException Throws an illegal argument exception if an argument is invalid.
      */
     private function parse(array $rules = []) {
 
@@ -135,7 +137,7 @@ final class QueryBuilderRuleSet implements QueryBuilderConditionInterface, Query
      *
      * @param string $condition The condition.
      * @return QueryBuilderRuleSet Returns the jQuery QueryBuilder rule set.
-     * @throws IllegalArgumentException Throws an illegal argument exception if the condition is is invalid.
+     * @throws IllegalArgumentException Throws an illegal argument exception if the condition is invalid.
      */
     protected function setCondition($condition) {
         if (!in_array($condition, self::CONDITIONS)) {

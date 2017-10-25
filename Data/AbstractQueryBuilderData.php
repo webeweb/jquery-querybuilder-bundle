@@ -57,6 +57,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
      *
      * @param string $id The id.
      * @param string $type The type.
+     * @throws IllegalArgumentException Throws an illegal argument exception if the type is invalid.
      */
     public function __construct($id = null, $type = null) {
         $this->setId($id);
@@ -126,7 +127,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
      *
      * @param string $input The input.
      * @return AbstractQueryBuilder Returns the QueryBuilder data.
-     * @throws IllegalArgumentException Throws an illegal argument exception if the input is not invalid.
+     * @throws IllegalArgumentException Throws an illegal argument exception if the input is invalid.
      */
     public final function setInput($input) {
         if (in_array($input, self::INPUTS) === false) {
@@ -141,7 +142,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
      *
      * @param string $type The type.
      * @return AbstractQueryBuilder Returns the QueryBuilder data.
-     * @throws IllegalArgumentException Throws an illegal argument exception if the type is not invalid.
+     * @throws IllegalArgumentException Throws an illegal argument exception if the type is invalid.
      */
     public final function setType($type) {
         if (!is_null($type) && in_array($type, self::TYPES) === false) {

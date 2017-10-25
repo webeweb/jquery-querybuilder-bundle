@@ -51,6 +51,7 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
      *
      * @param array $rule The rule.
      * @param QueryBuilderDecoratorInterface The QueryBuilder decorator.
+     * @throws IllegalArgumentException Throws an illegal argument exception if an argument is invalid.
      */
     public function __construct(array $rule = [], QueryBuilderDecoratorInterface $decorator = null) {
         parent::__construct();
@@ -89,6 +90,7 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
      * Parse.
      *
      * @param array $rule The rule.
+     * @throws IllegalArgumentException Throws an illegal argument exception if an argument is invalid.
      */
     private function parse(array $rule = []) {
         if (array_key_exists("id", $rule)) {

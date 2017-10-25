@@ -66,6 +66,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * @param string $id The id.
      * @param string $type The type.
      * @param array $operators The operators.
+     * @throws IllegalArgumentException Throws an illegal argument exception if an argument is invalid.
      */
     public function __construct($id, $type, array $operators) {
         parent::__construct($id, $type);
