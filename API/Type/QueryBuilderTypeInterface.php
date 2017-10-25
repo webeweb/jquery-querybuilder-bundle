@@ -23,13 +23,13 @@ interface QueryBuilderTypeInterface {
      * Types.
      */
     const TYPES = [
-        self::TYPE_BOOLEAN  => self::TYPE_BOOLEAN,
-        self::TYPE_DATE     => self::TYPE_DATE,
-        self::TYPE_DATETIME => self::TYPE_DATETIME,
-        self::TYPE_DOUBLE   => self::TYPE_DOUBLE,
-        self::TYPE_INTEGER  => self::TYPE_INTEGER,
-        self::TYPE_STRING   => self::TYPE_STRING,
-        self::TYPE_TIME     => self::TYPE_TIME,
+        self::TYPE_BOOLEAN,
+        self::TYPE_DATE,
+        self::TYPE_DATETIME,
+        self::TYPE_DOUBLE,
+        self::TYPE_INTEGER,
+        self::TYPE_STRING,
+        self::TYPE_TIME,
     ];
 
     /**
