@@ -65,6 +65,17 @@ final class QueryBuilderRuleSet implements QueryBuilderConditionInterface, Query
     }
 
     /**
+     * Add a rule.
+     *
+     * @param QueryBuilderRuleInterface $rule The rule.
+     * @return QueryBuilderRuleSet Returns the jQuery QueryBuilder rule set.
+     */
+    protected function addRule(QueryBuilderRuleInterface $rule) {
+        $this->rules[] = $rule;
+        return $this;
+    }
+
+    /**
      * Get the condition.
      *
      * @return string Returns the condition.
@@ -114,7 +125,7 @@ final class QueryBuilderRuleSet implements QueryBuilderConditionInterface, Query
                 if (array_key_exists("condition", $current)) {
 
                     // Build a QueryBuilder rule set.
-                    $this->rules[] = new QueryBuilderRuleSet($current, $this->filterSet);
+                    $this->addRule(new QueryBuilderRuleSet($current, $this->filterSet));
                     continue;
                 }
 
@@ -122,7 +133,7 @@ final class QueryBuilderRuleSet implements QueryBuilderConditionInterface, Query
                 $decorator = !is_null($this->filterSet) ? $this->filterSet->getDecorator($current["id"]) : null;
 
                 // Build a QueryBuilder rule.
-                $this->rules[] = new QueryBuilderRule($current, $decorator);
+                $this->addRule(new QueryBuilderRule($current, $decorator));
             }
         }
 
@@ -144,17 +155,6 @@ final class QueryBuilderRuleSet implements QueryBuilderConditionInterface, Query
             throw new IllegalArgumentException("The condition \"" . $condition . "\" is invalid");
         }
         $this->condition = $condition;
-        return $this;
-    }
-
-    /**
-     * Set the rules.
-     *
-     * @param QueryBuilderRuleInterface[] $rules The rules.
-     * @return QueryBuilderRuleSet Returns the jQuery QueryBuilder rule set.
-     */
-    protected function setRules(array $rules = []) {
-        $this->rules = $rules;
         return $this;
     }
 
