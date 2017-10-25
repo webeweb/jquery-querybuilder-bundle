@@ -134,23 +134,23 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
      * @return string Returns the quoted value.
      */
     private function quoteMixed($value, $wrap = false) {
-        $output = "";
+        $output = null;
         switch ($this->getType()) {
             case self::TYPE_BOOLEAN:
-                $output = $value === true ? 1 : 0;
+                $output = $value === true ? "1" : "0";
                 break;
             case self::TYPE_DATE:
             case self::TYPE_DATETIME:
             case self::TYPE_STRING:
             case self::TYPE_TIME:
-                $output = addslashes($value);
+                $output = $wrap === true ? "'" . addslashes($value) . "'" : addslashes($value);
                 break;
             case self::TYPE_DOUBLE:
             case self::TYPE_INTEGER:
                 $output = $value;
                 break;
         }
-        return $wrap === true ? "'" . $output . "'" : $output;
+        return $output;
     }
 
     /**
@@ -162,7 +162,7 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
      */
     public final function setOperator($operator) {
         if (array_key_exists($operator, self::OPERATORS) === false) {
-            throw new IllegalArgumentException("The operator \"" . $operator . "\ is invalid");
+            throw new IllegalArgumentException("The operator \"" . $operator . "\" is invalid");
         }
         $this->operator = $operator;
         return $this;
