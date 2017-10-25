@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Rule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\Condition\QueryBuilderConditionInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\Operator\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Data\AbstractQueryBuilderData;
+use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
 /**
  * jQuery QueryBuilder rule.
@@ -111,41 +112,45 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
     }
 
     /**
-     * Quote.
+     * Quote an array of values.
      *
-     * @param mixed $values The values.
-     * @return string Returns the values quoted.
+     * @param array $values The values.
+     * @param boolean $wrap Wrap ?
+     * @return array Returns the quoted values.
      */
-    private function quote($values) {
-
-        // Declare the utility function.
-        $quoteFunction = function($str, $type) {
-            $search  = ["'"];
-            $replace = ["''"];
-            $quoted  = str_replace($search, $replace, $str);
-            switch ($type) {
-                case self::TYPE_DATE:
-                    break;
-                case self::TYPE_DATETIME:
-                    break;
-                case self::TYPE_STRING:
-                    return "'" . $quoted . "'";
-                case self::TYPE_TIME:
-                    break;
-            }
-            return $quoted;
-        };
-
-        // Check the values.
-        if (!is_array($values)) {
-            return $quoteFunction($values, $this->getType());
-        } else {
-            $output = [];
-            foreach ($values as $current) {
-                $output[] = $quoteFunction($current, $this->getType());
-            }
-            return $output;
+    private function quoteArray(array $values, $wrap = false) {
+        $output = [];
+        foreach ($values as $current) {
+            $output[] = $this->quoteMixed($current, $wrap);
         }
+        return $output;
+    }
+
+    /**
+     * Quote a mixed value.
+     *
+     * @param mixed $value The value.
+     * @param boolean $wrap Wrap ?
+     * @return string Returns the quoted value.
+     */
+    private function quoteMixed($value, $wrap = false) {
+        $output = "";
+        switch ($this->getType()) {
+            case self::TYPE_BOOLEAN:
+                $output = $value === true ? 1 : 0;
+                break;
+            case self::TYPE_DATE:
+            case self::TYPE_DATETIME:
+            case self::TYPE_STRING:
+            case self::TYPE_TIME:
+                $output = addslashes($value);
+                break;
+            case self::TYPE_DOUBLE:
+            case self::TYPE_INTEGER:
+                $output = $value;
+                break;
+        }
+        return $wrap === true ? "'" . $output . "'" : $output;
     }
 
     /**
@@ -153,11 +158,13 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
      *
      * @param string $operator The operator.
      * @return QueryBuilderRule Returns the QueryBuilder rule.
+     * @throws IllegalArgumentException Thwrows an illegal argument exception if the operator is invalid.
      */
     public final function setOperator($operator) {
-        if (array_key_exists($operator, self::OPERATORS)) {
-            $this->operator = $operator;
+        if (array_key_exists($operator, self::OPERATORS) === false) {
+            throw new IllegalArgumentException("The operator \"" . $operator . "\ is invalid");
         }
+        $this->operator = $operator;
         return $this;
     }
 
@@ -178,16 +185,13 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
     public function toSQL() {
 
         // Check the decorator.
-        if (!is_null($this->_decorator)) {
-            return $this->_decorator->toSQL($this);
+        if (!is_null($this->decorator)) {
+            return $this->decorator->toSQL($this);
         }
 
-        $sql = [];
-
-        // Add the field.
+        // Initialize the SQL.
+        $sql   = [];
         $sql[] = $this->getField();
-
-        // Add the operator.
         $sql[] = self::OPERATORS[$this->operator];
 
         // Switch into operator.
@@ -195,33 +199,43 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
 
             case self::OPERATOR_BEGINS_WITH:
             case self::OPERATOR_NOT_BEGINS_WITH:
-                $sql[] = "'" . $this->quote($this->value, $this->getType()) . "%'";
+                $sql[] = "'" . $this->quoteMixed($this->value, false) . "%'";
                 break;
 
             case self::OPERATOR_BETWEEN:
             case self::OPERATOR_NOT_BETWEEN:
-                $sql[] = "(" . implode(" " . self::CONDITION_AND . " ", $this->quote($this->value)) . ")";
+                $sql[] = implode(" " . self::CONDITION_AND . " ", $this->quoteArray($this->value, true));
                 break;
 
             case self::OPERATOR_CONTAINS:
             case self::OPERATOR_NOT_CONTAINS:
-                $sql[] = "'%" . $this->quote($this->value) . "%'";
+                $sql[] = "'%" . $this->quoteMixed($this->value, false) . "%'";
                 break;
 
             case self::OPERATOR_ENDS_WITH:
             case self::OPERATOR_NOT_ENDS_WITH:
-                $sql[] = "'%" . $this->quote($this->value) . "'";
+                $sql[] = "'%" . $this->quoteMixed($this->value, false) . "'";
+                break;
+
+            case self::OPERATOR_EQUAL:
+            case self::OPERATOR_GREATER:
+            case self::OPERATOR_GREATER_OR_EQUAL:
+            case self::OPERATOR_LESS:
+            case self::OPERATOR_LESS_OR_EQUAL:
+            case self::OPERATOR_NOT_EQUAL:
+                $sql[] = $this->quoteMixed($this->value, true);
                 break;
 
             case self::OPERATOR_IN:
             case self::OPERATOR_NOT_IN:
-                $sql[] = "(" . implode(", ", $this->quote($this->value)) . ")";
+                $sql[] = "(" . implode(", ", $this->quoteArray($this->value, true)) . ")";
                 break;
 
             case self::OPERATOR_IS_EMPTY:
             case self::OPERATOR_IS_NOT_EMPTY:
             case self::OPERATOR_IS_NOT_NULL:
             case self::OPERATOR_IS_NULL:
+                // NOTHING TO DO.
                 break;
         }
 
