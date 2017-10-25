@@ -140,7 +140,7 @@ final class QueryBuilderRuleSet implements QueryBuilderConditionInterface, Query
      * @throws IllegalArgumentException Throws an illegal argument exception if the condition is invalid.
      */
     protected function setCondition($condition) {
-        if (!in_array($condition, self::CONDITIONS)) {
+        if (!is_null($condition) && !in_array($condition, self::CONDITIONS)) {
             throw new IllegalArgumentException("The condition \"" . $condition . "\" is invalid");
         }
         $this->condition = $condition;
