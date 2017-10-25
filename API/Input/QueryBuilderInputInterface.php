@@ -17,7 +17,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Input;
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Input
  */
-interface IQueryBuilderInput {
+interface QueryBuilderInputInterface {
 
     /**
      * Inputs.
