@@ -19,7 +19,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\Type\IQueryBuilderType;
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Type
- * @version 2.4.3
  * @final
  */
 final class IQueryBuilderTypeTest extends PHPUnit_Framework_TestCase {

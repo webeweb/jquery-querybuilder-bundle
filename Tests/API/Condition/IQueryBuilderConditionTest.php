@@ -19,7 +19,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\Condition\IQueryBuilderCondition;
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Condition
- * @version 2.4.3
  * @final
  */
 final class IQueryBuilderConditionTest extends PHPUnit_Framework_TestCase {

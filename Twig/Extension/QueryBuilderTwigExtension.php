@@ -20,7 +20,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Exception\QueryBuilderFileNotFoundExcep
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Twig\Extension
- * @version 2.4.3
  * @final
  */
 final class QueryBuilderTwigExtension extends Twig_Extension {

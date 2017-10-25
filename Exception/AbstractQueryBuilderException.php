@@ -18,7 +18,7 @@ use Exception;
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Exception
- * @version 2.4.3
+ * @abstract
  */
 abstract class AbstractQueryBuilderException extends Exception {
 

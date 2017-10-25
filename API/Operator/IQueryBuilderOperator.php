@@ -16,8 +16,6 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Operator;
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Operator
- * @version 2.4.3
- * @final
  */
 interface IQueryBuilderOperator {
 

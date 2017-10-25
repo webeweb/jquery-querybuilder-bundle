@@ -21,7 +21,6 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection
- * @version 2.4.3
  * @final
  */
 final class WBWJQueryQueryBuilderExtension extends Extension {

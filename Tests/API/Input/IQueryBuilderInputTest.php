@@ -19,7 +19,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\Input\IQueryBuilderInput;
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Input
- * @version 2.4.3
  * @final
  */
 final class IQueryBuilderInputTest extends PHPUnit_Framework_TestCase {

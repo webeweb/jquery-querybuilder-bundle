@@ -18,7 +18,6 @@ use JsonSerializable;
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Validation
- * @version 2.4.3
  * @final
  */
 final class QueryBuilderValidation implements JsonSerializable {

@@ -18,7 +18,6 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle
- * @version 2.4.3
  * @final
  */
 final class WBWJQueryQueryBuilderBundle extends Bundle {

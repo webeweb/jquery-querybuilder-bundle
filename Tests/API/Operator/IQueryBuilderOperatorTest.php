@@ -19,7 +19,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\Operator\IQueryBuilderOperator;
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Operator
- * @version 2.4.3
  * @final
  */
 final class IQueryBuilderOperatorTest extends PHPUnit_Framework_TestCase {
