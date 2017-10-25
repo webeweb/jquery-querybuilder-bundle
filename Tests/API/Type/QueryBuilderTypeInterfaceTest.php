@@ -15,7 +15,7 @@ use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\Type\QueryBuilderTypeInterface;
 
 /**
- * QueryBuilder type interface test.
+ * jQuery QueryBuilder type interface test.
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Type

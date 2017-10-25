@@ -15,7 +15,7 @@ use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\Condition\QueryBuilderConditionInterface;
 
 /**
- * QueryBuilder condition interface test.
+ * jQuery QueryBuilder condition interface test.
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Condition

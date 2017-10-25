@@ -15,7 +15,7 @@ use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\Input\QueryBuilderInputInterface;
 
 /**
- * QueryBuilder input interface test.
+ * jQuery QueryBuilder input interface test.
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Input

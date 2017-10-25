@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Operator;
 
 /**
- * QueryBuilder operator interface.
+ * jQuery QueryBuilder operator interface.
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Operator

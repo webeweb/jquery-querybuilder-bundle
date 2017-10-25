@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Type;
 
 /**
- * QueryBuilder type interface.
+ * jQuery QueryBuilder type interface.
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Type

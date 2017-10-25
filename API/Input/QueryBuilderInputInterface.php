@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Input;
 
 /**
- * QueryBuilder input interface.
+ * jQuery QueryBuilder input interface.
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Input

@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Condition;
 
 /**
- * QueryBuilder condition interface.
+ * jQuery QueryBuilder condition interface.
  *
  * @author NdC/WBW <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Condition
