@@ -60,25 +60,25 @@ final class QueryBuilderTwigExtensionTest extends PHPUnit_Framework_TestCase {
         $obj = new QueryBuilderTwigExtension(getcwd(), "");
 
         try {
-            $obj->queryBuilderScriptFunction("inexistant-script");
+            $obj->queryBuilderScriptFunction("exception");
         } catch (Exception $ex) {
             $this->assertInstanceOf(FileNotFoundException::class, $ex, "The method queryBuilderScriptFunction() does not throw the expected exception");
-            $this->assertEquals("The file \"js/inexistant-script.js\" is not found", $ex->getMessage(), "The method getMessage() does not return the expected value");
+            $this->assertEquals("The file \"js/exception.js\" is not found", $ex->getMessage(), "The method getMessage() does not return the expected value");
         }
 
-        $res1 = "<script src=\"/bundles/wbwjquery-querybuilder/js/query-builder.js\" type=\"text/javascript\"></script>";
+        $res1 = "<script src=\"/bundles/wbwjqueryquerybuilder/js/query-builder.js\" type=\"text/javascript\"></script>";
         $this->assertEquals($res1, $obj->queryBuilderScriptFunction("query-builder"), "The method queryBuilderScriptFunction() does not return the expected value");
 
-        $res1_1 = "<script src=\"/bundles/wbwjquery-querybuilder/js/query-builder.js\" type=\"text/javascript\"></script>";
+        $res1_1 = "<script src=\"/bundles/wbwjqueryquerybuilder/js/query-builder.js\" type=\"text/javascript\"></script>";
         $this->assertEquals($res1_1, $obj->queryBuilderScriptFunction("query-builder"), "The method queryBuilderScriptFunction() does not return the expected value");
 
-        $res2 = "<script src=\"/bundles/wbwjquery-querybuilder/js/interact.js\" type=\"text/javascript\"></script>";
+        $res2 = "<script src=\"/bundles/wbwjqueryquerybuilder/js/interact.js\" type=\"text/javascript\"></script>";
         $this->assertEquals($res2, $obj->queryBuilderScriptFunction("interact", "js"), "The method queryBuilderScriptFunction() does not return the expected value");
 
-        $res2_1 = "<script src=\"/bundles/wbwjquery-querybuilder/js/interact.js\" type=\"text/javascript\"></script>";
+        $res2_1 = "<script src=\"/bundles/wbwjqueryquerybuilder/js/interact.js\" type=\"text/javascript\"></script>";
         $this->assertEquals($res2_1, $obj->queryBuilderScriptFunction("interact"), "The method queryBuilderScriptFunction() does not return the expected value");
 
-        $res3 = "<script src=\"/bundles/wbwjquery-querybuilder/i18n/query-builder.en.js\" type=\"text/javascript\"></script>";
+        $res3 = "<script src=\"/bundles/wbwjqueryquerybuilder/i18n/query-builder.en.js\" type=\"text/javascript\"></script>";
         $this->assertEquals($res3, $obj->queryBuilderScriptFunction("query-builder.en", "i18n"), "The method queryBuilderScriptFunction() does not return the expected value");
     }
 
@@ -92,16 +92,16 @@ final class QueryBuilderTwigExtensionTest extends PHPUnit_Framework_TestCase {
         $obj = new QueryBuilderTwigExtension(getcwd(), "");
 
         try {
-            $obj->queryBuilderStyleFunction("inexistant-style");
+            $obj->queryBuilderStyleFunction("exception");
         } catch (Exception $ex) {
             $this->assertInstanceOf(FileNotFoundException::class, $ex, "The method queryBuilderStyleFunction() does not throw the expected exception");
-            $this->assertEquals("The file \"css/inexistant-style.css\" is not found", $ex->getMessage(), "The method getMessage() does not return the expected value");
+            $this->assertEquals("The file \"css/exception.css\" is not found", $ex->getMessage(), "The method getMessage() does not return the expected value");
         }
 
-        $res1 = "<link href=\"/bundles/wbwjquery-querybuilder/css/query-builder.default.css\" rel=\"stylesheet\" type=\"text/css\">";
+        $res1 = "<link href=\"/bundles/wbwjqueryquerybuilder/css/query-builder.default.css\" rel=\"stylesheet\" type=\"text/css\">";
         $this->assertEquals($res1, $obj->queryBuilderStyleFunction("query-builder.default"), "The method queryBuilderStyleFunction() does not return the expected value");
 
-        $res2 = "<link href=\"/bundles/wbwjquery-querybuilder/css/query-builder.dark.css\" rel=\"stylesheet\" type=\"text/css\">";
+        $res2 = "<link href=\"/bundles/wbwjqueryquerybuilder/css/query-builder.dark.css\" rel=\"stylesheet\" type=\"text/css\">";
         $this->assertEquals($res2, $obj->queryBuilderStyleFunction("query-builder.dark"), "The method queryBuilderStyleFunction() does not return the expected value");
     }
 
