@@ -19,52 +19,52 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Type;
  */
 interface QueryBuilderTypeInterface {
 
-    /**
-     * Types.
-     */
-    const TYPES = [
-        self::TYPE_BOOLEAN,
-        self::TYPE_DATE,
-        self::TYPE_DATETIME,
-        self::TYPE_DOUBLE,
-        self::TYPE_INTEGER,
-        self::TYPE_STRING,
-        self::TYPE_TIME,
-    ];
+	/**
+	 * Types.
+	 */
+	const TYPES = [
+		self::TYPE_BOOLEAN,
+		self::TYPE_DATE,
+		self::TYPE_DATETIME,
+		self::TYPE_DOUBLE,
+		self::TYPE_INTEGER,
+		self::TYPE_STRING,
+		self::TYPE_TIME,
+	];
 
-    /**
-     * Type boolean.
-     */
-    const TYPE_BOOLEAN = "boolean";
+	/**
+	 * Type boolean.
+	 */
+	const TYPE_BOOLEAN = "boolean";
 
-    /**
-     * Type date.
-     */
-    const TYPE_DATE = "date";
+	/**
+	 * Type date.
+	 */
+	const TYPE_DATE = "date";
 
-    /**
-     * Type datetime.
-     */
-    const TYPE_DATETIME = "datetime";
+	/**
+	 * Type datetime.
+	 */
+	const TYPE_DATETIME = "datetime";
 
-    /**
-     * Type double.
-     */
-    const TYPE_DOUBLE = "double";
+	/**
+	 * Type double.
+	 */
+	const TYPE_DOUBLE = "double";
 
-    /**
-     * Type integer.
-     */
-    const TYPE_INTEGER = "integer";
+	/**
+	 * Type integer.
+	 */
+	const TYPE_INTEGER = "integer";
 
-    /**
-     * Type string.
-     */
-    const TYPE_STRING = "string";
+	/**
+	 * Type string.
+	 */
+	const TYPE_STRING = "string";
 
-    /**
-     * Type time.
-     */
-    const TYPE_TIME = "time";
+	/**
+	 * Type time.
+	 */
+	const TYPE_TIME = "time";
 
 }

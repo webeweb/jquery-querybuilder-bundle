@@ -19,46 +19,46 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Input;
  */
 interface QueryBuilderInputInterface {
 
-    /**
-     * Inputs.
-     */
-    const INPUTS = [
-        self::INPUT_CHECKBOX,
-        self::INPUT_NUMBER,
-        self::INPUT_RADIO,
-        self::INPUT_SELECT,
-        self::INPUT_TEXT,
-        self::INPUT_TEXTAREA,
-    ];
+	/**
+	 * Inputs.
+	 */
+	const INPUTS = [
+		self::INPUT_CHECKBOX,
+		self::INPUT_NUMBER,
+		self::INPUT_RADIO,
+		self::INPUT_SELECT,
+		self::INPUT_TEXT,
+		self::INPUT_TEXTAREA,
+	];
 
-    /**
-     * Input checkbox.
-     */
-    const INPUT_CHECKBOX = "checkbox";
+	/**
+	 * Input checkbox.
+	 */
+	const INPUT_CHECKBOX = "checkbox";
 
-    /**
-     * Input number.
-     */
-    const INPUT_NUMBER = "number";
+	/**
+	 * Input number.
+	 */
+	const INPUT_NUMBER = "number";
 
-    /**
-     * Input radio.
-     */
-    const INPUT_RADIO = "radio";
+	/**
+	 * Input radio.
+	 */
+	const INPUT_RADIO = "radio";
 
-    /**
-     * Input select.
-     */
-    const INPUT_SELECT = "select";
+	/**
+	 * Input select.
+	 */
+	const INPUT_SELECT = "select";
 
-    /**
-     * Input text.
-     */
-    const INPUT_TEXT = "text";
+	/**
+	 * Input text.
+	 */
+	const INPUT_TEXT = "text";
 
-    /**
-     * Input textarea.
-     */
-    const INPUT_TEXTAREA = "textarea";
+	/**
+	 * Input textarea.
+	 */
+	const INPUT_TEXTAREA = "textarea";
 
 }

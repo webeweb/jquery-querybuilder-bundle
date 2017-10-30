@@ -24,171 +24,171 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
  */
 final class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilderRuleInterface {
 
-    /**
-     * Condition.
-     *
-     * @var string
-     */
-    private $condition;
+	/**
+	 * Condition.
+	 *
+	 * @var string
+	 */
+	private $condition;
 
-    /**
-     * Filter set.
-     *
-     * @var QueryBuilderFilterSet
-     */
-    private $filterSet;
+	/**
+	 * Filter set.
+	 *
+	 * @var QueryBuilderFilterSet
+	 */
+	private $filterSet;
 
-    /**
-     * Rules.
-     *
-     * @var QueryBuilderRuleInterface[]
-     */
-    private $rules = [];
+	/**
+	 * Rules.
+	 *
+	 * @var QueryBuilderRuleInterface[]
+	 */
+	private $rules = [];
 
-    /**
-     * Valid.
-     *
-     * @var boolean
-     */
-    private $valid = false;
+	/**
+	 * Valid.
+	 *
+	 * @var boolean
+	 */
+	private $valid = false;
 
-    /**
-     * Constructor.
-     *
-     * @param array $rules The rules.
-     * @param QueryBuilderFilterSet The query builder filter set.
-     * @throws IllegalArgumentException Throws an illegal argument exception if an argument is invalid.
-     */
-    public function __construct(array $rules = [], QueryBuilderFilterSet $filterSet = null) {
-        $this->filterSet = $filterSet;
-        $this->parse($rules);
-    }
+	/**
+	 * Constructor.
+	 *
+	 * @param array $rules The rules.
+	 * @param QueryBuilderFilterSet The query builder filter set.
+	 * @throws IllegalArgumentException Throws an illegal argument exception if an argument is invalid.
+	 */
+	public function __construct(array $rules = [], QueryBuilderFilterSet $filterSet = null) {
+		$this->filterSet = $filterSet;
+		$this->parse($rules);
+	}
 
-    /**
-     * Add a rule.
-     *
-     * @param QueryBuilderRuleInterface $rule The rule.
-     * @return QueryBuilderRuleSet Returns the jQuery QueryBuilder rule set.
-     */
-    protected function addRule(QueryBuilderRuleInterface $rule) {
-        $this->rules[] = $rule;
-        return $this;
-    }
+	/**
+	 * Add a rule.
+	 *
+	 * @param QueryBuilderRuleInterface $rule The rule.
+	 * @return QueryBuilderRuleSet Returns the jQuery QueryBuilder rule set.
+	 */
+	protected function addRule(QueryBuilderRuleInterface $rule) {
+		$this->rules[] = $rule;
+		return $this;
+	}
 
-    /**
-     * Get the condition.
-     *
-     * @return string Returns the condition.
-     */
-    public function getCondition() {
-        return $this->condition;
-    }
+	/**
+	 * Get the condition.
+	 *
+	 * @return string Returns the condition.
+	 */
+	public function getCondition() {
+		return $this->condition;
+	}
 
-    /**
-     * Get the rules.
-     *
-     * @return QueryBuilderRuleInterface[] Returns the rules.
-     */
-    public function getRules() {
-        return $this->rules;
-    }
+	/**
+	 * Get the rules.
+	 *
+	 * @return QueryBuilderRuleInterface[] Returns the rules.
+	 */
+	public function getRules() {
+		return $this->rules;
+	}
 
-    /**
-     * Get the valid.
-     *
-     * @return boolean Returns the valid.
-     */
-    public function getValid() {
-        return $this->valid;
-    }
+	/**
+	 * Get the valid.
+	 *
+	 * @return boolean Returns the valid.
+	 */
+	public function getValid() {
+		return $this->valid;
+	}
 
-    /**
-     * Parse.
-     *
-     * @param array $rules The rules.
-     * @throws IllegalArgumentException Throws an illegal argument exception if an argument is invalid.
-     */
-    private function parse(array $rules = []) {
+	/**
+	 * Parse.
+	 *
+	 * @param array $rules The rules.
+	 * @throws IllegalArgumentException Throws an illegal argument exception if an argument is invalid.
+	 */
+	private function parse(array $rules = []) {
 
-        // Check if condition exists.
-        if (array_key_exists("condition", $rules)) {
-            $this->setCondition($rules["condition"]);
-        }
+		// Check if condition exists.
+		if (array_key_exists("condition", $rules)) {
+			$this->setCondition($rules["condition"]);
+		}
 
-        // Check if rules exists.
-        if (array_key_exists("rules", $rules)) {
+		// Check if rules exists.
+		if (array_key_exists("rules", $rules)) {
 
-            // Handle each rule.
-            foreach ($rules["rules"] as $current) {
+			// Handle each rule.
+			foreach ($rules["rules"] as $current) {
 
-                // Check if condition exists.
-                if (array_key_exists("condition", $current)) {
+				// Check if condition exists.
+				if (array_key_exists("condition", $current)) {
 
-                    // Build a QueryBuilder rule set.
-                    $this->addRule(new QueryBuilderRuleSet($current, $this->filterSet));
-                    continue;
-                }
+					// Build a QueryBuilder rule set.
+					$this->addRule(new QueryBuilderRuleSet($current, $this->filterSet));
+					continue;
+				}
 
-                // Set the decorator.
-                $decorator = !is_null($this->filterSet) ? $this->filterSet->getDecorator($current["id"]) : null;
+				// Set the decorator.
+				$decorator = !is_null($this->filterSet) ? $this->filterSet->getDecorator($current["id"]) : null;
 
-                // Build a QueryBuilder rule.
-                $this->addRule(new QueryBuilderRule($current, $decorator));
-            }
-        }
+				// Build a QueryBuilder rule.
+				$this->addRule(new QueryBuilderRule($current, $decorator));
+			}
+		}
 
-        // Check if valid exists.
-        if (array_key_exists("valid", $rules)) {
-            $this->setValid($rules["valid"]);
-        }
-    }
+		// Check if valid exists.
+		if (array_key_exists("valid", $rules)) {
+			$this->setValid($rules["valid"]);
+		}
+	}
 
-    /**
-     * Set the condition.
-     *
-     * @param string $condition The condition.
-     * @return QueryBuilderRuleSet Returns the jQuery QueryBuilder rule set.
-     * @throws IllegalArgumentException Throws an illegal argument exception if the condition is invalid.
-     */
-    protected function setCondition($condition) {
-        if (!is_null($condition) && !in_array($condition, self::CONDITIONS)) {
-            throw new IllegalArgumentException("The condition \"" . $condition . "\" is invalid");
-        }
-        $this->condition = $condition;
-        return $this;
-    }
+	/**
+	 * Set the condition.
+	 *
+	 * @param string $condition The condition.
+	 * @return QueryBuilderRuleSet Returns the jQuery QueryBuilder rule set.
+	 * @throws IllegalArgumentException Throws an illegal argument exception if the condition is invalid.
+	 */
+	protected function setCondition($condition) {
+		if (!is_null($condition) && !in_array($condition, self::CONDITIONS)) {
+			throw new IllegalArgumentException("The condition \"" . $condition . "\" is invalid");
+		}
+		$this->condition = $condition;
+		return $this;
+	}
 
-    /**
-     * Set the valid.
-     *
-     * @param boolean $valid The valid.
-     * @return QueryBuilderRuleSet Returns the jQuery QueryBuilder rule set.
-     */
-    protected function setValid($valid) {
-        $this->valid = $valid;
-        return $this;
-    }
+	/**
+	 * Set the valid.
+	 *
+	 * @param boolean $valid The valid.
+	 * @return QueryBuilderRuleSet Returns the jQuery QueryBuilder rule set.
+	 */
+	protected function setValid($valid) {
+		$this->valid = $valid;
+		return $this;
+	}
 
-    /**
-     * {@inheritdoc}
-     */
-    public function toSQL() {
+	/**
+	 * {@inheritdoc}
+	 */
+	public function toSQL() {
 
-        // Check the rules.
-        if (count($this->rules) === 0) {
-            return "";
-        }
+		// Check the rules.
+		if (count($this->rules) === 0) {
+			return "";
+		}
 
-        // Initialize the SQL.
-        $sql = [];
+		// Initialize the SQL.
+		$sql = [];
 
-        // Handle each rule.
-        foreach ($this->rules as $rule) {
-            $sql[] = $rule->toSQL();
-        }
+		// Handle each rule.
+		foreach ($this->rules as $rule) {
+			$sql[] = $rule->toSQL();
+		}
 
-        // Return the SQL.
-        return "(" . implode(" " . $this->condition . " ", $sql) . ")";
-    }
+		// Return the SQL.
+		return "(" . implode(" " . $this->condition . " ", $sql) . ")";
+	}
 
 }

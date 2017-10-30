@@ -23,15 +23,15 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\Condition\QueryBuilderConditionInte
  */
 final class QueryBuilderConditionInterfaceTest extends PHPUnit_Framework_TestCase {
 
-    /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstructor() {
+	/**
+	 * Tests the __construct() method.
+	 *
+	 * @return void
+	 */
+	public function testConstructor() {
 
-        $this->assertEquals("AND", QueryBuilderConditionInterface::CONDITION_AND, "The constant CONDITION_AND does not return the expected value");
-        $this->assertEquals("OR", QueryBuilderConditionInterface::CONDITION_OR, "The constant CONDITION_OR does not return the expected value");
-    }
+		$this->assertEquals("AND", QueryBuilderConditionInterface::CONDITION_AND, "The constant CONDITION_AND does not return the expected value");
+		$this->assertEquals("OR", QueryBuilderConditionInterface::CONDITION_OR, "The constant CONDITION_OR does not return the expected value");
+	}
 
 }
