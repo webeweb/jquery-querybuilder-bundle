@@ -20,7 +20,7 @@ Edit `composer.json` file to add this bundle package:
 
 ```
 
-Run `php composer.phar update webeweb/jquery-querybuilder-bundle`
+Run `composer update webeweb/jquery-querybuilder-bundle`
 
 ---
 
@@ -39,7 +39,7 @@ Once all required libraries are installed then do:
 
 ```bash
 
-$ vendor/bin/phpunit
+$ ./vendor/bin/phpunit
 
 ```
 
