@@ -21,8 +21,8 @@ $ composer require webeweb/jquery-querybuilder "~1.0@dev"
 ```
 
 This command requires you to have Composer installed globally, as explained
-in the [installation chapter](https://getcomposer.org/doc/00-intro.md)
-of the Composer documentation.
+in the [installation chapter](https://getcomposer.org/doc/00-intro.md) of the
+Composer documentation.
 
 Then, enable the bundle by adding it to the list of registered bundles
 in the `app/AppKernel.php` file of your project:
