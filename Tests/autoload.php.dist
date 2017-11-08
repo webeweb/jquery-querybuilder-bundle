@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the WBWJQueryQueryBuilderBundle.
+ * This file is part of the jquery-querybuilder-bundle package.
  *
  * (c) 2017 NdC/WBW
  *
