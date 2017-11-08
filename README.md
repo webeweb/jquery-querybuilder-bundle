@@ -32,7 +32,7 @@ in the `app/AppKernel.php` file of your project:
 	public function registerBundles() {
 		$bundles = [
             // ...
-            new WBW\Bundle\JQuery\QueryBuilderBundle\WBWJQueryQueryBuilderBundle(),
+            new WBW\Bundle\JQuery\QueryBuilderBundle\JQueryQueryBuilderBundle(),
         ];
 
 		// ...
