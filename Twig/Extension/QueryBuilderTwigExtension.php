@@ -109,7 +109,7 @@ final class QueryBuilderTwigExtension extends Twig_Extension {
 		$filename = implode("/", [$subdirectory, $script . ".js"]);
 
 		// Return the output.
-		return $this->queryBuilderResourceFunction("<script src=\"/bundles/wbwjqueryquerybuilder/", $filename, "\" type=\"text/javascript\"></script>");
+		return $this->queryBuilderResourceFunction("<script src=\"/bundles/jqueryquerybuilder/", $filename, "\" type=\"text/javascript\"></script>");
 	}
 
 	/**
@@ -125,7 +125,7 @@ final class QueryBuilderTwigExtension extends Twig_Extension {
 		$filename = implode("/", ["css", $css . ".css"]);
 
 		// Return the output.
-		return $this->queryBuilderResourceFunction("<link href=\"/bundles/wbwjqueryquerybuilder/", $filename, "\" rel=\"stylesheet\" type=\"text/css\">");
+		return $this->queryBuilderResourceFunction("<link href=\"/bundles/jqueryquerybuilder/", $filename, "\" rel=\"stylesheet\" type=\"text/css\">");
 	}
 
 	/**
