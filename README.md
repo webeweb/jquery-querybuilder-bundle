@@ -1,7 +1,7 @@
-WBWJQueryQueryBuilderBundle
+jquery-querybuilder-bundle
 ===========================
 
-[![Build Status](https://travis-ci.org/webeweb/WBWJQueryQueryBuilderBundle.svg?branch=master)](https://travis-ci.org/webeweb/WBWJQueryQueryBuilderBundle) [![Coverage Status](https://coveralls.io/repos/github/webeweb/WBWJQueryQueryBuilderBundle/badge.svg?branch=master)](https://coveralls.io/github/webeweb/WBWJQueryQueryBuilderBundle?branch=master) [![Latest Stable Version](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/v/stable)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle) [![Latest Unstable Version](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/v/unstable)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle) [![License](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/license)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle) [![composer.lock](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/composerlock)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/57a910cc-74d4-4727-8c89-2805241f4ee6/mini.png)](https://insight.sensiolabs.com/projects/57a910cc-74d4-4727-8c89-2805241f4ee6)
+[![Build Status](https://travis-ci.org/webeweb/jquery-querybuilder-bundle.svg?branch=master)](https://travis-ci.org/webeweb/jquery-querybuilder-bundle) [![Coverage Status](https://coveralls.io/repos/github/webeweb/jquery-querybuilder-bundle/badge.svg?branch=master)](https://coveralls.io/github/webeweb/jquery-querybuilder-bundle?branch=master) [![Latest Stable Version](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/v/stable)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle) [![Latest Unstable Version](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/v/unstable)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle) [![License](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/license)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle) [![composer.lock](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/composerlock)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/57a910cc-74d4-4727-8c89-2805241f4ee6/mini.png)](https://insight.sensiolabs.com/projects/57a910cc-74d4-4727-8c89-2805241f4ee6)
 
 Integrate jQuery QueryBuilder with Symfony2
 
@@ -60,9 +60,9 @@ stable version of this package:
 
 ```bash
 
-$ mkdir WBWJQueryQueryBuilderBundle
-$ cd WBWJQueryQueryBuilderBundle
-$ git clone git@github.com:webeweb/WBWJQueryQueryBuilderBundle.git .
+$ mkdir jquery-querybuilder-bundle
+$ cd jquery-querybuilder-bundle
+$ git clone git@github.com:webeweb/jquery-querybuilder-bundle.git .
 $ composer install
 
 ```
@@ -79,5 +79,5 @@ $ vendor/bin/phpunit
 
 ## License
 
-WBWJQueryQueryBuilderBundle is released under the LGPL License. See the bundled
+jquery-querybuilder-bundle is released under the LGPL License. See the bundled
 [LICENSE](LICENSE) file for details.
