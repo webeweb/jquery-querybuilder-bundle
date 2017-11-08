@@ -24,7 +24,7 @@
 	"support": {
 		"issues": "http://github.com/webeweb/jquery-querybuilder-bundle/issues"
 	},
-	s	"autoload": {
+	"autoload": {
 		"psr-4": {
 			"WBW\\Bundle\\JQuery\\QueryBuilderBundle\\": ""
 		}
