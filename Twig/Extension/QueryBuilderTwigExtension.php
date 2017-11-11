@@ -27,7 +27,7 @@ final class QueryBuilderTwigExtension extends Twig_Extension {
 	/**
 	 * Service name.
 	 */
-	const SERVICE_NAME = "webeweb.jquery-querybuilder-bundle.twig.extension.querybuilder";
+	const SERVICE_NAME = "webeweb.bundle.jquery.querybuilderbundle.twig.extension.querybuilder";
 
 	/**
 	 * Directory.

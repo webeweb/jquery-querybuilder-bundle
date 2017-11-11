@@ -1,7 +1,7 @@
 # Resources/config/services.yml
 services:
 
-    webeweb.jquery-querybuilder-bundle.twig.extension.querybuilder:
+    webeweb.bundle.jquery.querybuilderbundle.twig.extension.querybuilder:
         class: WBW\Bundle\JQuery\QueryBuilderBundle\Twig\Extension\QueryBuilderTwigExtension
         arguments: ["@=service('kernel').locateResource('@JQueryQueryBuilderBundle')", "%kernel.environment%"]
         tags:
