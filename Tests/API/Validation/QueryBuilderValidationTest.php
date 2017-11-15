@@ -33,25 +33,25 @@ final class QueryBuilderValidationTest extends PHPUnit_Framework_TestCase {
 		$obj = new QueryBuilderValidation();
 
 		$obj->setAllowEmptyValue(true);
-		$this->assertEquals(true, $obj->getAllowEmptyValue(), "The method getAllowEmptyValue() does not return the expected value");
+		$this->assertEquals(true, $obj->getAllowEmptyValue());
 
 		$obj->setCallback("callback");
-		$this->assertEquals("callback", $obj->getCallback(), "The method getCallback() does not return the expected value");
+		$this->assertEquals("callback", $obj->getCallback());
 
 		$obj->setFormat("format");
-		$this->assertEquals("format", $obj->getFormat(), "The method getFormat() does not return the expected value");
+		$this->assertEquals("format", $obj->getFormat());
 
 		$obj->setMax(1);
-		$this->assertEquals(1, $obj->getMax(), "The method getMax() does not return the expected value");
+		$this->assertEquals(1, $obj->getMax());
 
 		$obj->setMessages([]);
-		$this->assertEquals([], $obj->getMessages(), "The method getMessages() does not return the expected value");
+		$this->assertEquals([], $obj->getMessages());
 
 		$obj->setMin(0);
-		$this->assertEquals(0, $obj->getMin(), "The method getMin() does not return the expected value");
+		$this->assertEquals(0, $obj->getMin());
 
 		$obj->setStep(1);
-		$this->assertEquals(1, $obj->getStep(), "The method getStep() does not return the expected value");
+		$this->assertEquals(1, $obj->getStep());
 	}
 
 	/**
@@ -63,7 +63,7 @@ final class QueryBuilderValidationTest extends PHPUnit_Framework_TestCase {
 
 		$obj = new QueryBuilderValidation();
 
-		$this->assertEquals([], $obj->jsonSerialize(), "The method jsonSerialize() does not return the expected value");
+		$this->assertEquals([], $obj->jsonSerialize());
 	}
 
 	/**
@@ -76,35 +76,35 @@ final class QueryBuilderValidationTest extends PHPUnit_Framework_TestCase {
 		$obj = new QueryBuilderValidation();
 
 		$res0 = [];
-		$this->assertEquals($res0, $obj->toArray(), "The method toArray() does not return the expected array");
+		$this->assertEquals($res0, $obj->toArray());
 
 		$obj->setFormat("format");
 		$res1 = ["format" => "format"];
-		$this->assertEquals($res1, $obj->toArray(), "The method toArray() does not return the expected array with format");
+		$this->assertEquals($res1, $obj->toArray());
 
 		$obj->setMin("min");
 		$res2 = ["format" => "format", "min" => "min"];
-		$this->assertEquals($res2, $obj->toArray(), "The method toArray() does not return the expected array with min");
+		$this->assertEquals($res2, $obj->toArray());
 
 		$obj->setMax("max");
 		$res3 = ["format" => "format", "min" => "min", "max" => "max"];
-		$this->assertEquals($res3, $obj->toArray(), "The method toArray() does not return the expected array with max");
+		$this->assertEquals($res3, $obj->toArray());
 
 		$obj->setStep(0);
 		$res4 = ["format" => "format", "min" => "min", "max" => "max", "step" => 0];
-		$this->assertEquals($res4, $obj->toArray(), "The method toArray() does not return the expected array with step");
+		$this->assertEquals($res4, $obj->toArray());
 
 		$obj->setMessages([]);
 		$res5 = ["format" => "format", "min" => "min", "max" => "max", "step" => 0, "messages" => []];
-		$this->assertEquals($res5, $obj->toArray(), "The method toArray() does not return the expected array with messages");
+		$this->assertEquals($res5, $obj->toArray());
 
 		$obj->setAllowEmptyValue(true);
 		$res6 = ["format" => "format", "min" => "min", "max" => "max", "step" => 0, "messages" => [], "allow_empty_value" => true];
-		$this->assertEquals($res6, $obj->toArray(), "The method toArray() does not return the expected array with allow empty value");
+		$this->assertEquals($res6, $obj->toArray());
 
 		$obj->setCallback("callback");
 		$res7 = ["format" => "format", "min" => "min", "max" => "max", "step" => 0, "messages" => [], "allow_empty_value" => true, "callback" => "callback"];
-		$this->assertEquals($res7, $obj->toArray(), "The method toArray() does not return the expected array with callback");
+		$this->assertEquals($res7, $obj->toArray());
 	}
 
 }

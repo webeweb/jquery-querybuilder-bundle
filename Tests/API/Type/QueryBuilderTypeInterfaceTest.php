@@ -30,13 +30,13 @@ final class QueryBuilderTypeInterfaceTest extends PHPUnit_Framework_TestCase {
 	 */
 	public function testConstructor() {
 
-		$this->assertEquals("boolean", QueryBuilderTypeInterface::TYPE_BOOLEAN, "The constant TYPE_BOOLEAN does not contain the expected value");
-		$this->assertEquals("date", QueryBuilderTypeInterface::TYPE_DATE, "The constant TYPE_DATE does not contain the expected value");
-		$this->assertEquals("datetime", QueryBuilderTypeInterface::TYPE_DATETIME, "The constant TYPE_DATETIME does not contain the expected value");
-		$this->assertEquals("double", QueryBuilderTypeInterface::TYPE_DOUBLE, "The constant TYPE_DOUBLE does not contain the expected value");
-		$this->assertEquals("integer", QueryBuilderTypeInterface::TYPE_INTEGER, "The constant TYPE_INTEGER does not contain the expected value");
-		$this->assertEquals("string", QueryBuilderTypeInterface::TYPE_STRING, "The constant TYPE_STRING does not contain the expected value");
-		$this->assertEquals("time", QueryBuilderTypeInterface::TYPE_TIME, "The constant TYPE_TIME does not contain the expected value");
+		$this->assertEquals("boolean", QueryBuilderTypeInterface::TYPE_BOOLEAN);
+		$this->assertEquals("date", QueryBuilderTypeInterface::TYPE_DATE);
+		$this->assertEquals("datetime", QueryBuilderTypeInterface::TYPE_DATETIME);
+		$this->assertEquals("double", QueryBuilderTypeInterface::TYPE_DOUBLE);
+		$this->assertEquals("integer", QueryBuilderTypeInterface::TYPE_INTEGER);
+		$this->assertEquals("string", QueryBuilderTypeInterface::TYPE_STRING);
+		$this->assertEquals("time", QueryBuilderTypeInterface::TYPE_TIME);
 	}
 
 }

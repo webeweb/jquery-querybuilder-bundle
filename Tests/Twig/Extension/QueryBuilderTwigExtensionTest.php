@@ -37,17 +37,17 @@ final class QueryBuilderTwigExtensionTest extends PHPUnit_Framework_TestCase {
 
 		$obj = new QueryBuilderTwigExtension(getcwd(), "");
 
-		$this->assertCount(2, $obj->getFunctions(), "The method getFunctions() does not return the expected count");
+		$this->assertCount(2, $obj->getFunctions());
 
-		$this->assertInstanceOf(Twig_SimpleFunction::class, $obj->getFunctions()[0], "The method getFunctions() does not return the expected object on item 0");
-		$this->assertEquals("queryBuilderScript", $obj->getFunctions()[0]->getName(), "The method getName() does not return the expected name on item 0");
-		$this->assertEquals([$obj, "queryBuilderScriptFunction"], $obj->getFunctions()[0]->getCallable(), "The method getCallable() does not return the expected callable on item 0");
-		$this->assertEquals(["html"], $obj->getFunctions()[0]->getSafe(new Twig_Node()), "The method getSafe() does not return the expected safe on item 0");
+		$this->assertInstanceOf(Twig_SimpleFunction::class, $obj->getFunctions()[0]);
+		$this->assertEquals("queryBuilderScript", $obj->getFunctions()[0]->getName());
+		$this->assertEquals([$obj, "queryBuilderScriptFunction"], $obj->getFunctions()[0]->getCallable());
+		$this->assertEquals(["html"], $obj->getFunctions()[0]->getSafe(new Twig_Node()));
 
-		$this->assertInstanceOf(Twig_SimpleFunction::class, $obj->getFunctions()[1], "The method getFunctions() does not return the expected object on item 1");
-		$this->assertEquals("queryBuilderStyle", $obj->getFunctions()[1]->getName(), "The method getName() does not return the expected name on item 1");
-		$this->assertEquals([$obj, "queryBuilderStyleFunction"], $obj->getFunctions()[1]->getCallable(), "The method getCallable() does not return the expected callable on item 1");
-		$this->assertEquals(["html"], $obj->getFunctions()[1]->getSafe(new Twig_Node()), "The method getSafe() does not return the expected safe on item 1");
+		$this->assertInstanceOf(Twig_SimpleFunction::class, $obj->getFunctions()[1]);
+		$this->assertEquals("queryBuilderStyle", $obj->getFunctions()[1]->getName());
+		$this->assertEquals([$obj, "queryBuilderStyleFunction"], $obj->getFunctions()[1]->getCallable());
+		$this->assertEquals(["html"], $obj->getFunctions()[1]->getSafe(new Twig_Node()));
 	}
 
 	/**
@@ -62,24 +62,24 @@ final class QueryBuilderTwigExtensionTest extends PHPUnit_Framework_TestCase {
 		try {
 			$obj->queryBuilderScriptFunction("exception");
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(FileNotFoundException::class, $ex, "The method queryBuilderScriptFunction() does not throw the expected exception");
-			$this->assertEquals("The file \"js/exception.js\" is not found", $ex->getMessage(), "The method getMessage() does not return the expected value");
+			$this->assertInstanceOf(FileNotFoundException::class, $ex);
+			$this->assertEquals("The file \"js/exception.js\" is not found", $ex->getMessage());
 		}
 
 		$res1 = "<script src=\"/bundles/jqueryquerybuilder/js/query-builder.js\" type=\"text/javascript\"></script>";
-		$this->assertEquals($res1, $obj->queryBuilderScriptFunction("query-builder"), "The method queryBuilderScriptFunction() does not return the expected value");
+		$this->assertEquals($res1, $obj->queryBuilderScriptFunction("query-builder"));
 
 		$res1_1 = "<script src=\"/bundles/jqueryquerybuilder/js/query-builder.js\" type=\"text/javascript\"></script>";
-		$this->assertEquals($res1_1, $obj->queryBuilderScriptFunction("query-builder"), "The method queryBuilderScriptFunction() does not return the expected value");
+		$this->assertEquals($res1_1, $obj->queryBuilderScriptFunction("query-builder"));
 
 		$res2 = "<script src=\"/bundles/jqueryquerybuilder/js/interact.js\" type=\"text/javascript\"></script>";
-		$this->assertEquals($res2, $obj->queryBuilderScriptFunction("interact", "js"), "The method queryBuilderScriptFunction() does not return the expected value");
+		$this->assertEquals($res2, $obj->queryBuilderScriptFunction("interact", "js"));
 
 		$res2_1 = "<script src=\"/bundles/jqueryquerybuilder/js/interact.js\" type=\"text/javascript\"></script>";
-		$this->assertEquals($res2_1, $obj->queryBuilderScriptFunction("interact"), "The method queryBuilderScriptFunction() does not return the expected value");
+		$this->assertEquals($res2_1, $obj->queryBuilderScriptFunction("interact"));
 
 		$res3 = "<script src=\"/bundles/jqueryquerybuilder/i18n/query-builder.en.js\" type=\"text/javascript\"></script>";
-		$this->assertEquals($res3, $obj->queryBuilderScriptFunction("query-builder.en", "i18n"), "The method queryBuilderScriptFunction() does not return the expected value");
+		$this->assertEquals($res3, $obj->queryBuilderScriptFunction("query-builder.en", "i18n"));
 	}
 
 	/**
@@ -94,15 +94,15 @@ final class QueryBuilderTwigExtensionTest extends PHPUnit_Framework_TestCase {
 		try {
 			$obj->queryBuilderStyleFunction("exception");
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(FileNotFoundException::class, $ex, "The method queryBuilderStyleFunction() does not throw the expected exception");
-			$this->assertEquals("The file \"css/exception.css\" is not found", $ex->getMessage(), "The method getMessage() does not return the expected value");
+			$this->assertInstanceOf(FileNotFoundException::class, $ex);
+			$this->assertEquals("The file \"css/exception.css\" is not found", $ex->getMessage());
 		}
 
 		$res1 = "<link href=\"/bundles/jqueryquerybuilder/css/query-builder.default.css\" rel=\"stylesheet\" type=\"text/css\">";
-		$this->assertEquals($res1, $obj->queryBuilderStyleFunction("query-builder.default"), "The method queryBuilderStyleFunction() does not return the expected value");
+		$this->assertEquals($res1, $obj->queryBuilderStyleFunction("query-builder.default"));
 
 		$res2 = "<link href=\"/bundles/jqueryquerybuilder/css/query-builder.dark.css\" rel=\"stylesheet\" type=\"text/css\">";
-		$this->assertEquals($res2, $obj->queryBuilderStyleFunction("query-builder.dark"), "The method queryBuilderStyleFunction() does not return the expected value");
+		$this->assertEquals($res2, $obj->queryBuilderStyleFunction("query-builder.dark"));
 	}
 
 }

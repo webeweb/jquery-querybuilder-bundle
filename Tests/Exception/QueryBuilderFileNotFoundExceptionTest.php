@@ -34,7 +34,7 @@ final class QueryBuilderFileNotFoundExceptionTest extends PHPUnit_Framework_Test
 		$obj = new QueryBuilderFileNotFoundException("exception");
 
 		$res = "The file \"exception\" was not found";
-		$this->assertEquals($res, $obj->getMessage(), "The method getMessage() does not return the expected value");
+		$this->assertEquals($res, $obj->getMessage());
 	}
 
 }

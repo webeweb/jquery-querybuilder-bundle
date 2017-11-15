@@ -36,16 +36,16 @@ final class QueryBuilderRuleSetTest extends PHPUnit_Framework_TestCase {
 		try {
 			new QueryBuilderRuleSet(["condition" => "exception"], null);
 		} catch (Exception $ex) {
-			$this->assertInstanceOf(IllegalArgumentException::class, $ex, "The method __construct() does not throw the expecetd exception");
-			$this->assertEquals("The condition \"exception\" is invalid", $ex->getMessage(), "The method getMessage() does not return the expected value");
+			$this->assertInstanceOf(IllegalArgumentException::class, $ex);
+			$this->assertEquals("The condition \"exception\" is invalid", $ex->getMessage());
 		}
 
 		$obj = new QueryBuilderRuleSet([], null);
 
-		$this->assertEquals(null, $obj->getCondition(), "The method getCondition() does not return the expected value");
-		$this->assertEquals([], $obj->getRules(), "The method getRules() does not return the expected value");
-		$this->assertEquals(false, $obj->getValid(), "The method getRules() does not return the expected value");
-		$this->assertEquals("", $obj->toSQL(), "The method toSQL() does not return the expecetd value");
+		$this->assertEquals(null, $obj->getCondition());
+		$this->assertEquals([], $obj->getRules());
+		$this->assertEquals(false, $obj->getValid());
+		$this->assertEquals("", $obj->toSQL());
 	}
 
 	/**
@@ -73,7 +73,7 @@ final class QueryBuilderRuleSetTest extends PHPUnit_Framework_TestCase {
 		$obj = new QueryBuilderRuleSet($rules, null);
 
 		$res = "(age > 21 OR (firstname = 'John' AND lastname = 'DOE'))";
-		$this->assertEquals($res, $obj->toSQL(), "The method toSQL() does not return the expected value");
+		$this->assertEquals($res, $obj->toSQL());
 	}
 
 }

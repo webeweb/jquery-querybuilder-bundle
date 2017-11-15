@@ -52,7 +52,7 @@ final class JQueryQueryBuilderExtensionTest extends PHPUnit_Framework_TestCase {
 
 		$obj->load([], $container);
 
-		$this->assertInstanceOf(QueryBuilderTwigExtension::class, $container->get(QueryBuilderTwigExtension::SERVICE_NAME), "The method load() does not load the expected service");
+		$this->assertInstanceOf(QueryBuilderTwigExtension::class, $container->get(QueryBuilderTwigExtension::SERVICE_NAME));
 	}
 
 }
