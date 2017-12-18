@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\DependencyInjection;
 use PHPUnit_Framework_TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
-use Symfony\Component\HttpKernel\Kernel;
+use Symfony\Component\HttpKernel\KernelInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection\JQueryQueryBuilderExtension;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Twig\Extension\QueryBuilderTwigExtension;
 
@@ -36,7 +36,7 @@ final class JQueryQueryBuilderExtensionTest extends PHPUnit_Framework_TestCase {
 	public function testLoad() {
 
 		// Set the mocks.
-		$kernel = $this->getMockBuilder(Kernel::class)->setConstructorArgs(["dev", false])->getMock();
+		$kernel = $this->getMockBuilder(KernelInterface::class)->getMock();
 
 		// We set a container builder with only the necessary.
 		$container = new ContainerBuilder(new ParameterBag(["kernel.environment" => "dev"]));
