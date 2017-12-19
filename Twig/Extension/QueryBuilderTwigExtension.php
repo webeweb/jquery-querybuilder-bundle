@@ -26,6 +26,8 @@ final class QueryBuilderTwigExtension extends Twig_Extension {
 
 	/**
 	 * Service name.
+	 *
+	 * @var string
 	 */
 	const SERVICE_NAME = "webeweb.bundle.jquery.querybuilderbundle.twig.extension.querybuilder";
 

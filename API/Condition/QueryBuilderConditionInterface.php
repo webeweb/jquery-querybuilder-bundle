@@ -21,6 +21,8 @@ interface QueryBuilderConditionInterface {
 
 	/**
 	 * Conditions.
+	 *
+	 * @var array
 	 */
 	const CONDITIONS = [
 		self::CONDITION_AND,
@@ -29,11 +31,15 @@ interface QueryBuilderConditionInterface {
 
 	/**
 	 * Condition AND.
+	 *
+	 * @var string
 	 */
 	const CONDITION_AND = "AND";
 
 	/**
 	 * Condition OR.
+	 *
+	 * @var string
 	 */
 	const CONDITION_OR = "OR";
 
