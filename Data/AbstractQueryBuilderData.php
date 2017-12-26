@@ -69,7 +69,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
 	 *
 	 * @return string Returns the field.
 	 */
-	public final function getField() {
+	final public function getField() {
 		return $this->field;
 	}
 
@@ -78,7 +78,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
 	 *
 	 * @return string Returns the id.
 	 */
-	public final function getId() {
+	final public function getId() {
 		return $this->id;
 	}
 
@@ -87,7 +87,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
 	 *
 	 * @return string Returns the input.
 	 */
-	public final function getInput() {
+	final public function getInput() {
 		return $this->input;
 	}
 
@@ -96,7 +96,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
 	 *
 	 * @return string Returns the type.
 	 */
-	public final function getType() {
+	final public function getType() {
 		return $this->type;
 	}
 
@@ -106,7 +106,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
 	 * @param string $field The field.
 	 * @return AbstractQueryBuilder Returns the QueryBuilder data.
 	 */
-	public final function setField($field) {
+	final public function setField($field) {
 		$this->field = $field;
 		return $this;
 	}
@@ -117,7 +117,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
 	 * @param string $id The id.
 	 * @return AbstractQueryBuilder Returns the QueryBuilder data.
 	 */
-	public final function setId($id) {
+	final public function setId($id) {
 		$this->id = $id;
 		return $this;
 	}
@@ -129,7 +129,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
 	 * @return AbstractQueryBuilder Returns the QueryBuilder data.
 	 * @throws IllegalArgumentException Throws an illegal argument exception if the input is invalid.
 	 */
-	public final function setInput($input) {
+	final public function setInput($input) {
 		if (in_array($input, self::INPUTS) === false) {
 			throw new IllegalArgumentException("The input \"" . $input . "\" is invalid");
 		}
@@ -144,7 +144,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
 	 * @return AbstractQueryBuilder Returns the QueryBuilder data.
 	 * @throws IllegalArgumentException Throws an illegal argument exception if the type is invalid.
 	 */
-	public final function setType($type) {
+	final public function setType($type) {
 		if (!is_null($type) && in_array($type, self::TYPES) === false) {
 			throw new IllegalArgumentException("The type \"" . $type . "\" is invalid");
 		}
