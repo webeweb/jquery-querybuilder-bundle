@@ -136,7 +136,7 @@ final class QueryBuilderTwigExtension extends Twig_Extension {
 	 * @return boolean Returns true in case of success, false otherwise.
 	 */
 	private function isDevEnvironment() {
-		return $this->environment === "dev";
+		return "dev" === $this->environment;
 	}
 
 }

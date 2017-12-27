@@ -175,7 +175,7 @@ final class QueryBuilderRuleSet implements QueryBuilderConditionInterface, Query
 	public function toSQL() {
 
 		// Check the rules.
-		if (count($this->rules) === 0) {
+		if (0 === count($this->rules)) {
 			return "";
 		}
 

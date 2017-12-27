@@ -157,7 +157,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
 	 */
 	final public function setOperators(array $operators = []) {
 		foreach ($operators as $current) {
-			if (array_key_exists($current, self::OPERATORS) === false) {
+			if (false === array_key_exists($current, self::OPERATORS)) {
 				throw new IllegalArgumentException("The operator \"" . $current . "\" is invalid");
 			}
 		}
@@ -199,26 +199,26 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
 
 		$output["id"] = $this->getId();
 
-		if (!is_null($this->getField())) {
+		if (null !== $this->getField()) {
 			$output["field"] = $this->getField();
 		}
 
 		$output["label"] = $this->label;
 		$output["type"]	 = $this->getType();
 
-		if (!is_null($this->getInput())) {
+		if (null !== $this->getInput()) {
 			$output["input"] = $this->getInput();
 		}
 
-		if (!is_null($this->values)) {
+		if (null !== $this->values) {
 			$output["values"] = $this->values;
 		}
 
-		if (!is_null($this->multiple) && $this->multiple !== false) {
+		if (null !== $this->multiple && true === $this->multiple) {
 			$output["multiple"] = $this->multiple;
 		}
 
-		if (!is_null($this->validation)) {
+		if (null !== $this->validation) {
 			$output["validation"] = $this->validation->toArray();
 		}
 

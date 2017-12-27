@@ -16,6 +16,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\Operator\QueryBuilderOperatorInterf
 use WBW\Bundle\JQuery\QueryBuilderBundle\Data\AbstractQueryBuilderData;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorInterface;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
+use WBW\Library\Core\Utility\IntegerUtility;
 
 /**
  * jQuery QueryBuilder rule.
@@ -140,13 +141,13 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
 		$output = null;
 		switch ($this->getType()) {
 			case self::TYPE_BOOLEAN:
-				$output	 = $value === true ? "1" : "0";
+				$output	 = IntegerUtility::parseBoolean($value);
 				break;
 			case self::TYPE_DATE:
 			case self::TYPE_DATETIME:
 			case self::TYPE_STRING:
 			case self::TYPE_TIME:
-				$output	 = $wrap === true ? "'" . addslashes($value) . "'" : addslashes($value);
+				$output	 = true === $wrap ? "'" . addslashes($value) . "'" : addslashes($value);
 				break;
 			case self::TYPE_DOUBLE:
 			case self::TYPE_INTEGER:
@@ -164,7 +165,7 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
 	 * @throws IllegalArgumentException Thwrows an illegal argument exception if the operator is invalid.
 	 */
 	final public function setOperator($operator) {
-		if (array_key_exists($operator, self::OPERATORS) === false) {
+		if (false === array_key_exists($operator, self::OPERATORS)) {
 			throw new IllegalArgumentException("The operator \"" . $operator . "\" is invalid");
 		}
 		$this->operator = $operator;
