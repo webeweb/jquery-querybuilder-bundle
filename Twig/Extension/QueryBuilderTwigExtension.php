@@ -105,7 +105,7 @@ final class QueryBuilderTwigExtension extends Twig_Extension {
 	 * @return string Returns the jQuery QueryBuilder script.
 	 * @throws FileNotFoundException Throws a file not found exception if the script is not found.
 	 */
-	public function queryBuilderScriptFunction($script, $subdirectory = "js") {
+	public function queryBuilderScriptFunction($script, $subdirectory = "jquery-querybuilder-2.4.3/js") {
 
 		// Initialize the filename.
 		$filename = implode("/", [$subdirectory, $script . ".js"]);
@@ -124,7 +124,7 @@ final class QueryBuilderTwigExtension extends Twig_Extension {
 	public function queryBuilderStyleFunction($css) {
 
 		// Initialize the filename.
-		$filename = implode("/", ["css", $css . ".css"]);
+		$filename = implode("/", ["jquery-querybuilder-2.4.3/css", $css . ".css"]);
 
 		// Return the output.
 		return $this->queryBuilderResourceFunction("<link href=\"/bundles/jqueryquerybuilder/", $filename, "\" rel=\"stylesheet\" type=\"text/css\">");
