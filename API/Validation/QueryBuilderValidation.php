@@ -238,37 +238,37 @@ final class QueryBuilderValidation implements JsonSerializable {
 		$output = [];
 
 		// Check the format.
-		if (!is_null($this->format)) {
+		if (null !== $this->format) {
 			$output["format"] = $this->format;
 		}
 
 		// Check the min.
-		if (!is_null($this->min)) {
+		if (null !== $this->min) {
 			$output["min"] = $this->min;
 		}
 
 		// Check the max.
-		if (!is_null($this->max)) {
+		if (null !== $this->max) {
 			$output["max"] = $this->max;
 		}
 
 		// Check the step.
-		if (!is_null($this->step)) {
+		if (null !== $this->step) {
 			$output["step"] = $this->step;
 		}
 
 		// Check the messages.
-		if (!is_null($this->messages)) {
+		if (null !== $this->messages) {
 			$output["messages"] = $this->messages;
 		}
 
 		// Check the allow empty value.
-		if (!is_null($this->allowEmptyValue)) {
+		if (null !== $this->allowEmptyValue) {
 			$output["allow_empty_value"] = $this->allowEmptyValue;
 		}
 
 		// Check the callback.
-		if (!is_null($this->callback)) {
+		if (null !== $this->callback) {
 			$output["callback"] = $this->callback;
 		}
 

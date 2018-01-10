@@ -50,7 +50,7 @@ class QueryBuilderFilterSet implements JsonSerializable {
 	 * @return QueryBuilderFilterSet Returns the QueryBuilder filter set.
 	 */
 	final public function addFilter(QueryBuilderFilter $filter) {
-		if ($filter instanceof QueryBuilderDecoratorInterface) {
+		if (true === ($filter instanceof QueryBuilderDecoratorInterface)) {
 			$this->decorators[$filter->getId()] = $filter;
 		}
 		$this->filters[$filter->getId()] = $filter;
@@ -64,7 +64,7 @@ class QueryBuilderFilterSet implements JsonSerializable {
 	 * @return QueryBuilderDecoratorInterface Returns the decorator in case of success, null otherwise.
 	 */
 	final public function getDecorator($id) {
-		if (!array_key_exists($id, $this->decorators)) {
+		if (false === array_key_exists($id, $this->decorators)) {
 			return null;
 		}
 		return $this->decorators[$id];
@@ -95,7 +95,7 @@ class QueryBuilderFilterSet implements JsonSerializable {
 	 * @return QueryBuilderFilterSet Returns the QueryBuilder filter set.
 	 */
 	final public function removeFilter(QueryBuilderFilter $filter) {
-		if (array_key_exists($filter->getId(), $this->filters)) {
+		if (true === array_key_exists($filter->getId(), $this->filters)) {
 			unset($this->filters[$filter->getId()]);
 		}
 		return $this;

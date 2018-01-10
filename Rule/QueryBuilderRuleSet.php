@@ -111,18 +111,18 @@ final class QueryBuilderRuleSet implements QueryBuilderConditionInterface, Query
 	private function parse(array $rules = []) {
 
 		// Check if condition exists.
-		if (array_key_exists("condition", $rules)) {
+		if (true === array_key_exists("condition", $rules)) {
 			$this->setCondition($rules["condition"]);
 		}
 
 		// Check if rules exists.
-		if (array_key_exists("rules", $rules)) {
+		if (true === array_key_exists("rules", $rules)) {
 
 			// Handle each rule.
 			foreach ($rules["rules"] as $current) {
 
 				// Check if condition exists.
-				if (array_key_exists("condition", $current)) {
+				if (true === array_key_exists("condition", $current)) {
 
 					// Build a QueryBuilder rule set.
 					$this->addRule(new QueryBuilderRuleSet($current, $this->filterSet));
@@ -130,7 +130,7 @@ final class QueryBuilderRuleSet implements QueryBuilderConditionInterface, Query
 				}
 
 				// Set the decorator.
-				$decorator = !is_null($this->filterSet) ? $this->filterSet->getDecorator($current["id"]) : null;
+				$decorator = null !== $this->filterSet ? $this->filterSet->getDecorator($current["id"]) : null;
 
 				// Build a QueryBuilder rule.
 				$this->addRule(new QueryBuilderRule($current, $decorator));
@@ -138,7 +138,7 @@ final class QueryBuilderRuleSet implements QueryBuilderConditionInterface, Query
 		}
 
 		// Check if valid exists.
-		if (array_key_exists("valid", $rules)) {
+		if (true === array_key_exists("valid", $rules)) {
 			$this->setValid($rules["valid"]);
 		}
 	}
@@ -151,7 +151,7 @@ final class QueryBuilderRuleSet implements QueryBuilderConditionInterface, Query
 	 * @throws IllegalArgumentException Throws an illegal argument exception if the condition is invalid.
 	 */
 	protected function setCondition($condition) {
-		if (!is_null($condition) && !in_array($condition, self::CONDITIONS)) {
+		if (null !== $condition && false === in_array($condition, self::CONDITIONS)) {
 			throw new IllegalArgumentException("The condition \"" . $condition . "\" is invalid");
 		}
 		$this->condition = $condition;

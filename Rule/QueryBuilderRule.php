@@ -95,22 +95,22 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
 	 * @throws IllegalArgumentException Throws an illegal argument exception if an argument is invalid.
 	 */
 	private function parse(array $rule = []) {
-		if (array_key_exists("id", $rule)) {
+		if (true === array_key_exists("id", $rule)) {
 			$this->setId($rule["id"]);
 		}
-		if (array_key_exists("field", $rule)) {
+		if (true === array_key_exists("field", $rule)) {
 			$this->setField($rule["field"]);
 		}
-		if (array_key_exists("input", $rule)) {
+		if (true === array_key_exists("input", $rule)) {
 			$this->setInput($rule["input"]);
 		}
-		if (array_key_exists("operator", $rule)) {
+		if (true === array_key_exists("operator", $rule)) {
 			$this->setOperator($rule["operator"]);
 		}
-		if (array_key_exists("type", $rule)) {
+		if (true === array_key_exists("type", $rule)) {
 			$this->setType($rule["type"]);
 		}
-		if (array_key_exists("value", $rule)) {
+		if (true === array_key_exists("value", $rule)) {
 			$this->setValue($rule["value"]);
 		}
 	}
@@ -189,7 +189,7 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
 	public function toSQL() {
 
 		// Check the decorator.
-		if (!is_null($this->decorator)) {
+		if (null !== $this->decorator) {
 			return $this->decorator->toSQL($this);
 		}
 
