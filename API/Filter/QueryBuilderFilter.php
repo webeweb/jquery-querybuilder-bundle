@@ -123,7 +123,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
 	 *
 	 * @return array Returns an array representing this instance.
 	 */
-	public function jsonSerialize() {
+	final public function jsonSerialize() {
 		return $this->toArray();
 	}
 
