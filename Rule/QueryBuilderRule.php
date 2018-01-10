@@ -66,7 +66,7 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
 	 *
 	 * @return string Returns the QueryBuilder decorator.
 	 */
-	final public function getDecorator() {
+	public function getDecorator() {
 		return $this->decorator;
 	}
 
@@ -75,7 +75,7 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
 	 *
 	 * @return string Returns the operator.
 	 */
-	final public function getOperator() {
+	public function getOperator() {
 		return $this->operator;
 	}
 
@@ -84,7 +84,7 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
 	 *
 	 * @return mixed Returns the value.
 	 */
-	final public function getValue() {
+	public function getValue() {
 		return $this->value;
 	}
 
@@ -164,7 +164,7 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
 	 * @return QueryBuilderRule Returns the QueryBuilder rule.
 	 * @throws IllegalArgumentException Thwrows an illegal argument exception if the operator is invalid.
 	 */
-	final public function setOperator($operator) {
+	public function setOperator($operator) {
 		if (false === array_key_exists($operator, self::OPERATORS)) {
 			throw new IllegalArgumentException("The operator \"" . $operator . "\" is invalid");
 		}
@@ -178,7 +178,7 @@ final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBu
 	 * @param mixed $value The value.
 	 * @return QueryBuilderRule Returns the QueryBuilder rule.
 	 */
-	final public function setValue($value) {
+	public function setValue($value) {
 		$this->value = $value;
 		return $this;
 	}
