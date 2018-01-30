@@ -23,19 +23,19 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\Input\QueryBuilderInputInterface;
  */
 final class QueryBuilderInputInterfaceTest extends PHPUnit_Framework_TestCase {
 
-	/**
-	 * Tests the __construct() method.
-	 *
-	 * @return void
-	 */
-	public function testConstructor() {
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstructor() {
 
-		$this->assertEquals("checkbox", QueryBuilderInputInterface::INPUT_CHECKBOX);
-		$this->assertEquals("number", QueryBuilderInputInterface::INPUT_NUMBER);
-		$this->assertEquals("radio", QueryBuilderInputInterface::INPUT_RADIO);
-		$this->assertEquals("select", QueryBuilderInputInterface::INPUT_SELECT);
-		$this->assertEquals("text", QueryBuilderInputInterface::INPUT_TEXT);
-		$this->assertEquals("textarea", QueryBuilderInputInterface::INPUT_TEXTAREA);
-	}
+        $this->assertEquals("checkbox", QueryBuilderInputInterface::INPUT_CHECKBOX);
+        $this->assertEquals("number", QueryBuilderInputInterface::INPUT_NUMBER);
+        $this->assertEquals("radio", QueryBuilderInputInterface::INPUT_RADIO);
+        $this->assertEquals("select", QueryBuilderInputInterface::INPUT_SELECT);
+        $this->assertEquals("text", QueryBuilderInputInterface::INPUT_TEXT);
+        $this->assertEquals("textarea", QueryBuilderInputInterface::INPUT_TEXTAREA);
+    }
 
 }

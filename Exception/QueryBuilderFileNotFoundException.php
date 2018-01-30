@@ -20,13 +20,13 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Exception;
  */
 final class QueryBuilderFileNotFoundException extends AbstractQueryBuilderException {
 
-	/**
-	 * Constructor.
-	 *
-	 * @param string $filename The file name.
-	 */
-	public function __construct($filename) {
-		parent::__construct("The file \"" . $filename . "\" was not found");
-	}
+    /**
+     * Constructor.
+     *
+     * @param string $filename The file name.
+     */
+    public function __construct($filename) {
+        parent::__construct("The file \"" . $filename . "\" was not found");
+    }
 
 }

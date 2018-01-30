@@ -19,10 +19,10 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Rule;
  */
 interface QueryBuilderRuleInterface {
 
-	/**
-	 * Convert into a SQL string representing this instance.
-	 *
-	 * @return string Returns a SQL string representing this instance.
-	 */
-	public function toSQL();
+    /**
+     * Convert into a SQL string representing this instance.
+     *
+     * @return string Returns a SQL string representing this instance.
+     */
+    public function toSQL();
 }

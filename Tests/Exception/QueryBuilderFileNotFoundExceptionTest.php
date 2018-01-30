@@ -24,17 +24,17 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Exception\QueryBuilderFileNotFoundExcep
  */
 final class QueryBuilderFileNotFoundExceptionTest extends PHPUnit_Framework_TestCase {
 
-	/**
-	 * Tests the __construct() method.
-	 *
-	 * @return void
-	 */
-	public function testConstruct() {
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstruct() {
 
-		$obj = new QueryBuilderFileNotFoundException("exception");
+        $obj = new QueryBuilderFileNotFoundException("exception");
 
-		$res = "The file \"exception\" was not found";
-		$this->assertEquals($res, $obj->getMessage());
-	}
+        $res = "The file \"exception\" was not found";
+        $this->assertEquals($res, $obj->getMessage());
+    }
 
 }

@@ -26,54 +26,54 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
  */
 final class QueryBuilderRuleSetTest extends PHPUnit_Framework_TestCase {
 
-	/**
-	 * Tests the __construct() method.
-	 *
-	 * @return void
-	 */
-	public function testConstruct() {
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstruct() {
 
-		try {
-			new QueryBuilderRuleSet(["condition" => "exception"], null);
-		} catch (Exception $ex) {
-			$this->assertInstanceOf(IllegalArgumentException::class, $ex);
-			$this->assertEquals("The condition \"exception\" is invalid", $ex->getMessage());
-		}
+        try {
+            new QueryBuilderRuleSet(["condition" => "exception"], null);
+        } catch (Exception $ex) {
+            $this->assertInstanceOf(IllegalArgumentException::class, $ex);
+            $this->assertEquals("The condition \"exception\" is invalid", $ex->getMessage());
+        }
 
-		$obj = new QueryBuilderRuleSet([], null);
+        $obj = new QueryBuilderRuleSet([], null);
 
-		$this->assertEquals(null, $obj->getCondition());
-		$this->assertEquals([], $obj->getRules());
-		$this->assertEquals(false, $obj->getValid());
-		$this->assertEquals("", $obj->toSQL());
-	}
+        $this->assertEquals(null, $obj->getCondition());
+        $this->assertEquals([], $obj->getRules());
+        $this->assertEquals(false, $obj->getValid());
+        $this->assertEquals("", $obj->toSQL());
+    }
 
-	/**
-	 * Tests the toSQL() method.
-	 *
-	 * @return void
-	 */
-	public function testToSQL() {
+    /**
+     * Tests the toSQL() method.
+     *
+     * @return void
+     */
+    public function testToSQL() {
 
-		$rules = [
-			"condition"	 => "OR",
-			"rules"		 => [
-				["id" => "age", "field" => "age", "input" => QueryBuilderRule::INPUT_NUMBER, "operator" => QueryBuilderRule::OPERATOR_GREATER, "type" => QueryBuilderRule::TYPE_INTEGER, "value" => "21"],
-				[
-					"condition"	 => "AND",
-					"rules"		 => [
-						["id" => "firstname", "field" => "firstname", "input" => QueryBuilderRule::INPUT_TEXT, "operator" => QueryBuilderRule::OPERATOR_EQUAL, "type" => QueryBuilderRule::TYPE_STRING, "value" => "John"],
-						["id" => "lastname", "field" => "lastname", "input" => QueryBuilderRule::INPUT_NUMBER, "operator" => QueryBuilderRule::OPERATOR_EQUAL, "type" => QueryBuilderRule::TYPE_STRING, "value" => "DOE"],
-					],
-				],
-			],
-			"valid"		 => true,
-		];
+        $rules = [
+            "condition" => "OR",
+            "rules"     => [
+                ["id" => "age", "field" => "age", "input" => QueryBuilderRule::INPUT_NUMBER, "operator" => QueryBuilderRule::OPERATOR_GREATER, "type" => QueryBuilderRule::TYPE_INTEGER, "value" => "21"],
+                [
+                    "condition" => "AND",
+                    "rules"     => [
+                        ["id" => "firstname", "field" => "firstname", "input" => QueryBuilderRule::INPUT_TEXT, "operator" => QueryBuilderRule::OPERATOR_EQUAL, "type" => QueryBuilderRule::TYPE_STRING, "value" => "John"],
+                        ["id" => "lastname", "field" => "lastname", "input" => QueryBuilderRule::INPUT_NUMBER, "operator" => QueryBuilderRule::OPERATOR_EQUAL, "type" => QueryBuilderRule::TYPE_STRING, "value" => "DOE"],
+                    ],
+                ],
+            ],
+            "valid"     => true,
+        ];
 
-		$obj = new QueryBuilderRuleSet($rules, null);
+        $obj = new QueryBuilderRuleSet($rules, null);
 
-		$res = "(age > 21 OR (firstname = 'John' AND lastname = 'DOE'))";
-		$this->assertEquals($res, $obj->toSQL());
-	}
+        $res = "(age > 21 OR (firstname = 'John' AND lastname = 'DOE'))";
+        $this->assertEquals($res, $obj->toSQL());
+    }
 
 }

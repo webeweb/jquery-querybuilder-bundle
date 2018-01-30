@@ -19,28 +19,28 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Condition;
  */
 interface QueryBuilderConditionInterface {
 
-	/**
-	 * Conditions.
-	 *
-	 * @var array
-	 */
-	const CONDITIONS = [
-		self::CONDITION_AND,
-		self::CONDITION_OR,
-	];
+    /**
+     * Conditions.
+     *
+     * @var array
+     */
+    const CONDITIONS = [
+        self::CONDITION_AND,
+        self::CONDITION_OR,
+    ];
 
-	/**
-	 * Condition AND.
-	 *
-	 * @var string
-	 */
-	const CONDITION_AND = "AND";
+    /**
+     * Condition AND.
+     *
+     * @var string
+     */
+    const CONDITION_AND = "AND";
 
-	/**
-	 * Condition OR.
-	 *
-	 * @var string
-	 */
-	const CONDITION_OR = "OR";
+    /**
+     * Condition OR.
+     *
+     * @var string
+     */
+    const CONDITION_OR = "OR";
 
 }

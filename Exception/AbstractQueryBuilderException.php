@@ -22,15 +22,15 @@ use Exception;
  */
 abstract class AbstractQueryBuilderException extends Exception {
 
-	/**
-	 * Constructor.
-	 *
-	 * @param string $message The message.
-	 * @param integer $code The code.
-	 * @param Exception $previous The previous exception.
-	 */
-	public function __construct($message, $code = 0, Exception $previous = null) {
-		parent::__construct($message, $code, $previous);
-	}
+    /**
+     * Constructor.
+     *
+     * @param string $message The message.
+     * @param integer $code The code.
+     * @param Exception $previous The previous exception.
+     */
+    public function __construct($message, $code = 0, Exception $previous = null) {
+        parent::__construct($message, $code, $previous);
+    }
 
 }

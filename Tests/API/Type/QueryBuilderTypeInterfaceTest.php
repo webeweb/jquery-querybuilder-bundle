@@ -23,20 +23,20 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\Type\QueryBuilderTypeInterface;
  */
 final class QueryBuilderTypeInterfaceTest extends PHPUnit_Framework_TestCase {
 
-	/**
-	 * Tests the __construct() method.
-	 *
-	 * @return void
-	 */
-	public function testConstructor() {
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function testConstructor() {
 
-		$this->assertEquals("boolean", QueryBuilderTypeInterface::TYPE_BOOLEAN);
-		$this->assertEquals("date", QueryBuilderTypeInterface::TYPE_DATE);
-		$this->assertEquals("datetime", QueryBuilderTypeInterface::TYPE_DATETIME);
-		$this->assertEquals("double", QueryBuilderTypeInterface::TYPE_DOUBLE);
-		$this->assertEquals("integer", QueryBuilderTypeInterface::TYPE_INTEGER);
-		$this->assertEquals("string", QueryBuilderTypeInterface::TYPE_STRING);
-		$this->assertEquals("time", QueryBuilderTypeInterface::TYPE_TIME);
-	}
+        $this->assertEquals("boolean", QueryBuilderTypeInterface::TYPE_BOOLEAN);
+        $this->assertEquals("date", QueryBuilderTypeInterface::TYPE_DATE);
+        $this->assertEquals("datetime", QueryBuilderTypeInterface::TYPE_DATETIME);
+        $this->assertEquals("double", QueryBuilderTypeInterface::TYPE_DOUBLE);
+        $this->assertEquals("integer", QueryBuilderTypeInterface::TYPE_INTEGER);
+        $this->assertEquals("string", QueryBuilderTypeInterface::TYPE_STRING);
+        $this->assertEquals("time", QueryBuilderTypeInterface::TYPE_TIME);
+    }
 
 }
