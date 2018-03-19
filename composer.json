@@ -1,7 +1,7 @@
 {
     "name": "webeweb/jquery-querybuilder-bundle",
     "type": "symfony-bundle",
-    "description": "Integrate jQuery QueryBuilder with Symfony2",
+    "description": "Integrate jQuery QueryBuilder with Symfony 2",
     "keywords": ["webeweb", "bundle", "symfony", "jquery", "querybuilder"],
     "homepage": "http://github.com/webeweb/jquery-querybuilder-bundle",
     "license": "LGPL-3.0-only",
