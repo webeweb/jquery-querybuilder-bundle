@@ -27,7 +27,10 @@
     "autoload": {
         "psr-4": {
             "WBW\\Bundle\\JQuery\\QueryBuilderBundle\\": ""
-        }
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
     },
     "extra": {
         "branch-alias": {
