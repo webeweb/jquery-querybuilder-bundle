@@ -33,7 +33,7 @@ final class QueryBuilderFilterSetTest extends PHPUnit_Framework_TestCase {
 
         $obj = new QueryBuilderFilterSet();
 
-        $this->assertEquals(null, $obj->getDecorator("id"));
+        $this->assertNull($obj->getDecorator("id"));
         $this->assertEquals([], $obj->getFilters());
     }
 

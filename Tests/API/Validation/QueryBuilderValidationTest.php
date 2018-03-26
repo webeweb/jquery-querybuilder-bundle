@@ -33,7 +33,7 @@ final class QueryBuilderValidationTest extends PHPUnit_Framework_TestCase {
         $obj = new QueryBuilderValidation();
 
         $obj->setAllowEmptyValue(true);
-        $this->assertEquals(true, $obj->getAllowEmptyValue());
+        $this->assertTrue($obj->getAllowEmptyValue());
 
         $obj->setCallback("callback");
         $this->assertEquals("callback", $obj->getCallback());

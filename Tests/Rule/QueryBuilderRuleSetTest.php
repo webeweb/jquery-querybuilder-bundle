@@ -42,9 +42,9 @@ final class QueryBuilderRuleSetTest extends PHPUnit_Framework_TestCase {
 
         $obj = new QueryBuilderRuleSet([], null);
 
-        $this->assertEquals(null, $obj->getCondition());
+        $this->assertNull($obj->getCondition());
         $this->assertEquals([], $obj->getRules());
-        $this->assertEquals(false, $obj->getValid());
+        $this->assertFalse($obj->getValid());
         $this->assertEquals("", $obj->toSQL());
     }
 

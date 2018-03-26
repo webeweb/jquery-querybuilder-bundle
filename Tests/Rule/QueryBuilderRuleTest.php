@@ -42,7 +42,7 @@ final class QueryBuilderRuleTest extends PHPUnit_Framework_TestCase {
         $obj = new QueryBuilderRule(["id" => "id", "field" => "id", "input" => QueryBuilderRule::INPUT_NUMBER, "operator" => QueryBuilderRule::OPERATOR_EQUAL, "type" => QueryBuilderRule::TYPE_INTEGER, "value" => 1]);
 
         $this->assertEquals("id", $obj->getId());
-        $this->assertEquals(null, $obj->getDecorator());
+        $this->assertNull($obj->getDecorator());
         $this->assertEquals("id", $obj->getField());
         $this->assertEquals(QueryBuilderRule::INPUT_NUMBER, $obj->getInput());
         $this->assertEquals(QueryBuilderRule::OPERATOR_EQUAL, $obj->getOperator());

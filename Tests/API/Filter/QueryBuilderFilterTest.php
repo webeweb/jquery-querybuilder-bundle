@@ -58,11 +58,11 @@ final class QueryBuilderFilterTest extends PHPUnit_Framework_TestCase {
 
         $this->assertEquals("id", $obj->getId());
         $this->assertEquals("", $obj->getLabel());
-        $this->assertEquals(false, $obj->getMultiple());
+        $this->assertFalse($obj->getMultiple());
         $this->assertEquals([QueryBuilderFilter::OPERATOR_EQUAL], $obj->getOperators());
         $this->assertEquals(QueryBuilderFilter::TYPE_INTEGER, $obj->getType());
-        $this->assertEquals(null, $obj->getValidation());
-        $this->assertEquals(null, $obj->getValues());
+        $this->assertNull($obj->getValidation());
+        $this->assertNull($obj->getValues());
     }
 
     /**
