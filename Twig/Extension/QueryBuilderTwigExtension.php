@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Twig\Extension;
 
 use Twig_Extension;
 use Twig_SimpleFunction;
-use WBW\Library\Core\Exception\File\FileNotFoundException;
+use WBW\Library\Core\Exception\IO\FileNotFoundException;
 
 /**
  * jQuery QueryBuilder Twig extension.

@@ -16,7 +16,7 @@ use PHPUnit_Framework_TestCase;
 use Twig_Node;
 use Twig_SimpleFunction;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Twig\Extension\QueryBuilderTwigExtension;
-use WBW\Library\Core\Exception\File\FileNotFoundException;
+use WBW\Library\Core\Exception\IO\FileNotFoundException;
 
 /**
  * jQuery QueryBuilder Twig extension test.
