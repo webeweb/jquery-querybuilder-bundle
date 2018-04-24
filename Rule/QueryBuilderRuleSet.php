@@ -20,9 +20,8 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Rule
- * @final
  */
-final class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilderRuleInterface {
+class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilderRuleInterface {
 
     /**
      * Condition.
