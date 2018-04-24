@@ -16,9 +16,8 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Exception;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Exception
- * @final
  */
-final class QueryBuilderFileNotFoundException extends AbstractQueryBuilderException {
+class QueryBuilderFileNotFoundException extends AbstractQueryBuilderException {
 
     /**
      * Constructor.
