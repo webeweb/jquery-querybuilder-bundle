@@ -23,9 +23,8 @@ use WBW\Library\Core\Utility\IntegerUtility;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Rule
- * @final
  */
-final class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBuilderConditionInterface, QueryBuilderOperatorInterface, QueryBuilderRuleInterface {
+class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBuilderConditionInterface, QueryBuilderOperatorInterface, QueryBuilderRuleInterface {
 
     /**
      * Decorator.
