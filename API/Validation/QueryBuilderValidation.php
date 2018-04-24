@@ -18,9 +18,8 @@ use JsonSerializable;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Validation
- * @final
  */
-final class QueryBuilderValidation implements JsonSerializable {
+class QueryBuilderValidation implements JsonSerializable {
 
     /**
      * Allow empty value.
