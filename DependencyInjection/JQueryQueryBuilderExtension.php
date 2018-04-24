@@ -21,9 +21,8 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection
- * @final
  */
-final class JQueryQueryBuilderExtension extends Extension {
+class JQueryQueryBuilderExtension extends Extension {
 
     /**
      * {@inheritdoc}
