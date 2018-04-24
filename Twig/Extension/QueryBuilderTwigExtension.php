@@ -20,9 +20,8 @@ use WBW\Library\Core\Exception\IO\FileNotFoundException;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Twig\Extension
- * @final
  */
-final class QueryBuilderTwigExtension extends Twig_Extension {
+class QueryBuilderTwigExtension extends Twig_Extension {
 
     /**
      * Service name.
