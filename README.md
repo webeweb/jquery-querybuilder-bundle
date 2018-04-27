@@ -34,15 +34,15 @@ Then, enable the bundle by adding it to the list of registered bundles
 in the `app/AppKernel.php` file of your project:
 
 ```php
-	public function registerBundles() {
-		$bundles = [
+    public function registerBundles() {
+        $bundles = [
             // ...
             new WBW\Bundle\JQuery\QueryBuilderBundle\JQueryQueryBuilderBundle(),
         ];
 
-		// ...
+        // ...
 
-		return $bundles;
+        return $bundles;
     }
 ```
 
