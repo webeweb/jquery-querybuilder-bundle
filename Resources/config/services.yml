@@ -5,4 +5,4 @@ services:
         class:     WBW\Bundle\JQuery\QueryBuilderBundle\Twig\Extension\QueryBuilderTwigExtension
         arguments: ["@=service('kernel').locateResource('@JQueryQueryBuilderBundle')", "%kernel.environment%"]
         tags:
-          - { name: twig.extension }
+          - { name: "twig.extension" }
