@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Type;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
 use PHPUnit_Framework_TestCase;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\Type\QueryBuilderTypeInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderTypeInterface;
 
 /**
  * jQuery QueryBuilder type interface test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Type
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
  * @final
  */
 final class QueryBuilderTypeInterfaceTest extends PHPUnit_Framework_TestCase {

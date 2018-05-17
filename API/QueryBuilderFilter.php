@@ -9,11 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Filter;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
 use JsonSerializable;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\Operator\QueryBuilderOperatorInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\Validation\QueryBuilderValidation;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Data\AbstractQueryBuilderData;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
@@ -21,7 +19,7 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
  * jQuery QueryBuilder filter.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Filter
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
  */
 class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSerializable, QueryBuilderOperatorInterface {
 

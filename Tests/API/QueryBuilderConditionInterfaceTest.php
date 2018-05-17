@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Condition;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
 use PHPUnit_Framework_TestCase;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\Condition\QueryBuilderConditionInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderConditionInterface;
 
 /**
  * jQuery QueryBuilder condition interface test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Condition
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
  * @final
  */
 final class QueryBuilderConditionInterfaceTest extends PHPUnit_Framework_TestCase {

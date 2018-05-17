@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Operator;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
 /**
  * jQuery QueryBuilder operator interface.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Operator
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
  */
 interface QueryBuilderOperatorInterface {
 

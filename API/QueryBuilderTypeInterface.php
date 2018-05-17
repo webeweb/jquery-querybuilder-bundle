@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Type;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
 /**
  * jQuery QueryBuilder type interface.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Type
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
  */
 interface QueryBuilderTypeInterface {
 

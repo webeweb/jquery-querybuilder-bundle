@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Input;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
 /**
  * jQuery QueryBuilder input interface.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Input
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
  */
 interface QueryBuilderInputInterface {
 

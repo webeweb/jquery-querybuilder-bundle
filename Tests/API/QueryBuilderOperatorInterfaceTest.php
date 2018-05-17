@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Operator;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
 use PHPUnit_Framework_TestCase;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\Operator\QueryBuilderOperatorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
 
 /**
  * jQuery QueryBuilder operator interface test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Operator
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
  * @final
  */
 final class QueryBuilderOperatorInterfaceTest extends PHPUnit_Framework_TestCase {

@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Filter;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
 use Exception;
 use PHPUnit_Framework_TestCase;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\Filter\QueryBuilderFilter;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\Validation\QueryBuilderValidation;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilter;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidation;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
 /**
  * jQuery QueryBuilder filter test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API\Filter
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
  * @final
  */
 final class QueryBuilderFilterTest extends PHPUnit_Framework_TestCase {

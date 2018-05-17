@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Validation;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
 use JsonSerializable;
 
@@ -17,7 +17,7 @@ use JsonSerializable;
  * jQuery QueryBuilder validation.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Validation
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
  */
 class QueryBuilderValidation implements JsonSerializable {
 

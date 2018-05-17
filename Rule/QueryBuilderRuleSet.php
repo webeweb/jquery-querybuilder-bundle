@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Rule;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\Condition\QueryBuilderConditionInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\Filter\QueryBuilderFilterSet;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderConditionInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSet;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
 /**

@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Data;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\Input\QueryBuilderInputInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\Type\QueryBuilderTypeInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderInputInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderTypeInterface;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
 /**

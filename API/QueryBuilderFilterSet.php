@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\API\Filter;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
 use JsonSerializable;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorInterface;
@@ -18,7 +18,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorInterfac
  * jQuery QueryBuilder filter set.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\API\Filter
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
  */
 class QueryBuilderFilterSet implements JsonSerializable {
 
