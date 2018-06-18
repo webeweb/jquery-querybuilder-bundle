@@ -21,6 +21,11 @@
         "phpunit/phpunit": "5.7.*",
         "symfony/expression-language": "^2.6|^3.0"
     },
+    "suggest": {
+        "webeweb/highcharts-bundle": "Integrate Highcharts with Symfony 2",
+        "webeweb/jquery-datatables-bundle": "Integrate jQuery DataTables with Symfony 2",
+        "webeweb/syntaxhighlighter-bundle": "Integrate SyntaxHighlighter with Symfony 2"
+    },
     "support": {
         "issues": "http://github.com/webeweb/jquery-querybuilder-bundle/issues"
     },
