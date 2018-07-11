@@ -104,7 +104,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
      * Set the field.
      *
      * @param string $field The field.
-     * @return AbstractQueryBuilder Returns the QueryBuilder data.
+     * @return AbstractQueryBuilder Returns this QueryBuilder data.
      */
     final public function setField($field) {
         $this->field = $field;
@@ -115,7 +115,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
      * Set the id.
      *
      * @param string $id The id.
-     * @return AbstractQueryBuilder Returns the QueryBuilder data.
+     * @return AbstractQueryBuilder Returns this QueryBuilder data.
      */
     final public function setId($id) {
         $this->id = $id;
@@ -126,7 +126,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
      * Set the input.
      *
      * @param string $input The input.
-     * @return AbstractQueryBuilder Returns the QueryBuilder data.
+     * @return AbstractQueryBuilder Returns this QueryBuilder data.
      * @throws IllegalArgumentException Throws an illegal argument exception if the input is invalid.
      */
     final public function setInput($input) {
@@ -141,7 +141,7 @@ abstract class AbstractQueryBuilderData implements QueryBuilderInputInterface, Q
      * Set the type.
      *
      * @param string $type The type.
-     * @return AbstractQueryBuilder Returns the QueryBuilder data.
+     * @return AbstractQueryBuilder Returns this QueryBuilder data.
      * @throws IllegalArgumentException Throws an illegal argument exception if the type is invalid.
      */
     final public function setType($type) {
