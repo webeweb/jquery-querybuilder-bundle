@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
 use JsonSerializable;
+use WBW\Library\Core\Utility\Argument\ArrayUtility;
 
 /**
  * jQuery QueryBuilder validation.
@@ -236,40 +237,13 @@ class QueryBuilderValidation implements JsonSerializable {
         // Initialize the output.
         $output = [];
 
-        // Check the format.
-        if (null !== $this->format) {
-            $output["format"] = $this->format;
-        }
-
-        // Check the min.
-        if (null !== $this->min) {
-            $output["min"] = $this->min;
-        }
-
-        // Check the max.
-        if (null !== $this->max) {
-            $output["max"] = $this->max;
-        }
-
-        // Check the step.
-        if (null !== $this->step) {
-            $output["step"] = $this->step;
-        }
-
-        // Check the messages.
-        if (null !== $this->messages) {
-            $output["messages"] = $this->messages;
-        }
-
-        // Check the allow empty value.
-        if (null !== $this->allowEmptyValue) {
-            $output["allow_empty_value"] = $this->allowEmptyValue;
-        }
-
-        // Check the callback.
-        if (null !== $this->callback) {
-            $output["callback"] = $this->callback;
-        }
+        ArrayUtility::set($output, "format", $this->format, [null]);
+        ArrayUtility::set($output, "min", $this->min, [null]);
+        ArrayUtility::set($output, "max", $this->max, [null]);
+        ArrayUtility::set($output, "step", $this->step, [null]);
+        ArrayUtility::set($output, "messages", $this->messages, [null]);
+        ArrayUtility::set($output, "allow_empty_value", $this->allowEmptyValue, [null]);
+        ArrayUtility::set($output, "callback", $this->callback, [null]);
 
         // Return the output.
         return $output;
