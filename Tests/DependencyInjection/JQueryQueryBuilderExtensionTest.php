@@ -16,7 +16,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\HttpKernel\KernelInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection\JQueryQueryBuilderExtension;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Twig\Extension\QueryBuilderTwigExtension;
 
 /**
  * jQuery QueryBuilder extension test.
@@ -45,7 +44,6 @@ final class JQueryQueryBuilderExtensionTest extends PHPUnit_Framework_TestCase {
         $obj = new JQueryQueryBuilderExtension();
 
         $obj->load([], $container);
-        $this->assertInstanceOf(QueryBuilderTwigExtension::class, $container->get(QueryBuilderTwigExtension::SERVICE_NAME));
     }
 
 }
