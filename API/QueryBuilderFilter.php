@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 use JsonSerializable;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Data\AbstractQueryBuilderData;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
+use WBW\Library\Core\Utility\Argument\ArrayUtility;
 
 /**
  * jQuery QueryBuilder filter.
@@ -76,7 +77,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      *
      * @return Return the label.
      */
-    final public function getLabel() {
+    public function getLabel() {
         return $this->label;
     }
 
@@ -85,7 +86,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      *
      * @return boolean Returns the multiple.
      */
-    final public function getMultiple() {
+    public function getMultiple() {
         return $this->multiple;
     }
 
@@ -94,7 +95,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      *
      * @return array Returns the operators.
      */
-    final public function getOperators() {
+    public function getOperators() {
         return $this->operators;
     }
 
@@ -103,7 +104,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      *
      * @return QueryBuilderValidation Returns the validation.
      */
-    final public function getValidation() {
+    public function getValidation() {
         return $this->validation;
     }
 
@@ -112,7 +113,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      *
      * @return array Returns the values.
      */
-    final public function getValues() {
+    public function getValues() {
         return $this->values;
     }
 
@@ -121,7 +122,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      *
      * @return array Returns an array representing this instance.
      */
-    final public function jsonSerialize() {
+    public function jsonSerialize() {
         return $this->toArray();
     }
 
@@ -131,7 +132,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * @param string $label The label.
      * @return QueryBuilderFilter Returns this jQuery QueryBuilder filter.
      */
-    final public function setLabel($label) {
+    public function setLabel($label) {
         $this->label = $label;
         return $this;
     }
@@ -142,7 +143,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * @param boolean $multiple The multiple.
      * @return QueryBuilderFilter Returns this jQuery QueryBuilder filter.
      */
-    final public function setMultiple($multiple = false) {
+    public function setMultiple($multiple = false) {
         $this->multiple = $multiple;
         return $this;
     }
@@ -153,7 +154,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * @param array $operators The operators.
      * @return QueryBuilderFilter Returns this jQuery QueryBuilder filter.
      */
-    final public function setOperators(array $operators = []) {
+    public function setOperators(array $operators = []) {
         foreach ($operators as $current) {
             if (false === array_key_exists($current, self::OPERATORS)) {
                 throw new IllegalArgumentException("The operator \"" . $current . "\" is invalid");
@@ -169,7 +170,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * @param QueryBuilderValidation $validation The validation.
      * @return QueryBuilderFilter Returns this jQuery QueryBuilder filter.
      */
-    final public function setValidation(QueryBuilderValidation $validation = null) {
+    public function setValidation(QueryBuilderValidation $validation = null) {
         $this->validation = $validation;
         return $this;
     }
@@ -180,7 +181,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * @param array $values The values.
      * @return QueryBuilderFilter Returns this jQuery QueryBuilder filter.
      */
-    final public function setValues(array $values = []) {
+    public function setValues(array $values = []) {
         $this->values = $values;
         return $this;
     }
@@ -190,36 +191,25 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      *
      * @return array Returns an array representing this instance.
      */
-    final public function toArray() {
+    public function toArray() {
 
         // Initialiaze the output.
         $output = [];
 
         $output["id"] = $this->getId();
 
-        if (null !== $this->getField()) {
-            $output["field"] = $this->getField();
-        }
+        ArrayUtility::set($output, "field", $this->getField(), [null]);
 
         $output["label"] = $this->label;
         $output["type"]  = $this->getType();
 
-        if (null !== $this->getInput()) {
-            $output["input"] = $this->getInput();
-        }
-
-        if (null !== $this->values) {
-            $output["values"] = $this->values;
-        }
-
-        if (null !== $this->multiple && true === $this->multiple) {
-            $output["multiple"] = $this->multiple;
-        }
+        ArrayUtility::set($output, "input", $this->getInput(), [null]);
+        ArrayUtility::set($output, "values", $this->values, [null]);
+        ArrayUtility::set($output, "multiple", $this->multiple, [null, false]);
 
         if (null !== $this->validation) {
             $output["validation"] = $this->validation->toArray();
         }
-
         $output["operators"] = $this->operators;
 
         // Return the output.
