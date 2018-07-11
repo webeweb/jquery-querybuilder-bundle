@@ -129,7 +129,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * Set the label.
      *
      * @param string $label The label.
-     * @return QueryBuilderFilter Returns the jQuery QueryBuilder filter.
+     * @return QueryBuilderFilter Returns this jQuery QueryBuilder filter.
      */
     final public function setLabel($label) {
         $this->label = $label;
@@ -140,7 +140,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * Set the multiple.
      *
      * @param boolean $multiple The multiple.
-     * @return QueryBuilderFilter Returns the jQuery QueryBuilder filter.
+     * @return QueryBuilderFilter Returns this jQuery QueryBuilder filter.
      */
     final public function setMultiple($multiple = false) {
         $this->multiple = $multiple;
@@ -151,7 +151,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * Set the operators.
      *
      * @param array $operators The operators.
-     * @return QueryBuilderFilter Returns the jQuery QueryBuilder filter.
+     * @return QueryBuilderFilter Returns this jQuery QueryBuilder filter.
      */
     final public function setOperators(array $operators = []) {
         foreach ($operators as $current) {
@@ -167,7 +167,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * Set the validation.
      *
      * @param QueryBuilderValidation $validation The validation.
-     * @return QueryBuilderFilter Returns the jQuery QueryBuilder filter.
+     * @return QueryBuilderFilter Returns this jQuery QueryBuilder filter.
      */
     final public function setValidation(QueryBuilderValidation $validation = null) {
         $this->validation = $validation;
@@ -178,7 +178,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * Set the values.
      *
      * @param array $values The values.
-     * @return QueryBuilderFilter Returns the jQuery QueryBuilder filter.
+     * @return QueryBuilderFilter Returns this jQuery QueryBuilder filter.
      */
     final public function setValues(array $values = []) {
         $this->values = $values;
