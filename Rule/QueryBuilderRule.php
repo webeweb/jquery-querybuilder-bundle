@@ -160,7 +160,7 @@ class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBuilderC
      * Set the operator.
      *
      * @param string $operator The operator.
-     * @return QueryBuilderRule Returns the QueryBuilder rule.
+     * @return QueryBuilderRule Returns this QueryBuilder rule.
      * @throws IllegalArgumentException Thwrows an illegal argument exception if the operator is invalid.
      */
     public function setOperator($operator) {
@@ -175,7 +175,7 @@ class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBuilderC
      * Set the value.
      *
      * @param mixed $value The value.
-     * @return QueryBuilderRule Returns the QueryBuilder rule.
+     * @return QueryBuilderRule Returns this QueryBuilder rule.
      */
     public function setValue($value) {
         $this->value = $value;

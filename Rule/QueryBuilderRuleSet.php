@@ -67,7 +67,7 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
      * Add a rule.
      *
      * @param QueryBuilderRuleInterface $rule The rule.
-     * @return QueryBuilderRuleSet Returns the jQuery QueryBuilder rule set.
+     * @return QueryBuilderRuleSet Returns this jQuery QueryBuilder rule set.
      */
     protected function addRule(QueryBuilderRuleInterface $rule) {
         $this->rules[] = $rule;
@@ -146,7 +146,7 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
      * Set the condition.
      *
      * @param string $condition The condition.
-     * @return QueryBuilderRuleSet Returns the jQuery QueryBuilder rule set.
+     * @return QueryBuilderRuleSet Returns this jQuery QueryBuilder rule set.
      * @throws IllegalArgumentException Throws an illegal argument exception if the condition is invalid.
      */
     protected function setCondition($condition) {
@@ -161,7 +161,7 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
      * Set the valid.
      *
      * @param boolean $valid The valid.
-     * @return QueryBuilderRuleSet Returns the jQuery QueryBuilder rule set.
+     * @return QueryBuilderRuleSet Returns this jQuery QueryBuilder rule set.
      */
     protected function setValid($valid) {
         $this->valid = $valid;
