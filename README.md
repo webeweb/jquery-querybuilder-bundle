@@ -9,6 +9,12 @@ Integrate jQuery QueryBuilder with Symfony 2.
 > done without prior notice to consumers of this package. Of course this code
 > will become stable at a certain point, but for now, use at your own risk.
 
+Includes:
+
+- [interactjs 1.3.3](http://interactjs.io/) (jQuery QueryBuilder dependency)
+- [jQuery 3.2.1](http://jquery.com/) (jQuery QueryBuilder dependency)
+- [jQuery QueryBuilder 2.4.4](https://querybuilder.js.org/)
+
 ---
 
 ## Compatibility
@@ -50,6 +56,24 @@ Once the bundle is added then do:
 
 ```bash
 $ php bin/console assets:install
+```
+
+---
+
+## Usage
+
+### Template
+
+```html
+{# AppBundle/Resources/views/layout.html.twig #}
+{% block styles %}
+    {{ parent() }}
+    {% include "@JQueryQueryBuilder/include/style/jquery-querybuilder.html.twig" %}
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    {% include "@JQueryQueryBuilder/include/script/jquery-querybuilder.html.twig" %}
+{% endblock %}
 ```
 
 ---
