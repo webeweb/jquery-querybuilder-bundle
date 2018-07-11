@@ -49,7 +49,7 @@ class QueryBuilderFilterSet implements JsonSerializable {
      * @param QueryBuilderFilter $filter The filter.
      * @return QueryBuilderFilterSet Returns this QueryBuilder filter set.
      */
-    final public function addFilter(QueryBuilderFilter $filter) {
+    public function addFilter(QueryBuilderFilter $filter) {
         if (true === ($filter instanceof QueryBuilderDecoratorInterface)) {
             $this->decorators[$filter->getId()] = $filter;
         }
@@ -63,7 +63,7 @@ class QueryBuilderFilterSet implements JsonSerializable {
      * @param string $id The id.
      * @return QueryBuilderDecoratorInterface Returns the decorator in case of success, null otherwise.
      */
-    final public function getDecorator($id) {
+    public function getDecorator($id) {
         if (false === array_key_exists($id, $this->decorators)) {
             return null;
         }
@@ -75,7 +75,7 @@ class QueryBuilderFilterSet implements JsonSerializable {
      *
      * @return QueryBuilderFilter[] Returns the filters.
      */
-    final public function getFilters() {
+    public function getFilters() {
         return $this->filters;
     }
 
@@ -84,7 +84,7 @@ class QueryBuilderFilterSet implements JsonSerializable {
      *
      * @return array Returns an array representing this instance.
      */
-    final public function jsonSerialize() {
+    public function jsonSerialize() {
         return $this->toArray();
     }
 
@@ -94,7 +94,7 @@ class QueryBuilderFilterSet implements JsonSerializable {
      * @param QueryBuilderFilter $filter The filter.
      * @return QueryBuilderFilterSet Returns this QueryBuilder filter set.
      */
-    final public function removeFilter(QueryBuilderFilter $filter) {
+    public function removeFilter(QueryBuilderFilter $filter) {
         if (true === array_key_exists($filter->getId(), $this->filters)) {
             unset($this->filters[$filter->getId()]);
         }
@@ -106,7 +106,7 @@ class QueryBuilderFilterSet implements JsonSerializable {
      *
      * @return array Returns an array representing this instance.
      */
-    final public function toArray() {
+    public function toArray() {
 
         // Initialize the output.
         $output = [];
