@@ -28,7 +28,7 @@ final class QueryBuilderConditionInterfaceTest extends PHPUnit_Framework_TestCas
      *
      * @return void
      */
-    public function testConstructor() {
+    public function testConstruct() {
 
         $this->assertEquals("AND", QueryBuilderConditionInterface::CONDITION_AND);
         $this->assertEquals("OR", QueryBuilderConditionInterface::CONDITION_OR);

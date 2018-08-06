@@ -28,7 +28,7 @@ final class QueryBuilderOperatorInterfaceTest extends PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    public function testConstructor() {
+    public function testConstruct() {
 
         $this->assertEquals("begins_with", QueryBuilderOperatorInterface::OPERATOR_BEGINS_WITH);
         $this->assertEquals("between", QueryBuilderOperatorInterface::OPERATOR_BETWEEN);

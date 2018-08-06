@@ -28,7 +28,7 @@ final class QueryBuilderTypeInterfaceTest extends PHPUnit_Framework_TestCase {
      *
      * @return void
      */
-    public function testConstructor() {
+    public function testConstruct() {
 
         $this->assertEquals("boolean", QueryBuilderTypeInterface::TYPE_BOOLEAN);
         $this->assertEquals("date", QueryBuilderTypeInterface::TYPE_DATE);

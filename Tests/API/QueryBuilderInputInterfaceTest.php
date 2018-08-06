@@ -28,7 +28,7 @@ final class QueryBuilderInputInterfaceTest extends PHPUnit_Framework_TestCase {
      *
      * @return void
      */
-    public function testConstructor() {
+    public function testConstruct() {
 
         $this->assertEquals("checkbox", QueryBuilderInputInterface::INPUT_CHECKBOX);
         $this->assertEquals("number", QueryBuilderInputInterface::INPUT_NUMBER);

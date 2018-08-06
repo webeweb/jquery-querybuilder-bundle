@@ -31,7 +31,7 @@ final class QueryBuilderFilterTest extends PHPUnit_Framework_TestCase {
      *
      * @return void
      */
-    public function testConstructor() {
+    public function testConstruct() {
 
         try {
             new QueryBuilderFilter("id", "exception", []);
