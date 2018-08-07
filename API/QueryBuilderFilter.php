@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 use JsonSerializable;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Data\AbstractQueryBuilderData;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
-use WBW\Library\Core\Utility\Argument\ArrayUtility;
+use WBW\Library\Core\Helper\Argument\ArrayHelper;
 
 /**
  * jQuery QueryBuilder filter.
@@ -198,14 +198,14 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
 
         $output["id"] = $this->getId();
 
-        ArrayUtility::set($output, "field", $this->getField(), [null]);
+        ArrayHelper::set($output, "field", $this->getField(), [null]);
 
         $output["label"] = $this->label;
         $output["type"]  = $this->getType();
 
-        ArrayUtility::set($output, "input", $this->getInput(), [null]);
-        ArrayUtility::set($output, "values", $this->values, [null]);
-        ArrayUtility::set($output, "multiple", $this->multiple, [null, false]);
+        ArrayHelper::set($output, "input", $this->getInput(), [null]);
+        ArrayHelper::set($output, "values", $this->values, [null]);
+        ArrayHelper::set($output, "multiple", $this->multiple, [null, false]);
 
         if (null !== $this->validation) {
             $output["validation"] = $this->validation->toArray();

@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Data\AbstractQueryBuilderData;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorInterface;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
-use WBW\Library\Core\Utility\IntegerUtility;
+use WBW\Library\Core\Helper\Argument\IntegerHelper;
 
 /**
  * jQuery QueryBuilder rule.
@@ -140,7 +140,7 @@ class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBuilderC
         $output = null;
         switch ($this->getType()) {
             case self::TYPE_BOOLEAN:
-                $output = IntegerUtility::parseBoolean($value);
+                $output = IntegerHelper::parseBoolean($value);
                 break;
             case self::TYPE_DATE:
             case self::TYPE_DATETIME:
