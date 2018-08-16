@@ -6,9 +6,9 @@ checks:
 
 filter:
     excluded_paths:
-        - Resources/public/*
-        - Tests/*
-        - vendor/*
+        - "Resources/public/*"
+        - "Tests/*"
+        - "vendor/*"
 
 tools:
     php_analyzer:                true
