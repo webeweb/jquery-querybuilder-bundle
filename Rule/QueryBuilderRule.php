@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Data\AbstractQueryBuilderData;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorInterface;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
-use WBW\Library\Core\Helper\Argument\IntegerHelper;
+use WBW\Library\Core\Argument\IntegerHelper;
 
 /**
  * jQuery QueryBuilder rule.

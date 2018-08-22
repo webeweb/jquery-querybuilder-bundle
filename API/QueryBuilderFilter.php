@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 use JsonSerializable;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Data\AbstractQueryBuilderData;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
-use WBW\Library\Core\Helper\Argument\ArrayHelper;
+use WBW\Library\Core\Argument\ArrayHelper;
 
 /**
  * jQuery QueryBuilder filter.
