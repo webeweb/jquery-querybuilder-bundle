@@ -22,10 +22,10 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Rule\QueryBuilderRule;
 interface QueryBuilderDecoratorInterface {
 
     /**
-     * Convert into a SQL string representing this jQuery QueryBuilder rule.
+     * Convert into a SQL string representing this rule.
      *
-     * @param QueryBuilderRule $queryBuilderRule The jQuery QueryBuilder rule.
-     * @return string Returns a SQL string representing this jQuery QueryBuilder rule.
+     * @param QueryBuilderRule $queryBuilderRule The rule.
+     * @return string Returns a SQL string representing this rule.
      */
     public function toSQL(QueryBuilderRule $queryBuilderRule);
 }
