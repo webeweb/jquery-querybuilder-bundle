@@ -46,9 +46,11 @@ final class QueryBuilderFilterSetTest extends PHPUnit_Framework_TestCase {
 
         $obj = new QueryBuilderFilterSet();
 
+        // ===
         $obj->addFilter(new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]));
         $this->assertCount(1, $obj->getFilters());
 
+        // ===
         $obj->addFilter(new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]));
         $this->assertCount(1, $obj->getFilters());
     }
@@ -62,9 +64,11 @@ final class QueryBuilderFilterSetTest extends PHPUnit_Framework_TestCase {
 
         $obj = new QueryBuilderFilterSet();
 
+        // ===
         $res0 = [];
         $this->assertEquals($res0, $obj->jsonSerialize());
 
+        // ===
         $obj->addFilter(new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]));
         $res1 = [["id" => "id", "label" => "", "type" => QueryBuilderFilter::TYPE_INTEGER, "operators" => [QueryBuilderFilter::OPERATOR_EQUAL]]];
         $this->assertEquals($res1, $obj->jsonSerialize());
@@ -79,14 +83,16 @@ final class QueryBuilderFilterSetTest extends PHPUnit_Framework_TestCase {
 
         $obj = new QueryBuilderFilterSet();
 
+        // ===
         $flt = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
         $obj->addFilter($flt);
-
         $this->assertCount(1, $obj->getFilters());
 
+        // ===
         $obj->removeFilter(new QueryBuilderFilter("bad", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]));
         $this->assertCount(1, $obj->getFilters());
 
+        // ===
         $obj->removeFilter($flt);
         $this->assertCount(0, $obj->getFilters());
     }

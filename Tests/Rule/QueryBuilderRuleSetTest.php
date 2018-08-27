@@ -33,13 +33,16 @@ final class QueryBuilderRuleSetTest extends PHPUnit_Framework_TestCase {
      */
     public function testConstruct() {
 
+        // ===
         try {
+
             new QueryBuilderRuleSet(["condition" => "exception"], null);
         } catch (Exception $ex) {
             $this->assertInstanceOf(IllegalArgumentException::class, $ex);
             $this->assertEquals("The condition \"exception\" is invalid", $ex->getMessage());
         }
 
+        // ===
         $obj = new QueryBuilderRuleSet([], null);
 
         $this->assertNull($obj->getCondition());

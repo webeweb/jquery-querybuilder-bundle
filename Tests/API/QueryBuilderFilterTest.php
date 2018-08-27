@@ -33,29 +33,40 @@ final class QueryBuilderFilterTest extends PHPUnit_Framework_TestCase {
      */
     public function testConstruct() {
 
+        // ===
         try {
+
             new QueryBuilderFilter("id", "exception", []);
         } catch (Exception $ex) {
+
             $this->assertInstanceOf(IllegalArgumentException::class, $ex);
             $this->assertEquals("The type \"exception\" is invalid", $ex->getMessage());
         }
 
+        // ===
         try {
+
             new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, ["exception"]);
         } catch (Exception $ex) {
+
             $this->assertInstanceOf(IllegalArgumentException::class, $ex);
             $this->assertEquals("The operator \"exception\" is invalid", $ex->getMessage());
         }
 
+        // ===
         $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
 
+        // ===
         try {
+
             $obj->setInput("exception");
         } catch (Exception $ex) {
+
             $this->assertInstanceOf(IllegalArgumentException::class, $ex);
             $this->assertEquals("The input \"exception\" is invalid", $ex->getMessage());
         }
 
+        // ===
         $this->assertEquals("id", $obj->getId());
         $this->assertEquals("", $obj->getLabel());
         $this->assertFalse($obj->getMultiple());

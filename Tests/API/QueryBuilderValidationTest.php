@@ -32,26 +32,13 @@ final class QueryBuilderValidationTest extends PHPUnit_Framework_TestCase {
 
         $obj = new QueryBuilderValidation();
 
-        $obj->setAllowEmptyValue(true);
-        $this->assertTrue($obj->getAllowEmptyValue());
-
-        $obj->setCallback("callback");
-        $this->assertEquals("callback", $obj->getCallback());
-
-        $obj->setFormat("format");
-        $this->assertEquals("format", $obj->getFormat());
-
-        $obj->setMax(1);
-        $this->assertEquals(1, $obj->getMax());
-
-        $obj->setMessages([]);
-        $this->assertEquals([], $obj->getMessages());
-
-        $obj->setMin(0);
-        $this->assertEquals(0, $obj->getMin());
-
-        $obj->setStep(1);
-        $this->assertEquals(1, $obj->getStep());
+        $this->assertNull($obj->getAllowEmptyValue());
+        $this->assertNull($obj->getCallback());
+        $this->assertNull($obj->getFormat());
+        $this->assertNull($obj->getMax());
+        $this->assertNull($obj->getMessages());
+        $this->assertNull($obj->getMin());
+        $this->assertNull($obj->getStep());
     }
 
     /**
@@ -64,6 +51,97 @@ final class QueryBuilderValidationTest extends PHPUnit_Framework_TestCase {
         $obj = new QueryBuilderValidation();
 
         $this->assertEquals([], $obj->jsonSerialize());
+    }
+
+    /**
+     * Tests the setAllowEmptyValue() method.
+     *
+     * @return void
+     */
+    public function testSetAllowEmptyValue() {
+
+        $obj = new QueryBuilderValidation();
+
+        $obj->setAllowEmptyValue(true);
+        $this->assertTrue($obj->getAllowEmptyValue());
+    }
+
+    /**
+     * Tests the setCallback() method.
+     *
+     * @return void
+     */
+    public function testSetCallback() {
+
+        $obj = new QueryBuilderValidation();
+
+        $obj->setCallback("callback");
+        $this->assertEquals("callback", $obj->getCallback());
+    }
+
+    /**
+     * Tests the setFormat() method.
+     *
+     * @return void
+     */
+    public function testSetFormat() {
+
+        $obj = new QueryBuilderValidation();
+
+        $obj->setFormat("format");
+        $this->assertEquals("format", $obj->getFormat());
+    }
+
+    /**
+     * Tests the setMax() method.
+     *
+     * @return void
+     */
+    public function testSetMax() {
+
+        $obj = new QueryBuilderValidation();
+
+        $obj->setMax(1);
+        $this->assertEquals(1, $obj->getMax());
+    }
+
+    /**
+     * Tests the setMessages() method.
+     *
+     * @return void
+     */
+    public function testSetMessages() {
+
+        $obj = new QueryBuilderValidation();
+
+        $obj->setMessages([]);
+        $this->assertEquals([], $obj->getMessages());
+    }
+
+    /**
+     * Tests the setMin() method.
+     *
+     * @return void
+     */
+    public function testSetMin() {
+
+        $obj = new QueryBuilderValidation();
+
+        $obj->setMin(0);
+        $this->assertEquals(0, $obj->getMin());
+    }
+
+    /**
+     * Tests the setStep() method.
+     *
+     * @return void
+     */
+    public function testSetStep() {
+
+        $obj = new QueryBuilderValidation();
+
+        $obj->setStep(1);
+        $this->assertEquals(1, $obj->getStep());
     }
 
     /**
