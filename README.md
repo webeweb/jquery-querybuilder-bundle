@@ -1,7 +1,13 @@
 jquery-querybuilder-bundle
 ==========================
 
-[![Build Status](https://travis-ci.org/webeweb/jquery-querybuilder-bundle.svg?branch=master)](https://travis-ci.org/webeweb/jquery-querybuilder-bundle) [![Coverage Status](https://coveralls.io/repos/github/webeweb/jquery-querybuilder-bundle/badge.svg?branch=master)](https://coveralls.io/github/webeweb/jquery-querybuilder-bundle?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/webeweb/jquery-querybuilder-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/webeweb/jquery-querybuilder-bundle/?branch=master) [![Latest Stable Version](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/v/stable)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle) [![Latest Unstable Version](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/v/unstable)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle) [![License](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/license)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle) [![composer.lock](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/composerlock)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle)
+[![Build Status](https://travis-ci.org/webeweb/jquery-querybuilder-bundle.svg?branch=master)](https://travis-ci.org/webeweb/jquery-querybuilder-bundle)
+[![Coverage Status](https://coveralls.io/repos/github/webeweb/jquery-querybuilder-bundle/badge.svg?branch=master)](https://coveralls.io/github/webeweb/jquery-querybuilder-bundle?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/webeweb/jquery-querybuilder-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/webeweb/jquery-querybuilder-bundle/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/v/stable)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle)
+[![Latest Unstable Version](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/v/unstable)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle)
+[![License](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/license)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle)
+[![composer.lock](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/composerlock)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle)
 
 Integrate jQuery QueryBuilder with Symfony 2.
 
@@ -19,7 +25,8 @@ Includes:
 
 ## Compatibility
 
-[![PHP](https://img.shields.io/badge/PHP-%5E5.6%7C%5E7.0-blue.svg)](http://php.net) [![Symfony](https://img.shields.io/badge/Symfony-%5E2.6%7C%5E3.0-brightgreen.svg)](https://symfony.com)
+[![PHP](https://img.shields.io/badge/PHP-%5E5.6%7C%5E7.0-blue.svg)](http://php.net)
+[![Symfony](https://img.shields.io/badge/Symfony-%5E2.6%7C%5E3.0-brightgreen.svg)](https://symfony.com)
 
 ---
 
