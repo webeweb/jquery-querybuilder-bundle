@@ -18,6 +18,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases
+ * @abstract
  */
 abstract class AbstractJQueryQueryBuilderFrameworkTestCase extends TestCase {
 
