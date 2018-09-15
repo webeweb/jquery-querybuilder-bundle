@@ -9,7 +9,14 @@ jquery-querybuilder-bundle
 [![License](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/license)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle)
 [![composer.lock](https://poser.pugx.org/webeweb/jquery-querybuilder-bundle/composerlock)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle)
 
-Integrate jQuery QueryBuilder with Symfony 2.
+Integrate jQuery QueryBuilder with Symfony 2 and more.
+
+`jquery-querybuilder-bundle` eases the use of jQuery QueryBuilder in your
+Symfony application by providing Twig extensions and PHP objects to do the
+heavy lifting. The bundle include the excellent JS library
+[jQuery QueryBuilder](https://querybuilder.js.org/).
+
+Dry out your jQuery QueryBuilder code by writing it all in PHP !
 
 > IMPORTANT NOTICE: This package is still under development. Any changes will be
 > done without prior notice to consumers of this package. Of course this code
@@ -26,7 +33,7 @@ Includes:
 ## Compatibility
 
 [![PHP](https://img.shields.io/badge/PHP-%5E5.6%7C%5E7.0-blue.svg)](http://php.net)
-[![Symfony](https://img.shields.io/badge/Symfony-%5E2.6%7C%5E3.0-brightgreen.svg)](https://symfony.com)
+[![Symfony](https://img.shields.io/badge/Symfony-%5E2.6%7C%5E3.0%7C%5E4.0-brightgreen.svg)](https://symfony.com)
 
 ---
 
