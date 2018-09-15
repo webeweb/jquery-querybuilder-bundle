@@ -11,11 +11,11 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\DependencyInjection;
 
-use PHPUnit_Framework_TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\HttpKernel\KernelInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection\JQueryQueryBuilderExtension;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases\AbstractJQueryQueryBuilderFrameworkTestCase;
 
 /**
  * jQuery QueryBuilder extension test.
@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection\JQueryQueryBuilderE
  * @version 2.4.3
  * @final
  */
-final class JQueryQueryBuilderExtensionTest extends PHPUnit_Framework_TestCase {
+final class JQueryQueryBuilderExtensionTest extends AbstractJQueryQueryBuilderFrameworkTestCase {
 
     /**
      * Tests the load() method.
