@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderInputInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases\AbstractJQueryQueryBuilderFrameworkTestCase;
 
 /**
  * jQuery QueryBuilder input interface test.
@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderInputInterface;
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
  * @final
  */
-final class QueryBuilderInputInterfaceTest extends PHPUnit_Framework_TestCase {
+final class QueryBuilderInputInterfaceTest extends AbstractJQueryQueryBuilderFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

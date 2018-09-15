@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderConditionInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases\AbstractJQueryQueryBuilderFrameworkTestCase;
 
 /**
  * jQuery QueryBuilder condition interface test.
@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderConditionInterface;
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
  * @final
  */
-final class QueryBuilderConditionInterfaceTest extends PHPUnit_Framework_TestCase {
+final class QueryBuilderConditionInterfaceTest extends AbstractJQueryQueryBuilderFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidation;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases\AbstractJQueryQueryBuilderFrameworkTestCase;
 
 /**
  * jQuery QueryBuilder validation test.
@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidation;
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
  * @final
  */
-final class QueryBuilderValidationTest extends PHPUnit_Framework_TestCase {
+final class QueryBuilderValidationTest extends AbstractJQueryQueryBuilderFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

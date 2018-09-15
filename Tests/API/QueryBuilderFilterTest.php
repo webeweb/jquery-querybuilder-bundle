@@ -12,9 +12,9 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
 use Exception;
-use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilter;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidation;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases\AbstractJQueryQueryBuilderFrameworkTestCase;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
 /**
@@ -24,7 +24,7 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
  * @final
  */
-final class QueryBuilderFilterTest extends PHPUnit_Framework_TestCase {
+final class QueryBuilderFilterTest extends AbstractJQueryQueryBuilderFrameworkTestCase {
 
     /**
      * Tests the __construct() method.

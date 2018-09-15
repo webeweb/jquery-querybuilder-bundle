@@ -11,9 +11,9 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilter;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSet;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases\AbstractJQueryQueryBuilderFrameworkTestCase;
 
 /**
  * jQuery QueryBuilder filter set test.
@@ -22,7 +22,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSet;
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
  * @final
  */
-final class QueryBuilderFilterSetTest extends PHPUnit_Framework_TestCase {
+final class QueryBuilderFilterSetTest extends AbstractJQueryQueryBuilderFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
