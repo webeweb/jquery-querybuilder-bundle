@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Exception;
 
-use PHPUnit_Framework_TestCase;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Exception\QueryBuilderFileNotFoundException;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases\AbstractJQueryQueryBuilderFrameworkTestCase;
 
 /**
  * jQuery QueryBuilder file not found exception test.
@@ -22,7 +22,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Exception\QueryBuilderFileNotFoundExcep
  * @version 2.4.3
  * @final
  */
-final class QueryBuilderFileNotFoundExceptionTest extends PHPUnit_Framework_TestCase {
+final class QueryBuilderFileNotFoundExceptionTest extends AbstractJQueryQueryBuilderFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
