@@ -14,7 +14,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AbstractJQueryQueryBuilderFrameworkTestCase.
+ * Abstract jQuery QueryBuilder framework test case.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases
