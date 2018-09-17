@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Rule;
 
 use Exception;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Rule\QueryBuilderRule;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases\AbstractJQueryQueryBuilderFrameworkTestCase;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractJQueryQueryBuilderFrameworkTestCase;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
 /**
