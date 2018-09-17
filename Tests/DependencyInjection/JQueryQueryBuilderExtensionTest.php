@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\HttpKernel\KernelInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection\JQueryQueryBuilderExtension;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases\AbstractJQueryQueryBuilderFrameworkTestCase;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractJQueryQueryBuilderFrameworkTestCase;
 
 /**
  * jQuery QueryBuilder extension test.
