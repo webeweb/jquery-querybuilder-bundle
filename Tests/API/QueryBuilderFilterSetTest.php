@@ -47,11 +47,11 @@ final class QueryBuilderFilterSetTest extends AbstractJQueryQueryBuilderFramewor
         $obj = new QueryBuilderFilterSet();
 
         // ===
-        $obj->addFilter(new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]));
+        $this->assertSame($obj, $obj->addFilter(new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL])));
         $this->assertCount(1, $obj->getFilters());
 
         // ===
-        $obj->addFilter(new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]));
+        $this->assertSame($obj, $obj->addFilter(new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL])));
         $this->assertCount(1, $obj->getFilters());
     }
 
