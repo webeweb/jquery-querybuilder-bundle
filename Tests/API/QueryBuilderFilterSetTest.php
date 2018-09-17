@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilter;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSet;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases\AbstractJQueryQueryBuilderFrameworkTestCase;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractJQueryQueryBuilderFrameworkTestCase;
 
 /**
  * jQuery QueryBuilder filter set test.
