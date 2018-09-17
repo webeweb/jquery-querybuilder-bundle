@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests;
 
 use PHPUnit\Framework\TestCase;
 
