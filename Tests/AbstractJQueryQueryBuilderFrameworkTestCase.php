@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
  * Abstract jQuery QueryBuilder framework test case.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests
  * @abstract
  */
 abstract class AbstractJQueryQueryBuilderFrameworkTestCase extends TestCase {
