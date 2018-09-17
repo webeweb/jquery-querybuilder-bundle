@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Exception;
 
 use WBW\Bundle\JQuery\QueryBuilderBundle\Exception\QueryBuilderFileNotFoundException;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Cases\AbstractJQueryQueryBuilderFrameworkTestCase;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractJQueryQueryBuilderFrameworkTestCase;
 
 /**
  * jQuery QueryBuilder file not found exception test.
