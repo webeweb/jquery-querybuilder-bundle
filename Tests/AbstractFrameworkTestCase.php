@@ -20,6 +20,6 @@ use PHPUnit\Framework\TestCase;
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests
  * @abstract
  */
-abstract class AbstractJQueryQueryBuilderFrameworkTestCase extends TestCase {
+abstract class AbstractFrameworkTestCase extends TestCase {
 
 }

@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBag;
 use Symfony\Component\HttpKernel\KernelInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection\JQueryQueryBuilderExtension;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractJQueryQueryBuilderFrameworkTestCase;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractFrameworkTestCase;
 
 /**
  * jQuery QueryBuilder extension test.
@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractJQueryQueryBuilderFramewo
  * @version 2.4.3
  * @final
  */
-final class JQueryQueryBuilderExtensionTest extends AbstractJQueryQueryBuilderFrameworkTestCase {
+final class JQueryQueryBuilderExtensionTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the load() method.

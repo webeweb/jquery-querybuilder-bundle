@@ -13,7 +13,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Rule;
 
 use Exception;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Rule\QueryBuilderRule;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractJQueryQueryBuilderFrameworkTestCase;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractFrameworkTestCase;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
 /**
@@ -23,7 +23,7 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Rule
  * @final
  */
-final class QueryBuilderRuleTest extends AbstractJQueryQueryBuilderFrameworkTestCase {
+final class QueryBuilderRuleTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
