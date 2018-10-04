@@ -47,7 +47,7 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
     /**
      * Valid.
      *
-     * @var boolean
+     * @var bool
      */
     private $valid = false;
 
@@ -95,7 +95,7 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
     /**
      * Get the valid.
      *
-     * @return boolean Returns the valid.
+     * @return bool Returns the valid.
      */
     public function getValid() {
         return $this->valid;
@@ -160,7 +160,7 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
     /**
      * Set the valid.
      *
-     * @param boolean $valid The valid.
+     * @param bool $valid The valid.
      * @return QueryBuilderRuleSet Returns this rule set.
      */
     protected function setValid($valid) {

@@ -25,7 +25,7 @@ class QueryBuilderValidation implements JsonSerializable {
     /**
      * Allow empty value.
      *
-     * @var boolean
+     * @var bool
      */
     private $allowEmptyValue;
 
@@ -81,7 +81,7 @@ class QueryBuilderValidation implements JsonSerializable {
     /**
      * Get the allow empty value.
      *
-     * @return boolean Returns  the allow empty value.
+     * @return bool Returns  the allow empty value.
      */
     public function getAllowEmptyValue() {
         return $this->allowEmptyValue;
@@ -153,7 +153,7 @@ class QueryBuilderValidation implements JsonSerializable {
     /**
      * Set the allow empty value.
      *
-     * @param boolean $allowEmptyValue The allow empty value.
+     * @param bool $allowEmptyValue The allow empty value.
      * @return QueryBuilderValidation Returns this validation.
      */
     public function setAllowEmptyValue($allowEmptyValue) {

@@ -118,7 +118,7 @@ class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBuilderC
      * Quote an array of values.
      *
      * @param array $values The values.
-     * @param boolean $wrap Wrap ?
+     * @param bool $wrap Wrap ?
      * @return array Returns the quoted values.
      */
     private function quoteArray(array $values, $wrap = false) {
@@ -133,7 +133,7 @@ class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBuilderC
      * Quote a mixed value.
      *
      * @param mixed $value The value.
-     * @param boolean $wrap Wrap ?
+     * @param bool $wrap Wrap ?
      * @return string Returns the quoted value.
      */
     private function quoteMixed($value, $wrap = false) {

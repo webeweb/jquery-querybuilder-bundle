@@ -34,7 +34,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
     /**
      * Multiple.
      *
-     * @var boolean
+     * @var bool
      */
     private $multiple = false;
 
@@ -84,7 +84,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
     /**
      * Get the multiple.
      *
-     * @return boolean Returns the multiple.
+     * @return bool Returns the multiple.
      */
     public function getMultiple() {
         return $this->multiple;
@@ -140,7 +140,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
     /**
      * Set the multiple.
      *
-     * @param boolean $multiple The multiple.
+     * @param bool $multiple The multiple.
      * @return QueryBuilderFilter Returns this filter.
      */
     public function setMultiple($multiple = false) {
