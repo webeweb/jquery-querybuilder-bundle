@@ -42,7 +42,7 @@ class JQueryQueryBuilderExtensionTest extends AbstractFrameworkTestCase {
 
         $obj = new JQueryQueryBuilderExtension();
 
-        $obj->load([], $container);
+        $this->assertNull($obj->load([], $container));
     }
 
 }
