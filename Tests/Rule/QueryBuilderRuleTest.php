@@ -21,9 +21,8 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Rule
- * @final
  */
-final class QueryBuilderRuleTest extends AbstractFrameworkTestCase {
+class QueryBuilderRuleTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
