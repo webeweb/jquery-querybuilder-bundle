@@ -20,9 +20,8 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractFrameworkTestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
- * @final
  */
-final class QueryBuilderFilterSetTest extends AbstractFrameworkTestCase {
+class QueryBuilderFilterSetTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
