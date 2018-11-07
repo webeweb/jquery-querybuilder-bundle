@@ -20,9 +20,8 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractFrameworkTestCase;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Exception
  * @version 2.4.3
- * @final
  */
-final class QueryBuilderFileNotFoundExceptionTest extends AbstractFrameworkTestCase {
+class QueryBuilderFileNotFoundExceptionTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the __construct() method.
