@@ -23,9 +23,8 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractFrameworkTestCase;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\DependencyInjection
  * @version 2.4.3
- * @final
  */
-final class JQueryQueryBuilderExtensionTest extends AbstractFrameworkTestCase {
+class JQueryQueryBuilderExtensionTest extends AbstractFrameworkTestCase {
 
     /**
      * Tests the load() method.
