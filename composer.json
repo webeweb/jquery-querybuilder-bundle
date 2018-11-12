@@ -3,12 +3,12 @@
     "type": "symfony-bundle",
     "description": "Integrate jQuery QueryBuilder with Symfony 2 and more",
     "keywords": ["webeweb", "bundle", "symfony", "jquery", "querybuilder"],
-    "homepage": "http://github.com/webeweb/jquery-querybuilder-bundle",
+    "homepage": "https://github.com/webeweb/jquery-querybuilder-bundle",
     "license": "LGPL-3.0-only",
     "authors": [
         {
             "name": "webeweb",
-            "homepage": "http://github.com/webeweb/"
+            "homepage": "https://github.com/webeweb/"
         }
     ],
     "require": {
@@ -21,7 +21,7 @@
         "phpunit/phpunit": "5.7.*|^7.0"
     },
     "support": {
-        "issues": "http://github.com/webeweb/jquery-querybuilder-bundle/issues"
+        "issues": "https://github.com/webeweb/jquery-querybuilder-bundle/issues"
     },
     "autoload": {
         "psr-4": {
