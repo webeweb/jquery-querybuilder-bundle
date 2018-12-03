@@ -101,7 +101,7 @@ stable version of this package:
 ```bash
 $ mkdir jquery-querybuilder-bundle
 $ cd jquery-querybuilder-bundle
-$ git clone git@github.com:webeweb/jquery-querybuilder-bundle.git .
+$ git clone https://github.com/webeweb/jquery-querybuilder-bundle.git .
 $ composer install
 ```
 
