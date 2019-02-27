@@ -99,9 +99,8 @@ Open a command console and execute the following commands to download the latest
 stable version of this package:
 
 ```bash
-$ mkdir jquery-querybuilder-bundle
+$ git clone https://github.com/webeweb/jquery-querybuilder-bundle.git
 $ cd jquery-querybuilder-bundle
-$ git clone https://github.com/webeweb/jquery-querybuilder-bundle.git .
 $ composer install
 ```
 
