@@ -21,8 +21,13 @@
     "require-dev": {
         "phpunit/phpunit": "^5.7|^7.0"
     },
-    "support": {
-        "issues": "https://github.com/webeweb/jquery-querybuilder-bundle/issues"
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
     },
     "autoload": {
         "psr-4": {
@@ -37,12 +42,7 @@
             "WBW\\Bundle\\JQuery\\QueryBuilderBundle\\Tests\\": "Tests/"
         }
     },
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.x-dev"
-        }
+    "support": {
+        "issues": "https://github.com/webeweb/jquery-querybuilder-bundle/issues"
     }
 }
