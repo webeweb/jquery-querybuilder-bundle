@@ -114,5 +114,5 @@ $ vendor/bin/phpunit
 
 ## License
 
-`jquery-querybuilder-bundle` is released under the LGPL License. See the bundled
+`jquery-querybuilder-bundle` is released under the MIT License. See the bundled
 [LICENSE](LICENSE) file for details.
