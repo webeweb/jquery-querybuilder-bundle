@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
 /**
- * jQuery QueryBuilder input interface.
+ * QueryBuilder input interface.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
@@ -20,59 +20,44 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 interface QueryBuilderInputInterface {
 
     /**
-     * Inputs.
-     *
-     * @var array
-     */
-    const INPUTS = [
-        self::INPUT_CHECKBOX,
-        self::INPUT_NUMBER,
-        self::INPUT_RADIO,
-        self::INPUT_SELECT,
-        self::INPUT_TEXT,
-        self::INPUT_TEXTAREA,
-    ];
-
-    /**
-     * Input checkbox.
+     * Input "checkbox".
      *
      * @var string
      */
     const INPUT_CHECKBOX = "checkbox";
 
     /**
-     * Input number.
+     * Input "number".
      *
      * @var string
      */
     const INPUT_NUMBER = "number";
 
     /**
-     * Input radio.
+     * Input "radio".
      *
      * @var string
      */
     const INPUT_RADIO = "radio";
 
     /**
-     * Input select.
+     * Input "select".
      *
      * @var string
      */
     const INPUT_SELECT = "select";
 
     /**
-     * Input text.
+     * Input "text".
      *
      * @var string
      */
     const INPUT_TEXT = "text";
 
     /**
-     * Input textarea.
+     * Input "textarea".
      *
      * @var string
      */
     const INPUT_TEXTAREA = "textarea";
-
 }

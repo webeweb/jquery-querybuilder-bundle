@@ -15,7 +15,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderInputInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractFrameworkTestCase;
 
 /**
- * jQuery QueryBuilder input interface test.
+ * QueryBuilder input interface test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
@@ -36,5 +36,4 @@ class QueryBuilderInputInterfaceTest extends AbstractFrameworkTestCase {
         $this->assertEquals("text", QueryBuilderInputInterface::INPUT_TEXT);
         $this->assertEquals("textarea", QueryBuilderInputInterface::INPUT_TEXTAREA);
     }
-
 }
