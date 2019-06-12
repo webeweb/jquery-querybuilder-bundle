@@ -1,5 +1,6 @@
 {# Resources/views/layout/stylesheet/jquery-querybuilder.html.twig #}
-{% set themes = ["default", "dark"] %}
-{% set path = qbTheme|default("") in themes ? qbTheme : "default" %}
-<!-- jQuery QueryBuilder plug-in -->
-<link type="text/css" rel="stylesheet" href="{{ asset("bundles/wbwjqueryquerybuilder/jquery-querybuilder-2.4.4/css/query-builder." ~ path ~ ".min.css") }}">
+{% set _version = constant("WBW\\Bundle\\JQuery\\QueryBuilderBundle\\QueryBuilderVersionInterface::QUERYBUILDER_VERSION")%}
+{% set _themes  = ["default", "dark"] %}
+{% set _theme   = qbTheme|default("") in _themes ? qbTheme : "default" %}
+<!-- jQuery QueryBuilder -->
+<link type="text/css" rel="stylesheet" href="{{ asset("bundles/wbwjqueryquerybuilder/jquery-querybuilder-" ~ _version ~ "/css/query-builder." ~ path ~ ".min.css") }}">
