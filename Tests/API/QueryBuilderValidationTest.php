@@ -12,15 +12,15 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidation;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractFrameworkTestCase;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
 /**
- * jQuery QueryBuilder validation test.
+ * QueryBuilder validation test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
  */
-class QueryBuilderValidationTest extends AbstractFrameworkTestCase {
+class QueryBuilderValidationTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -48,8 +48,24 @@ class QueryBuilderValidationTest extends AbstractFrameworkTestCase {
     public function testJsonSerialize() {
 
         $obj = new QueryBuilderValidation();
+        $obj->setAllowEmptyValue(true);
+        $obj->setCallback("callback");
+        $obj->setFormat("format");
+        $obj->setMax("max");
+        $obj->setMessages([]);
+        $obj->setMin("min");
+        $obj->setStep(0);
 
-        $this->assertEquals([], $obj->jsonSerialize());
+        $res = [
+            "format"            => "format",
+            "min"               => "min",
+            "max"               => "max",
+            "step"              => 0,
+            "messages"          => [],
+            "allow_empty_value" => true,
+            "callback"          => "callback",
+        ];
+        $this->assertEquals($res, $obj->jsonSerialize());
     }
 
     /**
@@ -142,46 +158,4 @@ class QueryBuilderValidationTest extends AbstractFrameworkTestCase {
         $obj->setStep(1);
         $this->assertEquals(1, $obj->getStep());
     }
-
-    /**
-     * Tests the toArray() method.
-     *
-     * @return void
-     */
-    public function testToArray() {
-
-        $obj = new QueryBuilderValidation();
-
-        $res0 = [];
-        $this->assertEquals($res0, $obj->toArray());
-
-        $obj->setFormat("format");
-        $res1 = ["format" => "format"];
-        $this->assertEquals($res1, $obj->toArray());
-
-        $obj->setMin("min");
-        $res2 = ["format" => "format", "min" => "min"];
-        $this->assertEquals($res2, $obj->toArray());
-
-        $obj->setMax("max");
-        $res3 = ["format" => "format", "min" => "min", "max" => "max"];
-        $this->assertEquals($res3, $obj->toArray());
-
-        $obj->setStep(0);
-        $res4 = ["format" => "format", "min" => "min", "max" => "max", "step" => 0];
-        $this->assertEquals($res4, $obj->toArray());
-
-        $obj->setMessages([]);
-        $res5 = ["format" => "format", "min" => "min", "max" => "max", "step" => 0, "messages" => []];
-        $this->assertEquals($res5, $obj->toArray());
-
-        $obj->setAllowEmptyValue(true);
-        $res6 = ["format" => "format", "min" => "min", "max" => "max", "step" => 0, "messages" => [], "allow_empty_value" => true];
-        $this->assertEquals($res6, $obj->toArray());
-
-        $obj->setCallback("callback");
-        $res7 = ["format" => "format", "min" => "min", "max" => "max", "step" => 0, "messages" => [], "allow_empty_value" => true, "callback" => "callback"];
-        $this->assertEquals($res7, $obj->toArray());
-    }
-
 }

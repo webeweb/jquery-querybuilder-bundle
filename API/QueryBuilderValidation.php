@@ -11,16 +11,15 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
-use JsonSerializable;
 use WBW\Library\Core\Argument\ArrayHelper;
 
 /**
- * jQuery QueryBuilder validation.
+ * QueryBuilder validation.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
  */
-class QueryBuilderValidation implements JsonSerializable {
+class QueryBuilderValidation implements QueryBuilderValidationInterface {
 
     /**
      * Allow empty value.
@@ -79,162 +78,59 @@ class QueryBuilderValidation implements JsonSerializable {
     }
 
     /**
-     * Get the allow empty value.
-     *
-     * @return bool Returns  the allow empty value.
+     * {@inheritDoc}
      */
     public function getAllowEmptyValue() {
         return $this->allowEmptyValue;
     }
 
     /**
-     * Get the callback.
-     *
-     * @return string
+     * {@inheritDoc}
      */
     public function getCallback() {
         return $this->callback;
     }
 
     /**
-     * Get the format.
-     *
-     * @return string|array Returns the dormat.
+     * {@inheritDoc}
      */
     public function getFormat() {
         return $this->format;
     }
 
     /**
-     * Get the max.
-     *
-     * @return integer|float|string Returns the max.
+     * {@inheritDoc}
      */
     public function getMax() {
         return $this->max;
     }
 
     /**
-     * Get the messages.
-     *
-     * @return array Returns the messages.
+     * {@inheritDoc}
      */
     public function getMessages() {
         return $this->messages;
     }
 
     /**
-     * Get the min.
-     *
-     * @return integer|float|string Returns the min.
+     * {@inheritDoc}
      */
     public function getMin() {
         return $this->min;
     }
 
     /**
-     * Get the step.
-     *
-     * @return integer|float Returns the step/
+     * {@inheritDoc}
      */
     public function getStep() {
         return $this->step;
     }
 
     /**
-     * Serialize this instance.
-     *
-     * @return array Returns an array representing this instance.
+     * {@inheritDoc}
      */
     public function jsonSerialize() {
-        return $this->toArray();
-    }
 
-    /**
-     * Set the allow empty value.
-     *
-     * @param bool $allowEmptyValue The allow empty value.
-     * @return QueryBuilderValidation Returns this validation.
-     */
-    public function setAllowEmptyValue($allowEmptyValue) {
-        $this->allowEmptyValue = $allowEmptyValue;
-        return $this;
-    }
-
-    /**
-     * Set the callback.
-     *
-     * @param string $callback The callback.
-     * @return QueryBuilderValidation Returns this validation.
-     */
-    public function setCallback($callback) {
-        $this->callback = $callback;
-        return $this;
-    }
-
-    /**
-     * Set the format.
-     *
-     * @param string|array $format The format.
-     * @return QueryBuilderValidation Returns this validation.
-     */
-    public function setFormat($format) {
-        $this->format = $format;
-        return $this;
-    }
-
-    /**
-     * Set the max.
-     *
-     * @param integer|float|string $max The max.
-     * @return QueryBuilderValidation Returns this validation.
-     */
-    public function setMax($max) {
-        $this->max = $max;
-        return $this;
-    }
-
-    /**
-     * Set the messages.
-     *
-     * @param array $messages The messages.
-     * @return QueryBuilderValidation Returns this validation.
-     */
-    public function setMessages(array $messages = []) {
-        $this->messages = $messages;
-        return $this;
-    }
-
-    /**
-     * Set the min.
-     *
-     * @param integer|float|string $min The min.
-     * @return QueryBuilderValidation Returns this validation.
-     */
-    public function setMin($min) {
-        $this->min = $min;
-        return $this;
-    }
-
-    /**
-     * Set the step.
-     *
-     * @param integer|float $step The step.
-     * @return QueryBuilderValidation Returns this validation.
-     */
-    public function setStep($step) {
-        $this->step = $step;
-        return $this;
-    }
-
-    /**
-     * Convert into an array representing this instance.
-     *
-     * @return array Returns an array representing this instance.
-     */
-    public function toArray() {
-
-        // Initialize the output.
         $output = [];
 
         ArrayHelper::set($output, "format", $this->format, [null]);
@@ -245,8 +141,83 @@ class QueryBuilderValidation implements JsonSerializable {
         ArrayHelper::set($output, "allow_empty_value", $this->allowEmptyValue, [null]);
         ArrayHelper::set($output, "callback", $this->callback, [null]);
 
-        // Return the output.
         return $output;
     }
 
+    /**
+     * Set the allow empty value.
+     *
+     * @param bool $allowEmptyValue The allow empty value.
+     * @return QueryBuilderValidationInterface Returns this validation.
+     */
+    public function setAllowEmptyValue($allowEmptyValue) {
+        $this->allowEmptyValue = $allowEmptyValue;
+        return $this;
+    }
+
+    /**
+     * Set the callback.
+     *
+     * @param string $callback The callback.
+     * @return QueryBuilderValidationInterface Returns this validation.
+     */
+    public function setCallback($callback) {
+        $this->callback = $callback;
+        return $this;
+    }
+
+    /**
+     * Set the format.
+     *
+     * @param string|array $format The format.
+     * @return QueryBuilderValidationInterface Returns this validation.
+     */
+    public function setFormat($format) {
+        $this->format = $format;
+        return $this;
+    }
+
+    /**
+     * Set the max.
+     *
+     * @param integer|float|string $max The max.
+     * @return QueryBuilderValidationInterface Returns this validation.
+     */
+    public function setMax($max) {
+        $this->max = $max;
+        return $this;
+    }
+
+    /**
+     * Set the messages.
+     *
+     * @param array $messages The messages.
+     * @return QueryBuilderValidationInterface Returns this validation.
+     */
+    public function setMessages(array $messages) {
+        $this->messages = $messages;
+        return $this;
+    }
+
+    /**
+     * Set the min.
+     *
+     * @param integer|float|string $min The min.
+     * @return QueryBuilderValidationInterface Returns this validation.
+     */
+    public function setMin($min) {
+        $this->min = $min;
+        return $this;
+    }
+
+    /**
+     * Set the step.
+     *
+     * @param integer|float $step The step.
+     * @return QueryBuilderValidationInterface Returns this validation.
+     */
+    public function setStep($step) {
+        $this->step = $step;
+        return $this;
+    }
 }
