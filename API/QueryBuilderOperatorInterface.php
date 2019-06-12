@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
 /**
- * jQuery QueryBuilder operator interface.
+ * QueryBuilder operator interface.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
@@ -20,171 +20,142 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 interface QueryBuilderOperatorInterface {
 
     /**
-     * Operators.
-     *
-     * @var array
-     */
-    const OPERATORS = [
-        self::OPERATOR_BEGINS_WITH      => "LIKE",
-        self::OPERATOR_BETWEEN          => "BETWEEN",
-        self::OPERATOR_CONTAINS         => "LIKE",
-        self::OPERATOR_ENDS_WITH        => "LIKE",
-        self::OPERATOR_EQUAL            => "=",
-        self::OPERATOR_GREATER          => ">",
-        self::OPERATOR_GREATER_OR_EQUAL => ">=",
-        self::OPERATOR_IN               => "IN",
-        self::OPERATOR_IS_EMPTY         => "IS NULL",
-        self::OPERATOR_IS_NOT_EMPTY     => "IS NOT NULL",
-        self::OPERATOR_IS_NOT_NULL      => "IS NOT NULL",
-        self::OPERATOR_IS_NULL          => "IS NULL",
-        self::OPERATOR_LESS             => "<",
-        self::OPERATOR_LESS_OR_EQUAL    => "<=",
-        self::OPERATOR_NOT_BEGINS_WITH  => "NOT LIKE",
-        self::OPERATOR_NOT_BETWEEN      => "NOT BETWEEN",
-        self::OPERATOR_NOT_CONTAINS     => "NOT LIKE",
-        self::OPERATOR_NOT_ENDS_WITH    => "NOT LIKE",
-        self::OPERATOR_NOT_EQUAL        => "<>",
-        self::OPERATOR_NOT_IN           => "NOT IN",
-    ];
-
-    /**
-     * Operator begins with.
+     * Operator "begins with".
      *
      * @var string
      */
     const OPERATOR_BEGINS_WITH = "begins_with";
 
     /**
-     * Operator between.
+     * Operator "between".
      *
      * @var string
      */
     const OPERATOR_BETWEEN = "between";
 
     /**
-     * Operator contains.
+     * Operator "contains".
      *
      * @var string
      */
     const OPERATOR_CONTAINS = "contains";
 
     /**
-     * Operator ends with.
+     * Operator "ends with".
      *
      * @var string
      */
     const OPERATOR_ENDS_WITH = "ends_with";
 
     /**
-     * Operator equal.
+     * Operator "equal".
      *
      * @var string
      */
     const OPERATOR_EQUAL = "equal";
 
     /**
-     * Operator greater.
+     * Operator "greater".
      *
      * @var string
      */
     const OPERATOR_GREATER = "greater";
 
     /**
-     * Operator greater or equal.
+     * Operator "greater or equal".
      *
      * @var string
      */
     const OPERATOR_GREATER_OR_EQUAL = "greater_or_equal";
 
     /**
-     * Operator in.
+     * Operator "in".
      *
      * @var string
      */
     const OPERATOR_IN = "in";
 
     /**
-     * Operator less.
-     *
-     * @var string
-     */
-    const OPERATOR_LESS = "less";
-
-    /**
-     * Operator less or equal.
-     *
-     * @var string
-     */
-    const OPERATOR_LESS_OR_EQUAL = "less_or_equal";
-
-    /**
-     * Operator not begins with.
-     *
-     * @var string
-     */
-    const OPERATOR_NOT_BEGINS_WITH = "not_begins_with";
-
-    /**
-     * Operator not between.
-     *
-     * @var string
-     */
-    const OPERATOR_NOT_BETWEEN = "not_between";
-
-    /**
-     * Operator not contains.
-     *
-     * @var string
-     */
-    const OPERATOR_NOT_CONTAINS = "not_contains";
-
-    /**
-     * Operator not ends with.
-     *
-     * @var string
-     */
-    const OPERATOR_NOT_ENDS_WITH = "not_ends_with";
-
-    /**
-     * Operator not_equal.
-     *
-     * @var string
-     */
-    const OPERATOR_NOT_EQUAL = "not_equal";
-
-    /**
-     * Operator not in.
-     *
-     * @var string
-     */
-    const OPERATOR_NOT_IN = "not_in";
-
-    /**
-     * Operator is empty.
+     * Operator "is empty".
      *
      * @var string
      */
     const OPERATOR_IS_EMPTY = "is_empty";
 
     /**
-     * Operator is not empty.
+     * Operator "is not empty".
      *
      * @var string
      */
     const OPERATOR_IS_NOT_EMPTY = "is_not_empty";
 
     /**
-     * Operator is not null.
+     * Operator "is not null".
      *
      * @var string
      */
     const OPERATOR_IS_NOT_NULL = "is_not_null";
 
     /**
-     * Operator is null.
+     * Operator "is null".
      *
      * @var string
      */
     const OPERATOR_IS_NULL = "is_null";
 
+    /**
+     * Operator "less".
+     *
+     * @var string
+     */
+    const OPERATOR_LESS = "less";
+
+    /**
+     * Operator "less or equal".
+     *
+     * @var string
+     */
+    const OPERATOR_LESS_OR_EQUAL = "less_or_equal";
+
+    /**
+     * Operator "not begins with".
+     *
+     * @var string
+     */
+    const OPERATOR_NOT_BEGINS_WITH = "not_begins_with";
+
+    /**
+     * Operator "not between".
+     *
+     * @var string
+     */
+    const OPERATOR_NOT_BETWEEN = "not_between";
+
+    /**
+     * Operator "not contains".
+     *
+     * @var string
+     */
+    const OPERATOR_NOT_CONTAINS = "not_contains";
+
+    /**
+     * Operator "not ends with".
+     *
+     * @var string
+     */
+    const OPERATOR_NOT_ENDS_WITH = "not_ends_with";
+
+    /**
+     * Operator "not_equal".
+     *
+     * @var string
+     */
+    const OPERATOR_NOT_EQUAL = "not_equal";
+
+    /**
+     * Operator "not in".
+     *
+     * @var string
+     */
+    const OPERATOR_NOT_IN = "not_in";
 }
