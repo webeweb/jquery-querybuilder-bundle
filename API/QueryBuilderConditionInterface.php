@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
 /**
- * jQuery QueryBuilder condition interface.
+ * QueryBuilder condition interface.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
@@ -20,27 +20,16 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 interface QueryBuilderConditionInterface {
 
     /**
-     * Conditions.
-     *
-     * @var array
-     */
-    const CONDITIONS = [
-        self::CONDITION_AND,
-        self::CONDITION_OR,
-    ];
-
-    /**
-     * Condition AND.
+     * Condition "AND".
      *
      * @var string
      */
     const CONDITION_AND = "AND";
 
     /**
-     * Condition OR.
+     * Condition "OR".
      *
      * @var string
      */
     const CONDITION_OR = "OR";
-
 }

@@ -15,7 +15,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderConditionInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractFrameworkTestCase;
 
 /**
- * jQuery QueryBuilder condition interface test.
+ * QueryBuilder condition interface test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
@@ -32,5 +32,4 @@ class QueryBuilderConditionInterfaceTest extends AbstractFrameworkTestCase {
         $this->assertEquals("AND", QueryBuilderConditionInterface::CONDITION_AND);
         $this->assertEquals("OR", QueryBuilderConditionInterface::CONDITION_OR);
     }
-
 }
