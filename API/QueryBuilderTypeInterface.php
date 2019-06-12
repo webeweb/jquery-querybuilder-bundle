@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
 /**
- * jQuery QueryBuilder type interface.
+ * QueryBuilder type interface.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
@@ -20,67 +20,51 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 interface QueryBuilderTypeInterface {
 
     /**
-     * Types.
-     *
-     * @var array
-     */
-    const TYPES = [
-        self::TYPE_BOOLEAN,
-        self::TYPE_DATE,
-        self::TYPE_DATETIME,
-        self::TYPE_DOUBLE,
-        self::TYPE_INTEGER,
-        self::TYPE_STRING,
-        self::TYPE_TIME,
-    ];
-
-    /**
-     * Type boolean.
+     * Type "boolean".
      *
      * @var string
      */
     const TYPE_BOOLEAN = "boolean";
 
     /**
-     * Type date.
+     * Type "date".
      *
      * @var string
      */
     const TYPE_DATE = "date";
 
     /**
-     * Type datetime.
+     * Type "datetime".
      *
      * @var string
      */
     const TYPE_DATETIME = "datetime";
 
     /**
-     * Type double.
+     * Type "double".
      *
      * @var string
      */
     const TYPE_DOUBLE = "double";
 
     /**
-     * Type integer.
+     * Type "integer".
      *
      * @var string
      */
     const TYPE_INTEGER = "integer";
 
     /**
-     * Type string.
+     * Type "string".
      *
      * @var string
      */
     const TYPE_STRING = "string";
 
     /**
-     * Type time.
+     * Type "time".
      *
      * @var string
      */
     const TYPE_TIME = "time";
-
 }

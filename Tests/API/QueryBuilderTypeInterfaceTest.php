@@ -15,7 +15,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderTypeInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractFrameworkTestCase;
 
 /**
- * jQuery QueryBuilder type interface test.
+ * QueryBuilder type interface test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
@@ -37,5 +37,4 @@ class QueryBuilderTypeInterfaceTest extends AbstractFrameworkTestCase {
         $this->assertEquals("string", QueryBuilderTypeInterface::TYPE_STRING);
         $this->assertEquals("time", QueryBuilderTypeInterface::TYPE_TIME);
     }
-
 }
