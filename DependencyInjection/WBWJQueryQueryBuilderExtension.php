@@ -22,19 +22,29 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection
  */
-class JQueryQueryBuilderExtension extends Extension {
+class WBWJQueryQueryBuilderExtension extends Extension {
 
+    /**
+     * Extension alias.
+     *
+     * @var string
+     */
+    const EXTENSION_ALIAS = "wbw_jquery_querybuilder";
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAlias() {
+        return self::EXTENSION_ALIAS;
+    }
     /**
      * {@inheritdoc}
      */
     public function load(array $configs, ContainerBuilder $container) {
 
-        // Create the file locator.
         $fileLocator = new FileLocator(__DIR__ . "/../Resources/config");
 
-        // Load the services.
         $serviceLoader = new YamlFileLoader($container, $fileLocator);
         $serviceLoader->load("services.yml");
     }
-
 }
