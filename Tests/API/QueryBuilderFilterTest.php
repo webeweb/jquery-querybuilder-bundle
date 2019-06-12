@@ -12,18 +12,18 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
 use Exception;
+use UnexpectedValueException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilter;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidation;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractFrameworkTestCase;
-use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidationInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
 /**
- * jQuery QueryBuilder filter test.
+ * QueryBuilder filter test.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
  */
-class QueryBuilderFilterTest extends AbstractFrameworkTestCase {
+class QueryBuilderFilterTest extends AbstractTestCase {
 
     /**
      * Tests the __construct() method.
@@ -32,45 +32,16 @@ class QueryBuilderFilterTest extends AbstractFrameworkTestCase {
      */
     public function testConstruct() {
 
-        // ===
-        try {
+        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
 
-            new QueryBuilderFilter("id", "exception", []);
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(IllegalArgumentException::class, $ex);
-            $this->assertEquals("The type \"exception\" is invalid", $ex->getMessage());
-        }
-
-        // ===
-        try {
-
-            new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, ["exception"]);
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(IllegalArgumentException::class, $ex);
-            $this->assertEquals("The operator \"exception\" is invalid", $ex->getMessage());
-        }
-
-        // ===
-        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
-
-        // ===
-        try {
-
-            $obj->setInput("exception");
-        } catch (Exception $ex) {
-
-            $this->assertInstanceOf(IllegalArgumentException::class, $ex);
-            $this->assertEquals("The input \"exception\" is invalid", $ex->getMessage());
-        }
-
-        // ===
         $this->assertEquals("id", $obj->getId());
+        $this->assertNull($obj->getField());
+        $this->assertNull($obj->getInput());
+        $this->assertEquals(QueryBuilderFilter::TYPE_BOOLEAN, $obj->getType());
+
         $this->assertEquals("", $obj->getLabel());
         $this->assertFalse($obj->getMultiple());
-        $this->assertEquals([QueryBuilderFilter::OPERATOR_EQUAL], $obj->getOperators());
-        $this->assertEquals(QueryBuilderFilter::TYPE_INTEGER, $obj->getType());
+        $this->assertEquals([], $obj->getOperators());
         $this->assertNull($obj->getValidation());
         $this->assertNull($obj->getValues());
     }
@@ -82,34 +53,117 @@ class QueryBuilderFilterTest extends AbstractFrameworkTestCase {
      */
     public function testJsonSerialize() {
 
-        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
+        // Set a QueryBuilder validation mock.
+        $validation = $this->getMockBuilder(QueryBuilderValidationInterface::class)->getMock();
+        $validation->expects($this->any())->method("jsonSerialize")->willReturn([]);
 
-        $res0 = ["id" => "id", "label" => "", "type" => QueryBuilderFilter::TYPE_INTEGER, "operators" => [QueryBuilderFilter::OPERATOR_EQUAL]];
-        $this->assertEquals($res0, $obj->jsonSerialize());
-
-        $obj->setField("id");
-        $res1 = ["id" => "id", "field" => "id", "label" => "", "type" => QueryBuilderFilter::TYPE_INTEGER, "operators" => [QueryBuilderFilter::OPERATOR_EQUAL]];
-        $this->assertEquals($res1, $obj->jsonSerialize());
-
-        $obj->setLabel("label");
-        $res2 = ["id" => "id", "field" => "id", "label" => "label", "type" => QueryBuilderFilter::TYPE_INTEGER, "operators" => [QueryBuilderFilter::OPERATOR_EQUAL]];
-        $this->assertEquals($res2, $obj->jsonSerialize());
-
+        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_STRING, [QueryBuilderFilter::OPERATOR_EQUAL]);
+        $obj->setField("field");
         $obj->setInput(QueryBuilderFilter::INPUT_NUMBER);
-        $res3 = ["id" => "id", "field" => "id", "label" => "label", "type" => QueryBuilderFilter::TYPE_INTEGER, "input" => QueryBuilderFilter::INPUT_NUMBER, "operators" => [QueryBuilderFilter::OPERATOR_EQUAL]];
-        $this->assertEquals($res3, $obj->jsonSerialize());
-
-        $obj->setValues([1, 2, 3]);
-        $res4 = ["id" => "id", "field" => "id", "label" => "label", "type" => QueryBuilderFilter::TYPE_INTEGER, "input" => QueryBuilderFilter::INPUT_NUMBER, "values" => [1, 2, 3], "operators" => [QueryBuilderFilter::OPERATOR_EQUAL]];
-        $this->assertEquals($res4, $obj->jsonSerialize());
-
+        $obj->setLabel("label");
         $obj->setMultiple(true);
-        $res5 = ["id" => "id", "field" => "id", "label" => "label", "type" => QueryBuilderFilter::TYPE_INTEGER, "input" => QueryBuilderFilter::INPUT_NUMBER, "values" => [1, 2, 3], "multiple" => true, "operators" => [QueryBuilderFilter::OPERATOR_EQUAL]];
-        $this->assertEquals($res5, $obj->jsonSerialize());
+        $obj->setValidation($validation);
+        $obj->setValues(["values"]);
 
-        $obj->setValidation(new QueryBuilderValidation());
-        $res6 = ["id" => "id", "field" => "id", "label" => "label", "type" => QueryBuilderFilter::TYPE_INTEGER, "input" => QueryBuilderFilter::INPUT_NUMBER, "values" => [1, 2, 3], "multiple" => true, "validation" => [], "operators" => [QueryBuilderFilter::OPERATOR_EQUAL]];
-        $this->assertEquals($res6, $obj->jsonSerialize());
+        $res = [
+            "id"         => "id",
+            "field"      => "field",
+            "label"      => "label",
+            "type"       => "string",
+            "input"      => "number",
+            "values"     => ["values"],
+            "multiple"   => true,
+            "validation" => [],
+            "operators"  => ["equal"],
+        ];
+
+        $this->assertEquals($res, $obj->jsonSerialize());
     }
 
+    /**
+     * Tests the setLabel() method.
+     *
+     * @return void
+     */
+    public function testSetLabel() {
+
+        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+
+        $obj->setLabel("label");
+        $this->assertEquals("label", $obj->getLabel());
+    }
+
+    /**
+     * Tests the setMultiple() method.
+     *
+     * @return void
+     */
+    public function testSetMultiple() {
+
+        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+
+        $obj->setMultiple(true);
+        $this->assertTrue($obj->getMultiple());
+    }
+
+    /**
+     * Tests the setOperators() method.
+     *
+     * @return void
+     */
+    public function testSetOperators() {
+
+        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+
+        $obj->setOperators([QueryBuilderFilter::OPERATOR_EQUAL]);
+        $this->assertEquals([QueryBuilderFilter::OPERATOR_EQUAL], $obj->getOperators());
+    }
+
+    /**
+     * Tests the setOperators() method.
+     *
+     * @return void
+     */
+    public function testSetOperatorsWithUnexpectedValueException() {
+
+        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+
+        try {
+
+            $obj->setOperators(["exception"]);
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertEquals("The operator \"exception\" is invalid", $ex->getMessage());
+        }
+    }
+
+    /**
+     * Tests the setValidation() method.
+     *
+     * @return void
+     */
+    public function testSetValidation() {
+
+        // Set a QueryBuilder validation mock.
+        $validation = $this->getMockBuilder(QueryBuilderValidationInterface::class)->getMock();
+
+        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+
+        $obj->setValidation($validation);
+        $this->assertSame($validation, $obj->getValidation());
+    }
+
+    /**
+     * Tests the setValues() method.
+     *
+     * @return void
+     */
+    public function testSetValues() {
+
+        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+
+        $obj->setValues(["values"]);
+        $this->assertEquals(["values"], $obj->getValues());
+    }
 }

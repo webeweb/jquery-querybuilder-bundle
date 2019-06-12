@@ -11,32 +11,30 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
-use JsonSerializable;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Data\AbstractQueryBuilderData;
-use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
+use UnexpectedValueException;
 use WBW\Library\Core\Argument\ArrayHelper;
 
 /**
- * jQuery QueryBuilder filter.
+ * QueryBuilder filter.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
  */
-class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSerializable, QueryBuilderOperatorInterface {
+class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFilterInterface, QueryBuilderOperatorInterface {
 
     /**
      * Label.
      *
      * @var string
      */
-    private $label = "";
+    private $label;
 
     /**
      * Multiple.
      *
      * @var bool
      */
-    private $multiple = false;
+    private $multiple;
 
     /**
      * Operators.
@@ -48,7 +46,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
     /**
      * Validation.
      *
-     * @var QueryBuilderValidation
+     * @var QueryBuilderValidationInterface
      */
     private $validation;
 
@@ -65,17 +63,21 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * @param string $id The id.
      * @param string $type The type.
      * @param array $operators The operators.
-     * @throws IllegalArgumentException Throws an illegal argument exception if an argument is invalid.
+     * @throws UnexpectedValueException Throws an unexpected value exception if an operator is invalid.
      */
     public function __construct($id, $type, array $operators) {
-        parent::__construct($id, $type);
+        parent::__construct();
+        $this->setId($id);
+        $this->setLabel("");
+        $this->setMultiple(false);
         $this->setOperators($operators);
+        $this->setType($type);
     }
 
     /**
      * Get the label.
      *
-     * @return Return the label.
+     * @return string Returns the label.
      */
     public function getLabel() {
         return $this->label;
@@ -102,7 +104,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
     /**
      * Get the validation.
      *
-     * @return QueryBuilderValidation Returns the validation.
+     * @return QueryBuilderValidationInterface Returns the validation.
      */
     public function getValidation() {
         return $this->validation;
@@ -123,7 +125,26 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * @return array Returns an array representing this instance.
      */
     public function jsonSerialize() {
-        return $this->toArray();
+
+        $output = [];
+
+        $output["id"] = $this->getId();
+
+        ArrayHelper::set($output, "field", $this->getField(), [null]);
+
+        $output["label"] = $this->getLabel();
+        $output["type"]  = $this->getType();
+
+        ArrayHelper::set($output, "input", $this->getInput(), [null]);
+        ArrayHelper::set($output, "values", $this->getValues(), [null]);
+        ArrayHelper::set($output, "multiple", $this->getMultiple(), [null, false]);
+
+        if (null !== $this->getValues()) {
+            $output["validation"] = $this->getValidation()->jsonSerialize();
+        }
+        $output["operators"] = $this->getOperators();
+
+        return $output;
     }
 
     /**
@@ -143,7 +164,7 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * @param bool $multiple The multiple.
      * @return QueryBuilderFilter Returns this filter.
      */
-    public function setMultiple($multiple = false) {
+    public function setMultiple($multiple) {
         $this->multiple = $multiple;
         return $this;
     }
@@ -152,12 +173,13 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * Set the operators.
      *
      * @param array $operators The operators.
-     * @return QueryBuilderFilter Returns this filter.
+     * @return QueryBuilderFilterInterface Returns this filter.
+     * @throws UnexpectedValueException Throws an unexpected value exception if an operator is invalid.
      */
-    public function setOperators(array $operators = []) {
+    public function setOperators(array $operators) {
         foreach ($operators as $current) {
-            if (false === array_key_exists($current, self::OPERATORS)) {
-                throw new IllegalArgumentException("The operator \"" . $current . "\" is invalid");
+            if (false === array_key_exists($current, QueryBuilderEnumerator::enumOperators())) {
+                throw new UnexpectedValueException("The operator \"" . $current . "\" is invalid");
             }
         }
         $this->operators = $operators;
@@ -167,10 +189,10 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
     /**
      * Set the validation.
      *
-     * @param QueryBuilderValidation $validation The validation.
-     * @return QueryBuilderFilter Returns this filter.
+     * @param QueryBuilderValidationInterface|null $validation The validation.
+     * @return QueryBuilderFilterInterface Returns this filter.
      */
-    public function setValidation(QueryBuilderValidation $validation = null) {
+    public function setValidation(QueryBuilderValidationInterface $validation = null) {
         $this->validation = $validation;
         return $this;
     }
@@ -179,41 +201,10 @@ class QueryBuilderFilter extends AbstractQueryBuilderData implements JsonSeriali
      * Set the values.
      *
      * @param array $values The values.
-     * @return QueryBuilderFilter Returns this filter.
+     * @return QueryBuilderFilterInterface Returns this filter.
      */
-    public function setValues(array $values = []) {
+    public function setValues(array $values) {
         $this->values = $values;
         return $this;
     }
-
-    /**
-     * Convert into an array representing this instance.
-     *
-     * @return array Returns an array representing this instance.
-     */
-    public function toArray() {
-
-        // Initialiaze the output.
-        $output = [];
-
-        $output["id"] = $this->getId();
-
-        ArrayHelper::set($output, "field", $this->getField(), [null]);
-
-        $output["label"] = $this->label;
-        $output["type"]  = $this->getType();
-
-        ArrayHelper::set($output, "input", $this->getInput(), [null]);
-        ArrayHelper::set($output, "values", $this->values, [null]);
-        ArrayHelper::set($output, "multiple", $this->multiple, [null, false]);
-
-        if (null !== $this->validation) {
-            $output["validation"] = $this->validation->toArray();
-        }
-        $output["operators"] = $this->operators;
-
-        // Return the output.
-        return $output;
-    }
-
 }
