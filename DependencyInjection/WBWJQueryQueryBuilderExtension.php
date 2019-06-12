@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection;
 
+use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
@@ -37,6 +38,7 @@ class WBWJQueryQueryBuilderExtension extends Extension {
     public function getAlias() {
         return self::EXTENSION_ALIAS;
     }
+
     /**
      * {@inheritdoc}
      */
@@ -46,5 +48,10 @@ class WBWJQueryQueryBuilderExtension extends Extension {
 
         $serviceLoader = new YamlFileLoader($container, $fileLocator);
         $serviceLoader->load("services.yml");
+
+        /** @var ConfigurationInterface $configuration */
+        $configuration = $this->getConfiguration($configs, $container);
+
+        $config = $this->processConfiguration($configuration, $configs);
     }
 }
