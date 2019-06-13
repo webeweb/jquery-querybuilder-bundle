@@ -1,5 +1,5 @@
 {# Resources/views/layout/javascript/jquery-querybuilder.html.twig #}
-{% set _version   = constant("WBW\\Bundle\\JQuery\\QueryBuilderBundle\\QueryBuilderVersionInterface::QUERYBUILDER_VERSION") %}
+{% set _version   = constant("WBW\\Bundle\\JQuery\\QueryBuilderBundle\\QueryBuilderInterface::QUERYBUILDER_VERSION") %}
 {% set _languages = ["ar", "az", "bg", "cs", "da", "de", "el", "en", "es", "fa-IR", "fr", "he", "it", "nl", "no", "pl", "pt-BR", "pt-PT", "ro", "ru", "sq", "tr", "ua", "zh-CN" ] %}
 {% set _language  = qbLanguage|default("") in _languages ? qbLanguage : "en" %}
 <!-- jQuery QueryBuilder -->

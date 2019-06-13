@@ -1,0 +1,10 @@
+# Tests/Fixtures/app/config/routing_test.yml
+wbw_jquery_querybuilder_javascripts:
+    path:     "/javascripts"
+    defaults: { _controller: "WBW\\Bundle\\JQuery\\QueryBuilderBundle\\Tests\\Fixtures\\Controller\\TestLayoutController::javascriptsAction" }
+    methods:  ["GET"]
+
+wbw_jquery_querybuilder_stylesheets:
+    path:     "/stylesheets"
+    defaults: { _controller: "WBW\\Bundle\\JQuery\\QueryBuilderBundle\\Tests\\Fixtures\\Controller\\TestLayoutController::stylesheetsAction" }
+    methods:  ["GET"]
