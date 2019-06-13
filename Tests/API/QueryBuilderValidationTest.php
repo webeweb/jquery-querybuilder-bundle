@@ -49,7 +49,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
 
         $obj = new QueryBuilderValidation();
 
-        $this->assertIsArray($obj->jsonSerialize());
+        $this->assertTrue(is_array($obj->jsonSerialize()));
     }
 
     /**

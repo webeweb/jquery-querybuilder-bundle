@@ -98,7 +98,7 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
         $obj = new QueryBuilderFilterSet();
         $obj->addFilter($filter);
 
-        $this->assertIsArray($obj->jsonSerialize());
+        $this->assertTrue(is_array($obj->jsonSerialize()));
     }
 
     /**

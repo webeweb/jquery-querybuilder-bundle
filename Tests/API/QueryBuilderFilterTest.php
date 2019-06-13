@@ -55,7 +55,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
 
         $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_STRING, [QueryBuilderFilter::OPERATOR_EQUAL]);
 
-        $this->assertIsArray($obj->jsonSerialize());
+        $this->assertTrue(is_array($obj->jsonSerialize()));
     }
 
     /**
