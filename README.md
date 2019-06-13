@@ -69,6 +69,7 @@ Once the bundle is added then do:
 
 ```bash
 $ php bin/console assets:install
+$ php bin/console wbw:core:unzip-assets
 ```
 
 ---
