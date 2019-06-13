@@ -12,7 +12,6 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Rule;
 
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderConditionInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSet;
 use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
 
 /**
@@ -22,84 +21,6 @@ use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Rule
  */
 class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilderRuleInterface {
-
-    /**
-     * Condition.
-     *
-     * @var string
-     */
-    private $condition;
-
-    /**
-     * Filter set.
-     *
-     * @var QueryBuilderFilterSet
-     */
-    private $filterSet;
-
-    /**
-     * Rules.
-     *
-     * @var QueryBuilderRuleInterface[]
-     */
-    private $rules = [];
-
-    /**
-     * Valid.
-     *
-     * @var bool
-     */
-    private $valid = false;
-
-    /**
-     * Constructor.
-     *
-     * @param array $rules The rules.
-     * @param QueryBuilderFilterSet The query builder filter set.
-     * @throws IllegalArgumentException Throws an illegal argument exception if an argument is invalid.
-     */
-    public function __construct(array $rules = [], QueryBuilderFilterSet $filterSet = null) {
-        $this->filterSet = $filterSet;
-        $this->parse($rules);
-    }
-
-    /**
-     * Add a rule.
-     *
-     * @param QueryBuilderRuleInterface $rule The rule.
-     * @return QueryBuilderRuleSet Returns this rule set.
-     */
-    protected function addRule(QueryBuilderRuleInterface $rule) {
-        $this->rules[] = $rule;
-        return $this;
-    }
-
-    /**
-     * Get the condition.
-     *
-     * @return string Returns the condition.
-     */
-    public function getCondition() {
-        return $this->condition;
-    }
-
-    /**
-     * Get the rules.
-     *
-     * @return QueryBuilderRuleInterface[] Returns the rules.
-     */
-    public function getRules() {
-        return $this->rules;
-    }
-
-    /**
-     * Get the valid.
-     *
-     * @return bool Returns the valid.
-     */
-    public function getValid() {
-        return $this->valid;
-    }
 
     /**
      * Parse.
@@ -141,53 +62,4 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
             $this->setValid($rules["valid"]);
         }
     }
-
-    /**
-     * Set the condition.
-     *
-     * @param string $condition The condition.
-     * @return QueryBuilderRuleSet Returns this rule set.
-     * @throws IllegalArgumentException Throws an illegal argument exception if the condition is invalid.
-     */
-    protected function setCondition($condition) {
-        if (null !== $condition && false === in_array($condition, self::CONDITIONS)) {
-            throw new IllegalArgumentException("The condition \"" . $condition . "\" is invalid");
-        }
-        $this->condition = $condition;
-        return $this;
-    }
-
-    /**
-     * Set the valid.
-     *
-     * @param bool $valid The valid.
-     * @return QueryBuilderRuleSet Returns this rule set.
-     */
-    protected function setValid($valid) {
-        $this->valid = $valid;
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function toSQL() {
-
-        // Check the rules.
-        if (0 === count($this->rules)) {
-            return "";
-        }
-
-        // Initialize the SQL.
-        $sql = [];
-
-        // Handle each rule.
-        foreach ($this->rules as $rule) {
-            $sql[] = $rule->toSQL();
-        }
-
-        // Return the SQL.
-        return "(" . implode(" " . $this->condition . " ", $sql) . ")";
-    }
-
 }

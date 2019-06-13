@@ -15,8 +15,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderConditionInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Data\AbstractQueryBuilderData;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorInterface;
-use WBW\Library\Core\Exception\Argument\IllegalArgumentException;
-use WBW\Library\Core\Argument\IntegerHelper;
 
 /**
  * jQuery QueryBuilder rule.
@@ -25,162 +23,6 @@ use WBW\Library\Core\Argument\IntegerHelper;
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Rule
  */
 class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBuilderConditionInterface, QueryBuilderOperatorInterface, QueryBuilderRuleInterface {
-
-    /**
-     * Decorator.
-     *
-     * @var QueryBuilderDecoratorInterface
-     */
-    private $decorator;
-
-    /**
-     * Operator.
-     *
-     * @var string
-     */
-    private $operator;
-
-    /**
-     * Value.
-     *
-     * @var mixed
-     */
-    private $value;
-
-    /**
-     * Constructor.
-     *
-     * @param array $rule The rule.
-     * @param QueryBuilderDecoratorInterface The QueryBuilder decorator.
-     * @throws IllegalArgumentException Throws an illegal argument exception if an argument is invalid.
-     */
-    public function __construct(array $rule = [], QueryBuilderDecoratorInterface $decorator = null) {
-        parent::__construct();
-        $this->decorator = $decorator;
-        $this->parse($rule);
-    }
-
-    /**
-     * Get the QueryBuilder decorator.
-     *
-     * @return string Returns the QueryBuilder decorator.
-     */
-    public function getDecorator() {
-        return $this->decorator;
-    }
-
-    /**
-     * Get the operator.
-     *
-     * @return string Returns the operator.
-     */
-    public function getOperator() {
-        return $this->operator;
-    }
-
-    /**
-     * Get the value.
-     *
-     * @return mixed Returns the value.
-     */
-    public function getValue() {
-        return $this->value;
-    }
-
-    /**
-     * Parse.
-     *
-     * @param array $rule The rule.
-     * @throws IllegalArgumentException Throws an illegal argument exception if an argument is invalid.
-     */
-    private function parse(array $rule = []) {
-        if (true === array_key_exists("id", $rule)) {
-            $this->setId($rule["id"]);
-        }
-        if (true === array_key_exists("field", $rule)) {
-            $this->setField($rule["field"]);
-        }
-        if (true === array_key_exists("input", $rule)) {
-            $this->setInput($rule["input"]);
-        }
-        if (true === array_key_exists("operator", $rule)) {
-            $this->setOperator($rule["operator"]);
-        }
-        if (true === array_key_exists("type", $rule)) {
-            $this->setType($rule["type"]);
-        }
-        if (true === array_key_exists("value", $rule)) {
-            $this->setValue($rule["value"]);
-        }
-    }
-
-    /**
-     * Quote an array of values.
-     *
-     * @param array $values The values.
-     * @param bool $wrap Wrap ?
-     * @return array Returns the quoted values.
-     */
-    private function quoteArray(array $values, $wrap = false) {
-        $output = [];
-        foreach ($values as $current) {
-            $output[] = $this->quoteMixed($current, $wrap);
-        }
-        return $output;
-    }
-
-    /**
-     * Quote a mixed value.
-     *
-     * @param mixed $value The value.
-     * @param bool $wrap Wrap ?
-     * @return string Returns the quoted value.
-     */
-    private function quoteMixed($value, $wrap = false) {
-        $output = null;
-        switch ($this->getType()) {
-            case self::TYPE_BOOLEAN:
-                $output = IntegerHelper::parseBoolean($value);
-                break;
-            case self::TYPE_DATE:
-            case self::TYPE_DATETIME:
-            case self::TYPE_STRING:
-            case self::TYPE_TIME:
-                $output = true === $wrap ? "'" . addslashes($value) . "'" : addslashes($value);
-                break;
-            case self::TYPE_DOUBLE:
-            case self::TYPE_INTEGER:
-                $output = $value;
-                break;
-        }
-        return $output;
-    }
-
-    /**
-     * Set the operator.
-     *
-     * @param string $operator The operator.
-     * @return QueryBuilderRule Returns this QueryBuilder rule.
-     * @throws IllegalArgumentException Thwrows an illegal argument exception if the operator is invalid.
-     */
-    public function setOperator($operator) {
-        if (false === array_key_exists($operator, self::OPERATORS)) {
-            throw new IllegalArgumentException("The operator \"" . $operator . "\" is invalid");
-        }
-        $this->operator = $operator;
-        return $this;
-    }
-
-    /**
-     * Set the value.
-     *
-     * @param mixed $value The value.
-     * @return QueryBuilderRule Returns this QueryBuilder rule.
-     */
-    public function setValue($value) {
-        $this->value = $value;
-        return $this;
-    }
 
     /**
      * {@inheritdoc}
@@ -245,5 +87,4 @@ class QueryBuilderRule extends AbstractQueryBuilderData implements QueryBuilderC
         // Return the SQL.
         return implode(" ", $sql);
     }
-
 }
