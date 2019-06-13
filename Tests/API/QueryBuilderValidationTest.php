@@ -48,24 +48,8 @@ class QueryBuilderValidationTest extends AbstractTestCase {
     public function testJsonSerialize() {
 
         $obj = new QueryBuilderValidation();
-        $obj->setAllowEmptyValue(true);
-        $obj->setCallback("callback");
-        $obj->setFormat("format");
-        $obj->setMax("max");
-        $obj->setMessages([]);
-        $obj->setMin("min");
-        $obj->setStep(0);
 
-        $res = [
-            "format"            => "format",
-            "min"               => "min",
-            "max"               => "max",
-            "step"              => 0,
-            "messages"          => [],
-            "allow_empty_value" => true,
-            "callback"          => "callback",
-        ];
-        $this->assertEquals($res, $obj->jsonSerialize());
+        $this->assertIsArray($obj->jsonSerialize());
     }
 
     /**

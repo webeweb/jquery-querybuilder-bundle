@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
-use WBW\Library\Core\Argument\ArrayHelper;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer\QueryBuilderNormalizer;
 
 /**
  * QueryBuilder validation.
@@ -130,18 +130,7 @@ class QueryBuilderValidation implements QueryBuilderValidationInterface {
      * {@inheritDoc}
      */
     public function jsonSerialize() {
-
-        $output = [];
-
-        ArrayHelper::set($output, "format", $this->format, [null]);
-        ArrayHelper::set($output, "min", $this->min, [null]);
-        ArrayHelper::set($output, "max", $this->max, [null]);
-        ArrayHelper::set($output, "step", $this->step, [null]);
-        ArrayHelper::set($output, "messages", $this->messages, [null]);
-        ArrayHelper::set($output, "allow_empty_value", $this->allowEmptyValue, [null]);
-        ArrayHelper::set($output, "callback", $this->callback, [null]);
-
-        return $output;
+        return QueryBuilderNormalizer::normalizeQueryBuilderValidation($this);
     }
 
     /**
