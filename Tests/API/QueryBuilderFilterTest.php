@@ -53,31 +53,9 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      */
     public function testJsonSerialize() {
 
-        // Set a QueryBuilder validation mock.
-        $validation = $this->getMockBuilder(QueryBuilderValidationInterface::class)->getMock();
-        $validation->expects($this->any())->method("jsonSerialize")->willReturn([]);
-
         $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_STRING, [QueryBuilderFilter::OPERATOR_EQUAL]);
-        $obj->setField("field");
-        $obj->setInput(QueryBuilderFilter::INPUT_NUMBER);
-        $obj->setLabel("label");
-        $obj->setMultiple(true);
-        $obj->setValidation($validation);
-        $obj->setValues(["values"]);
 
-        $res = [
-            "id"         => "id",
-            "field"      => "field",
-            "label"      => "label",
-            "type"       => "string",
-            "input"      => "number",
-            "values"     => ["values"],
-            "multiple"   => true,
-            "validation" => [],
-            "operators"  => ["equal"],
-        ];
-
-        $this->assertEquals($res, $obj->jsonSerialize());
+        $this->assertIsArray($obj->jsonSerialize());
     }
 
     /**

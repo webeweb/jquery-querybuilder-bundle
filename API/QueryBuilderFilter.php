@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
 use UnexpectedValueException;
-use WBW\Library\Core\Argument\ArrayHelper;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer\QueryBuilderNormalizer;
 
 /**
  * QueryBuilder filter.
@@ -63,7 +63,7 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      * @param string $id The id.
      * @param string $type The type.
      * @param array $operators The operators.
-     * @throws UnexpectedValueException Throws an unexpected value exception if an operator is invalid.
+     * @throws UnexpectedValueException Throws an unexpected value exception if an argument is invalid.
      */
     public function __construct($id, $type, array $operators) {
         parent::__construct();
@@ -113,33 +113,14 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      * {@inheritDoc}
      */
     public function jsonSerialize() {
-
-        $output = [];
-
-        $output["id"] = $this->getId();
-
-        ArrayHelper::set($output, "field", $this->getField(), [null]);
-
-        $output["label"] = $this->getLabel();
-        $output["type"]  = $this->getType();
-
-        ArrayHelper::set($output, "input", $this->getInput(), [null]);
-        ArrayHelper::set($output, "values", $this->getValues(), [null]);
-        ArrayHelper::set($output, "multiple", $this->getMultiple(), [null, false]);
-
-        if (null !== $this->getValues()) {
-            $output["validation"] = $this->getValidation()->jsonSerialize();
-        }
-        $output["operators"] = $this->getOperators();
-
-        return $output;
+        return QueryBuilderNormalizer::normalizeQueryBuilderFilter($this);
     }
 
     /**
      * Set the label.
      *
      * @param string $label The label.
-     * @return QueryBuilderFilter Returns this filter.
+     * @return QueryBuilderFilterInterface Returns this filter.
      */
     public function setLabel($label) {
         $this->label = $label;
@@ -150,7 +131,7 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      * Set the multiple.
      *
      * @param bool $multiple The multiple.
-     * @return QueryBuilderFilter Returns this filter.
+     * @return QueryBuilderFilterInterface Returns this filter.
      */
     public function setMultiple($multiple) {
         $this->multiple = $multiple;
@@ -166,8 +147,8 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      */
     public function setOperators(array $operators) {
         foreach ($operators as $current) {
-            if (false === array_key_exists($current, QueryBuilderEnumerator::enumOperators())) {
-                throw new UnexpectedValueException("The operator \"" . $current . "\" is invalid");
+            if (null !== $current && false === array_key_exists($current, QueryBuilderEnumerator::enumOperators())) {
+                throw new UnexpectedValueException(sprintf("The operator \"%s\" is invalid", $current));
             }
         }
         $this->operators = $operators;
