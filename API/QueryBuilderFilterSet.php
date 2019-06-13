@@ -11,45 +11,42 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
-use JsonSerializable;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer\QueryBuilderNormalizer;
 
 /**
- * jQuery QueryBuilder filter set.
+ * QueryBuilder filter set.
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
  */
-class QueryBuilderFilterSet implements JsonSerializable {
+class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
 
     /**
      * Decorators.
      *
      * @var QueryBuilderDecoratorInterface[]
      */
-    private $decorators = [];
+    private $decorators;
 
     /**
      * Filters.
      *
-     * @var QueryBuilderFilter[]
+     * @var QueryBuilderFilterInterface[]
      */
-    private $filters = [];
+    private $filters;
 
     /**
      * Constructor.
      */
-    public function __construcct() {
-        // NOTHING TO DO.
+    public function __construct() {
+        $this->setDecorators([]);
+        $this->setFilters([]);
     }
 
     /**
-     * Add a filter.
-     *
-     * @param QueryBuilderFilter $filter The filter.
-     * @return QueryBuilderFilterSet Returns this QueryBuilder filter set.
+     * {@inheritDoc}
      */
-    public function addFilter(QueryBuilderFilter $filter) {
+    public function addFilter(QueryBuilderFilterInterface $filter) {
         if (true === ($filter instanceof QueryBuilderDecoratorInterface)) {
             $this->decorators[$filter->getId()] = $filter;
         }
@@ -71,9 +68,14 @@ class QueryBuilderFilterSet implements JsonSerializable {
     }
 
     /**
-     * Get the filters.
-     *
-     * @return QueryBuilderFilter[] Returns the filters.
+     * {@inheritDoc}
+     */
+    public function getDecorators() {
+        return $this->decorators;
+    }
+
+    /**
+     * {@inheritDoc}
      */
     public function getFilters() {
         return $this->filters;
@@ -85,16 +87,13 @@ class QueryBuilderFilterSet implements JsonSerializable {
      * @return array Returns an array representing this instance.
      */
     public function jsonSerialize() {
-        return $this->toArray();
+        return QueryBuilderNormalizer::normalizeQueryBuilderFilterSet($this);
     }
 
     /**
-     * Remove a filter.
-     *
-     * @param QueryBuilderFilter $filter The filter.
-     * @return QueryBuilderFilterSet Returns this QueryBuilder filter set.
+     * {@inheritDoc}
      */
-    public function removeFilter(QueryBuilderFilter $filter) {
+    public function removeFilter(QueryBuilderFilterInterface $filter) {
         if (true === array_key_exists($filter->getId(), $this->filters)) {
             unset($this->filters[$filter->getId()]);
         }
@@ -102,22 +101,24 @@ class QueryBuilderFilterSet implements JsonSerializable {
     }
 
     /**
-     * Convert into an array representing this instance.
+     * Set the decorators.
      *
-     * @return array Returns an array representing this instance.
+     * @param QueryBuilderDecoratorInterface[] $decorators The decorators.
+     * @return QueryBuilderFilterSetInterface Returns this filter set.
      */
-    public function toArray() {
-
-        // Initialize the output.
-        $output = [];
-
-        // Handle each filter.
-        foreach ($this->filters as $current) {
-            $output[] = $current->toArray();
-        }
-
-        // Return the output.
-        return $output;
+    protected function setDecorators(array $decorators) {
+        $this->decorators = $decorators;
+        return $this;
     }
 
+    /**
+     * Set the filters.
+     *
+     * @param QueryBuilderFilterInterface[] $filters The filters.
+     * @return QueryBuilderFilterSetInterface Returns this filter set.
+     */
+    protected function setFilters(array $filters) {
+        $this->filters = $filters;
+        return $this;
+    }
 }
