@@ -13,7 +13,6 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
 use Exception;
 use UnexpectedValueException;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSetInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleSet;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
@@ -70,20 +69,5 @@ class QueryBuilderRuleSetTest extends AbstractTestCase {
             $this->assertInstanceOf(UnexpectedValueException::class, $ex);
             $this->assertEquals("The condition \"condition\" is invalid", $ex->getMessage());
         }
-    }
-
-    /**
-     * Tests the setFilterSet() method.
-     *
-     * @return void
-     */
-    public function testSetFilterSet() {
-
-        // Set a Filter set mock.
-        $filterSet = $this->getMockBuilder(QueryBuilderFilterSetInterface::class)->getMock();
-
-        $obj = new QueryBuilderRuleSet();
-
-        $this->assertSame($filterSet, $obj->getFilterSet());
     }
 }
