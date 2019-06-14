@@ -23,7 +23,8 @@ interface QueryBuilderDecoratorInterface {
      * Convert the rule into a SQL string representation.
      *
      * @param QueryBuilderRuleInterface $rule The rule.
+     * @param bool $wrap Wrap ?
      * @return string Returns a SQL string representing the rule.
      */
-    public function toSQL(QueryBuilderRuleInterface $rule);
+    public function toSQL(QueryBuilderRuleInterface $rule, $wrap = false);
 }
