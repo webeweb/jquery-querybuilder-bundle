@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
 use Exception;
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilter;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidationInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
@@ -102,7 +102,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOperatorsWithUnexpectedValueException() {
+    public function testSetOperatorsWithInvalidArgumentException() {
 
         $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
 
@@ -111,7 +111,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
             $obj->setOperators(["exception"]);
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The operator \"exception\" is invalid", $ex->getMessage());
         }
     }

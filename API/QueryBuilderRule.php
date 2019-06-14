@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
-use UnexpectedValueException;
+use InvalidArgumentException;
 
 /**
  * QueryBuilder rule.
@@ -75,11 +75,11 @@ class QueryBuilderRule extends AbstractQueryBuilder implements QueryBuilderOpera
      *
      * @param string $operator The operator.
      * @return QueryBuilderRuleInterface Returns this rule.
-     * @throws UnexpectedValueException Throws an unexpected value exception if the operator is invalid.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the operator is invalid.
      */
     public function setOperator($operator) {
         if (null !== $operator && false === array_key_exists($operator, QueryBuilderEnumerator::enumOperators())) {
-            throw new UnexpectedValueException(sprintf("The operator \"%s\" is invalid", $operator));
+            throw new InvalidArgumentException(sprintf("The operator \"%s\" is invalid", $operator));
         }
         $this->operator = $operator;
         return $this;

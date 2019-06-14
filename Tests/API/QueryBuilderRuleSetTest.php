@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
 use Exception;
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleSet;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
@@ -57,7 +57,7 @@ class QueryBuilderRuleSetTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetConditionWithUnexpectedValueException() {
+    public function testSetConditionWithInvalidArgumentException() {
 
         $obj = new QueryBuilderRuleSet();
 
@@ -66,7 +66,7 @@ class QueryBuilderRuleSetTest extends AbstractTestCase {
             $obj->setCondition("condition");
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The condition \"condition\" is invalid", $ex->getMessage());
         }
     }

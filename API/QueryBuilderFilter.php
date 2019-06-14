@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer\QueryBuilderNormalizer;
 
 /**
@@ -63,7 +63,7 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      * @param string $id The id.
      * @param string $type The type.
      * @param array $operators The operators.
-     * @throws UnexpectedValueException Throws an unexpected value exception if an argument is invalid.
+     * @throws InvalidArgumentException Throws an invalid argument exception if an argument is invalid.
      */
     public function __construct($id, $type, array $operators) {
         parent::__construct();
@@ -143,12 +143,13 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      *
      * @param array $operators The operators.
      * @return QueryBuilderFilterInterface Returns this filter.
-     * @throws UnexpectedValueException Throws an unexpected value exception if an operator is invalid.
+     * @throws InvalidArgumentException Throws an invalid argument exception if an operator is invalid.
      */
     public function setOperators(array $operators) {
+        $enumOperators = QueryBuilderEnumerator::enumOperators();
         foreach ($operators as $current) {
-            if (null !== $current && false === array_key_exists($current, QueryBuilderEnumerator::enumOperators())) {
-                throw new UnexpectedValueException(sprintf("The operator \"%s\" is invalid", $current));
+            if (null !== $current && false === array_key_exists($current, $enumOperators)) {
+                throw new InvalidArgumentException(sprintf("The operator \"%s\" is invalid", $current));
             }
         }
         $this->operators = $operators;

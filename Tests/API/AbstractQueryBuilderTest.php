@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
 use Exception;
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderInputInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderTypeInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
@@ -86,7 +86,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetInputWithUnexpectedValueException() {
+    public function testSetInputWithInvalidArgumentException() {
 
         $obj = new TestQueryBuilder();
 
@@ -95,7 +95,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
             $obj->setInput("input");
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The input \"input\" is invalid", $ex->getMessage());
         }
     }
@@ -118,7 +118,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetTypeWithUnexpectedValueException() {
+    public function testSetTypeWithInvalidArgumentException() {
 
         $obj = new TestQueryBuilder();
 
@@ -127,7 +127,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
             $obj->setType("type");
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The type \"type\" is invalid", $ex->getMessage());
         }
     }

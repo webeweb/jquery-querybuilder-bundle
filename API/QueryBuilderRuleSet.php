@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
-use UnexpectedValueException;
+use InvalidArgumentException;
 
 /**
  * QueryBuilder rule set.
@@ -120,11 +120,11 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
      *
      * @param string $condition The condition.
      * @return QueryBuilderRuleSetInterface Returns this rule set.
-     * @throws UnexpectedValueException Throws an unexpected value exception if the condition is invalid.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the condition is invalid.
      */
     public function setCondition($condition) {
         if (null !== $condition && false === in_array($condition, QueryBuilderEnumerator::enumConditions())) {
-            throw new UnexpectedValueException(sprintf("The condition \"%s\" is invalid", $condition));
+            throw new InvalidArgumentException(sprintf("The condition \"%s\" is invalid", $condition));
         }
         $this->condition = $condition;
         return $this;

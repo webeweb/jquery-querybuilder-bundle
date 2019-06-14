@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
 use Exception;
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
@@ -60,7 +60,7 @@ class QueryBuilderRuleTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOperatorWithUnexpectedValueException() {
+    public function testSetOperatorWithInvalidArgumentException() {
 
         $obj = new QueryBuilderRule();
 
@@ -69,7 +69,7 @@ class QueryBuilderRuleTest extends AbstractTestCase {
             $obj->setOperator("operator");
         } catch (Exception $ex) {
 
-            $this->assertInstanceOf(UnexpectedValueException::class, $ex);
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The operator \"operator\" is invalid", $ex->getMessage());
         }
     }
