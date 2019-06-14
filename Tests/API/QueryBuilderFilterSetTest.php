@@ -65,24 +65,7 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
 
         $obj = new QueryBuilderFilterSet();
 
-        $this->assertEquals([], $obj->getDecorators());
         $this->assertEquals([], $obj->getFilters());
-    }
-
-    /**
-     * Tests the getDecorator() method.
-     *
-     * @return void
-     */
-    public function testGetDecorator() {
-
-        // Set a QueryBuilder filter mock.
-        $filter = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
-
-        $obj = new QueryBuilderFilterSet();
-
-        $this->assertSame($obj, $obj->addFilter($filter));
-        $this->assertNull($obj->getDecorator("id"));
     }
 
     /**

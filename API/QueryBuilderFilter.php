@@ -23,6 +23,13 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer\QueryBuilderNormalizer;
 class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFilterInterface, QueryBuilderOperatorInterface {
 
     /**
+     * Decorator.
+     *
+     * @var QueryBuilderDecoratorInterface
+     */
+    private $decorator;
+
+    /**
      * Label.
      *
      * @var string
@@ -75,6 +82,15 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
     }
 
     /**
+     * Get the decorator.
+     *
+     * @return QueryBuilderDecoratorInterface Returns the decorator.
+     */
+    public function getDecorator() {
+        return $this->decorator;
+    }
+
+    /**
      * {@inheritDoc}
      */
     public function getLabel() {
@@ -114,6 +130,17 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      */
     public function jsonSerialize() {
         return QueryBuilderNormalizer::normalizeQueryBuilderFilter($this);
+    }
+
+    /**
+     * Set the decorator.
+     *
+     * @param QueryBuilderDecoratorInterface|null $decorator The decorator.
+     * @return QueryBuilderFilterInterface Returns this filter.
+     */
+    public function setDecorator(QueryBuilderDecoratorInterface $decorator = null) {
+        $this->decorator = $decorator;
+        return $this;
     }
 
     /**

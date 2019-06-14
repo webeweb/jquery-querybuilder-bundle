@@ -22,6 +22,13 @@ use JsonSerializable;
 interface QueryBuilderFilterInterface extends JsonSerializable {
 
     /**
+     * Get the decorator.
+     *
+     * @return QueryBuilderDecoratorInterface Returns the decorator.
+     */
+    public function getDecorator();
+
+    /**
      * Get the field.
      *
      * @return string Returns the field.

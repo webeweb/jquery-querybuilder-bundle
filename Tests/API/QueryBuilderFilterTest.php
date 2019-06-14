@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
 use Exception;
 use InvalidArgumentException;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderDecoratorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilter;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidationInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
@@ -39,6 +40,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
         $this->assertNull($obj->getInput());
         $this->assertEquals(QueryBuilderFilter::TYPE_BOOLEAN, $obj->getType());
 
+        $this->assertNull($obj->getDecorator());
         $this->assertEquals("", $obj->getLabel());
         $this->assertFalse($obj->getMultiple());
         $this->assertEquals([], $obj->getOperators());
@@ -56,6 +58,22 @@ class QueryBuilderFilterTest extends AbstractTestCase {
         $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_STRING, [QueryBuilderFilter::OPERATOR_EQUAL]);
 
         $this->assertTrue(is_array($obj->jsonSerialize()));
+    }
+
+    /**
+     * Tests the setDecorator() method.
+     *
+     * @return void
+     */
+    public function testSetDecorator() {
+
+        // Set a QueryBuilder decorator mock.
+        $decorator = $this->getMockBuilder(QueryBuilderDecoratorInterface::class)->getMock();
+
+        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+
+        $obj->setDecorator($decorator);
+        $this->assertSame($decorator, $obj->getDecorator());
     }
 
     /**

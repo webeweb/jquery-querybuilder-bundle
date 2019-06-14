@@ -22,13 +22,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer\QueryBuilderNormalizer;
 class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
 
     /**
-     * Decorators.
-     *
-     * @var QueryBuilderDecoratorInterface[]
-     */
-    private $decorators;
-
-    /**
      * Filters.
      *
      * @var QueryBuilderFilterInterface[]
@@ -39,7 +32,6 @@ class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
      * Constructor.
      */
     public function __construct() {
-        $this->setDecorators([]);
         $this->setFilters([]);
     }
 
@@ -47,31 +39,8 @@ class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
      * {@inheritDoc}
      */
     public function addFilter(QueryBuilderFilterInterface $filter) {
-        if (true === ($filter instanceof QueryBuilderDecoratorInterface)) {
-            $this->decorators[$filter->getId()] = $filter;
-        }
         $this->filters[$filter->getId()] = $filter;
         return $this;
-    }
-
-    /**
-     * Get a decorator.
-     *
-     * @param string $id The id.
-     * @return QueryBuilderDecoratorInterface Returns the decorator in case of success, null otherwise.
-     */
-    public function getDecorator($id) {
-        if (false === array_key_exists($id, $this->decorators)) {
-            return null;
-        }
-        return $this->decorators[$id];
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getDecorators() {
-        return $this->decorators;
     }
 
     /**
@@ -97,17 +66,6 @@ class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
         if (true === array_key_exists($filter->getId(), $this->filters)) {
             unset($this->filters[$filter->getId()]);
         }
-        return $this;
-    }
-
-    /**
-     * Set the decorators.
-     *
-     * @param QueryBuilderDecoratorInterface[] $decorators The decorators.
-     * @return QueryBuilderFilterSetInterface Returns this filter set.
-     */
-    protected function setDecorators(array $decorators) {
-        $this->decorators = $decorators;
         return $this;
     }
 
