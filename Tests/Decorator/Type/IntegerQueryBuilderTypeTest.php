@@ -49,6 +49,6 @@ class IntegerQueryBuilderTypeTest extends AbstractTestCase {
 
         $obj = new IntegerQueryBuilderType();
 
-        $this->assertEquals(1, $obj->toSQL($rule));
+        $this->assertEquals("1", $obj->toSQL($rule));
     }
 }

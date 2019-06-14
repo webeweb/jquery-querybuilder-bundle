@@ -32,6 +32,6 @@ class IntegerQueryBuilderType extends AbstractQueryBuilderType {
      * {@inheritDoc}
      */
     public function toSQL(QueryBuilderRuleInterface $rule, $wrap = false) {
-        return $rule->getValue();
+        return "" . $rule->getValue();
     }
 }
