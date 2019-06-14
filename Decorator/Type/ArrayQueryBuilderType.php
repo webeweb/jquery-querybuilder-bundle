@@ -35,15 +35,12 @@ class ArrayQueryBuilderType extends AbstractQueryBuilderType {
      */
     public function toSQL(QueryBuilderRuleInterface $rule, $wrap = false) {
 
+        /** @var string[] $sql */
         $sql = [];
 
         foreach ($rule->getValue() as $current) {
 
             $qbd = QueryBuilderDecoratorFactory::newQueryBuilderType($rule->getType());
-            if (null === $qbd) {
-                continue;
-            }
-
             $qbr = (new QueryBuilderRule())->setType($rule->getType())->setValue($current);
 
             $sql[] = $qbd->toSQL($qbr, $wrap);
