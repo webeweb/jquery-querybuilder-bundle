@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer;
 
-use UnexpectedValueException;
+use InvalidArgumentException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSetInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRule;
@@ -34,7 +34,7 @@ class QueryBuilderNormalizer {
      *
      * @param array $rule The rule.
      * @return QueryBuilderRuleInterface Returns the de-normalized rule.
-     * @throws UnexpectedValueException Throws an unexpected value exception if an argument is invalid.
+     * @throws InvalidArgumentException Throws an invalid argument exception if an argument is invalid.
      */
     public static function denormalizeQueryBuilderRule(array $rule) {
 
@@ -54,6 +54,7 @@ class QueryBuilderNormalizer {
      *
      * @param array $rules The rules.
      * @return QueryBuilderRuleSetInterface Returns the rule set.
+     * @throws InvalidArgumentException Throws an invalid argument exception if an argument is invalid.
      */
     public static function denormalizeQueryBuilderRuleSet(array $rules) {
 
