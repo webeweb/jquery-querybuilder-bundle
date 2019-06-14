@@ -34,7 +34,6 @@ class QueryBuilderRuleSetTest extends AbstractTestCase {
         $obj = new QueryBuilderRuleSet();
 
         $this->assertNull($obj->getCondition());
-        $this->assertNull($obj->getFilterSet());
         $this->assertEquals([], $obj->getRules());
         $this->assertFalse($obj->getValid());
     }

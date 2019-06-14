@@ -29,13 +29,6 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
     private $condition;
 
     /**
-     * Filter set.
-     *
-     * @var QueryBuilderFilterSetInterface
-     */
-    private $filterSet;
-
-    /**
      * Rules.
      *
      * @var array
@@ -89,15 +82,6 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
     }
 
     /**
-     * Get the filter set.
-     *
-     * @return QueryBuilderFilterSetInterface Returns the filter set.
-     */
-    public function getFilterSet() {
-        return $this->filterSet;
-    }
-
-    /**
      * Get the rules.
      *
      * @return array Returns the rules.
@@ -127,17 +111,6 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
             throw new InvalidArgumentException(sprintf("The condition \"%s\" is invalid", $condition));
         }
         $this->condition = $condition;
-        return $this;
-    }
-
-    /**
-     * Set the filter set.
-     *
-     * @param QueryBuilderFilterSetInterface $filterSet The filter set.
-     * @return QueryBuilderRuleSet Returns this rule set.
-     */
-    protected function setFilterSet(QueryBuilderFilterSetInterface $filterSet) {
-        $this->filterSet = $filterSet;
         return $this;
     }
 
