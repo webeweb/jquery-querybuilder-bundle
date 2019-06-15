@@ -30,6 +30,22 @@ interface QueryBuilderFilterSetInterface extends JsonSerializable {
     public function addFilter(QueryBuilderFilterInterface $filter);
 
     /**
+     * Get a decorator.
+     *
+     * @param string $id The id.
+     * @return QueryBuilderDecoratorInterface|null Returns the decorator in case of success, null otherwise.
+     */
+    public function getDecorator($id);
+
+    /**
+     * Get a filter.
+     *
+     * @param string $id The id.
+     * @return QueryBuilderFilterInterface|null Returns the filter in case of success, null otherwise.
+     */
+    public function getFilter($id);
+
+    /**
      * Get the filters.
      *
      * @return QueryBuilderFilterInterface[] Returns the filters.

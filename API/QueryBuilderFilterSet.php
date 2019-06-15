@@ -46,6 +46,27 @@ class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
     /**
      * {@inheritDoc}
      */
+    public function getDecorator($id) {
+        $filter = $this->getFilter($id);
+        if (null === $filter) {
+            return $filter;
+        }
+        return $filter->getDecorator();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFilter($id) {
+        if (false === array_key_exists($id, $this->filters)) {
+            return null;
+        }
+        return $this->filters[$id];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getFilters() {
         return $this->filters;
     }

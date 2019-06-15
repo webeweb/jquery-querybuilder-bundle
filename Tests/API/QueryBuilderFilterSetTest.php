@@ -36,6 +36,8 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
         $obj = new QueryBuilderFilterSet();
 
         $this->assertSame($obj, $obj->addFilter($filter));
+        $this->assertNull($obj->getDecorator("id"));
+        $this->assertSame($filter, $obj->getFilter("id"));
         $this->assertCount(1, $obj->getFilters());
     }
 
@@ -65,6 +67,8 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
 
         $obj = new QueryBuilderFilterSet();
 
+        $this->assertNull($obj->getDecorator("id"));
+        $this->assertNull($obj->getFilter("id"));
         $this->assertEquals([], $obj->getFilters());
     }
 
