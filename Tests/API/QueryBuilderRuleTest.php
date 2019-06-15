@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
 
 use Exception;
 use InvalidArgumentException;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderDecoratorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
@@ -40,6 +41,22 @@ class QueryBuilderRuleTest extends AbstractTestCase {
         $this->assertNull($obj->getOperator());
         $this->assertNull($obj->getType());
         $this->assertNull($obj->getValue());
+    }
+
+    /**
+     * Tests the setDecorator() method.
+     *
+     * @return void
+     */
+    public function testSetDecorator() {
+
+        // Set a QueryBuilder decorator mock.
+        $decorator = $this->getMockBuilder(QueryBuilderDecoratorInterface::class)->getMock();
+
+        $obj = new QueryBuilderRule();
+
+        $obj->setDecorator($decorator);
+        $this->assertSame($decorator, $obj->getDecorator());
     }
 
     /**

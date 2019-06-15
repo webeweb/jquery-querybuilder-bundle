@@ -71,6 +71,17 @@ class QueryBuilderRule extends AbstractQueryBuilder implements QueryBuilderOpera
     }
 
     /**
+     * Set the decorator.
+     *
+     * @param QueryBuilderDecoratorInterface|null $decorator The decorator.
+     * @return QueryBuilderRuleInterface Returns this rule.
+     */
+    public function setDecorator(QueryBuilderDecoratorInterface $decorator = null) {
+        $this->decorator = $decorator;
+        return $this;
+    }
+
+    /**
      * Set the operator.
      *
      * @param string $operator The operator.
