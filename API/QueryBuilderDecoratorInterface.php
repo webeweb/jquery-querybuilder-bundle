@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
+use InvalidArgumentException;
+
 /**
  * QueryBuilder decorator interface.
  *
@@ -25,6 +27,7 @@ interface QueryBuilderDecoratorInterface {
      * @param QueryBuilderRuleInterface $rule The rule.
      * @param bool $wrap Wrap ?
      * @return string|string[] Returns a SQL string representing the rule.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the type is invalid.
      */
     public function toSQL(QueryBuilderRuleInterface $rule, $wrap = false);
 }

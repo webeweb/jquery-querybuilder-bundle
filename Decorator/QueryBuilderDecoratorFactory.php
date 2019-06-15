@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Decorator;
 
+use InvalidArgumentException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderDecoratorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderTypeInterface;
@@ -77,12 +78,13 @@ class QueryBuilderDecoratorFactory implements QueryBuilderOperatorInterface, Que
      * @param array $enum The enumeration.
      * @param string $key The key.
      * @return QueryBuilderDecoratorInterface|null Returns the QueryBuilder decorator in case of success, null otherwise.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the argument is invalid.
      */
     protected static function newQueryBuilderDecorator($enum, $key) {
 
         $class = ArrayHelper::get($enum, $key);
         if (null === $class) {
-            return null;
+            throw new InvalidArgumentException(sprintf("The decorator \"%s\" is invalid", $key));
         }
 
         return new $class();
@@ -93,6 +95,7 @@ class QueryBuilderDecoratorFactory implements QueryBuilderOperatorInterface, Que
      *
      * @param string $operator The Operator.
      * @return QueryBuilderDecoratorInterface|null Returns the QueryBuilder operator in case of success, false otherwise.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the argument is invalid.
      */
     public static function newQueryBuilderOperator($operator) {
         return static::newQueryBuilderDecorator(static::enumQueryBuilderOperators(), $operator);
@@ -103,6 +106,7 @@ class QueryBuilderDecoratorFactory implements QueryBuilderOperatorInterface, Que
      *
      * @param string $type The type.
      * @return QueryBuilderDecoratorInterface|null Returns the QueryBuilder type in case of success, false otherwise.
+     * @throws InvalidArgumentException Throws an invalid argument exception if the argument is invalid.
      */
     public static function newQueryBuilderType($type) {
         return static::newQueryBuilderDecorator(static::enumQueryBuilderTypes(), $type);

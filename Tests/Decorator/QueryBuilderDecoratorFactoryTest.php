@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Decorator;
 
+use Exception;
+use InvalidArgumentException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderDecoratorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderEnumerator;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
@@ -103,9 +105,16 @@ class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewQueryBuilderDecoratorOperatorWithBadOperator() {
+    public function testNewQueryBuilderDecoratorOperatorWithInvalidArgumentException() {
 
-        $this->assertNull(QueryBuilderDecoratorFactory::newQueryBuilderOperator("operator"));
+        try {
+
+            QueryBuilderDecoratorFactory::newQueryBuilderOperator("operator");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
+            $this->assertEquals("The decorator \"operator\" is invalid", $ex->getMessage());
+        }
     }
 
     /**
@@ -131,8 +140,15 @@ class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewQueryBuilderDecoratorTypeWithBadType() {
+    public function testNewQueryBuilderDecoratorTypeWithInvalidArgumentException() {
 
-        $this->assertNull(QueryBuilderDecoratorFactory::newQueryBuilderType("type"));
+        try {
+
+            QueryBuilderDecoratorFactory::newQueryBuilderType("type");
+        } catch (Exception $ex) {
+
+            $this->assertInstanceOf(InvalidArgumentException::class, $ex);
+            $this->assertEquals("The decorator \"type\" is invalid", $ex->getMessage());
+        }
     }
 }
