@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Normalizer;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderConditionInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilter;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSet;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSetInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderInputInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleInterface;
@@ -40,9 +41,12 @@ class QueryBuilderNormalizerTest extends AbstractTestCase {
      */
     public function testDenormalizeQueryBuilderRule() {
 
+        // Set a QueryBuilder filter set mock.
+        $filterSet = $this->getMockBuilder(QueryBuilderFilterSetInterface::class)->getMock();
+
         $arg = TestFixtures::getRule();
 
-        $res = QueryBuilderNormalizer::denormalizeQueryBuilderRule($arg);
+        $res = QueryBuilderNormalizer::denormalizeQueryBuilderRule($filterSet, $arg);
         $this->assertInstanceOf(QueryBuilderRuleInterface::class, $res);
 
         $this->assertEquals("age", $res->getId());
@@ -60,9 +64,12 @@ class QueryBuilderNormalizerTest extends AbstractTestCase {
      */
     public function testDenormalizeQueryBuilderRuleSet() {
 
+        // Set a QueryBuilder filter set mock.
+        $filterSet = $this->getMockBuilder(QueryBuilderFilterSetInterface::class)->getMock();
+
         $arg = TestFixtures::getRules();
 
-        $res = QueryBuilderNormalizer::denormalizeQueryBuilderRuleSet($arg);
+        $res = QueryBuilderNormalizer::denormalizeQueryBuilderRuleSet($filterSet, $arg);
         $this->assertInstanceOf(QueryBuilderRuleSetInterface::class, $res);
 
         $this->assertEquals(QueryBuilderConditionInterface::CONDITION_OR, $res->getCondition());

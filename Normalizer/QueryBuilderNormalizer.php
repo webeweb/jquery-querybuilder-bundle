@@ -32,11 +32,12 @@ class QueryBuilderNormalizer {
     /**
      * Denormalize a rule.
      *
+     * @param QueryBuilderFilterSetInterface $filterSet The filter set.
      * @param array $rule The rule.
      * @return QueryBuilderRuleInterface Returns the de-normalized rule.
      * @throws InvalidArgumentException Throws an invalid argument exception if an argument is invalid.
      */
-    public static function denormalizeQueryBuilderRule(array $rule) {
+    public static function denormalizeQueryBuilderRule(QueryBuilderFilterSetInterface $filterSet, array $rule) {
 
         $model = new QueryBuilderRule();
         $model->setId(ArrayHelper::get($rule, "id", null));
@@ -46,17 +47,20 @@ class QueryBuilderNormalizer {
         $model->setType(ArrayHelper::get($rule, "type", null));
         $model->setValue(ArrayHelper::get($rule, "value", null));
 
+        $model->setDecorator($filterSet->getDecorator($model->getId()));
+
         return $model;
     }
 
     /**
      * Denormalize a rule set.
      *
+     * @param QueryBuilderFilterSetInterface $filterSet The filter set.
      * @param array $rules The rules.
      * @return QueryBuilderRuleSetInterface Returns the rule set.
      * @throws InvalidArgumentException Throws an invalid argument exception if an argument is invalid.
      */
-    public static function denormalizeQueryBuilderRuleSet(array $rules) {
+    public static function denormalizeQueryBuilderRuleSet(QueryBuilderFilterSetInterface $filterSet, array $rules) {
 
         $model = new QueryBuilderRuleSet();
         $model->setCondition(ArrayHelper::get($rules, "condition", null));
@@ -66,11 +70,11 @@ class QueryBuilderNormalizer {
 
             // Rule set ?
             if (true === array_key_exists("condition", $current)) {
-                $model->addRuleSet(static::denormalizeQueryBuilderRuleSet($current));
+                $model->addRuleSet(static::denormalizeQueryBuilderRuleSet($filterSet, $current));
                 continue;
             }
 
-            $model->addRule(static::denormalizeQueryBuilderRule($current));
+            $model->addRule(static::denormalizeQueryBuilderRule($filterSet, $current));
         }
 
         return $model;
