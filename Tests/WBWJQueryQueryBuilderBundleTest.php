@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests;
 
+use WBW\Bundle\CoreBundle\Provider\AssetsProviderInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection\WBWJQueryQueryBuilderExtension;
 use WBW\Bundle\JQuery\QueryBuilderBundle\WBWJQueryQueryBuilderBundle;
 
@@ -43,8 +44,7 @@ class WBWJQueryQueryBuilderBundleTest extends AbstractTestCase {
 
         $obj = new WBWJQueryQueryBuilderBundle();
 
-        $res = "/Resources/assets";
-        $this->assertEquals($res, $obj->getAssetsRelativeDirectory());
+        $this->assertEquals(AssetsProviderInterface::ASSETS_RELATIVE_DIRECTORY, $obj->getAssetsRelativeDirectory());
     }
 
     /**
@@ -56,7 +56,6 @@ class WBWJQueryQueryBuilderBundleTest extends AbstractTestCase {
 
         $obj = new WBWJQueryQueryBuilderBundle();
 
-        $res = $obj->getContainerExtension();
-        $this->assertInstanceOf(WBWJQueryQueryBuilderExtension::class, $res);
+        $this->assertInstanceOf(WBWJQueryQueryBuilderExtension::class, $obj->getContainerExtension());
     }
 }
