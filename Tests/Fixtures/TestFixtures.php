@@ -50,7 +50,7 @@ class TestFixtures {
             "condition" => QueryBuilderConditionInterface::CONDITION_OR,
             "rules"     => [
 
-                    static::getRule(),
+                static::getRule(),
 
                 [
                     "condition" => QueryBuilderConditionInterface::CONDITION_AND,
