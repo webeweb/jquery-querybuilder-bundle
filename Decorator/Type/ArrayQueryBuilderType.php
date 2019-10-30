@@ -41,7 +41,10 @@ class ArrayQueryBuilderType extends AbstractQueryBuilderType {
         foreach ($rule->getValue() as $current) {
 
             $qbd = QueryBuilderDecoratorFactory::newQueryBuilderType($rule->getType());
-            $qbr = (new QueryBuilderRule())->setType($rule->getType())->setValue($current);
+
+            $qbr = new QueryBuilderRule();
+            $qbr->setType($rule->getType());
+            $qbr->setValue($current);
 
             $sql[] = $qbd->toSQL($qbr, $wrap);
         }
