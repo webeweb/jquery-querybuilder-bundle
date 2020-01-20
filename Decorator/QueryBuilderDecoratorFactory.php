@@ -15,7 +15,7 @@ use InvalidArgumentException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderDecoratorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderTypeInterface;
-use WBW\Library\Core\Argument\ArrayHelper;
+use WBW\Library\Core\Argument\Helper\ArrayHelper;
 
 /**
  * QueryBuilder decorator factory.

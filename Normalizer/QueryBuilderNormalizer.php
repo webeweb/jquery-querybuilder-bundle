@@ -19,7 +19,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleSet;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleSetInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidationInterface;
-use WBW\Library\Core\Argument\ArrayHelper;
+use WBW\Library\Core\Argument\Helper\ArrayHelper;
 
 /**
  * QueryBuilder normalizer.

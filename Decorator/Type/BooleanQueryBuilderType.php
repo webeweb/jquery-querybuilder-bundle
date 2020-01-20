@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Type;
 
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleInterface;
-use WBW\Library\Core\Argument\IntegerHelper;
+use WBW\Library\Core\Argument\Helper\IntegerHelper;
 
 /**
  * Boolean QueryBuilder type.
