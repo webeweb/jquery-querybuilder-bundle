@@ -27,14 +27,13 @@ Includes:
 - [interactjs 1.3.3](http://interactjs.io/) (jQuery QueryBuilder dependency)
 - [jQuery QueryBuilder 2.4.4](https://querybuilder.js.org/)
 
----
+If you like this package, pay me a beer (or a coffee)
+[![paypal.me](https://img.shields.io/badge/paypal.me-webeweb-0070ba.svg?style=flat-square&logo=paypal)](https://www.paypal.me/webeweb)
 
 ## Compatibility
 
 [![PHP](https://img.shields.io/packagist/php-v/webeweb/jquery-querybuilder-bundle.svg?style=flat-square)](http://php.net)
 [![Symfony](https://img.shields.io/badge/symfony-%5E2.7%7C%5E3.0%7C%5E4.0-brightness.svg?style=flat-square)](https://symfony.com)
-
----
 
 ## Installation
 
@@ -72,13 +71,9 @@ $ php bin/console assets:install
 $ php bin/console wbw:core:unzip-assets
 ```
 
----
-
 ## Usage
 
 Read the [documentation](Resources/doc/index.md).
-
----
 
 ## Testing
 
@@ -98,9 +93,12 @@ Once all required libraries are installed then do:
 $ vendor/bin/phpunit
 ```
 
----
-
 ## License
 
 `jquery-querybuilder-bundle` is released under the MIT License. See the bundled
 [LICENSE](LICENSE) file for details.
+
+## Donate
+
+If you like this work, please consider donating at
+[![paypal.me](https://img.shields.io/badge/paypal.me-webeweb-0070ba.svg?style=flat-square&logo=paypal)](https://www.paypal.me/webeweb)
