@@ -25,20 +25,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class QueryBuilderRuleSetTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new QueryBuilderRuleSet();
-
-        $this->assertNull($obj->getCondition());
-        $this->assertEquals([], $obj->getRules());
-        $this->assertFalse($obj->getValid());
-    }
-
-    /**
      * Tests the setCondition() method.
      *
      * @return void
@@ -68,5 +54,19 @@ class QueryBuilderRuleSetTest extends AbstractTestCase {
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The condition \"condition\" is invalid", $ex->getMessage());
         }
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new QueryBuilderRuleSet();
+
+        $this->assertNull($obj->getCondition());
+        $this->assertEquals([], $obj->getRules());
+        $this->assertFalse($obj->getValid());
     }
 }

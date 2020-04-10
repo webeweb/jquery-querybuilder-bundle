@@ -25,18 +25,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class GreaterQueryBuilderOperatorTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new GreaterQueryBuilderOperator();
-
-        $this->assertEquals(QueryBuilderOperatorInterface::OPERATOR_GREATER, $obj->getOperator());
-    }
-
-    /**
      * Tests the toSQL() method.
      *
      * @return void
@@ -52,5 +40,17 @@ class GreaterQueryBuilderOperatorTest extends AbstractTestCase {
         $obj = new GreaterQueryBuilderOperator();
 
         $this->assertEquals("field > 'value'", $obj->toSQL($rule));
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new GreaterQueryBuilderOperator();
+
+        $this->assertEquals(QueryBuilderOperatorInterface::OPERATOR_GREATER, $obj->getOperator());
     }
 }

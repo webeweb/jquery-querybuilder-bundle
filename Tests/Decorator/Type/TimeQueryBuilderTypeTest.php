@@ -25,18 +25,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class TimeQueryBuilderTypeTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new TimeQueryBuilderType();
-
-        $this->assertEquals(QueryBuilderTypeInterface::TYPE_TIME, $obj->getType());
-    }
-
-    /**
      * Tests the toSQL() method.
      *
      * @return void
@@ -66,5 +54,17 @@ class TimeQueryBuilderTypeTest extends AbstractTestCase {
         $obj = new TimeQueryBuilderType();
 
         $this->assertEquals("'18:00:00'", $obj->toSQL($rule, true));
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new TimeQueryBuilderType();
+
+        $this->assertEquals(QueryBuilderTypeInterface::TYPE_TIME, $obj->getType());
     }
 }

@@ -25,18 +25,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class BeginsWithQueryBuilderOperatorTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new BeginsWithQueryBuilderOperator();
-
-        $this->assertEquals(QueryBuilderOperatorInterface::OPERATOR_BEGINS_WITH, $obj->getOperator());
-    }
-
-    /**
      * Tests the toSQL() method.
      *
      * @return void
@@ -52,5 +40,17 @@ class BeginsWithQueryBuilderOperatorTest extends AbstractTestCase {
         $obj = new BeginsWithQueryBuilderOperator();
 
         $this->assertEquals("field LIKE 'value%'", $obj->toSQL($rule));
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new BeginsWithQueryBuilderOperator();
+
+        $this->assertEquals(QueryBuilderOperatorInterface::OPERATOR_BEGINS_WITH, $obj->getOperator());
     }
 }

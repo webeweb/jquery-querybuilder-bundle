@@ -25,18 +25,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class ArrayQueryBuilderTypeTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new ArrayQueryBuilderType();
-
-        $this->assertNull($obj->getType());
-    }
-
-    /**
      * Tests the toSQL() method.
      *
      * @return void
@@ -51,5 +39,17 @@ class ArrayQueryBuilderTypeTest extends AbstractTestCase {
         $obj = new ArrayQueryBuilderType();
 
         $this->assertEquals([0, 1], $obj->toSQL($rule));
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new ArrayQueryBuilderType();
+
+        $this->assertNull($obj->getType());
     }
 }

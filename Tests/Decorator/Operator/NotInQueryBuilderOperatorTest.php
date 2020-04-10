@@ -26,18 +26,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class NotInQueryBuilderOperatorTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new NotInQueryBuilderOperator();
-
-        $this->assertEquals(QueryBuilderOperatorInterface::OPERATOR_NOT_IN, $obj->getOperator());
-    }
-
-    /**
      * Tests the toSQL() method.
      *
      * @return void
@@ -53,5 +41,17 @@ class NotInQueryBuilderOperatorTest extends AbstractTestCase {
         $obj = new NotInQueryBuilderOperator();
 
         $this->assertEquals("field NOT IN ('value1', 'value2')", $obj->toSQL($rule));
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new NotInQueryBuilderOperator();
+
+        $this->assertEquals(QueryBuilderOperatorInterface::OPERATOR_NOT_IN, $obj->getOperator());
     }
 }

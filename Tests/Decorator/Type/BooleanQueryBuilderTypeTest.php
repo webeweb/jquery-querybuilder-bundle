@@ -25,18 +25,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class BooleanQueryBuilderTypeTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new BooleanQueryBuilderType();
-
-        $this->assertEquals(QueryBuilderTypeInterface::TYPE_BOOLEAN, $obj->getType());
-    }
-
-    /**
      * Tests the toSQL() method.
      *
      * @return void
@@ -50,5 +38,17 @@ class BooleanQueryBuilderTypeTest extends AbstractTestCase {
         $obj = new BooleanQueryBuilderType();
 
         $this->assertEquals("1", $obj->toSQL($rule));
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new BooleanQueryBuilderType();
+
+        $this->assertEquals(QueryBuilderTypeInterface::TYPE_BOOLEAN, $obj->getType());
     }
 }

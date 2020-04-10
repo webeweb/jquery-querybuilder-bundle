@@ -26,24 +26,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class QueryBuilderRuleTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new QueryBuilderRule();
-
-        $this->assertNull($obj->getDecorator());
-        $this->assertNull($obj->getField());
-        $this->assertNull($obj->getId());
-        $this->assertNull($obj->getInput());
-        $this->assertNull($obj->getOperator());
-        $this->assertNull($obj->getType());
-        $this->assertNull($obj->getValue());
-    }
-
-    /**
      * Tests the setDecorator() method.
      *
      * @return void
@@ -102,5 +84,23 @@ class QueryBuilderRuleTest extends AbstractTestCase {
 
         $obj->setValue("value");
         $this->assertEquals("value", $obj->getValue());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new QueryBuilderRule();
+
+        $this->assertNull($obj->getDecorator());
+        $this->assertNull($obj->getField());
+        $this->assertNull($obj->getId());
+        $this->assertNull($obj->getInput());
+        $this->assertNull($obj->getOperator());
+        $this->assertNull($obj->getType());
+        $this->assertNull($obj->getValue());
     }
 }

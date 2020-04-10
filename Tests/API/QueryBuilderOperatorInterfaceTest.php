@@ -27,7 +27,7 @@ class QueryBuilderOperatorInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("begins_with", QueryBuilderOperatorInterface::OPERATOR_BEGINS_WITH);
         $this->assertEquals("between", QueryBuilderOperatorInterface::OPERATOR_BETWEEN);

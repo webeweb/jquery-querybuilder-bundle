@@ -27,7 +27,7 @@ class QueryBuilderInputInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("checkbox", QueryBuilderInputInterface::INPUT_CHECKBOX);
         $this->assertEquals("number", QueryBuilderInputInterface::INPUT_NUMBER);

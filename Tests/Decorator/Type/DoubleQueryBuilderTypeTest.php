@@ -25,18 +25,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class DoubleQueryBuilderTypeTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new DoubleQueryBuilderType();
-
-        $this->assertEquals(QueryBuilderTypeInterface::TYPE_DOUBLE, $obj->getType());
-    }
-
-    /**
      * Tests the toSQL() method.
      *
      * @return void
@@ -50,5 +38,17 @@ class DoubleQueryBuilderTypeTest extends AbstractTestCase {
         $obj = new DoubleQueryBuilderType();
 
         $this->assertRegExp("/^5[\.,]5$/", $obj->toSQL($rule));
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new DoubleQueryBuilderType();
+
+        $this->assertEquals(QueryBuilderTypeInterface::TYPE_DOUBLE, $obj->getType());
     }
 }

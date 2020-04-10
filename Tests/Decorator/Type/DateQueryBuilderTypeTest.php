@@ -25,18 +25,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class DateQueryBuilderTypeTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new DateQueryBuilderType();
-
-        $this->assertEquals(QueryBuilderTypeInterface::TYPE_DATE, $obj->getType());
-    }
-
-    /**
      * Tests the toSQL() method.
      *
      * @return void
@@ -66,5 +54,17 @@ class DateQueryBuilderTypeTest extends AbstractTestCase {
         $obj = new DateQueryBuilderType();
 
         $this->assertEquals("'2019-06-14'", $obj->toSQL($rule, true));
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new DateQueryBuilderType();
+
+        $this->assertEquals(QueryBuilderTypeInterface::TYPE_DATE, $obj->getType());
     }
 }

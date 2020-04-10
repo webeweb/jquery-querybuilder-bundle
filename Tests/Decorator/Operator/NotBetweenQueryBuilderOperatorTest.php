@@ -26,18 +26,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class NotBetweenQueryBuilderOperatorTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new NotBetweenQueryBuilderOperator();
-
-        $this->assertEquals(QueryBuilderOperatorInterface::OPERATOR_NOT_BETWEEN, $obj->getOperator());
-    }
-
-    /**
      * Tests the toSQL() method.
      *
      * @return void
@@ -53,5 +41,17 @@ class NotBetweenQueryBuilderOperatorTest extends AbstractTestCase {
         $obj = new NotBetweenQueryBuilderOperator();
 
         $this->assertEquals("field NOT BETWEEN 'value1' AND 'value2'", $obj->toSQL($rule));
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new NotBetweenQueryBuilderOperator();
+
+        $this->assertEquals(QueryBuilderOperatorInterface::OPERATOR_NOT_BETWEEN, $obj->getOperator());
     }
 }

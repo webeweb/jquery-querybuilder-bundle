@@ -27,28 +27,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class QueryBuilderFilterTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
-
-        $this->assertEquals("id", $obj->getId());
-        $this->assertNull($obj->getField());
-        $this->assertNull($obj->getInput());
-        $this->assertEquals(QueryBuilderFilter::TYPE_BOOLEAN, $obj->getType());
-
-        $this->assertNull($obj->getDecorator());
-        $this->assertEquals("", $obj->getLabel());
-        $this->assertFalse($obj->getMultiple());
-        $this->assertEquals([], $obj->getOperators());
-        $this->assertNull($obj->getValidation());
-        $this->assertNull($obj->getValues());
-    }
-
-    /**
      * Tests the jsonSerialize() method.
      *
      * @return void
@@ -161,5 +139,27 @@ class QueryBuilderFilterTest extends AbstractTestCase {
 
         $obj->setValues(["values"]);
         $this->assertEquals(["values"], $obj->getValues());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+
+        $this->assertEquals("id", $obj->getId());
+        $this->assertNull($obj->getField());
+        $this->assertNull($obj->getInput());
+        $this->assertEquals(QueryBuilderFilter::TYPE_BOOLEAN, $obj->getType());
+
+        $this->assertNull($obj->getDecorator());
+        $this->assertEquals("", $obj->getLabel());
+        $this->assertFalse($obj->getMultiple());
+        $this->assertEquals([], $obj->getOperators());
+        $this->assertNull($obj->getValidation());
+        $this->assertNull($obj->getValues());
     }
 }

@@ -25,16 +25,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class LessOrEqualQueryBuilderOperatorTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     */
-    public function testConstruct() {
-
-        $obj = new LessOrEqualQueryBuilderOperator();
-
-        $this->assertEquals(QueryBuilderOperatorInterface::OPERATOR_LESS_OR_EQUAL, $obj->getOperator());
-    }
-
-    /**
      * Tests the toSQL() method.
      *
      * @return void
@@ -50,5 +40,15 @@ class LessOrEqualQueryBuilderOperatorTest extends AbstractTestCase {
         $obj = new LessOrEqualQueryBuilderOperator();
 
         $this->assertEquals("field <= 'value'", $obj->toSQL($rule));
+    }
+
+    /**
+     * Tests the __construct() method.
+     */
+    public function test__construct() {
+
+        $obj = new LessOrEqualQueryBuilderOperator();
+
+        $this->assertEquals(QueryBuilderOperatorInterface::OPERATOR_LESS_OR_EQUAL, $obj->getOperator());
     }
 }

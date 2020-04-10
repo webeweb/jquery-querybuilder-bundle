@@ -27,22 +27,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\API\TestQueryBuilder;
 class AbstractQueryBuilderTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     * @throws Exception Throws an exception if an error occurs.
-     */
-    public function testConstruct() {
-
-        $obj = new TestQueryBuilder();
-
-        $this->assertNull($obj->getId());
-        $this->assertNull($obj->getField());
-        $this->assertNull($obj->getInput());
-        $this->assertNull($obj->getType());
-    }
-
-    /**
      * Tests the setField() method.
      *
      * @return void
@@ -130,5 +114,21 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals("The type \"type\" is invalid", $ex->getMessage());
         }
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    public function test__construct() {
+
+        $obj = new TestQueryBuilder();
+
+        $this->assertNull($obj->getId());
+        $this->assertNull($obj->getField());
+        $this->assertNull($obj->getInput());
+        $this->assertNull($obj->getType());
     }
 }

@@ -25,18 +25,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class IntegerQueryBuilderTypeTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new IntegerQueryBuilderType();
-
-        $this->assertEquals(QueryBuilderTypeInterface::TYPE_INTEGER, $obj->getType());
-    }
-
-    /**
      * Tests the toSQL() method.
      *
      * @return void
@@ -50,5 +38,17 @@ class IntegerQueryBuilderTypeTest extends AbstractTestCase {
         $obj = new IntegerQueryBuilderType();
 
         $this->assertEquals("1", $obj->toSQL($rule));
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new IntegerQueryBuilderType();
+
+        $this->assertEquals(QueryBuilderTypeInterface::TYPE_INTEGER, $obj->getType());
     }
 }

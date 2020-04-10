@@ -23,24 +23,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class QueryBuilderValidationTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new QueryBuilderValidation();
-
-        $this->assertNull($obj->getAllowEmptyValue());
-        $this->assertNull($obj->getCallback());
-        $this->assertNull($obj->getFormat());
-        $this->assertNull($obj->getMax());
-        $this->assertNull($obj->getMessages());
-        $this->assertNull($obj->getMin());
-        $this->assertNull($obj->getStep());
-    }
-
-    /**
      * Tests the jsonSerialize() method.
      *
      * @return void
@@ -141,5 +123,23 @@ class QueryBuilderValidationTest extends AbstractTestCase {
 
         $obj->setStep(1);
         $this->assertEquals(1, $obj->getStep());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new QueryBuilderValidation();
+
+        $this->assertNull($obj->getAllowEmptyValue());
+        $this->assertNull($obj->getCallback());
+        $this->assertNull($obj->getFormat());
+        $this->assertNull($obj->getMax());
+        $this->assertNull($obj->getMessages());
+        $this->assertNull($obj->getMin());
+        $this->assertNull($obj->getStep());
     }
 }

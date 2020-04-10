@@ -27,7 +27,7 @@ class QueryBuilderTypeInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("boolean", QueryBuilderTypeInterface::TYPE_BOOLEAN);
         $this->assertEquals("date", QueryBuilderTypeInterface::TYPE_DATE);

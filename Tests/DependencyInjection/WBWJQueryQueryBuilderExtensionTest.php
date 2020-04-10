@@ -44,16 +44,6 @@ class WBWJQueryQueryBuilderExtensionTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $this->assertEquals("wbw_jquery_querybuilder", WBWJQueryQueryBuilderExtension::EXTENSION_ALIAS);
-    }
-
-    /**
      * Tests the getAlias() method.
      *
      * @return void
@@ -88,5 +78,15 @@ class WBWJQueryQueryBuilderExtensionTest extends AbstractTestCase {
         $obj = new WBWJQueryQueryBuilderExtension();
 
         $this->assertNull($obj->load($this->configs, $this->containerBuilder));
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $this->assertEquals("wbw_jquery_querybuilder", WBWJQueryQueryBuilderExtension::EXTENSION_ALIAS);
     }
 }

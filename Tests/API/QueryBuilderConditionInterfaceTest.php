@@ -27,7 +27,7 @@ class QueryBuilderConditionInterfaceTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testConstruct() {
+    public function test__construct() {
 
         $this->assertEquals("AND", QueryBuilderConditionInterface::CONDITION_AND);
         $this->assertEquals("OR", QueryBuilderConditionInterface::CONDITION_OR);

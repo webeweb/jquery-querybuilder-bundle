@@ -59,20 +59,6 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new QueryBuilderFilterSet();
-
-        $this->assertNull($obj->getDecorator("id"));
-        $this->assertNull($obj->getFilter("id"));
-        $this->assertEquals([], $obj->getFilters());
-    }
-
-    /**
      * Tests the jsonSerialize() method.
      *
      * @return void
@@ -106,5 +92,19 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
 
         $this->assertSame($obj, $obj->removeFilter($filter));
         $this->assertCount(0, $obj->getFilters());
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new QueryBuilderFilterSet();
+
+        $this->assertNull($obj->getDecorator("id"));
+        $this->assertNull($obj->getFilter("id"));
+        $this->assertEquals([], $obj->getFilters());
     }
 }

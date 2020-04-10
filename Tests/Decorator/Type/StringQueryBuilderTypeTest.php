@@ -25,18 +25,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class StringQueryBuilderTypeTest extends AbstractTestCase {
 
     /**
-     * Tests the __construct() method.
-     *
-     * @return void
-     */
-    public function testConstruct() {
-
-        $obj = new StringQueryBuilderType();
-
-        $this->assertEquals(QueryBuilderTypeInterface::TYPE_STRING, $obj->getType());
-    }
-
-    /**
      * Tests the toSQL() method.
      *
      * @return void
@@ -66,5 +54,17 @@ class StringQueryBuilderTypeTest extends AbstractTestCase {
         $obj = new StringQueryBuilderType();
 
         $this->assertEquals("'string'", $obj->toSQL($rule, true));
+    }
+
+    /**
+     * Tests the __construct() method.
+     *
+     * @return void
+     */
+    public function test__construct() {
+
+        $obj = new StringQueryBuilderType();
+
+        $this->assertEquals(QueryBuilderTypeInterface::TYPE_STRING, $obj->getType());
     }
 }
