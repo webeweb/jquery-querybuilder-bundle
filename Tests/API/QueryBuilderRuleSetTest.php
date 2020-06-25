@@ -52,7 +52,7 @@ class QueryBuilderRuleSetTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The condition \"condition\" is invalid", $ex->getMessage());
+            $this->assertEquals('The condition "condition" is invalid', $ex->getMessage());
         }
     }
 

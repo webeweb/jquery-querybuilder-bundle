@@ -108,7 +108,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The operator \"exception\" is invalid", $ex->getMessage());
+            $this->assertEquals('The operator "exception" is invalid', $ex->getMessage());
         }
     }
 

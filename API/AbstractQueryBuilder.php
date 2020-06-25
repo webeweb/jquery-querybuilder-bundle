@@ -116,7 +116,7 @@ abstract class AbstractQueryBuilder implements QueryBuilderInputInterface, Query
      */
     public function setInput($input) {
         if (false === in_array($input, QueryBuilderEnumerator::enumInputs())) {
-            throw new InvalidArgumentException(sprintf("The input \"%s\" is invalid", $input));
+            throw new InvalidArgumentException(sprintf('The input "%s" is invalid', $input));
         }
         $this->input = $input;
         return $this;
@@ -131,7 +131,7 @@ abstract class AbstractQueryBuilder implements QueryBuilderInputInterface, Query
      */
     public function setType($type) {
         if (null !== $type && false === in_array($type, QueryBuilderEnumerator::enumTypes())) {
-            throw new InvalidArgumentException(sprintf("The type \"%s\" is invalid", $type));
+            throw new InvalidArgumentException(sprintf('The type "%s" is invalid', $type));
         }
         $this->type = $type;
         return $this;

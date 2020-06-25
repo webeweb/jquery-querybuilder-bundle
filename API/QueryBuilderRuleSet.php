@@ -108,7 +108,7 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
      */
     public function setCondition($condition) {
         if (null !== $condition && false === in_array($condition, QueryBuilderEnumerator::enumConditions())) {
-            throw new InvalidArgumentException(sprintf("The condition \"%s\" is invalid", $condition));
+            throw new InvalidArgumentException(sprintf('The condition "%s" is invalid', $condition));
         }
         $this->condition = $condition;
         return $this;

@@ -176,7 +176,7 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
         $enumOperators = QueryBuilderEnumerator::enumOperators();
         foreach ($operators as $current) {
             if (null !== $current && false === array_key_exists($current, $enumOperators)) {
-                throw new InvalidArgumentException(sprintf("The operator \"%s\" is invalid", $current));
+                throw new InvalidArgumentException(sprintf('The operator "%s" is invalid', $current));
             }
         }
         $this->operators = $operators;

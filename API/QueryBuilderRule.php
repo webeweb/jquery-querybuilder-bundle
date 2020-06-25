@@ -90,7 +90,7 @@ class QueryBuilderRule extends AbstractQueryBuilder implements QueryBuilderOpera
      */
     public function setOperator($operator) {
         if (null !== $operator && false === array_key_exists($operator, QueryBuilderEnumerator::enumOperators())) {
-            throw new InvalidArgumentException(sprintf("The operator \"%s\" is invalid", $operator));
+            throw new InvalidArgumentException(sprintf('The operator "%s" is invalid', $operator));
         }
         $this->operator = $operator;
         return $this;

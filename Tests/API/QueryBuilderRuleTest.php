@@ -69,7 +69,7 @@ class QueryBuilderRuleTest extends AbstractTestCase {
         } catch (Exception $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
-            $this->assertEquals("The operator \"operator\" is invalid", $ex->getMessage());
+            $this->assertEquals('The operator "operator" is invalid', $ex->getMessage());
         }
     }
 

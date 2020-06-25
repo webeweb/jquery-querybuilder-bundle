@@ -84,7 +84,7 @@ class QueryBuilderDecoratorFactory implements QueryBuilderOperatorInterface, Que
 
         $class = ArrayHelper::get($enum, $key);
         if (null === $class) {
-            throw new InvalidArgumentException(sprintf("The decorator \"%s\" is invalid", $key));
+            throw new InvalidArgumentException(sprintf('The decorator "%s" is invalid', $key));
         }
 
         return new $class();
