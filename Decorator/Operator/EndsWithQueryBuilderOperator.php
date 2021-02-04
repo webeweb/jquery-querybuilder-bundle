@@ -32,13 +32,13 @@ class EndsWithQueryBuilderOperator extends AbstractQueryBuilderOperator {
     /**
      * {@inheritDoc}
      */
-    public function toSQL(QueryBuilderRuleInterface $rule, $wrap = false) {
+    public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
 
         $qbt = QueryBuilderDecoratorFactory::newQueryBuilderType($rule->getType());
 
         $sql = [
-            parent::toSQL($rule, $wrap),
-            "'%" . $qbt->toSQL($rule, false) . "'",
+            parent::toSql($rule, $wrap),
+            "'%" . $qbt->toSql($rule, false) . "'",
         ];
 
         return implode(" ", $sql);

@@ -39,7 +39,7 @@ class QueryBuilderNormalizerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDenormalizeQueryBuilderRule() {
+    public function testDenormalizeQueryBuilderRule(): void {
 
         // Set a QueryBuilder filter set mock.
         $filterSet = $this->getMockBuilder(QueryBuilderFilterSetInterface::class)->getMock();
@@ -62,7 +62,7 @@ class QueryBuilderNormalizerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testDenormalizeQueryBuilderRuleSet() {
+    public function testDenormalizeQueryBuilderRuleSet(): void {
 
         // Set a QueryBuilder filter set mock.
         $filterSet = $this->getMockBuilder(QueryBuilderFilterSetInterface::class)->getMock();
@@ -91,7 +91,7 @@ class QueryBuilderNormalizerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNormalizeQueryBuilderFilter() {
+    public function testNormalizeQueryBuilderFilter(): void {
 
         // Set a QueryBuilder validation mock.
         $validation = $this->getMockBuilder(QueryBuilderValidationInterface::class)->getMock();
@@ -125,7 +125,7 @@ class QueryBuilderNormalizerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNormalizeQueryBuilderFilterSet() {
+    public function testNormalizeQueryBuilderFilterSet(): void {
 
         // Set a QueryBuilder filter mock.
         $filter = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
@@ -151,7 +151,7 @@ class QueryBuilderNormalizerTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNormalizeQueryBuilderValidation() {
+    public function testNormalizeQueryBuilderValidation(): void {
 
         $obj = new QueryBuilderValidation();
         $obj->setAllowEmptyValue(true);

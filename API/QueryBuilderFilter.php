@@ -25,7 +25,7 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
     /**
      * Decorator.
      *
-     * @var QueryBuilderDecoratorInterface
+     * @var QueryBuilderDecoratorInterface|null
      */
     private $decorator;
 
@@ -53,14 +53,14 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
     /**
      * Validation.
      *
-     * @var QueryBuilderValidationInterface
+     * @var QueryBuilderValidationInterface|null
      */
     private $validation;
 
     /**
      * Values.
      *
-     * @var array
+     * @var array|null
      */
     private $values;
 
@@ -72,7 +72,7 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      * @param array $operators The operators.
      * @throws InvalidArgumentException Throws an invalid argument exception if an argument is invalid.
      */
-    public function __construct($id, $type, array $operators) {
+    public function __construct(string $id, string $type, array $operators) {
         parent::__construct();
         $this->setId($id);
         $this->setLabel("");
@@ -82,53 +82,51 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
     }
 
     /**
-     * Get the decorator.
-     *
-     * @return QueryBuilderDecoratorInterface Returns the decorator.
+     * {@inheritDoc}
      */
-    public function getDecorator() {
+    public function getDecorator(): ?QueryBuilderDecoratorInterface {
         return $this->decorator;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getLabel() {
+    public function getLabel(): string {
         return $this->label;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getMultiple() {
+    public function getMultiple(): bool {
         return $this->multiple;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getOperators() {
+    public function getOperators(): array {
         return $this->operators;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getValidation() {
+    public function getValidation(): ?QueryBuilderValidationInterface {
         return $this->validation;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getValues() {
+    public function getValues(): ?array {
         return $this->values;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function jsonSerialize() {
+    public function jsonSerialize(): array {
         return QueryBuilderNormalizer::normalizeQueryBuilderFilter($this);
     }
 
@@ -138,7 +136,7 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      * @param QueryBuilderDecoratorInterface|null $decorator The decorator.
      * @return QueryBuilderFilterInterface Returns this filter.
      */
-    public function setDecorator(QueryBuilderDecoratorInterface $decorator = null) {
+    public function setDecorator(?QueryBuilderDecoratorInterface $decorator): QueryBuilderFilterInterface {
         $this->decorator = $decorator;
         return $this;
     }
@@ -149,7 +147,7 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      * @param string $label The label.
      * @return QueryBuilderFilterInterface Returns this filter.
      */
-    public function setLabel($label) {
+    public function setLabel(string $label): QueryBuilderFilterInterface {
         $this->label = $label;
         return $this;
     }
@@ -160,7 +158,7 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      * @param bool $multiple The multiple.
      * @return QueryBuilderFilterInterface Returns this filter.
      */
-    public function setMultiple($multiple) {
+    public function setMultiple(bool $multiple): QueryBuilderFilterInterface {
         $this->multiple = $multiple;
         return $this;
     }
@@ -172,7 +170,7 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      * @return QueryBuilderFilterInterface Returns this filter.
      * @throws InvalidArgumentException Throws an invalid argument exception if an operator is invalid.
      */
-    public function setOperators(array $operators) {
+    public function setOperators(array $operators): QueryBuilderFilterInterface {
         $enumOperators = QueryBuilderEnumerator::enumOperators();
         foreach ($operators as $current) {
             if (null !== $current && false === array_key_exists($current, $enumOperators)) {
@@ -189,7 +187,7 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      * @param QueryBuilderValidationInterface|null $validation The validation.
      * @return QueryBuilderFilterInterface Returns this filter.
      */
-    public function setValidation(QueryBuilderValidationInterface $validation = null) {
+    public function setValidation(?QueryBuilderValidationInterface $validation): QueryBuilderFilterInterface {
         $this->validation = $validation;
         return $this;
     }
@@ -197,10 +195,10 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
     /**
      * Set the values.
      *
-     * @param array $values The values.
+     * @param array|null $values The values.
      * @return QueryBuilderFilterInterface Returns this filter.
      */
-    public function setValues(array $values) {
+    public function setValues(?array $values): QueryBuilderFilterInterface {
         $this->values = $values;
         return $this;
     }

@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle;
 
+use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use WBW\Bundle\CoreBundle\Provider\AssetsProviderInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection\WBWJQueryQueryBuilderExtension;
@@ -26,14 +27,14 @@ class WBWJQueryQueryBuilderBundle extends Bundle implements AssetsProviderInterf
     /**
      * {@inheritDoc}
      */
-    public function getAssetsRelativeDirectory() {
+    public function getAssetsRelativeDirectory(): string {
         return self::ASSETS_RELATIVE_DIRECTORY;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getContainerExtension() {
+    public function getContainerExtension(): Extension {
         return new WBWJQueryQueryBuilderExtension();
     }
 }

@@ -24,7 +24,7 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
     /**
      * Condition.
      *
-     * @var string
+     * @var string|null
      */
     private $condition;
 
@@ -56,7 +56,7 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
      * @param QueryBuilderRuleInterface $rule The rule.
      * @return QueryBuilderRuleSetInterface Returns this rule set.
      */
-    public function addRule(QueryBuilderRuleInterface $rule) {
+    public function addRule(QueryBuilderRuleInterface $rule): QueryBuilderRuleSetInterface {
         $this->rules[] = $rule;
         return $this;
     }
@@ -67,46 +67,40 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
      * @param QueryBuilderRuleSetInterface $rule The rule.
      * @return QueryBuilderRuleSetInterface Returns this rule set.
      */
-    public function addRuleSet(QueryBuilderRuleSetInterface $rule) {
+    public function addRuleSet(QueryBuilderRuleSetInterface $rule): QueryBuilderRuleSetInterface {
         $this->rules[] = $rule;
         return $this;
     }
 
     /**
-     * Get the condition.
-     *
-     * @return string Returns the condition.
+     * {@inheritDoc}
      */
-    public function getCondition() {
+    public function getCondition(): ?string {
         return $this->condition;
     }
 
     /**
-     * Get the rules.
-     *
-     * @return array Returns the rules.
+     * {@inheritDoc}
      */
-    public function getRules() {
+    public function getRules(): array {
         return $this->rules;
     }
 
     /**
-     * Get the valid.
-     *
-     * @return bool Returns the valid.
+     * {@inheritDoc}
      */
-    public function getValid() {
+    public function getValid(): bool {
         return $this->valid;
     }
 
     /**
      * Set the condition.
      *
-     * @param string $condition The condition.
+     * @param string|null $condition The condition.
      * @return QueryBuilderRuleSetInterface Returns this rule set.
      * @throws InvalidArgumentException Throws an invalid argument exception if the condition is invalid.
      */
-    public function setCondition($condition) {
+    public function setCondition(?string $condition): QueryBuilderRuleSetInterface {
         if (null !== $condition && false === in_array($condition, QueryBuilderEnumerator::enumConditions())) {
             throw new InvalidArgumentException(sprintf('The condition "%s" is invalid', $condition));
         }
@@ -120,7 +114,7 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
      * @param array $rules The rules.
      * @return QueryBuilderRuleSet Returns this rule set.
      */
-    protected function setRules(array $rules) {
+    protected function setRules(array $rules): QueryBuilderRuleSetInterface {
         $this->rules = $rules;
         return $this;
     }
@@ -131,7 +125,7 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
      * @param bool $valid The valid.
      * @return QueryBuilderRuleSetInterface Returns this rule set.
      */
-    public function setValid($valid) {
+    public function setValid(bool $valid): QueryBuilderRuleSetInterface {
         $this->valid = $valid;
         return $this;
     }

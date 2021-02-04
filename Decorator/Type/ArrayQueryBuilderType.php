@@ -23,6 +23,8 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorFactory;
  */
 class ArrayQueryBuilderType extends AbstractQueryBuilderType {
 
+    const DEFAULT_IMPLODER = "{{implode}}";
+
     /**
      * Constructor.
      */
@@ -33,7 +35,7 @@ class ArrayQueryBuilderType extends AbstractQueryBuilderType {
     /**
      * {@inheritDoc}
      */
-    public function toSQL(QueryBuilderRuleInterface $rule, $wrap = false) {
+    public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
 
         /** @var string[] $sql */
         $sql = [];
@@ -46,9 +48,9 @@ class ArrayQueryBuilderType extends AbstractQueryBuilderType {
             $qbr->setType($rule->getType());
             $qbr->setValue($current);
 
-            $sql[] = $qbd->toSQL($qbr, $wrap);
+            $sql[] = $qbd->toSql($qbr, $wrap);
         }
 
-        return $sql;
+        return implode("{{implode}}", $sql);
     }
 }

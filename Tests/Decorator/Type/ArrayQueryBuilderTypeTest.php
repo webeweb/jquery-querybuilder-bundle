@@ -25,11 +25,11 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class ArrayQueryBuilderTypeTest extends AbstractTestCase {
 
     /**
-     * Tests the toSQL() method.
+     * Tests the toSql() method.
      *
      * @return void
      */
-    public function testToSQL() {
+    public function testToSQL(): void {
 
         // Set a QueryBuilder rule mock.
         $rule = new QueryBuilderRule();
@@ -38,7 +38,7 @@ class ArrayQueryBuilderTypeTest extends AbstractTestCase {
 
         $obj = new ArrayQueryBuilderType();
 
-        $this->assertEquals([0, 1], $obj->toSQL($rule));
+        $this->assertEquals("0{{implode}}1", $obj->toSql($rule));
     }
 
     /**
@@ -46,7 +46,7 @@ class ArrayQueryBuilderTypeTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new ArrayQueryBuilderType();
 

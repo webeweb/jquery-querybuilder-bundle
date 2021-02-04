@@ -30,7 +30,7 @@ class QueryBuilderDecoratorFactory implements QueryBuilderOperatorInterface, Que
      *
      * @return array Returns the QueryBuilder operators enumeration.
      */
-    protected static function enumQueryBuilderOperators() {
+    protected static function enumQueryBuilderOperators(): array {
         return [
             self::OPERATOR_BEGINS_WITH      => __NAMESPACE__ . "\\Operator\\BeginsWithQueryBuilderOperator",
             self::OPERATOR_BETWEEN          => __NAMESPACE__ . "\\Operator\\BetweenQueryBuilderOperator",
@@ -60,7 +60,7 @@ class QueryBuilderDecoratorFactory implements QueryBuilderOperatorInterface, Que
      *
      * @return array Returns the QueryBuilder types enumeration.
      */
-    protected static function enumQueryBuilderTypes() {
+    protected static function enumQueryBuilderTypes(): array {
         return [
             self::TYPE_BOOLEAN  => __NAMESPACE__ . "\\Type\\BooleanQueryBuilderType",
             self::TYPE_DATE     => __NAMESPACE__ . "\\Type\\DateQueryBuilderType",
@@ -80,7 +80,7 @@ class QueryBuilderDecoratorFactory implements QueryBuilderOperatorInterface, Que
      * @return QueryBuilderDecoratorInterface|null Returns the QueryBuilder decorator in case of success, null otherwise.
      * @throws InvalidArgumentException Throws an invalid argument exception if the argument is invalid.
      */
-    protected static function newQueryBuilderDecorator($enum, $key) {
+    protected static function newQueryBuilderDecorator(array $enum, string $key): ?QueryBuilderDecoratorInterface {
 
         $class = ArrayHelper::get($enum, $key);
         if (null === $class) {
@@ -97,7 +97,7 @@ class QueryBuilderDecoratorFactory implements QueryBuilderOperatorInterface, Que
      * @return QueryBuilderDecoratorInterface|null Returns the QueryBuilder operator in case of success, false otherwise.
      * @throws InvalidArgumentException Throws an invalid argument exception if the argument is invalid.
      */
-    public static function newQueryBuilderOperator($operator) {
+    public static function newQueryBuilderOperator(string $operator): ?QueryBuilderDecoratorInterface {
         return static::newQueryBuilderDecorator(static::enumQueryBuilderOperators(), $operator);
     }
 
@@ -108,7 +108,7 @@ class QueryBuilderDecoratorFactory implements QueryBuilderOperatorInterface, Que
      * @return QueryBuilderDecoratorInterface|null Returns the QueryBuilder type in case of success, false otherwise.
      * @throws InvalidArgumentException Throws an invalid argument exception if the argument is invalid.
      */
-    public static function newQueryBuilderType($type) {
+    public static function newQueryBuilderType(string $type): ?QueryBuilderDecoratorInterface {
         return static::newQueryBuilderDecorator(static::enumQueryBuilderTypes(), $type);
     }
 }

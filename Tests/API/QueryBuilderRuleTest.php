@@ -30,7 +30,7 @@ class QueryBuilderRuleTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetDecorator() {
+    public function testSetDecorator(): void {
 
         // Set a QueryBuilder decorator mock.
         $decorator = $this->getMockBuilder(QueryBuilderDecoratorInterface::class)->getMock();
@@ -46,7 +46,7 @@ class QueryBuilderRuleTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOperator() {
+    public function testSetOperator(): void {
 
         $obj = new QueryBuilderRule();
 
@@ -59,7 +59,7 @@ class QueryBuilderRuleTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOperatorWithInvalidArgumentException() {
+    public function testSetOperatorWithInvalidArgumentException(): void {
 
         $obj = new QueryBuilderRule();
 
@@ -78,7 +78,7 @@ class QueryBuilderRuleTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetValue() {
+    public function testSetValue(): void {
 
         $obj = new QueryBuilderRule();
 
@@ -91,7 +91,7 @@ class QueryBuilderRuleTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new QueryBuilderRule();
 

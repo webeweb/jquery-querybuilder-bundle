@@ -37,7 +37,7 @@ abstract class AbstractQueryBuilderOperator implements QueryBuilderDecoratorInte
      *
      * @param string $operator The operator.
      */
-    protected function __construct($operator) {
+    protected function __construct(string $operator) {
         $this->setOperator($operator);
     }
 
@@ -46,7 +46,7 @@ abstract class AbstractQueryBuilderOperator implements QueryBuilderDecoratorInte
      *
      * @return string Returns the operator.
      */
-    public function getOperator() {
+    public function getOperator(): string {
         return $this->operator;
     }
 
@@ -56,7 +56,7 @@ abstract class AbstractQueryBuilderOperator implements QueryBuilderDecoratorInte
      * @param string $operator The operator
      * @return AbstractQueryBuilderOperator Returns this operator.
      */
-    protected function setOperator($operator) {
+    protected function setOperator(string $operator): AbstractQueryBuilderOperator {
         $this->operator = $operator;
         return $this;
     }
@@ -64,11 +64,13 @@ abstract class AbstractQueryBuilderOperator implements QueryBuilderDecoratorInte
     /**
      * {@inheritDoc}
      */
-    public function toSQL(QueryBuilderRuleInterface $rule, $wrap = false) {
+    public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
+
         $sql = [
             $rule->getField(),
             QueryBuilderEnumerator::enumOperators()[$this->getOperator()],
         ];
+
         return implode(" ", $sql);
     }
 }

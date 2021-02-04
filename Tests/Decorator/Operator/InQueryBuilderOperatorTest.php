@@ -26,11 +26,11 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class InQueryBuilderOperatorTest extends AbstractTestCase {
 
     /**
-     * Tests the toSQL() method.
+     * Tests the toSql() method.
      *
      * @return void
      */
-    public function testToSQL() {
+    public function testToSQL(): void {
 
         // Set a QueryBuilder rule mock.
         $rule = new QueryBuilderRule();
@@ -40,7 +40,7 @@ class InQueryBuilderOperatorTest extends AbstractTestCase {
 
         $obj = new InQueryBuilderOperator();
 
-        $this->assertEquals("field IN ('value1', 'value2')", $obj->toSQL($rule));
+        $this->assertEquals("field IN ('value1', 'value2')", $obj->toSql($rule));
     }
 
     /**
@@ -48,7 +48,7 @@ class InQueryBuilderOperatorTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new InQueryBuilderOperator();
 

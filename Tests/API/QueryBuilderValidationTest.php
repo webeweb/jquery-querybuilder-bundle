@@ -27,7 +27,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testJsonSerialize() {
+    public function testJsonSerialize(): void {
 
         $obj = new QueryBuilderValidation();
 
@@ -39,7 +39,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetAllowEmptyValue() {
+    public function testSetAllowEmptyValue(): void {
 
         $obj = new QueryBuilderValidation();
 
@@ -52,7 +52,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetCallback() {
+    public function testSetCallback(): void {
 
         $obj = new QueryBuilderValidation();
 
@@ -65,7 +65,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetFormat() {
+    public function testSetFormat(): void {
 
         $obj = new QueryBuilderValidation();
 
@@ -78,7 +78,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetMax() {
+    public function testSetMax(): void {
 
         $obj = new QueryBuilderValidation();
 
@@ -91,7 +91,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetMessages() {
+    public function testSetMessages(): void {
 
         $obj = new QueryBuilderValidation();
 
@@ -104,7 +104,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetMin() {
+    public function testSetMin(): void {
 
         $obj = new QueryBuilderValidation();
 
@@ -117,7 +117,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetStep() {
+    public function testSetStep(): void {
 
         $obj = new QueryBuilderValidation();
 
@@ -130,7 +130,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new QueryBuilderValidation();
 

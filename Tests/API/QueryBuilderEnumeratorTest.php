@@ -31,7 +31,7 @@ class QueryBuilderEnumeratorTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumConditions() {
+    public function testEnumConditions(): void {
 
         $res = [
             QueryBuilderConditionInterface::CONDITION_AND,
@@ -47,7 +47,7 @@ class QueryBuilderEnumeratorTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumInputs() {
+    public function testEnumInputs(): void {
 
         $res = [
             QueryBuilderInputInterface::INPUT_CHECKBOX,
@@ -66,7 +66,7 @@ class QueryBuilderEnumeratorTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumOperators() {
+    public function testEnumOperators(): void {
 
         $res = [
             QueryBuilderOperatorInterface::OPERATOR_BEGINS_WITH      => "LIKE",
@@ -99,7 +99,7 @@ class QueryBuilderEnumeratorTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumTypes() {
+    public function testEnumTypes(): void {
 
         $res = [
             QueryBuilderTypeInterface::TYPE_BOOLEAN,

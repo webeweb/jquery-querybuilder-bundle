@@ -34,7 +34,7 @@ class WBWJQueryQueryBuilderExtensionTest extends AbstractTestCase {
     /**
      * {@inheritDoc}
      */
-    protected function setUp() {
+    protected function setUp(): void {
         parent::setUp();
 
         // Set a configs array mock.
@@ -48,7 +48,7 @@ class WBWJQueryQueryBuilderExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetAlias() {
+    public function testGetAlias(): void {
 
         $obj = new WBWJQueryQueryBuilderExtension();
 
@@ -60,7 +60,7 @@ class WBWJQueryQueryBuilderExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testGetConfiguration() {
+    public function testGetConfiguration(): void {
 
         $obj = new WBWJQueryQueryBuilderExtension();
 
@@ -73,7 +73,7 @@ class WBWJQueryQueryBuilderExtensionTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function testLoad() {
+    public function testLoad(): void {
 
         $obj = new WBWJQueryQueryBuilderExtension();
 
@@ -85,7 +85,7 @@ class WBWJQueryQueryBuilderExtensionTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $this->assertEquals("wbw_jquery_querybuilder", WBWJQueryQueryBuilderExtension::EXTENSION_ALIAS);
     }

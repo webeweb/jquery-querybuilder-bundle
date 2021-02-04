@@ -22,21 +22,21 @@ interface QueryBuilderRuleSetInterface {
     /**
      * Get the condition.
      *
-     * @return string Returns the condition.
+     * @return string|null Returns the condition.
      */
-    public function getCondition();
+    public function getCondition(): ?string;
 
     /**
      * Get the rules.
      *
      * @return array Returns the rules.
      */
-    public function getRules();
+    public function getRules(): array;
 
     /**
      * Get the valid.
      *
      * @return bool Returns the valid.
      */
-    public function getValid();
+    public function getValid(): bool;
 }

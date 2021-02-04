@@ -25,11 +25,11 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class DateQueryBuilderTypeTest extends AbstractTestCase {
 
     /**
-     * Tests the toSQL() method.
+     * Tests the toSql() method.
      *
      * @return void
      */
-    public function testToSQL() {
+    public function testToSQL(): void {
 
         // Set a QueryBuilder rule mock.
         $rule = new QueryBuilderRule();
@@ -37,15 +37,15 @@ class DateQueryBuilderTypeTest extends AbstractTestCase {
 
         $obj = new DateQueryBuilderType();
 
-        $this->assertEquals("2019-06-14", $obj->toSQL($rule));
+        $this->assertEquals("2019-06-14", $obj->toSql($rule));
     }
 
     /**
-     * Tests the toSQL() method.
+     * Tests the toSql() method.
      *
      * @return void
      */
-    public function testToSQLWithWrap() {
+    public function testToSQLWithWrap(): void {
 
         // Set a QueryBuilder rule mock.
         $rule = new QueryBuilderRule();
@@ -53,7 +53,7 @@ class DateQueryBuilderTypeTest extends AbstractTestCase {
 
         $obj = new DateQueryBuilderType();
 
-        $this->assertEquals("'2019-06-14'", $obj->toSQL($rule, true));
+        $this->assertEquals("'2019-06-14'", $obj->toSql($rule, true));
     }
 
     /**
@@ -61,7 +61,7 @@ class DateQueryBuilderTypeTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new DateQueryBuilderType();
 

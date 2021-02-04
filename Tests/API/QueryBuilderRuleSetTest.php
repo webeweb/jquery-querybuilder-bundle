@@ -29,7 +29,7 @@ class QueryBuilderRuleSetTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetCondition() {
+    public function testSetCondition(): void {
 
         $obj = new QueryBuilderRuleSet();
 
@@ -42,7 +42,7 @@ class QueryBuilderRuleSetTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetConditionWithInvalidArgumentException() {
+    public function testSetConditionWithInvalidArgumentException(): void {
 
         $obj = new QueryBuilderRuleSet();
 
@@ -61,7 +61,7 @@ class QueryBuilderRuleSetTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new QueryBuilderRuleSet();
 

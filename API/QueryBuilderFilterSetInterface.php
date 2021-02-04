@@ -27,7 +27,7 @@ interface QueryBuilderFilterSetInterface extends JsonSerializable {
      * @param QueryBuilderFilterInterface $filter The filter.
      * @return QueryBuilderFilterSetInterface Returns this filter set.
      */
-    public function addFilter(QueryBuilderFilterInterface $filter);
+    public function addFilter(QueryBuilderFilterInterface $filter): QueryBuilderFilterSetInterface;
 
     /**
      * Get a decorator.
@@ -35,7 +35,7 @@ interface QueryBuilderFilterSetInterface extends JsonSerializable {
      * @param string $id The id.
      * @return QueryBuilderDecoratorInterface|null Returns the decorator in case of success, null otherwise.
      */
-    public function getDecorator($id);
+    public function getDecorator(string $id): ?QueryBuilderDecoratorInterface;
 
     /**
      * Get a filter.
@@ -43,14 +43,14 @@ interface QueryBuilderFilterSetInterface extends JsonSerializable {
      * @param string $id The id.
      * @return QueryBuilderFilterInterface|null Returns the filter in case of success, null otherwise.
      */
-    public function getFilter($id);
+    public function getFilter(string $id): ?QueryBuilderFilterInterface;
 
     /**
      * Get the filters.
      *
      * @return QueryBuilderFilterInterface[] Returns the filters.
      */
-    public function getFilters();
+    public function getFilters(): array;
 
     /**
      * Remove a filter.
@@ -58,5 +58,5 @@ interface QueryBuilderFilterSetInterface extends JsonSerializable {
      * @param QueryBuilderFilterInterface $filter The filter.
      * @return QueryBuilderFilterSetInterface Returns this filter set.
      */
-    public function removeFilter(QueryBuilderFilterInterface $filter);
+    public function removeFilter(QueryBuilderFilterInterface $filter): QueryBuilderFilterSetInterface;
 }

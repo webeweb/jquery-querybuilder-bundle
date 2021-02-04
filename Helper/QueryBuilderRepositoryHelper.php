@@ -30,17 +30,17 @@ class QueryBuilderRepositoryHelper implements QueryBuilderConditionInterface, Qu
      * Convert a rule into a SQL string representation.
      *
      * @param QueryBuilderRuleInterface $rule The rule.
-     * @return string Returns the SQL string representing the rule.
+     * @return string|null Returns the SQL string representing the rule.
      */
-    public static function queryBuilderRule2SQL(QueryBuilderRuleInterface $rule) {
+    public static function queryBuilderRule2Sql(QueryBuilderRuleInterface $rule): ?string {
 
         if (null !== $rule->getDecorator()) {
-            return $rule->getDecorator()->toSQL($rule, false);
+            return $rule->getDecorator()->toSql($rule, false);
         }
 
         $qbo = QueryBuilderDecoratorFactory::newQueryBuilderOperator($rule->getOperator());
 
-        return $qbo->toSQL($rule, false);
+        return $qbo->toSql($rule, false);
     }
 
     /**
@@ -49,7 +49,7 @@ class QueryBuilderRepositoryHelper implements QueryBuilderConditionInterface, Qu
      * @param QueryBuilderRuleSetInterface $ruleSet The rule set.
      * @return string Returns the SQL string representing the rule set.
      */
-    public static function queryBuilderRuleSet2SQL(QueryBuilderRuleSetInterface $ruleSet) {
+    public static function queryBuilderRuleSet2Sql(QueryBuilderRuleSetInterface $ruleSet): string {
 
         if (0 === count($ruleSet->getRules())) {
             return "";
@@ -62,12 +62,12 @@ class QueryBuilderRepositoryHelper implements QueryBuilderConditionInterface, Qu
             if (true === ($current instanceof QueryBuilderRuleSetInterface)) {
 
                 /** @var QueryBuilderRuleSetInterface $current */
-                $sql[] = static::queryBuilderRuleSet2SQL($current);
+                $sql[] = static::queryBuilderRuleSet2Sql($current);
                 continue;
             }
 
             /** @var QueryBuilderRuleInterface $current */
-            $sql[] = static::queryBuilderRule2SQL($current);
+            $sql[] = static::queryBuilderRule2Sql($current);
         }
 
         return "(" . implode(" " . $ruleSet->getCondition() . " ", $sql) . ")";

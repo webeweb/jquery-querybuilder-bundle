@@ -34,7 +34,7 @@ class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumQueryBuilderOperators() {
+    public function testEnumQueryBuilderOperators(): void {
 
         $res = [
             QueryBuilderOperatorInterface::OPERATOR_BEGINS_WITH      => "WBW\\Bundle\\JQuery\\QueryBuilderBundle\\Decorator\\Operator\\BeginsWithQueryBuilderOperator",
@@ -67,7 +67,7 @@ class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testEnumQueryBuilderTypes() {
+    public function testEnumQueryBuilderTypes(): void {
 
         $res = [
             QueryBuilderTypeInterface::TYPE_BOOLEAN  => "WBW\\Bundle\\JQuery\\QueryBuilderBundle\\Decorator\\Type\\BooleanQueryBuilderType",
@@ -87,7 +87,7 @@ class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewQueryBuilderDecoratorOperator() {
+    public function testNewQueryBuilderDecoratorOperator(): void {
 
         $classes = TestQueryBuilderDecoratorFactory::enumQueryBuilderOperators();
         $enum    = QueryBuilderEnumerator::enumOperators();
@@ -105,7 +105,7 @@ class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewQueryBuilderDecoratorOperatorWithInvalidArgumentException() {
+    public function testNewQueryBuilderDecoratorOperatorWithInvalidArgumentException(): void {
 
         try {
 
@@ -122,7 +122,7 @@ class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewQueryBuilderDecoratorType() {
+    public function testNewQueryBuilderDecoratorType(): void {
 
         $classes = TestQueryBuilderDecoratorFactory::enumQueryBuilderTypes();
         $enum    = QueryBuilderEnumerator::enumTypes();
@@ -140,7 +140,7 @@ class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testNewQueryBuilderDecoratorTypeWithInvalidArgumentException() {
+    public function testNewQueryBuilderDecoratorTypeWithInvalidArgumentException(): void {
 
         try {
 

@@ -32,13 +32,13 @@ class GreaterQueryBuilderOperator extends AbstractQueryBuilderOperator {
     /**
      * {@inheritDoc}
      */
-    public function toSQL(QueryBuilderRuleInterface $rule, $wrap = false) {
+    public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
 
         $qbt = QueryBuilderDecoratorFactory::newQueryBuilderType($rule->getType());
 
         $sql = [
-            parent::toSQL($rule, $wrap),
-            $qbt->toSQL($rule, true),
+            parent::toSql($rule, $wrap),
+            $qbt->toSql($rule, true),
         ];
 
         return implode(" ", $sql);

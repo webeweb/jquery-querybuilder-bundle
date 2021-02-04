@@ -31,7 +31,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetField() {
+    public function testSetField(): void {
 
         $obj = new TestQueryBuilder();
 
@@ -44,7 +44,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetId() {
+    public function testSetId(): void {
 
         $obj = new TestQueryBuilder();
 
@@ -57,7 +57,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetInput() {
+    public function testSetInput(): void {
 
         $obj = new TestQueryBuilder();
 
@@ -70,7 +70,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetInputWithInvalidArgumentException() {
+    public function testSetInputWithInvalidArgumentException(): void {
 
         $obj = new TestQueryBuilder();
 
@@ -89,7 +89,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetType() {
+    public function testSetType(): void {
 
         $obj = new TestQueryBuilder();
 
@@ -102,7 +102,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetTypeWithInvalidArgumentException() {
+    public function testSetTypeWithInvalidArgumentException(): void {
 
         $obj = new TestQueryBuilder();
 
@@ -122,7 +122,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
      * @return void
      * @throws Exception Throws an exception if an error occurs.
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TestQueryBuilder();
 

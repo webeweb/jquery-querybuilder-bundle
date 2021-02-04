@@ -25,11 +25,11 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class GreaterOrEqualQueryBuilderOperatorTest extends AbstractTestCase {
 
     /**
-     * Tests the toSQL() method.
+     * Tests the toSql() method.
      *
      * @return void
      */
-    public function testToSQL() {
+    public function testToSQL(): void {
 
         // Set a QueryBuilder rule mock.
         $rule = new QueryBuilderRule();
@@ -39,7 +39,7 @@ class GreaterOrEqualQueryBuilderOperatorTest extends AbstractTestCase {
 
         $obj = new GreaterOrEqualQueryBuilderOperator();
 
-        $this->assertEquals("field >= 'value'", $obj->toSQL($rule));
+        $this->assertEquals("field >= 'value'", $obj->toSql($rule));
     }
 
     /**
@@ -47,7 +47,7 @@ class GreaterOrEqualQueryBuilderOperatorTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new GreaterOrEqualQueryBuilderOperator();
 

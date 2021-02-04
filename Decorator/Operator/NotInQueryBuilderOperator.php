@@ -32,13 +32,14 @@ class NotInQueryBuilderOperator extends AbstractQueryBuilderOperator {
     /**
      * {@inheritDoc}
      */
-    public function toSQL(QueryBuilderRuleInterface $rule, $wrap = false) {
+    public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
 
         $qbt = new ArrayQueryBuilderType();
+        $tmp = $qbt->toSql($rule, true);
 
         $sql = [
-            parent::toSQL($rule, $wrap),
-            "(" . implode(", ", $qbt->toSQL($rule, true)) . ")",
+            parent::toSql($rule, $wrap),
+            "(" . str_replace("{{implode}}", ", ", $tmp) . ")",
         ];
 
         return implode(" ", $sql);

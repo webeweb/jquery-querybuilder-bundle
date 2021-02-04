@@ -28,7 +28,7 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddFilter() {
+    public function testAddFilter(): void {
 
         // Set a QueryBuilder filter mock.
         $filter = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
@@ -46,7 +46,7 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testAddFilterWithSameId() {
+    public function testAddFilterWithSameId(): void {
 
         // Set a QueryBuilder filter mock.
         $filter = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
@@ -63,7 +63,7 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testJsonSerialize() {
+    public function testJsonSerialize(): void {
 
         // Set a QueryBuilder filter mock.
         $filter = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
@@ -79,7 +79,7 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testRemoveFilter() {
+    public function testRemoveFilter(): void {
 
         // Set a QueryBuilder filter mock.
         $filter = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
@@ -99,7 +99,7 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new QueryBuilderFilterSet();
 

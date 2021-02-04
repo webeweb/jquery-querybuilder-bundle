@@ -29,7 +29,7 @@ class TestFixtures {
      *
      * @return array Returns a rule.
      */
-    public static function getRule() {
+    public static function getRule(): array {
         return [
             "id"       => "age",
             "field"    => "age",
@@ -45,7 +45,7 @@ class TestFixtures {
      *
      * @return array Returns the rules.
      */
-    public static function getRules() {
+    public static function getRules(): array {
         return [
             "condition" => QueryBuilderConditionInterface::CONDITION_OR,
             "rules"     => [

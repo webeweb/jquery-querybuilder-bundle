@@ -37,7 +37,7 @@ class QueryBuilderNormalizer {
      * @return QueryBuilderRuleInterface Returns the de-normalized rule.
      * @throws InvalidArgumentException Throws an invalid argument exception if an argument is invalid.
      */
-    public static function denormalizeQueryBuilderRule(QueryBuilderFilterSetInterface $filterSet, array $rule) {
+    public static function denormalizeQueryBuilderRule(QueryBuilderFilterSetInterface $filterSet, array $rule): QueryBuilderRuleInterface {
 
         $model = new QueryBuilderRule();
         $model->setId(ArrayHelper::get($rule, "id", null));
@@ -60,7 +60,7 @@ class QueryBuilderNormalizer {
      * @return QueryBuilderRuleSetInterface Returns the rule set.
      * @throws InvalidArgumentException Throws an invalid argument exception if an argument is invalid.
      */
-    public static function denormalizeQueryBuilderRuleSet(QueryBuilderFilterSetInterface $filterSet, array $rules) {
+    public static function denormalizeQueryBuilderRuleSet(QueryBuilderFilterSetInterface $filterSet, array $rules): QueryBuilderRuleSetInterface {
 
         $model = new QueryBuilderRuleSet();
         $model->setCondition(ArrayHelper::get($rules, "condition", null));
@@ -86,7 +86,7 @@ class QueryBuilderNormalizer {
      * @param QueryBuilderFilterInterface $filter The filter.
      * @return array Returns the normalized filter.
      */
-    public static function normalizeQueryBuilderFilter(QueryBuilderFilterInterface $filter) {
+    public static function normalizeQueryBuilderFilter(QueryBuilderFilterInterface $filter): array {
 
         $output = [];
 
@@ -113,7 +113,7 @@ class QueryBuilderNormalizer {
      * @param QueryBuilderFilterSetInterface $filterSet The filter set.
      * @return array Returns the normalized filter set.
      */
-    public static function normalizeQueryBuilderFilterSet(QueryBuilderFilterSetInterface $filterSet) {
+    public static function normalizeQueryBuilderFilterSet(QueryBuilderFilterSetInterface $filterSet): array {
 
         $output = [];
 
@@ -131,7 +131,7 @@ class QueryBuilderNormalizer {
      * @param QueryBuilderValidationInterface $validation The validation.
      * @return array Returns the normalized validation.
      */
-    public static function normalizeQueryBuilderValidation(QueryBuilderValidationInterface $validation) {
+    public static function normalizeQueryBuilderValidation(QueryBuilderValidationInterface $validation): array {
 
         $output = [];
 

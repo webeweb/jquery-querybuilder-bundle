@@ -38,7 +38,7 @@ class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
     /**
      * {@inheritDoc}
      */
-    public function addFilter(QueryBuilderFilterInterface $filter) {
+    public function addFilter(QueryBuilderFilterInterface $filter): QueryBuilderFilterSetInterface {
         $this->filters[$filter->getId()] = $filter;
         return $this;
     }
@@ -46,28 +46,32 @@ class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
     /**
      * {@inheritDoc}
      */
-    public function getDecorator($id) {
+    public function getDecorator(string $id): ?QueryBuilderDecoratorInterface {
+
         $filter = $this->getFilter($id);
         if (null === $filter) {
-            return $filter;
+            return null;
         }
+
         return $filter->getDecorator();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getFilter($id) {
+    public function getFilter(string $id): ?QueryBuilderFilterInterface {
+
         if (false === array_key_exists($id, $this->filters)) {
             return null;
         }
+
         return $this->filters[$id];
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getFilters() {
+    public function getFilters(): array {
         return $this->filters;
     }
 
@@ -76,14 +80,14 @@ class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
      *
      * @return array Returns an array representing this instance.
      */
-    public function jsonSerialize() {
+    public function jsonSerialize(): array {
         return QueryBuilderNormalizer::normalizeQueryBuilderFilterSet($this);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function removeFilter(QueryBuilderFilterInterface $filter) {
+    public function removeFilter(QueryBuilderFilterInterface $filter): QueryBuilderFilterSetInterface {
         if (true === array_key_exists($filter->getId(), $this->filters)) {
             unset($this->filters[$filter->getId()]);
         }
@@ -96,7 +100,7 @@ class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
      * @param QueryBuilderFilterInterface[] $filters The filters.
      * @return QueryBuilderFilterSetInterface Returns this filter set.
      */
-    protected function setFilters(array $filters) {
+    protected function setFilters(array $filters): QueryBuilderFilterSetInterface {
         $this->filters = $filters;
         return $this;
     }

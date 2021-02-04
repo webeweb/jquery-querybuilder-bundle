@@ -24,49 +24,49 @@ class QueryBuilderValidation implements QueryBuilderValidationInterface {
     /**
      * Allow empty value.
      *
-     * @var bool
+     * @var bool|null
      */
     private $allowEmptyValue;
 
     /**
      * Callback.
      *
-     * @var string
+     * @var string|null
      */
     private $callback;
 
     /**
      * Format.
      *
-     * @var string|array
+     * @var mixed
      */
     private $format;
 
     /**
      * Max.
      *
-     * @var integer|float|string
+     * @var mixed
      */
     private $max;
 
     /**
      * Messages.
      *
-     * @var array
+     * @var array|null
      */
     private $messages;
 
     /**
      * Min.
      *
-     * @var integer|float|string
+     * @var mixed
      */
     private $min;
 
     /**
      * Step.
      *
-     * @var integer|float
+     * @var mixed
      */
     private $step;
 
@@ -74,20 +74,20 @@ class QueryBuilderValidation implements QueryBuilderValidationInterface {
      * Constructor.
      */
     public function __construct() {
-        // NOTHING TO DO.
+        // NOTHING TO DO
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getAllowEmptyValue() {
+    public function getAllowEmptyValue(): ?bool {
         return $this->allowEmptyValue;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getCallback() {
+    public function getCallback(): ?string {
         return $this->callback;
     }
 
@@ -108,7 +108,7 @@ class QueryBuilderValidation implements QueryBuilderValidationInterface {
     /**
      * {@inheritDoc}
      */
-    public function getMessages() {
+    public function getMessages(): ?array {
         return $this->messages;
     }
 
@@ -129,17 +129,17 @@ class QueryBuilderValidation implements QueryBuilderValidationInterface {
     /**
      * {@inheritDoc}
      */
-    public function jsonSerialize() {
+    public function jsonSerialize(): array {
         return QueryBuilderNormalizer::normalizeQueryBuilderValidation($this);
     }
 
     /**
      * Set the allow empty value.
      *
-     * @param bool $allowEmptyValue The allow empty value.
+     * @param bool|null $allowEmptyValue The allow empty value.
      * @return QueryBuilderValidationInterface Returns this validation.
      */
-    public function setAllowEmptyValue($allowEmptyValue) {
+    public function setAllowEmptyValue(?bool $allowEmptyValue): QueryBuilderValidationInterface {
         $this->allowEmptyValue = $allowEmptyValue;
         return $this;
     }
@@ -147,10 +147,10 @@ class QueryBuilderValidation implements QueryBuilderValidationInterface {
     /**
      * Set the callback.
      *
-     * @param string $callback The callback.
+     * @param string|null $callback The callback.
      * @return QueryBuilderValidationInterface Returns this validation.
      */
-    public function setCallback($callback) {
+    public function setCallback(?string $callback): QueryBuilderValidationInterface {
         $this->callback = $callback;
         return $this;
     }
@@ -158,10 +158,10 @@ class QueryBuilderValidation implements QueryBuilderValidationInterface {
     /**
      * Set the format.
      *
-     * @param string|array $format The format.
+     * @param mixed $format The format.
      * @return QueryBuilderValidationInterface Returns this validation.
      */
-    public function setFormat($format) {
+    public function setFormat($format): QueryBuilderValidationInterface {
         $this->format = $format;
         return $this;
     }
@@ -169,10 +169,10 @@ class QueryBuilderValidation implements QueryBuilderValidationInterface {
     /**
      * Set the max.
      *
-     * @param integer|float|string $max The max.
+     * @param mixed $max The max.
      * @return QueryBuilderValidationInterface Returns this validation.
      */
-    public function setMax($max) {
+    public function setMax($max): QueryBuilderValidationInterface {
         $this->max = $max;
         return $this;
     }
@@ -180,10 +180,10 @@ class QueryBuilderValidation implements QueryBuilderValidationInterface {
     /**
      * Set the messages.
      *
-     * @param array $messages The messages.
+     * @param array|null $messages The messages.
      * @return QueryBuilderValidationInterface Returns this validation.
      */
-    public function setMessages(array $messages) {
+    public function setMessages(?array $messages): QueryBuilderValidationInterface {
         $this->messages = $messages;
         return $this;
     }
@@ -191,10 +191,10 @@ class QueryBuilderValidation implements QueryBuilderValidationInterface {
     /**
      * Set the min.
      *
-     * @param integer|float|string $min The min.
+     * @param mixed $min The min.
      * @return QueryBuilderValidationInterface Returns this validation.
      */
-    public function setMin($min) {
+    public function setMin($min): QueryBuilderValidationInterface {
         $this->min = $min;
         return $this;
     }
@@ -202,10 +202,10 @@ class QueryBuilderValidation implements QueryBuilderValidationInterface {
     /**
      * Set the step.
      *
-     * @param integer|float $step The step.
+     * @param mixed $step The step.
      * @return QueryBuilderValidationInterface Returns this validation.
      */
-    public function setStep($step) {
+    public function setStep($step): QueryBuilderValidationInterface {
         $this->step = $step;
         return $this;
     }

@@ -11,6 +11,7 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Decorator;
 
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderDecoratorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorFactory;
 
 /**
@@ -24,21 +25,21 @@ class TestQueryBuilderDecoratorFactory extends QueryBuilderDecoratorFactory {
     /**
      * {@inheritDoc}
      */
-    public static function enumQueryBuilderOperators() {
+    public static function enumQueryBuilderOperators(): array {
         return parent::enumQueryBuilderOperators();
     }
 
     /**
      * {@inheritDoc}
      */
-    public static function enumQueryBuilderTypes() {
+    public static function enumQueryBuilderTypes(): array {
         return parent::enumQueryBuilderTypes();
     }
 
     /**
      * {@inheritDoc}
      */
-    public static function newQueryBuilderDecorator($enum, $key) {
+    public static function newQueryBuilderDecorator(array $enum, string $key): ?QueryBuilderDecoratorInterface {
         return parent::newQueryBuilderDecorator($enum, $key);
     }
 }

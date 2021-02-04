@@ -30,11 +30,11 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\TestFixtures;
 class QueryBuilderRepositoryHelperTest extends AbstractTestCase {
 
     /**
-     * Tests the queryBuilderRule2SQL() method.
+     * Tests the queryBuilderRule2Sql() method.
      *
      * @returns void
      */
-    public function testQueryBuilderRule2SQL() {
+    public function testQueryBuilderRule2Sql(): void {
 
         $obj = new QueryBuilderRule();
         $obj->setField("field");
@@ -42,15 +42,15 @@ class QueryBuilderRepositoryHelperTest extends AbstractTestCase {
         $obj->setType(QueryBuilderTypeInterface::TYPE_STRING);
         $obj->setValue("value");
 
-        $this->assertEquals("field = 'value'", QueryBuilderRepositoryHelper::queryBuilderRule2SQL($obj));
+        $this->assertEquals("field = 'value'", QueryBuilderRepositoryHelper::queryBuilderRule2Sql($obj));
     }
 
     /**
-     * Tests the queryBuilderRule2SQL() method.
+     * Tests the queryBuilderRule2Sql() method.
      *
      * @returns void
      */
-    public function testQueryBuilderRule2SQLWithDecorator() {
+    public function testQueryBuilderRule2SqlWithDecorator(): void {
 
         // Set a QueryBuilder decorator mock.
         $decorator = $this->getMockBuilder(QueryBuilderDecoratorInterface::class)->getMock();
@@ -58,15 +58,15 @@ class QueryBuilderRepositoryHelperTest extends AbstractTestCase {
         $obj = new QueryBuilderRule();
         $obj->setDecorator($decorator);
 
-        $this->assertNull(QueryBuilderRepositoryHelper::queryBuilderRule2SQL($obj));
+        $this->assertEquals("", QueryBuilderRepositoryHelper::queryBuilderRule2Sql($obj));
     }
 
     /**
-     * Tests the queryBuilderRuleSet2SQL() method.
+     * Tests the queryBuilderRuleSet2Sql() method.
      *
      * @returns void
      */
-    public function testQueryBuilderRuleSet2SQL() {
+    public function testQueryBuilderRuleSet2Sql(): void {
 
         // Set a QueryBuilder filter set mock.
         $filterSet = $this->getMockBuilder(QueryBuilderFilterSetInterface::class)->getMock();
@@ -76,21 +76,21 @@ class QueryBuilderRepositoryHelperTest extends AbstractTestCase {
         $obj = QueryBuilderNormalizer::denormalizeQueryBuilderRuleSet($filterSet, $arg);
 
         $res = "(age > 21 OR (firstname = 'John' AND lastname = 'DOE'))";
-        $this->assertEquals($res, QueryBuilderRepositoryHelper::queryBuilderRuleSet2SQL($obj));
+        $this->assertEquals($res, QueryBuilderRepositoryHelper::queryBuilderRuleSet2Sql($obj));
     }
 
     /**
-     * Tests the queryBuilderRuleSet2SQL() method.
+     * Tests the queryBuilderRuleSet2Sql() method.
      *
      * @returns void
      */
-    public function testQueryBuilderRuleSet2SQLWithoutRules() {
+    public function testQueryBuilderRuleSet2SqlWithoutRules(): void {
 
         // Set a QueryBuilder filter set mock.
         $filterSet = $this->getMockBuilder(QueryBuilderFilterSetInterface::class)->getMock();
 
         $obj = QueryBuilderNormalizer::denormalizeQueryBuilderRuleSet($filterSet, []);
 
-        $this->assertEquals("", QueryBuilderRepositoryHelper::queryBuilderRuleSet2SQL($obj));
+        $this->assertEquals("", QueryBuilderRepositoryHelper::queryBuilderRuleSet2Sql($obj));
     }
 }

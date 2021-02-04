@@ -33,13 +33,14 @@ class NotBetweenQueryBuilderOperator extends AbstractQueryBuilderOperator implem
     /**
      * {@inheritDoc}
      */
-    public function toSQL(QueryBuilderRuleInterface $rule, $wrap = false) {
+    public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
 
         $qbt = new ArrayQueryBuilderType();
+        $tmp = $qbt->toSql($rule, true);
 
         $sql = [
-            parent::toSQL($rule, $wrap),
-            implode(" " . self::CONDITION_AND . " ", $qbt->toSQL($rule, true)),
+            parent::toSql($rule, $wrap),
+            str_replace("{{implode}}", " " . self::CONDITION_AND . " ", $tmp),
         ];
 
         return implode(" ", $sql);

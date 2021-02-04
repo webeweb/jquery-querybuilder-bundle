@@ -25,11 +25,11 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class BooleanQueryBuilderTypeTest extends AbstractTestCase {
 
     /**
-     * Tests the toSQL() method.
+     * Tests the toSql() method.
      *
      * @return void
      */
-    public function testToSQL() {
+    public function testToSQL(): void {
 
         // Set a QueryBuilder rule mock.
         $rule = new QueryBuilderRule();
@@ -37,7 +37,7 @@ class BooleanQueryBuilderTypeTest extends AbstractTestCase {
 
         $obj = new BooleanQueryBuilderType();
 
-        $this->assertEquals("1", $obj->toSQL($rule));
+        $this->assertEquals("1", $obj->toSql($rule));
     }
 
     /**
@@ -45,7 +45,7 @@ class BooleanQueryBuilderTypeTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new BooleanQueryBuilderType();
 

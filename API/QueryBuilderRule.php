@@ -24,14 +24,14 @@ class QueryBuilderRule extends AbstractQueryBuilder implements QueryBuilderOpera
     /**
      * Decorator.
      *
-     * @var QueryBuilderDecoratorInterface
+     * @var QueryBuilderDecoratorInterface|null
      */
     private $decorator;
 
     /**
      * Operator.
      *
-     * @var string
+     * @var string|null
      */
     private $operator;
 
@@ -52,14 +52,14 @@ class QueryBuilderRule extends AbstractQueryBuilder implements QueryBuilderOpera
     /**
      * {@inheritDoc}
      */
-    public function getDecorator() {
+    public function getDecorator(): ?QueryBuilderDecoratorInterface {
         return $this->decorator;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getOperator() {
+    public function getOperator(): ?string {
         return $this->operator;
     }
 
@@ -76,7 +76,7 @@ class QueryBuilderRule extends AbstractQueryBuilder implements QueryBuilderOpera
      * @param QueryBuilderDecoratorInterface|null $decorator The decorator.
      * @return QueryBuilderRuleInterface Returns this rule.
      */
-    public function setDecorator(QueryBuilderDecoratorInterface $decorator = null) {
+    public function setDecorator(?QueryBuilderDecoratorInterface $decorator): QueryBuilderRuleInterface {
         $this->decorator = $decorator;
         return $this;
     }
@@ -84,11 +84,11 @@ class QueryBuilderRule extends AbstractQueryBuilder implements QueryBuilderOpera
     /**
      * Set the operator.
      *
-     * @param string $operator The operator.
+     * @param string|null $operator The operator.
      * @return QueryBuilderRuleInterface Returns this rule.
      * @throws InvalidArgumentException Throws an invalid argument exception if the operator is invalid.
      */
-    public function setOperator($operator) {
+    public function setOperator(?string $operator): QueryBuilderRuleInterface {
         if (null !== $operator && false === array_key_exists($operator, QueryBuilderEnumerator::enumOperators())) {
             throw new InvalidArgumentException(sprintf('The operator "%s" is invalid', $operator));
         }
@@ -102,7 +102,7 @@ class QueryBuilderRule extends AbstractQueryBuilder implements QueryBuilderOpera
      * @param mixed $value The value.
      * @return QueryBuilderRuleInterface Returns this rule.
      */
-    public function setValue($value) {
+    public function setValue($value): QueryBuilderRuleInterface {
         $this->value = $value;
         return $this;
     }

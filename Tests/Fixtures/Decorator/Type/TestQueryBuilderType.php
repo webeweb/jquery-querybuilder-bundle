@@ -32,7 +32,7 @@ class TestQueryBuilderType extends AbstractQueryBuilderType {
     /**
      * {@inheritDoc}
      */
-    public function toSQL(QueryBuilderRuleInterface $rule, $wrap = false) {
-        // NOTHING TO DO.
+    public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
+        // NOTHING TO DO
     }
 }

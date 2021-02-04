@@ -26,35 +26,35 @@ abstract class AbstractQueryBuilderType implements QueryBuilderDecoratorInterfac
     /**
      * Type.
      *
-     * @var string
+     * @var string|null
      */
     private $type;
 
     /**
      * Constructor.
      *
-     * @param string $type The type.
+     * @param string|null $type The type.
      */
-    protected function __construct($type) {
+    protected function __construct(?string $type) {
         $this->setType($type);
     }
 
     /**
      * Get the type.
      *
-     * @return string Returns the type.
+     * @return string|null Returns the type.
      */
-    public function getType() {
+    public function getType(): ?string {
         return $this->type;
     }
 
     /**
      * Set the type.
      *
-     * @param string $type The type
+     * @param string|null $type The type
      * @return AbstractQueryBuilderType Returns this type.
      */
-    protected function setType($type) {
+    protected function setType(?string $type): AbstractQueryBuilderType {
         $this->type = $type;
         return $this;
     }

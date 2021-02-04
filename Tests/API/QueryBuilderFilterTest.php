@@ -31,7 +31,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testJsonSerialize() {
+    public function testJsonSerialize(): void {
 
         $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_STRING, [QueryBuilderFilter::OPERATOR_EQUAL]);
 
@@ -43,7 +43,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetDecorator() {
+    public function testSetDecorator(): void {
 
         // Set a QueryBuilder decorator mock.
         $decorator = $this->getMockBuilder(QueryBuilderDecoratorInterface::class)->getMock();
@@ -59,7 +59,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetLabel() {
+    public function testSetLabel(): void {
 
         $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
 
@@ -72,7 +72,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetMultiple() {
+    public function testSetMultiple(): void {
 
         $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
 
@@ -85,7 +85,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOperators() {
+    public function testSetOperators(): void {
 
         $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
 
@@ -98,7 +98,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetOperatorsWithInvalidArgumentException() {
+    public function testSetOperatorsWithInvalidArgumentException(): void {
 
         $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
 
@@ -117,7 +117,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetValidation() {
+    public function testSetValidation(): void {
 
         // Set a QueryBuilder validation mock.
         $validation = $this->getMockBuilder(QueryBuilderValidationInterface::class)->getMock();
@@ -133,7 +133,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testSetValues() {
+    public function testSetValues(): void {
 
         $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
 
@@ -146,7 +146,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
 

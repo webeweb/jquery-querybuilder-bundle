@@ -25,28 +25,28 @@ abstract class AbstractQueryBuilder implements QueryBuilderInputInterface, Query
     /**
      * Field.
      *
-     * @var string
+     * @var string|null
      */
     private $field;
 
     /**
      * Id.
      *
-     * @var string
+     * @var string|null
      */
     private $id;
 
     /**
      * Input.
      *
-     * @var string
+     * @var string|null
      */
     private $input;
 
     /**
      * Type.
      *
-     * @var string
+     * @var string|null
      */
     private $type;
 
@@ -54,44 +54,44 @@ abstract class AbstractQueryBuilder implements QueryBuilderInputInterface, Query
      * Constructor.
      */
     protected function __construct() {
-        // NOTHING TO TO.
+        // NOTHING TO TO
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getField() {
+    public function getField(): ?string {
         return $this->field;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getId() {
+    public function getId(): ?string {
         return $this->id;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getInput() {
+    public function getInput(): ?string {
         return $this->input;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getType() {
+    public function getType(): ?string {
         return $this->type;
     }
 
     /**
      * Set the field.
      *
-     * @param string $field The field.
+     * @param string|null $field The field.
      * @return AbstractQueryBuilder Returns this QueryBuilder.
      */
-    public function setField($field) {
+    public function setField(?string $field): AbstractQueryBuilder {
         $this->field = $field;
         return $this;
     }
@@ -99,10 +99,10 @@ abstract class AbstractQueryBuilder implements QueryBuilderInputInterface, Query
     /**
      * Set the id.
      *
-     * @param string $id The id.
+     * @param string|null $id The id.
      * @return AbstractQueryBuilder Returns this QueryBuilder.
      */
-    public function setId($id) {
+    public function setId(?string $id): AbstractQueryBuilder {
         $this->id = $id;
         return $this;
     }
@@ -110,11 +110,11 @@ abstract class AbstractQueryBuilder implements QueryBuilderInputInterface, Query
     /**
      * Set the input.
      *
-     * @param string $input The input.
+     * @param string|null $input The input.
      * @return AbstractQueryBuilder Returns this QueryBuilder.
      * @throws InvalidArgumentException Throws an invalid argument exception if the input is invalid.
      */
-    public function setInput($input) {
+    public function setInput(?string $input): AbstractQueryBuilder {
         if (false === in_array($input, QueryBuilderEnumerator::enumInputs())) {
             throw new InvalidArgumentException(sprintf('The input "%s" is invalid', $input));
         }
@@ -125,11 +125,11 @@ abstract class AbstractQueryBuilder implements QueryBuilderInputInterface, Query
     /**
      * Set the type.
      *
-     * @param string $type The type.
+     * @param string|null $type The type.
      * @return AbstractQueryBuilder Returns this QueryBuilder.
      * @throws InvalidArgumentException Throws an invalid argument exception if the type is invalid.
      */
-    public function setType($type) {
+    public function setType(?string $type): AbstractQueryBuilder {
         if (null !== $type && false === in_array($type, QueryBuilderEnumerator::enumTypes())) {
             throw new InvalidArgumentException(sprintf('The type "%s" is invalid', $type));
         }

@@ -22,44 +22,44 @@ interface QueryBuilderRuleInterface {
     /**
      * Get the decorator.
      *
-     * @return QueryBuilderDecoratorInterface Returns the decorator.
+     * @return QueryBuilderDecoratorInterface|null Returns the decorator.
      */
-    public function getDecorator();
+    public function getDecorator(): ?QueryBuilderDecoratorInterface;
 
     /**
      * Get the field.
      *
-     * @return string Returns the field.
+     * @return string|null Returns the field.
      */
-    public function getField();
+    public function getField(): ?string;
 
     /**
      * Get the id.
      *
-     * @return string Returns the id.
+     * @return string|null Returns the id.
      */
-    public function getId();
+    public function getId(): ?string;
 
     /**
      * Get the input.
      *
-     * @return string Returns the input.
+     * @return string|null Returns the input.
      */
-    public function getInput();
+    public function getInput(): ?string;
 
     /**
      * Get the operator.
      *
-     * @return string Returns the operator.
+     * @return string|null Returns the operator.
      */
-    public function getOperator();
+    public function getOperator(): ?string;
 
     /**
      * Get the type.
      *
-     * @return string Returns the type.
+     * @return string|null Returns the type.
      */
-    public function getType();
+    public function getType(): ?string;
 
     /**
      * Get the value.

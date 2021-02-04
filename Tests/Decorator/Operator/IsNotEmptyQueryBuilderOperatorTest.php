@@ -25,11 +25,11 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class IsNotEmptyQueryBuilderOperatorTest extends AbstractTestCase {
 
     /**
-     * Tests the toSQL() method.
+     * Tests the toSql() method.
      *
      * @return void
      */
-    public function testToSQL() {
+    public function testToSQL(): void {
 
         // Set a QueryBuilder rule mock.
         $rule = new QueryBuilderRule();
@@ -37,7 +37,7 @@ class IsNotEmptyQueryBuilderOperatorTest extends AbstractTestCase {
 
         $obj = new IsNotEmptyQueryBuilderOperator();
 
-        $this->assertEquals("field IS NOT NULL", $obj->toSQL($rule));
+        $this->assertEquals("field IS NOT NULL", $obj->toSql($rule));
     }
 
     /**
@@ -45,7 +45,7 @@ class IsNotEmptyQueryBuilderOperatorTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new IsNotEmptyQueryBuilderOperator();
 

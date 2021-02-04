@@ -25,11 +25,11 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class TimeQueryBuilderTypeTest extends AbstractTestCase {
 
     /**
-     * Tests the toSQL() method.
+     * Tests the toSql() method.
      *
      * @return void
      */
-    public function testToSQL() {
+    public function testToSQL(): void {
 
         // Set a QueryBuilder rule mock.
         $rule = new QueryBuilderRule();
@@ -37,15 +37,15 @@ class TimeQueryBuilderTypeTest extends AbstractTestCase {
 
         $obj = new TimeQueryBuilderType();
 
-        $this->assertEquals("18:00:00", $obj->toSQL($rule));
+        $this->assertEquals("18:00:00", $obj->toSql($rule));
     }
 
     /**
-     * Tests the toSQL() method.
+     * Tests the toSql() method.
      *
      * @return void
      */
-    public function testToSQLWithWrap() {
+    public function testToSQLWithWrap(): void {
 
         // Set a QueryBuilder rule mock.
         $rule = new QueryBuilderRule();
@@ -53,7 +53,7 @@ class TimeQueryBuilderTypeTest extends AbstractTestCase {
 
         $obj = new TimeQueryBuilderType();
 
-        $this->assertEquals("'18:00:00'", $obj->toSQL($rule, true));
+        $this->assertEquals("'18:00:00'", $obj->toSql($rule, true));
     }
 
     /**
@@ -61,7 +61,7 @@ class TimeQueryBuilderTypeTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function test__construct() {
+    public function test__construct(): void {
 
         $obj = new TimeQueryBuilderType();
 
