@@ -35,58 +35,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\TestFixtures;
 class QueryBuilderNormalizerTest extends AbstractTestCase {
 
     /**
-     * Tests the denormalizeQueryBuilderRuel() method.
-     *
-     * @return void
-     */
-    public function testDenormalizeQueryBuilderRule(): void {
-
-        // Set a QueryBuilder filter set mock.
-        $filterSet = $this->getMockBuilder(QueryBuilderFilterSetInterface::class)->getMock();
-
-        $arg = TestFixtures::getRule();
-
-        $res = QueryBuilderNormalizer::denormalizeQueryBuilderRule($filterSet, $arg);
-        $this->assertInstanceOf(QueryBuilderRuleInterface::class, $res);
-
-        $this->assertEquals("age", $res->getId());
-        $this->assertEquals("age", $res->getField());
-        $this->assertEquals(QueryBuilderInputInterface::INPUT_NUMBER, $res->getInput());
-        $this->assertEquals(QueryBuilderOperatorInterface::OPERATOR_GREATER, $res->getOperator());
-        $this->assertEquals(QueryBuilderTypeInterface::TYPE_INTEGER, $res->getType());
-        $this->assertEquals(21, $res->getValue());
-    }
-
-    /**
-     * Tests the denormalizeQueryBuilderRuleSet() method.
-     *
-     * @return void
-     */
-    public function testDenormalizeQueryBuilderRuleSet(): void {
-
-        // Set a QueryBuilder filter set mock.
-        $filterSet = $this->getMockBuilder(QueryBuilderFilterSetInterface::class)->getMock();
-
-        $arg = TestFixtures::getRules();
-
-        $res = QueryBuilderNormalizer::denormalizeQueryBuilderRuleSet($filterSet, $arg);
-        $this->assertInstanceOf(QueryBuilderRuleSetInterface::class, $res);
-
-        $this->assertEquals(QueryBuilderConditionInterface::CONDITION_OR, $res->getCondition());
-        $this->assertCount(2, $res->getRules());
-        $this->assertTrue($res->getValid());
-
-        $this->assertInstanceOf(QueryBuilderRuleInterface::class, $res->getRules()[0]);
-
-        $this->assertInstanceOf(QueryBuilderRuleSetInterface::class, $res->getRules()[1]);
-
-        $this->assertCount(2, $res->getRules()[1]->getRules());
-
-        $this->assertInstanceOf(QueryBuilderRuleInterface::class, $res->getRules()[1]->getRules()[0]);
-        $this->assertInstanceOf(QueryBuilderRuleInterface::class, $res->getRules()[1]->getRules()[1]);
-    }
-
-    /**
      * Tests the normalizeQueryBuilderFilter() method.
      *
      * @return void

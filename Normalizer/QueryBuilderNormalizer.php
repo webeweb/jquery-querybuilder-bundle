@@ -30,57 +30,6 @@ use WBW\Library\Core\Argument\Helper\ArrayHelper;
 class QueryBuilderNormalizer {
 
     /**
-     * Denormalize a rule.
-     *
-     * @param QueryBuilderFilterSetInterface $filterSet The filter set.
-     * @param array $rule The rule.
-     * @return QueryBuilderRuleInterface Returns the de-normalized rule.
-     * @throws InvalidArgumentException Throws an invalid argument exception if an argument is invalid.
-     */
-    public static function denormalizeQueryBuilderRule(QueryBuilderFilterSetInterface $filterSet, array $rule): QueryBuilderRuleInterface {
-
-        $model = new QueryBuilderRule();
-        $model->setId(ArrayHelper::get($rule, "id", null));
-        $model->setField(ArrayHelper::get($rule, "field", null));
-        $model->setInput(ArrayHelper::get($rule, "input", null));
-        $model->setOperator(ArrayHelper::get($rule, "operator", null));
-        $model->setType(ArrayHelper::get($rule, "type", null));
-        $model->setValue(ArrayHelper::get($rule, "value", null));
-
-        $model->setDecorator($filterSet->getDecorator($model->getId()));
-
-        return $model;
-    }
-
-    /**
-     * Denormalize a rule set.
-     *
-     * @param QueryBuilderFilterSetInterface $filterSet The filter set.
-     * @param array $rules The rules.
-     * @return QueryBuilderRuleSetInterface Returns the rule set.
-     * @throws InvalidArgumentException Throws an invalid argument exception if an argument is invalid.
-     */
-    public static function denormalizeQueryBuilderRuleSet(QueryBuilderFilterSetInterface $filterSet, array $rules): QueryBuilderRuleSetInterface {
-
-        $model = new QueryBuilderRuleSet();
-        $model->setCondition(ArrayHelper::get($rules, "condition", null));
-        $model->setValid(ArrayHelper::get($rules, "valid", false));
-
-        foreach (ArrayHelper::get($rules, "rules", []) as $current) {
-
-            // Rule set ?
-            if (true === array_key_exists("condition", $current)) {
-                $model->addRuleSet(static::denormalizeQueryBuilderRuleSet($filterSet, $current));
-                continue;
-            }
-
-            $model->addRule(static::denormalizeQueryBuilderRule($filterSet, $current));
-        }
-
-        return $model;
-    }
-
-    /**
      * Normalize a filter.
      *
      * @param QueryBuilderFilterInterface $filter The filter.

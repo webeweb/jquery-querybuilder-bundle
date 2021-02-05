@@ -18,6 +18,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderTypeInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Helper\QueryBuilderRepositoryHelper;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer\QueryBuilderNormalizer;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Serializer\JsonDeserializer;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\TestFixtures;
 
@@ -73,7 +74,7 @@ class QueryBuilderRepositoryHelperTest extends AbstractTestCase {
 
         $arg = TestFixtures::getRules();
 
-        $obj = QueryBuilderNormalizer::denormalizeQueryBuilderRuleSet($filterSet, $arg);
+        $obj = JsonDeserializer::deserializeQueryBuilderRuleSet($filterSet, $arg);
 
         $res = "(age > 21 OR (firstname = 'John' AND lastname = 'DOE'))";
         $this->assertEquals($res, QueryBuilderRepositoryHelper::queryBuilderRuleSet2Sql($obj));
@@ -89,7 +90,7 @@ class QueryBuilderRepositoryHelperTest extends AbstractTestCase {
         // Set a QueryBuilder filter set mock.
         $filterSet = $this->getMockBuilder(QueryBuilderFilterSetInterface::class)->getMock();
 
-        $obj = QueryBuilderNormalizer::denormalizeQueryBuilderRuleSet($filterSet, []);
+        $obj = JsonDeserializer::deserializeQueryBuilderRuleSet($filterSet, []);
 
         $this->assertEquals("", QueryBuilderRepositoryHelper::queryBuilderRuleSet2Sql($obj));
     }
