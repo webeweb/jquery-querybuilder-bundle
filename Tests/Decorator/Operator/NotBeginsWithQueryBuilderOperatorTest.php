@@ -29,7 +29,7 @@ class NotBeginsWithQueryBuilderOperatorTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testToSQL(): void {
+    public function testToSql(): void {
 
         // Set a QueryBuilder rule mock.
         $rule = new QueryBuilderRule();

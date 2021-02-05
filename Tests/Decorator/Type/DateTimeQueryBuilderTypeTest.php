@@ -29,7 +29,7 @@ class DateTimeQueryBuilderTypeTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testToSQL(): void {
+    public function testToSql(): void {
 
         // Set a QueryBuilder rule mock.
         $rule = new QueryBuilderRule();
@@ -45,7 +45,7 @@ class DateTimeQueryBuilderTypeTest extends AbstractTestCase {
      *
      * @return void
      */
-    public function testToSQLWithWrap(): void {
+    public function testToSqlWithWrap(): void {
 
         // Set a QueryBuilder rule mock.
         $rule = new QueryBuilderRule();
