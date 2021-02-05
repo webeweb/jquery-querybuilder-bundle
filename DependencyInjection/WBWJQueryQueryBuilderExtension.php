@@ -16,6 +16,7 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use WBW\Bundle\CoreBundle\DependencyInjection\ConfigurationHelper;
 
 /**
  * jQuery QueryBuilder extension.
@@ -53,5 +54,11 @@ class WBWJQueryQueryBuilderExtension extends Extension {
         $configuration = $this->getConfiguration($configs, $container);
 
         $config = $this->processConfiguration($configuration, $configs);
+
+        ConfigurationHelper::registerContainerParameter($container, $config, $this->getAlias(), "locale");
+        ConfigurationHelper::registerContainerParameter($container, $config, $this->getAlias(), "theme");
+
+        $assets = ConfigurationHelper::loadYamlConfig(__DIR__, "assets");
+        ConfigurationHelper::registerContainerParameters($container, $assets["assets"]);
     }
 }

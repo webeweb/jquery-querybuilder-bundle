@@ -1,2 +1,9 @@
 {# Resources/views/layout/stylesheets.html.twig #}
-{% include "@WBWJQueryQueryBuilder/layout/stylesheet/jquery-querybuilder.html.twig" with {"qbTheme": qbTheme|default("default") } %}
+{% set _webPath  = "bundles/wbwjqueryquerybuilder" %}
+{% set _version  = getContainerParameter("wbw.jquery_querybuilder.asset.jquery_querybuilder").version %}
+{% set _appTheme = getContainerParameter("wbw_jquery_querybuilder.theme") %}
+
+{% if ("prod" != app.environment) %}
+    <!-- jQuery QueryBuilder -->
+{% endif %}
+<link type="text/css" rel="stylesheet" href="{{ asset(_webPath ~ "/jquery-querybuilder-" ~ _version ~ "/css/query-builder." ~ _appTheme ~ ".min.css") }}">

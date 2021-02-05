@@ -22,6 +22,16 @@ framework:
     validation:
         enabled: false
 
+# Doctrine configuration
+doctrine:
+    dbal:
+        driver: "pdo_sqlite"
+        path:   "%kernel.root_dir%/var/test.sqlite"
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        auto_mapping:                true
+        naming_strategy:             "doctrine.orm.naming_strategy.underscore"
+
 # Monolog configuration
 monolog:
     handlers:
@@ -34,3 +44,8 @@ monolog:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+
+# jQuery QueryBuilder configuration
+wbw_jquery_querybuilder:
+    locale: "fr"
+    theme:  "dark"

@@ -1,1 +1,39 @@
 # Resources/config/assets.yml
+assets:
+
+    wbw.jquery_querybuilder.asset.jquery_querybuilder:
+        version: "2.4.4"
+        themes:
+            - "default"
+            - "dark"
+        requires:
+            interactjs:
+                version: "1.3.3"
+                javascripts:
+                    - "/interactjs-{{ version }}/interact.min.js"
+                stylesheets: [ ]
+        locales:
+            - "ar"
+            - "az"
+            - "bg"
+            - "cs"
+            - "da"
+            - "de"
+            - "el"
+            - "en"
+            - "es"
+            - "fa-IR"
+            - "fr"
+            - "he"
+            - "it"
+            - "nl"
+            - "no"
+            - "pl"
+            - "pt-BR"
+            - "pt-PT"
+            - "ro"
+            - "ru"
+            - "sq"
+            - "tr"
+            - "ua"
+            - "zh-CN"

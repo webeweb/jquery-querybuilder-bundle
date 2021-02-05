@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Controller;
 
-use WBW\Bundle\CoreBundle\Tests\AbstractWebTestCase;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractWebTestCase;
 
 /**
  * Layout controller test.
@@ -34,6 +34,15 @@ class LayoutControllerTest extends AbstractWebTestCase {
         // Make a GET request.
         $client->request("GET", "/javascripts");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+
+        // Get the response content.
+        $content = $client->getResponse()->getContent();
+
+        // Check the Javascript.
+        foreach (static::listJavascriptAssets() as $current) {
+            $this->assertRegExp("/" . preg_quote($current, "/") . "/", $content);
+        }
     }
 
     /**
@@ -49,5 +58,14 @@ class LayoutControllerTest extends AbstractWebTestCase {
         // Make a GET request.
         $client->request("GET", "/stylesheets");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
+
+        // Get the response content.
+        $content = $client->getResponse()->getContent();
+
+        // Check the CSS.
+        foreach (static::listCSSAssets() as $current) {
+            $this->assertRegExp("/" . preg_quote($current, "/") . "/", $content);
+        }
     }
 }

@@ -32,9 +32,28 @@ class Configuration implements ConfigurationInterface {
      */
     public function getConfigTreeBuilder(): TreeBuilder {
 
+        $assets  = ConfigurationHelper::loadYamlConfig(__DIR__, "assets");
+        $locales = $assets["assets"]["wbw.jquery_querybuilder.asset.jquery_querybuilder"]["locales"];
+        $themes  = $assets["assets"]["wbw.jquery_querybuilder.asset.jquery_querybuilder"]["themes"];
+
         $treeBuilder = new TreeBuilder(WBWJQueryQueryBuilderExtension::EXTENSION_ALIAS);
 
         $rootNode = ConfigurationHelper::getRootNode($treeBuilder, WBWJQueryQueryBuilderExtension::EXTENSION_ALIAS);
+        $rootNode
+            ->children()
+                ->variableNode("locale")->defaultValue("en")->info("jQuery QueryBuilder locale")
+                    ->validate()
+                        ->ifNotInArray($locales)
+                        ->thenInvalid("The jQuery QueryBuilder locale %s is not supported. Please choose one of " . json_encode($locales))
+                    ->end()
+                ->end()
+                ->variableNode("theme")->defaultValue("default")->info("jQuery QueryBuilder theme")
+                    ->validate()
+                        ->ifNotInArray($themes)
+                        ->thenInvalid("The jQuery QueryBuilder theme %s is not supported. Please choose one of " . json_encode($themes))
+                    ->end()
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }
