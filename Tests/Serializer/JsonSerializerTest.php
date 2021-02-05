@@ -9,37 +9,29 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Normalizer;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Serializer;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderConditionInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilter;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSet;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSetInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderInputInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleSetInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderTypeInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidation;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidationInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer\QueryBuilderNormalizer;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Serializer\JsonSerializer;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\TestFixtures;
 
 /**
- * QueryBuilder normalizer test.
+ * QueryBuilder serializer test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Normalizer
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Serializer
  */
-class QueryBuilderNormalizerTest extends AbstractTestCase {
+class JsonSerializerTest extends AbstractTestCase {
 
     /**
-     * Tests the normalizeQueryBuilderFilter() method.
+     * Tests the serializeQueryBuilderFilter() method.
      *
      * @return void
      */
-    public function testNormalizeQueryBuilderFilter(): void {
+    public function testSerializeQueryBuilderFilter(): void {
 
         // Set a QueryBuilder validation mock.
         $validation = $this->getMockBuilder(QueryBuilderValidationInterface::class)->getMock();
@@ -65,15 +57,15 @@ class QueryBuilderNormalizerTest extends AbstractTestCase {
             "operators"  => ["equal"],
         ];
 
-        $this->assertEquals($res, QueryBuilderNormalizer::normalizeQueryBuilderFilter($obj));
+        $this->assertEquals($res, JsonSerializer::serializeQueryBuilderFilter($obj));
     }
 
     /**
-     * Tests the normalizeQueryBuilderSet() method.
+     * Tests the serializeQueryBuilderSet() method.
      *
      * @return void
      */
-    public function testNormalizeQueryBuilderFilterSet(): void {
+    public function testSerializeQueryBuilderFilterSet(): void {
 
         // Set a QueryBuilder filter mock.
         $filter = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
@@ -91,15 +83,15 @@ class QueryBuilderNormalizerTest extends AbstractTestCase {
                 ],
             ],
         ];
-        $this->assertEquals($res, QueryBuilderNormalizer::normalizeQueryBuilderFilterSet($obj));
+        $this->assertEquals($res, JsonSerializer::serializeQueryBuilderFilterSet($obj));
     }
 
     /**
-     * Tests the normalizeQueryBuilderValidation() method.
+     * Tests the serializeQueryBuilderValidation() method.
      *
      * @return void
      */
-    public function testNormalizeQueryBuilderValidation(): void {
+    public function testSerializeQueryBuilderValidation(): void {
 
         $obj = new QueryBuilderValidation();
         $obj->setAllowEmptyValue(true);
@@ -119,6 +111,6 @@ class QueryBuilderNormalizerTest extends AbstractTestCase {
             "allow_empty_value" => true,
             "callback"          => "callback",
         ];
-        $this->assertEquals($res, QueryBuilderNormalizer::normalizeQueryBuilderValidation($obj));
+        $this->assertEquals($res, JsonSerializer::serializeQueryBuilderValidation($obj));
     }
 }

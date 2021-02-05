@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer\QueryBuilderNormalizer;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Serializer\JsonSerializer;
 
 /**
  * QueryBuilder filter set.
@@ -81,7 +81,7 @@ class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
      * @return array Returns an array representing this instance.
      */
     public function jsonSerialize(): array {
-        return QueryBuilderNormalizer::normalizeQueryBuilderFilterSet($this);
+        return JsonSerializer::serializeQueryBuilderFilterSet($this);
     }
 
     /**

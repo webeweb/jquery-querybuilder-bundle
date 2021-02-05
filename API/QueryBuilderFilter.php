@@ -12,7 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
 use InvalidArgumentException;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer\QueryBuilderNormalizer;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Serializer\JsonSerializer;
 
 /**
  * QueryBuilder filter.
@@ -127,7 +127,7 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      * {@inheritDoc}
      */
     public function jsonSerialize(): array {
-        return QueryBuilderNormalizer::normalizeQueryBuilderFilter($this);
+        return JsonSerializer::serializeQueryBuilderFilter($this);
     }
 
     /**

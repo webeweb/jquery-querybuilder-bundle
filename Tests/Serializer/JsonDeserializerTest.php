@@ -18,7 +18,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleSetInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderTypeInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer\QueryBuilderNormalizer;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer\JsonSerializer;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Serializer\JsonDeserializer;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\TestFixtures;

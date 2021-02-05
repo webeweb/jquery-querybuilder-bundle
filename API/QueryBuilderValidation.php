@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer\QueryBuilderNormalizer;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Serializer\JsonSerializer;
 
 /**
  * QueryBuilder validation.
@@ -130,7 +130,7 @@ class QueryBuilderValidation implements QueryBuilderValidationInterface {
      * {@inheritDoc}
      */
     public function jsonSerialize(): array {
-        return QueryBuilderNormalizer::normalizeQueryBuilderValidation($this);
+        return JsonSerializer::serializeQueryBuilderValidation($this);
     }
 
     /**

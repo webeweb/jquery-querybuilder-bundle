@@ -9,33 +9,28 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Serializer;
 
-use InvalidArgumentException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSetInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRule;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleSet;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleSetInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidationInterface;
 use WBW\Library\Core\Argument\Helper\ArrayHelper;
 
 /**
- * QueryBuilder normalizer.
+ * JSON serializer.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\Normalizer
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Serializer
  */
-class QueryBuilderNormalizer {
+class JsonSerializer {
 
     /**
-     * Normalize a filter.
+     * Serialize a filter.
      *
      * @param QueryBuilderFilterInterface $filter The filter.
-     * @return array Returns the normalized filter.
+     * @return array Returns the serialized filter.
      */
-    public static function normalizeQueryBuilderFilter(QueryBuilderFilterInterface $filter): array {
+    public static function serializeQueryBuilderFilter(QueryBuilderFilterInterface $filter): array {
 
         $output = [];
 
@@ -57,30 +52,30 @@ class QueryBuilderNormalizer {
     }
 
     /**
-     * Normalize a filter set.
+     * Serialize a filter set.
      *
      * @param QueryBuilderFilterSetInterface $filterSet The filter set.
-     * @return array Returns the normalized filter set.
+     * @return array Returns the serialized filter set.
      */
-    public static function normalizeQueryBuilderFilterSet(QueryBuilderFilterSetInterface $filterSet): array {
+    public static function serializeQueryBuilderFilterSet(QueryBuilderFilterSetInterface $filterSet): array {
 
         $output = [];
 
         /** @var QueryBuilderFilterInterface $current */
         foreach ($filterSet->getFilters() as $current) {
-            $output[] = static::normalizeQueryBuilderFilter($current);
+            $output[] = static::serializeQueryBuilderFilter($current);
         }
 
         return $output;
     }
 
     /**
-     * Normalize a validation.
+     * Serialize a validation.
      *
      * @param QueryBuilderValidationInterface $validation The validation.
-     * @return array Returns the normalized validation.
+     * @return array Returns the serialized validation.
      */
-    public static function normalizeQueryBuilderValidation(QueryBuilderValidationInterface $validation): array {
+    public static function serializeQueryBuilderValidation(QueryBuilderValidationInterface $validation): array {
 
         $output = [];
 
