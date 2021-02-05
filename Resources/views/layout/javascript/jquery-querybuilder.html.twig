@@ -1,8 +1,0 @@
-{# Resources/views/layout/javascript/jquery-querybuilder.html.twig #}
-{% set _version   = constant("WBW\\Bundle\\JQuery\\QueryBuilderBundle\\QueryBuilderInterface::QUERYBUILDER_VERSION") %}
-{% set _languages = ["ar", "az", "bg", "cs", "da", "de", "el", "en", "es", "fa-IR", "fr", "he", "it", "nl", "no", "pl", "pt-BR", "pt-PT", "ro", "ru", "sq", "tr", "ua", "zh-CN" ] %}
-{% set _language  = qbLanguage|default("") in _languages ? qbLanguage : "en" %}
-<!-- jQuery QueryBuilder -->
-<script type="text/javascript" src="{{ asset("bundles/wbwjqueryquerybuilder/interactjs-1.3.3/interact.min.js") }}"></script>
-<script type="text/javascript" src="{{ asset("bundles/wbwjqueryquerybuilder/jquery-querybuilder-" ~ _version ~ "/js/query-builder.standalone.min.js") }}"></script>
-<script type="text/javascript" src="{{ asset("bundles/wbwjqueryquerybuilder/jquery-querybuilder-" ~ _version ~ "/i18n/query-builder." ~ _language ~ ".js") }}"></script>
