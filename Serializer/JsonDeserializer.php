@@ -38,12 +38,12 @@ class JsonDeserializer {
     public static function deserializeQueryBuilderRule(QueryBuilderFilterSetInterface $filterSet, array $rule): QueryBuilderRuleInterface {
 
         $model = new QueryBuilderRule();
-        $model->setId(ArrayHelper::get($rule, "id", null));
-        $model->setField(ArrayHelper::get($rule, "field", null));
-        $model->setInput(ArrayHelper::get($rule, "input", null));
-        $model->setOperator(ArrayHelper::get($rule, "operator", null));
-        $model->setType(ArrayHelper::get($rule, "type", null));
-        $model->setValue(ArrayHelper::get($rule, "value", null));
+        $model->setId(ArrayHelper::get($rule, "id"));
+        $model->setField(ArrayHelper::get($rule, "field"));
+        $model->setInput(ArrayHelper::get($rule, "input"));
+        $model->setOperator(ArrayHelper::get($rule, "operator"));
+        $model->setType(ArrayHelper::get($rule, "type"));
+        $model->setValue(ArrayHelper::get($rule, "value"));
 
         $model->setDecorator($filterSet->getDecorator($model->getId()));
 

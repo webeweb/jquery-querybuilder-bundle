@@ -33,6 +33,6 @@ class TestQueryBuilderOperator extends AbstractQueryBuilderOperator {
      * {@inheritDoc}
      */
     public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
-        // NOTHING TO DO
+        return "";
     }
 }

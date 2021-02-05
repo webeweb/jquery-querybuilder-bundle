@@ -61,7 +61,6 @@ class JsonSerializer {
 
         $output = [];
 
-        /** @var QueryBuilderFilterInterface $current */
         foreach ($filterSet->getFilters() as $current) {
             $output[] = static::serializeQueryBuilderFilter($current);
         }

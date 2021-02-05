@@ -61,7 +61,6 @@ class QueryBuilderRepositoryHelper implements QueryBuilderConditionInterface, Qu
 
             if (true === ($current instanceof QueryBuilderRuleSetInterface)) {
 
-                /** @var QueryBuilderRuleSetInterface $current */
                 $sql[] = static::queryBuilderRuleSet2Sql($current);
                 continue;
             }
