@@ -37,7 +37,7 @@ class WBWJQueryQueryBuilderExtension extends Extension {
      * {@inheritDoc}
      */
     public function getAlias(): string {
-        return self::EXTENSION_ALIAS;
+        return static::EXTENSION_ALIAS;
     }
 
     /**

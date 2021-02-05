@@ -27,7 +27,7 @@ class NotBetweenQueryBuilderOperator extends AbstractQueryBuilderOperator implem
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(self::OPERATOR_NOT_BETWEEN);
+        parent::__construct(static::OPERATOR_NOT_BETWEEN);
     }
 
     /**
@@ -40,7 +40,7 @@ class NotBetweenQueryBuilderOperator extends AbstractQueryBuilderOperator implem
 
         $sql = [
             parent::toSql($rule, $wrap),
-            str_replace("{{implode}}", " " . self::CONDITION_AND . " ", $tmp),
+            str_replace("{{implode}}", " " . static::CONDITION_AND . " ", $tmp),
         ];
 
         return implode(" ", $sql);

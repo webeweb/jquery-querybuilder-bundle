@@ -25,7 +25,7 @@ class IsEmptyQueryBuilderOperator extends AbstractQueryBuilderOperator {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(self::OPERATOR_IS_EMPTY);
+        parent::__construct(static::OPERATOR_IS_EMPTY);
     }
 
     /**

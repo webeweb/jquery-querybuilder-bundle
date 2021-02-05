@@ -25,7 +25,7 @@ class TimeQueryBuilderType extends AbstractQueryBuilderType {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(self::TYPE_TIME);
+        parent::__construct(static::TYPE_TIME);
     }
 
     /**

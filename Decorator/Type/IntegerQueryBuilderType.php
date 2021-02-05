@@ -25,7 +25,7 @@ class IntegerQueryBuilderType extends AbstractQueryBuilderType {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(self::TYPE_INTEGER);
+        parent::__construct(static::TYPE_INTEGER);
     }
 
     /**

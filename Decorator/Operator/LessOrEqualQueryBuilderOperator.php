@@ -26,7 +26,7 @@ class LessOrEqualQueryBuilderOperator extends AbstractQueryBuilderOperator {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(self::OPERATOR_LESS_OR_EQUAL);
+        parent::__construct(static::OPERATOR_LESS_OR_EQUAL);
     }
 
     /**

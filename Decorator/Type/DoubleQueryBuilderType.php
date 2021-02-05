@@ -25,7 +25,7 @@ class DoubleQueryBuilderType extends AbstractQueryBuilderType {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(self::TYPE_DOUBLE);
+        parent::__construct(static::TYPE_DOUBLE);
     }
 
     /**

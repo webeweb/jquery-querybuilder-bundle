@@ -26,7 +26,7 @@ class InQueryBuilderOperator extends AbstractQueryBuilderOperator {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(self::OPERATOR_IN);
+        parent::__construct(static::OPERATOR_IN);
     }
 
     /**

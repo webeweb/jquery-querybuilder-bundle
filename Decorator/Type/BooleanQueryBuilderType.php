@@ -26,7 +26,7 @@ class BooleanQueryBuilderType extends AbstractQueryBuilderType {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(self::TYPE_BOOLEAN);
+        parent::__construct(static::TYPE_BOOLEAN);
     }
 
     /**

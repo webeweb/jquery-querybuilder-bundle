@@ -26,7 +26,7 @@ class NotEndsWithQueryBuilderOperator extends AbstractQueryBuilderOperator {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(self::OPERATOR_NOT_ENDS_WITH);
+        parent::__construct(static::OPERATOR_NOT_ENDS_WITH);
     }
 
     /**

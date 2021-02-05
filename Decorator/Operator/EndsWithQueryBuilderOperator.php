@@ -26,7 +26,7 @@ class EndsWithQueryBuilderOperator extends AbstractQueryBuilderOperator {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(self::OPERATOR_ENDS_WITH);
+        parent::__construct(static::OPERATOR_ENDS_WITH);
     }
 
     /**
