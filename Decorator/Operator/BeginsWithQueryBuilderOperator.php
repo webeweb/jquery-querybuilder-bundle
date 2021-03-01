@@ -26,7 +26,7 @@ class BeginsWithQueryBuilderOperator extends AbstractQueryBuilderOperator {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(static::OPERATOR_BEGINS_WITH);
+        parent::__construct(self::OPERATOR_BEGINS_WITH);
     }
 
     /**

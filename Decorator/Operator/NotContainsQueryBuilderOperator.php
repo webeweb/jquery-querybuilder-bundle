@@ -26,7 +26,7 @@ class NotContainsQueryBuilderOperator extends AbstractQueryBuilderOperator {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(static::OPERATOR_NOT_CONTAINS);
+        parent::__construct(self::OPERATOR_NOT_CONTAINS);
     }
 
     /**

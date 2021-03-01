@@ -25,7 +25,7 @@ class DateTimeQueryBuilderType extends AbstractQueryBuilderType {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(static::TYPE_DATETIME);
+        parent::__construct(self::TYPE_DATETIME);
     }
 
     /**

@@ -26,7 +26,7 @@ class EqualQueryBuilderOperator extends AbstractQueryBuilderOperator {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(static::OPERATOR_EQUAL);
+        parent::__construct(self::OPERATOR_EQUAL);
     }
 
     /**

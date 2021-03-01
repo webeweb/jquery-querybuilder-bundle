@@ -26,7 +26,7 @@ class GreaterOrEqualQueryBuilderOperator extends AbstractQueryBuilderOperator {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(static::OPERATOR_GREATER_OR_EQUAL);
+        parent::__construct(self::OPERATOR_GREATER_OR_EQUAL);
     }
 
     /**

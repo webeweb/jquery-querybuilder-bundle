@@ -27,7 +27,7 @@ class BetweenQueryBuilderOperator extends AbstractQueryBuilderOperator implement
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(static::OPERATOR_BETWEEN);
+        parent::__construct(self::OPERATOR_BETWEEN);
     }
 
     /**
@@ -40,7 +40,7 @@ class BetweenQueryBuilderOperator extends AbstractQueryBuilderOperator implement
 
         $sql = [
             parent::toSql($rule, $wrap),
-            str_replace("{{implode}}", " " . static::CONDITION_AND . " ", $tmp),
+            str_replace("{{implode}}", " " . self::CONDITION_AND . " ", $tmp),
         ];
 
         return implode(" ", $sql);

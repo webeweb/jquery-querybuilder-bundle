@@ -26,7 +26,7 @@ class NotEqualQueryBuilderOperator extends AbstractQueryBuilderOperator {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(static::OPERATOR_NOT_EQUAL);
+        parent::__construct(self::OPERATOR_NOT_EQUAL);
     }
 
     /**

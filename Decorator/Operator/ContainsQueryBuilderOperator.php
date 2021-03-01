@@ -26,7 +26,7 @@ class ContainsQueryBuilderOperator extends AbstractQueryBuilderOperator {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(static::OPERATOR_CONTAINS);
+        parent::__construct(self::OPERATOR_CONTAINS);
     }
 
     /**

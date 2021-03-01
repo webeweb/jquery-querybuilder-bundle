@@ -25,7 +25,7 @@ class IsNotNullQueryBuilderOperator extends AbstractQueryBuilderOperator {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(static::OPERATOR_IS_NOT_NULL);
+        parent::__construct(self::OPERATOR_IS_NOT_NULL);
     }
 
     /**

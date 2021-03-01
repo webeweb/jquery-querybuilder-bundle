@@ -28,7 +28,7 @@ class WBWJQueryQueryBuilderBundle extends Bundle implements AssetsProviderInterf
      * {@inheritDoc}
      */
     public function getAssetsRelativeDirectory(): string {
-        return static::ASSETS_RELATIVE_DIRECTORY;
+        return self::ASSETS_RELATIVE_DIRECTORY;
     }
 
     /**

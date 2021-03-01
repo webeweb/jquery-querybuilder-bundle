@@ -26,7 +26,7 @@ class LessQueryBuilderOperator extends AbstractQueryBuilderOperator {
      * Constructor.
      */
     public function __construct() {
-        parent::__construct(static::OPERATOR_LESS);
+        parent::__construct(self::OPERATOR_LESS);
     }
 
     /**
