@@ -9,35 +9,47 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
+
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderConditionInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderInputInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderTypeInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderEnumerator;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
 /**
- * QueryBuilder enumerator.
+ * QueryBuilder enumerator test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model
  */
-class QueryBuilderEnumerator {
+class QueryBuilderEnumeratorTest extends AbstractTestCase {
 
     /**
-     * Enumerates the conditions.
+     * Tests the enumConditions() method.
      *
-     * @return string[] Returns the conditions enumeration.
+     * @return void
      */
-    public static function enumConditions(): array {
-        return [
+    public function testEnumConditions(): void {
+
+        $res = [
             QueryBuilderConditionInterface::CONDITION_AND,
             QueryBuilderConditionInterface::CONDITION_OR,
+
         ];
+
+        $this->assertEquals($res, QueryBuilderEnumerator::enumConditions());
     }
 
     /**
-     * Enumerates the inputs.
+     * Tests the enumInputs() method.
      *
-     * @return string[] Returns the inputs enumeration.
+     * @return void
      */
-    public static function enumInputs(): array {
-        return [
+    public function testEnumInputs(): void {
+
+        $res = [
             QueryBuilderInputInterface::INPUT_CHECKBOX,
             QueryBuilderInputInterface::INPUT_NUMBER,
             QueryBuilderInputInterface::INPUT_RADIO,
@@ -45,15 +57,18 @@ class QueryBuilderEnumerator {
             QueryBuilderInputInterface::INPUT_TEXT,
             QueryBuilderInputInterface::INPUT_TEXTAREA,
         ];
+
+        $this->assertEquals($res, QueryBuilderEnumerator::enumInputs());
     }
 
     /**
-     * Enumerates the operators.
+     * Tests the enumOperators() method.
      *
-     * @return array Returns the operators enumeration.
+     * @return void
      */
-    public static function enumOperators(): array {
-        return [
+    public function testEnumOperators(): void {
+
+        $res = [
             QueryBuilderOperatorInterface::OPERATOR_BEGINS_WITH      => "LIKE",
             QueryBuilderOperatorInterface::OPERATOR_BETWEEN          => "BETWEEN",
             QueryBuilderOperatorInterface::OPERATOR_CONTAINS         => "LIKE",
@@ -75,15 +90,18 @@ class QueryBuilderEnumerator {
             QueryBuilderOperatorInterface::OPERATOR_NOT_EQUAL        => "<>",
             QueryBuilderOperatorInterface::OPERATOR_NOT_IN           => "NOT IN",
         ];
+
+        $this->assertEquals($res, QueryBuilderEnumerator::enumOperators());
     }
 
     /**
-     * Enumerates the types.
+     * Tests the enumTypes() method.
      *
-     * @return string[] Returns the types enumeration.
+     * @return void
      */
-    public static function enumTypes(): array {
-        return [
+    public function testEnumTypes(): void {
+
+        $res = [
             QueryBuilderTypeInterface::TYPE_BOOLEAN,
             QueryBuilderTypeInterface::TYPE_DATE,
             QueryBuilderTypeInterface::TYPE_DATETIME,
@@ -92,5 +110,7 @@ class QueryBuilderEnumerator {
             QueryBuilderTypeInterface::TYPE_STRING,
             QueryBuilderTypeInterface::TYPE_TIME,
         ];
+
+        $this->assertEquals($res, QueryBuilderEnumerator::enumTypes());
     }
 }

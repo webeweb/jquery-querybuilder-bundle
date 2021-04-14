@@ -9,15 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Model;
 
 use InvalidArgumentException;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderConditionInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleSetInterface;
 
 /**
  * QueryBuilder rule set.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Model
  */
 class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilderRuleSetInterface {
 

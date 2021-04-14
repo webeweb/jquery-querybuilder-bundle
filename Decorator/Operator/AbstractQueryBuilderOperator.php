@@ -12,9 +12,9 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Operator;
 
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderDecoratorInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderEnumerator;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderEnumerator;
 
 /**
  * Abstract QueryBuilder operator.

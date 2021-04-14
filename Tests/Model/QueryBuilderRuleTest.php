@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 
 use Exception;
 use InvalidArgumentException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderDecoratorInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRule;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
 /**
  * QueryBuilder rule test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model
  */
 class QueryBuilderRuleTest extends AbstractTestCase {
 

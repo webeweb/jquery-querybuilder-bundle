@@ -13,7 +13,6 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Helper;
 
 use Exception;
 use WBW\Bundle\CoreBundle\Tests\Fixtures\Helper\TestAssetsHelper;
-use WBW\Bundle\JQuery\QueryBuilderBundle\QueryBuilderInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
 /**
@@ -53,6 +52,6 @@ class AssetsHelperTest extends AbstractTestCase {
         $this->assertCount(2, $res);
 
         $this->assertRegexp("/interactjs\-.*\.zip$/", $res[0]);
-        $this->assertRegexp("/jquery\-querybuilder\-" . QueryBuilderInterface::QUERYBUILDER_VERSION . ".*\.zip$/", $res[1]);
+        $this->assertRegexp("/jquery\-querybuilder\-2\.4\.4.*\.zip$/", $res[1]);
     }
 }

@@ -11,9 +11,9 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Decorator\Type;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderTypeInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Type\ArrayQueryBuilderType;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
 /**

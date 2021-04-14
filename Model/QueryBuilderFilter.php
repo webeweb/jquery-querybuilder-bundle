@@ -9,16 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Model;
 
 use InvalidArgumentException;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderDecoratorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidationInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Serializer\JsonSerializer;
 
 /**
  * QueryBuilder filter.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Model
  */
 class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFilterInterface, QueryBuilderOperatorInterface {
 

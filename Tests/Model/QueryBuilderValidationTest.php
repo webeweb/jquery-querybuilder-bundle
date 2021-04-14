@@ -9,16 +9,16 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidation;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderValidation;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
 /**
  * QueryBuilder validation test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model
  */
 class QueryBuilderValidationTest extends AbstractTestCase {
 

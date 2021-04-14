@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\API;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Model;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\AbstractQueryBuilder;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Model\AbstractQueryBuilder;
 
 /**
  * Test QueryBuilder.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\API
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Model
  */
 class TestQueryBuilder extends AbstractQueryBuilder {
 

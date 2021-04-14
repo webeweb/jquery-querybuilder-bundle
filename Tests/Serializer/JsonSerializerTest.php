@@ -11,10 +11,10 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Serializer;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilter;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSet;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidation;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidationInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilter;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilterSet;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderValidation;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Serializer\JsonSerializer;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 

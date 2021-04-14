@@ -9,20 +9,20 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 
 use Exception;
 use InvalidArgumentException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderDecoratorInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilter;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidationInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilter;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
 /**
  * QueryBuilder filter test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model
  */
 class QueryBuilderFilterTest extends AbstractTestCase {
 

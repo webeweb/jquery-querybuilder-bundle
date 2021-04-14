@@ -9,15 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Model;
 
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderDecoratorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSetInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Serializer\JsonSerializer;
 
 /**
  * QueryBuilder filter set.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Model
  */
 class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
 

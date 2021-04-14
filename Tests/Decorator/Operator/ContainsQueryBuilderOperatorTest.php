@@ -12,8 +12,8 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Decorator\Operator;
 
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Operator\ContainsQueryBuilderOperator;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
 /**

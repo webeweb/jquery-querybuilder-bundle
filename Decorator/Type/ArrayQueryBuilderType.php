@@ -11,9 +11,9 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Type;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorFactory;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRule;
 
 /**
  * Array QueryBuilder type.

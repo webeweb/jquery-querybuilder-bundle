@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilter;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSet;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilter;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilterSet;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
 /**
  * QueryBuilder filter set test.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model
  */
 class QueryBuilderFilterSetTest extends AbstractTestCase {
 

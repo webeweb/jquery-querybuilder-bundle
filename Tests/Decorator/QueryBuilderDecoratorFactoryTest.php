@@ -14,10 +14,10 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Decorator;
 use Exception;
 use InvalidArgumentException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderDecoratorInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderEnumerator;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderTypeInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorFactory;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderEnumerator;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Decorator\TestQueryBuilderDecoratorFactory;
 

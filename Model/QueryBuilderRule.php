@@ -9,15 +9,18 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Model;
 
 use InvalidArgumentException;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderDecoratorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleInterface;
 
 /**
  * QueryBuilder rule.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Model
  */
 class QueryBuilderRule extends AbstractQueryBuilder implements QueryBuilderOperatorInterface, QueryBuilderRuleInterface {
 
