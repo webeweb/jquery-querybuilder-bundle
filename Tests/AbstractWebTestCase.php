@@ -51,7 +51,7 @@ abstract class AbstractWebTestCase extends WebTestCase {
         // Load the YAML configuration.
         $config   = ConfigurationHelper::loadYamlConfig(getcwd() . "/DependencyInjection", "assets");
         $version  = $config["assets"]["wbw.jquery_querybuilder.asset.jquery_querybuilder"]["version"];
-        $requires  = $config["assets"]["wbw.jquery_querybuilder.asset.jquery_querybuilder"]["requires"];
+        $requires = $config["assets"]["wbw.jquery_querybuilder.asset.jquery_querybuilder"]["requires"];
 
         $assets = [];
 
