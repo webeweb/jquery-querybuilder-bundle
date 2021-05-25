@@ -18,6 +18,7 @@ use WBW\Bundle\CoreBundle\Tests\AbstractTestCase as TestCase;
  *
  * @author webeweb <https://github.com/webeweb/>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests
+ * @abstract
  */
 abstract class AbstractTestCase extends TestCase {
 
