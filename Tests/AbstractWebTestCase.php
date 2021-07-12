@@ -30,13 +30,15 @@ abstract class AbstractWebTestCase extends WebTestCase {
      */
     public static function listCSSAssets(): array {
 
+        $directory = realpath(__DIR__ . "/../DependencyInjection");
+
         // Load the YAML configuration.
-        $config  = ConfigurationHelper::loadYamlConfig(getcwd() . "/DependencyInjection", "assets");
+        $config  = ConfigurationHelper::loadYamlConfig($directory, "assets");
         $version = $config["assets"]["wbw.jquery_querybuilder.asset.jquery_querybuilder"]["version"];
 
-        $assets = [];
-
-        $assets[] = 'href="/bundles/wbwjqueryquerybuilder/jquery-querybuilder-' . $version . '/css/query-builder.dark.min.css"';
+        $assets = [
+            'href="/bundles/wbwjqueryquerybuilder/jquery-querybuilder-' . $version . '/css/query-builder.dark.min.css"',
+        ];
 
         return $assets;
     }
@@ -48,16 +50,18 @@ abstract class AbstractWebTestCase extends WebTestCase {
      */
     public static function listJavascriptAssets(): array {
 
+        $directory = realpath(__DIR__ . "/../DependencyInjection");
+
         // Load the YAML configuration.
-        $config   = ConfigurationHelper::loadYamlConfig(getcwd() . "/DependencyInjection", "assets");
+        $config   = ConfigurationHelper::loadYamlConfig($directory, "assets");
         $version  = $config["assets"]["wbw.jquery_querybuilder.asset.jquery_querybuilder"]["version"];
         $requires = $config["assets"]["wbw.jquery_querybuilder.asset.jquery_querybuilder"]["requires"];
 
-        $assets = [];
-
-        $assets[] = 'src="/bundles/wbwjqueryquerybuilder/interactjs-' . $requires["interactjs"]["version"] . '/interact.min.js"';
-        $assets[] = 'src="/bundles/wbwjqueryquerybuilder/jquery-querybuilder-' . $version . '/js/query-builder.standalone.min.js"';
-        $assets[] = 'src="/bundles/wbwjqueryquerybuilder/jquery-querybuilder-' . $version . '/i18n/query-builder.fr.js';
+        $assets = [
+            'src="/bundles/wbwjqueryquerybuilder/interactjs-' . $requires["interactjs"]["version"] . '/interact.min.js"',
+            'src="/bundles/wbwjqueryquerybuilder/jquery-querybuilder-' . $version . '/js/query-builder.standalone.min.js"',
+            'src="/bundles/wbwjqueryquerybuilder/jquery-querybuilder-' . $version . '/i18n/query-builder.fr.js',
+        ];
 
         return $assets;
     }
