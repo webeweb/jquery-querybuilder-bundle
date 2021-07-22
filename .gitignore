@@ -1,5 +1,6 @@
-/composer.lock
 /vendor/*
+/.phpunit.result.cache
+/composer.lock
 
 /Resources/public/*
 !/Resources/public/.gitkeep
