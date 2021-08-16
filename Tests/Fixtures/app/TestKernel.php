@@ -15,7 +15,6 @@ use WBW\Bundle\CoreBundle\Tests\AbstractKernel;
  * Test kernel.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\CoreBundle\Tests\Fixtures
  */
 class TestKernel extends AbstractKernel {
 
