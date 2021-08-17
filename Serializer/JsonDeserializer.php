@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleSetInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRuleSet;
-use WBW\Library\Core\Argument\Helper\ArrayHelper;
+use WBW\Library\Types\Helper\ArrayHelper;
 
 /**
  * JSON deserializer.
