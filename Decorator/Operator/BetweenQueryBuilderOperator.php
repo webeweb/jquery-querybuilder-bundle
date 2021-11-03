@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Operator;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderConditionInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderConditionInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderRuleInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Type\ArrayQueryBuilderType;
 
 /**

@@ -12,9 +12,9 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Serializer;
 
 use InvalidArgumentException;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderFilterSetInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleSetInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderFilterSetInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderRuleInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderRuleSetInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRuleSet;
 use WBW\Library\Types\Helper\ArrayHelper;

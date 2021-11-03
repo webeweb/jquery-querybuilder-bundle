@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Serializer;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderValidationInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderValidationInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilter;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilterSet;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderValidation;

@@ -12,9 +12,9 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Model;
 
 use InvalidArgumentException;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderConditionInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleSetInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderConditionInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderRuleInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderRuleSetInterface;
 
 /**
  * QueryBuilder rule set.

@@ -11,7 +11,7 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Decorator\Type;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderRuleInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderRuleInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Type\AbstractQueryBuilderType;
 
 /**

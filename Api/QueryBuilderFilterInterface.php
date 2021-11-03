@@ -9,15 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace WBW\Bundle\JQuery\QueryBuilderBundle\API;
+namespace WBW\Bundle\JQuery\QueryBuilderBundle\Api;
+
+use JsonSerializable;
 
 /**
- * QueryBuilder rule interface.
+ * QueryBuilder filter interface.
  *
  * @author webeweb <https://github.com/webeweb/>
- * @package WBW\Bundle\JQuery\QueryBuilderBundle\API
+ * @package WBW\Bundle\JQuery\QueryBuilderBundle\Api
  */
-interface QueryBuilderRuleInterface {
+interface QueryBuilderFilterInterface extends JsonSerializable {
 
     /**
      * Get the decorator.
@@ -48,11 +50,25 @@ interface QueryBuilderRuleInterface {
     public function getInput(): ?string;
 
     /**
-     * Get the operator.
+     * Get the label.
      *
-     * @return string|null Returns the operator.
+     * @return string Returns the label.
      */
-    public function getOperator(): ?string;
+    public function getLabel(): string;
+
+    /**
+     * Get the multiple.
+     *
+     * @return bool Returns the multiple.
+     */
+    public function getMultiple(): bool;
+
+    /**
+     * Get the operators.
+     *
+     * @return array Returns the operators.
+     */
+    public function getOperators(): array;
 
     /**
      * Get the type.
@@ -62,9 +78,16 @@ interface QueryBuilderRuleInterface {
     public function getType(): ?string;
 
     /**
-     * Get the value.
+     * Get the validation.
      *
-     * @return mixed Returns the value.
+     * @return QueryBuilderValidationInterface|null Returns the validation.
      */
-    public function getValue();
+    public function getValidation(): ?QueryBuilderValidationInterface;
+
+    /**
+     * Get the values.
+     *
+     * @return array|null Returns the values.
+     */
+    public function getValues(): ?array;
 }

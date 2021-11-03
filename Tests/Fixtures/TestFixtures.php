@@ -11,10 +11,10 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderConditionInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderInputInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderOperatorInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\API\QueryBuilderTypeInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderConditionInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderInputInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderOperatorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderTypeInterface;
 
 /**
  * Test fixtures.
@@ -46,12 +46,11 @@ class TestFixtures {
      * @return array Returns the rules.
      */
     public static function getRules(): array {
+
         return [
             "condition" => QueryBuilderConditionInterface::CONDITION_OR,
             "rules"     => [
-
                 static::getRule(),
-
                 [
                     "condition" => QueryBuilderConditionInterface::CONDITION_AND,
                     "rules"     => [
