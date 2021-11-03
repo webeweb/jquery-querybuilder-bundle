@@ -1,5 +1,5 @@
 {# Resources/views/layout/javascripts.html.twig #}
-{% set _webPath   = "bundles/wbwjqueryquerybuilder" %}
+{% set _rootPath  = "bundles/wbwjqueryquerybuilder" %}
 {% set _version   = getContainerParameter("wbw.jquery_querybuilder.asset.jquery_querybuilder").version %}
 {% set _requires  = getContainerParameter("wbw.jquery_querybuilder.asset.jquery_querybuilder").requires %}
 {% set _appLocale = getContainerParameter("wbw_jquery_querybuilder.locale") %}
@@ -7,6 +7,6 @@
 {% if ("prod" != app.environment) %}
     <!-- jQuery QueryBuilder -->
 {% endif %}
-<script type="text/javascript" src="{{ asset((_webPath ~ _requires["interactjs"].javascripts[0]) | replace({"{{ version }}": _requires["interactjs"].version})) }}"></script>
-<script type="text/javascript" src="{{ asset(_webPath ~ "/jquery-querybuilder-" ~ _version ~ "/js/query-builder.standalone.min.js") }}"></script>
-<script type="text/javascript" src="{{ asset(_webPath ~ "/jquery-querybuilder-" ~ _version ~ "/i18n/query-builder." ~ _appLocale ~ ".js") }}"></script>
+<script type="text/javascript" src="{{ asset((_rootPath ~ _requires["interactjs"].javascripts[0]) | replace({"{{ version }}": _requires["interactjs"].version})) }}"></script>
+<script type="text/javascript" src="{{ asset(_rootPath ~ "/jquery-querybuilder-" ~ _version ~ "/js/query-builder.standalone.min.js") }}"></script>
+<script type="text/javascript" src="{{ asset(_rootPath ~ "/jquery-querybuilder-" ~ _version ~ "/i18n/query-builder." ~ _appLocale ~ ".js") }}"></script>
