@@ -104,9 +104,11 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
      * @throws InvalidArgumentException Throws an invalid argument exception if the condition is invalid.
      */
     public function setCondition(?string $condition): QueryBuilderRuleSetInterface {
+
         if (null !== $condition && false === in_array($condition, QueryBuilderEnumerator::enumConditions())) {
             throw new InvalidArgumentException(sprintf('The condition "%s" is invalid', $condition));
         }
+
         $this->condition = $condition;
         return $this;
     }

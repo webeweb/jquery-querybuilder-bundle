@@ -23,8 +23,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRule;
  */
 class ArrayQueryBuilderType extends AbstractQueryBuilderType {
 
-    const DEFAULT_IMPLODER = "{{implode}}";
-
     /**
      * Constructor.
      */
@@ -51,6 +49,6 @@ class ArrayQueryBuilderType extends AbstractQueryBuilderType {
             $sql[] = $qbd->toSql($qbr, $wrap);
         }
 
-        return implode("{{implode}}", $sql);
+        return implode(self::DEFAULT_SEPARATOR, $sql);
     }
 }

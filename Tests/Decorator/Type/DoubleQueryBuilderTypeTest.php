@@ -37,7 +37,7 @@ class DoubleQueryBuilderTypeTest extends AbstractTestCase {
 
         $obj = new DoubleQueryBuilderType();
 
-        $this->assertRegExp("/^5[\.,]5$/", $obj->toSql($rule));
+        $this->assertRegExp("/^5[\.,]5/", $obj->toSql($rule));
     }
 
     /**

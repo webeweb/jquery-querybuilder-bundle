@@ -38,7 +38,7 @@ class ContainsQueryBuilderOperator extends AbstractQueryBuilderOperator {
 
         $sql = [
             parent::toSql($rule, $wrap),
-            "'%" . $qbt->toSql($rule, false) . "%'",
+            sprintf("'%%%s%%'", $qbt->toSql($rule, false)),
         ];
 
         return implode(" ", $sql);

@@ -40,7 +40,7 @@ class BetweenQueryBuilderOperator extends AbstractQueryBuilderOperator implement
 
         $sql = [
             parent::toSql($rule, $wrap),
-            str_replace("{{implode}}", " " . self::CONDITION_AND . " ", $tmp),
+            str_replace(self::DEFAULT_SEPARATOR, sprintf(" %s ", self::CONDITION_AND), $tmp),
         ];
 
         return implode(" ", $sql);

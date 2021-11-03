@@ -78,6 +78,7 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      */
     public function __construct(string $id, string $type, array $operators) {
         parent::__construct();
+
         $this->setId($id);
         $this->setLabel("");
         $this->setMultiple(false);
@@ -175,12 +176,14 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
      * @throws InvalidArgumentException Throws an invalid argument exception if an operator is invalid.
      */
     public function setOperators(array $operators): QueryBuilderFilterInterface {
-        $enumOperators = QueryBuilderEnumerator::enumOperators();
+
+        $enum = QueryBuilderEnumerator::enumOperators();
         foreach ($operators as $current) {
-            if (null !== $current && false === array_key_exists($current, $enumOperators)) {
+            if (null !== $current && false === array_key_exists($current, $enum)) {
                 throw new InvalidArgumentException(sprintf('The operator "%s" is invalid', $current));
             }
         }
+
         $this->operators = $operators;
         return $this;
     }

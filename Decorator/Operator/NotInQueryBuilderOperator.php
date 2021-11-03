@@ -39,7 +39,7 @@ class NotInQueryBuilderOperator extends AbstractQueryBuilderOperator {
 
         $sql = [
             parent::toSql($rule, $wrap),
-            "(" . str_replace("{{implode}}", ", ", $tmp) . ")",
+            sprintf("(%s)", str_replace(self::DEFAULT_SEPARATOR, ", ", $tmp)),
         ];
 
         return implode(" ", $sql);

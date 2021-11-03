@@ -38,7 +38,7 @@ class ArrayQueryBuilderTypeTest extends AbstractTestCase {
 
         $obj = new ArrayQueryBuilderType();
 
-        $this->assertEquals("0{{implode}}1", $obj->toSql($rule));
+        $this->assertEquals("0{{ separator }}1", $obj->toSql($rule));
     }
 
     /**

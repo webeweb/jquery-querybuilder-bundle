@@ -32,6 +32,6 @@ class DoubleQueryBuilderType extends AbstractQueryBuilderType {
      * {@inheritDoc}
      */
     public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
-        return "" . $rule->getValue();
+        return sprintf("%F", $rule->getValue());
     }
 }
