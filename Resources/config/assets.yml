@@ -9,9 +9,9 @@ assets:
         requires:
             interactjs:
                 version: "1.3.3"
+                stylesheets: [ ]
                 javascripts:
                     - "/interactjs-{{ version }}/interact.min.js"
-                stylesheets: [ ]
         locales:
             - "ar"
             - "az"
