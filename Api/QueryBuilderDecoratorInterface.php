@@ -22,6 +22,13 @@ use InvalidArgumentException;
 interface QueryBuilderDecoratorInterface {
 
     /**
+     * Default separator.
+     *
+     * @var string
+     */
+    const DEFAULT_SEPARATOR = "{{ separator }}";
+
+    /**
      * Convert the rule into a SQL string representation.
      *
      * @param QueryBuilderRuleInterface $rule The rule.
