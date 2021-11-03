@@ -31,19 +31,19 @@ class JsonDeserializer {
      * Deserialize a rule.
      *
      * @param QueryBuilderFilterSetInterface $filterSet The filter set.
-     * @param array $rule The rule.
+     * @param array $data The data.
      * @return QueryBuilderRuleInterface Returns the de-normalized rule.
      * @throws InvalidArgumentException Throws an invalid argument exception if an argument is invalid.
      */
-    public static function deserializeQueryBuilderRule(QueryBuilderFilterSetInterface $filterSet, array $rule): QueryBuilderRuleInterface {
+    public static function deserializeQueryBuilderRule(QueryBuilderFilterSetInterface $filterSet, array $data): QueryBuilderRuleInterface {
 
         $model = new QueryBuilderRule();
-        $model->setId(ArrayHelper::get($rule, "id"));
-        $model->setField(ArrayHelper::get($rule, "field"));
-        $model->setInput(ArrayHelper::get($rule, "input"));
-        $model->setOperator(ArrayHelper::get($rule, "operator"));
-        $model->setType(ArrayHelper::get($rule, "type"));
-        $model->setValue(ArrayHelper::get($rule, "value"));
+        $model->setId(ArrayHelper::get($data, "id"));
+        $model->setField(ArrayHelper::get($data, "field"));
+        $model->setInput(ArrayHelper::get($data, "input"));
+        $model->setOperator(ArrayHelper::get($data, "operator"));
+        $model->setType(ArrayHelper::get($data, "type"));
+        $model->setValue(ArrayHelper::get($data, "value"));
 
         $model->setDecorator($filterSet->getDecorator($model->getId()));
 
@@ -54,17 +54,17 @@ class JsonDeserializer {
      * Deserialize a rule set.
      *
      * @param QueryBuilderFilterSetInterface $filterSet The filter set.
-     * @param array $rules The rules.
+     * @param array $data The data.
      * @return QueryBuilderRuleSetInterface Returns the rule set.
      * @throws InvalidArgumentException Throws an invalid argument exception if an argument is invalid.
      */
-    public static function deserializeQueryBuilderRuleSet(QueryBuilderFilterSetInterface $filterSet, array $rules): QueryBuilderRuleSetInterface {
+    public static function deserializeQueryBuilderRuleSet(QueryBuilderFilterSetInterface $filterSet, array $data): QueryBuilderRuleSetInterface {
 
         $model = new QueryBuilderRuleSet();
-        $model->setCondition(ArrayHelper::get($rules, "condition", null));
-        $model->setValid(ArrayHelper::get($rules, "valid", false));
+        $model->setCondition(ArrayHelper::get($data, "condition", null));
+        $model->setValid(ArrayHelper::get($data, "valid", false));
 
-        foreach (ArrayHelper::get($rules, "rules", []) as $current) {
+        foreach (ArrayHelper::get($data, "rules", []) as $current) {
 
             // Rule set ?
             if (true === array_key_exists("condition", $current)) {
