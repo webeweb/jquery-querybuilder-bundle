@@ -1,9 +1,7 @@
-{# Resources/views/layout/stylesheets.html.twig #}
+{# Resources/views/assets/stylesheets.html.twig #}
 {% set _rootPath = "bundles/wbwjqueryquerybuilder" %}
 {% set _version  = getContainerParameter("wbw.jquery_querybuilder.asset.jquery_querybuilder").version %}
 {% set _appTheme = getContainerParameter("wbw_jquery_querybuilder.theme") %}
 
-{% if ("prod" != app.environment) %}
-    <!-- jQuery QueryBuilder -->
-{% endif %}
+{% if ("prod" != app.environment) %}<!-- jQuery QueryBuilder -->{% endif %}
 <link type="text/css" rel="stylesheet" href="{{ asset(_rootPath ~ "/jquery-querybuilder-" ~ _version ~ "/css/query-builder." ~ _appTheme ~ ".min.css") }}">

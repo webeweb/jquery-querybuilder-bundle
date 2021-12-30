@@ -28,7 +28,7 @@ class TestLayoutController extends AbstractController {
      * @return Response Returns the response.
      */
     public function javascriptsAction(): Response {
-        return $this->render("@WBWJQueryQueryBuilder/layout/javascripts.html.twig");
+        return $this->render("@WBWJQueryQueryBuilder/assets/javascripts.html.twig");
     }
 
     /**
@@ -37,6 +37,6 @@ class TestLayoutController extends AbstractController {
      * @return Response Returns the response.
      */
     public function stylesheetsAction(): Response {
-        return $this->render("@WBWJQueryQueryBuilder/layout/stylesheets.html.twig");
+        return $this->render("@WBWJQueryQueryBuilder/assets/stylesheets.html.twig");
     }
 }
