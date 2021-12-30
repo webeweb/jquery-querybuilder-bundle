@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Helper;
 
 use Exception;
+use WBW\Bundle\CoreBundle\DependencyInjection\ConfigurationHelper;
 use WBW\Bundle\CoreBundle\Tests\Fixtures\Helper\TestAssetsHelper;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
@@ -48,10 +49,16 @@ class AssetsHelperTest extends AbstractTestCase {
      */
     public function testListAssets(): void {
 
+        // Load the YAML configuration.
+        $config  = ConfigurationHelper::loadYamlConfig(getcwd() . "/DependencyInjection", "assets");
+        $plugins = $config["assets"]["wbw.jquery_querybuilder.asset.jquery_querybuilder"];
+
         $res = TestAssetsHelper::listAssets($this->directoryAssets);
         $this->assertCount(2, $res);
 
-        $this->assertRegexp("/interactjs\-.*\.zip$/", $res[0]);
-        $this->assertRegexp("/jquery\-querybuilder\-2\.4\.4.*\.zip$/", $res[1]);
+        $i = -1;
+
+        $this->assertRegexp("/interactjs\-" . preg_quote($plugins["requires"]["interactjs"]["version"]) . "\.zip$/", $res[++$i]);
+        $this->assertRegexp("/jquery\-querybuilder\-" . preg_quote($plugins["version"]) . "\.zip$/", $res[++$i]);
     }
 }

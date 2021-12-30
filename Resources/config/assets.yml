@@ -2,7 +2,7 @@
 assets:
 
     wbw.jquery_querybuilder.asset.jquery_querybuilder:
-        version: "2.4.4"
+        version: "2.6.2"
         themes:
             - "default"
             - "dark"
