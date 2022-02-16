@@ -26,7 +26,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class QueryBuilderRuleTest extends AbstractTestCase {
 
     /**
-     * Tests the setDecorator() method.
+     * Tests setDecorator()
      *
      * @return void
      */
@@ -42,7 +42,7 @@ class QueryBuilderRuleTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setOperator() method.
+     * Tests setOperator()
      *
      * @return void
      */
@@ -55,7 +55,7 @@ class QueryBuilderRuleTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setOperator() method.
+     * Tests setOperator()
      *
      * @return void
      */
@@ -74,7 +74,7 @@ class QueryBuilderRuleTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setValue() method.
+     * Tests setValue()
      *
      * @return void
      */
@@ -87,7 +87,7 @@ class QueryBuilderRuleTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

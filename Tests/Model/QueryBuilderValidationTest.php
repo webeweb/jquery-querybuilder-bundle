@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class QueryBuilderValidationTest extends AbstractTestCase {
 
     /**
-     * Tests the jsonSerialize() method.
+     * Tests jsonSerialize()
      *
      * @return void
      */
@@ -35,7 +35,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setAllowEmptyValue() method.
+     * Tests setAllowEmptyValue()
      *
      * @return void
      */
@@ -48,7 +48,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setCallback() method.
+     * Tests setCallback()
      *
      * @return void
      */
@@ -61,7 +61,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setFormat() method.
+     * Tests setFormat()
      *
      * @return void
      */
@@ -74,7 +74,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setMax() method.
+     * Tests setMax()
      *
      * @return void
      */
@@ -87,7 +87,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setMessages() method.
+     * Tests setMessages()
      *
      * @return void
      */
@@ -100,7 +100,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setMin() method.
+     * Tests setMin()
      *
      * @return void
      */
@@ -113,7 +113,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setStep() method.
+     * Tests setStep()
      *
      * @return void
      */
@@ -126,7 +126,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

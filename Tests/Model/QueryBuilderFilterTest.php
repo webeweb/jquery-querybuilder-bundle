@@ -27,7 +27,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class QueryBuilderFilterTest extends AbstractTestCase {
 
     /**
-     * Tests the jsonSerialize() method.
+     * Tests jsonSerialize()
      *
      * @return void
      */
@@ -39,7 +39,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setDecorator() method.
+     * Tests setDecorator()
      *
      * @return void
      */
@@ -55,7 +55,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setLabel() method.
+     * Tests setLabel()
      *
      * @return void
      */
@@ -68,7 +68,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setMultiple() method.
+     * Tests setMultiple()
      *
      * @return void
      */
@@ -81,7 +81,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setOperators() method.
+     * Tests setOperators()
      *
      * @return void
      */
@@ -94,7 +94,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setOperators() method.
+     * Tests setOperators()
      *
      * @return void
      */
@@ -113,7 +113,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setValidation() method.
+     * Tests setValidation()
      *
      * @return void
      */
@@ -129,7 +129,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setValues() method.
+     * Tests setValues()
      *
      * @return void
      */
@@ -142,7 +142,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

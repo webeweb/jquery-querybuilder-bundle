@@ -27,7 +27,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Model\TestQueryBuilder;
 class AbstractQueryBuilderTest extends AbstractTestCase {
 
     /**
-     * Tests the setField() method.
+     * Tests setField()
      *
      * @return void
      */
@@ -40,7 +40,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setId() method.
+     * Tests setId()
      *
      * @return void
      */
@@ -53,7 +53,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setInput() method.
+     * Tests setInput()
      *
      * @return void
      */
@@ -66,7 +66,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setInput() method.
+     * Tests setInput()
      *
      * @return void
      */
@@ -85,7 +85,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setType() method.
+     * Tests setType()
      *
      * @return void
      */
@@ -98,7 +98,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setType() method.
+     * Tests setType()
      *
      * @return void
      */
@@ -117,7 +117,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      * @throws Exception Throws an exception if an error occurs.

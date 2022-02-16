@@ -22,7 +22,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractWebTestCase;
 class LayoutControllerTest extends AbstractWebTestCase {
 
     /**
-     * Tests the javascriptsAction() method.
+     * Tests javascriptsAction()
      *
      * @return void
      */
@@ -46,7 +46,7 @@ class LayoutControllerTest extends AbstractWebTestCase {
     }
 
     /**
-     * Tests the stylesheetsAction() method.
+     * Tests stylesheetsAction()
      *
      * @return void
      */

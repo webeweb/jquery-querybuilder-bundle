@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class TimeQueryBuilderTypeTest extends AbstractTestCase {
 
     /**
-     * Tests the toSql() method.
+     * Tests toSql()
      *
      * @return void
      */
@@ -41,7 +41,7 @@ class TimeQueryBuilderTypeTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the toSql() method.
+     * Tests toSql()
      *
      * @return void
      */
@@ -57,7 +57,7 @@ class TimeQueryBuilderTypeTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */

@@ -31,7 +31,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\TestFixtures;
 class JsonDeserializerTest extends AbstractTestCase {
 
     /**
-     * Tests the deserializeQueryBuilderRule() method.
+     * Tests deserializeQueryBuilderRule()
      *
      * @return void
      */
@@ -54,7 +54,7 @@ class JsonDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the deserializeQueryBuilderRuleSet() method.
+     * Tests deserializeQueryBuilderRuleSet()
      *
      * @return void
      */

@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\WBWJQueryQueryBuilderBundle;
 class WBWJQueryQueryBuilderBundleTest extends AbstractTestCase {
 
     /**
-     * Tests the build() method.
+     * Tests build()
      *
      * @return void
      */
@@ -36,7 +36,7 @@ class WBWJQueryQueryBuilderBundleTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the getAssetsRelativeDirectory() method.
+     * Tests getAssetsRelativeDirectory()
      *
      * @return void
      */
@@ -48,7 +48,7 @@ class WBWJQueryQueryBuilderBundleTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the getContainerExtension() method.
+     * Tests getContainerExtension()
      *
      * @return void
      */

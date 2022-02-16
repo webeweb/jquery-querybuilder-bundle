@@ -27,7 +27,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class JsonSerializerTest extends AbstractTestCase {
 
     /**
-     * Tests the serializeQueryBuilderFilter() method.
+     * Tests serializeQueryBuilderFilter()
      *
      * @return void
      */
@@ -61,7 +61,7 @@ class JsonSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the serializeQueryBuilderSet() method.
+     * Tests serializeQueryBuilderSet()
      *
      * @return void
      */
@@ -87,7 +87,7 @@ class JsonSerializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the serializeQueryBuilderValidation() method.
+     * Tests serializeQueryBuilderValidation()
      *
      * @return void
      */

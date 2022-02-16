@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class QueryBuilderRuleSetTest extends AbstractTestCase {
 
     /**
-     * Tests the setCondition() method.
+     * Tests setCondition()
      *
      * @return void
      */
@@ -38,7 +38,7 @@ class QueryBuilderRuleSetTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the setCondition() method.
+     * Tests setCondition()
      *
      * @return void
      */
@@ -57,7 +57,7 @@ class QueryBuilderRuleSetTest extends AbstractTestCase {
     }
 
     /**
-     * Tests the __construct() method.
+     * Tests __construct()
      *
      * @return void
      */
