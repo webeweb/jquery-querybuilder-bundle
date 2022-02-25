@@ -19,7 +19,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 /**
  * Assets helper test
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Helper
  */
 class AssetsHelperTest extends AbstractTestCase {

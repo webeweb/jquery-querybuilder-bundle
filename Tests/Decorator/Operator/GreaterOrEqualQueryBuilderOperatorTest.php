@@ -19,7 +19,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 /**
  * Greater or equal QueryBuilder operator test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Decorator\Operator
  */
 class GreaterOrEqualQueryBuilderOperatorTest extends AbstractTestCase {

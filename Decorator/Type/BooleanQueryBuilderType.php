@@ -17,7 +17,7 @@ use WBW\Library\Types\Helper\IntegerHelper;
 /**
  * Boolean QueryBuilder type.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Type
  */
 class BooleanQueryBuilderType extends AbstractQueryBuilderType {

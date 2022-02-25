@@ -20,7 +20,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 /**
  * In QueryBuilder operator test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Decorator\Operator
  */
 class InQueryBuilderOperatorTest extends AbstractTestCase {

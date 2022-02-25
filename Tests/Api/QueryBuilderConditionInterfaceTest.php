@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 /**
  * QueryBuilder condition interface test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\API
  */
 class QueryBuilderConditionInterfaceTest extends AbstractTestCase {

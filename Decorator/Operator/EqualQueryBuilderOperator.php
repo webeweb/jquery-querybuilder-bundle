@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorFactory;
 /**
  * Equal QueryBuilder operator.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Operator
  */
 class EqualQueryBuilderOperator extends AbstractQueryBuilderOperator {

@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\TestFixtures;
 /**
  * QueryBuilder repository helper test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Helper
  */
 class QueryBuilderRepositoryHelperTest extends AbstractTestCase {

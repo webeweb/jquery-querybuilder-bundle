@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Model\TestQueryBuilder;
 /**
  * Abstract QueryBuilder test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model
  */
 class AbstractQueryBuilderTest extends AbstractTestCase {

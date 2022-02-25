@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderRuleInterface;
 /**
  * Is not empty QueryBuilder operator.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Operator
  */
 class IsNotEmptyQueryBuilderOperator extends AbstractQueryBuilderOperator {

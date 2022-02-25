@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Type\ArrayQueryBuilderType;
 /**
  * In QueryBuilder operator.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Operator
  */
 class InQueryBuilderOperator extends AbstractQueryBuilderOperator {

@@ -19,7 +19,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderRuleInterface;
 /**
  * QueryBuilder rule.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Model
  */
 class QueryBuilderRule extends AbstractQueryBuilder implements QueryBuilderOperatorInterface, QueryBuilderRuleInterface {

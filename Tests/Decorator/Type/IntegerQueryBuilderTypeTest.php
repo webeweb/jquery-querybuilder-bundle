@@ -19,7 +19,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 /**
  * Integer QueryBuilder type test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Decorator\Type
  */
 class IntegerQueryBuilderTypeTest extends AbstractTestCase {

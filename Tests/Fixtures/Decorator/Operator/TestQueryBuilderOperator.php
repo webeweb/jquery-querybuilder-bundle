@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Operator\AbstractQueryBuilder
 /**
  * Test QueryBuilder operator.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Decorator\Operator
  */
 class TestQueryBuilderOperator extends AbstractQueryBuilderOperator {

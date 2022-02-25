@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorFactory;
 /**
  * Not begins with QueryBuilder operator.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Operator
  */
 class NotBeginsWithQueryBuilderOperator extends AbstractQueryBuilderOperator {

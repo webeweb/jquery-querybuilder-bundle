@@ -18,7 +18,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRule;
 /**
  * Array QueryBuilder type.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Type
  */
 class ArrayQueryBuilderType extends AbstractQueryBuilderType {

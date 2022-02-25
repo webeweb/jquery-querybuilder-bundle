@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorFactory;
 /**
  * QueryBuilder repository helper.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Helper
  */
 class QueryBuilderRepositoryHelper implements QueryBuilderConditionInterface, QueryBuilderOperatorInterface, QueryBuilderTypeInterface {

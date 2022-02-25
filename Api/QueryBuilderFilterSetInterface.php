@@ -16,7 +16,7 @@ use JsonSerializable;
 /**
  * QueryBuilder filter set interface.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Api
  */
 interface QueryBuilderFilterSetInterface extends JsonSerializable {

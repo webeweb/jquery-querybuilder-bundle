@@ -16,7 +16,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Model\AbstractQueryBuilder;
 /**
  * Test QueryBuilder.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Model
  */
 class TestQueryBuilder extends AbstractQueryBuilder {

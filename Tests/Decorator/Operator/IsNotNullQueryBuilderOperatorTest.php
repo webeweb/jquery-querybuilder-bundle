@@ -19,7 +19,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 /**
  * Is not null QueryBuilder operator test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Decorator\Operator
  */
 class IsNotNullQueryBuilderOperatorTest extends AbstractTestCase {

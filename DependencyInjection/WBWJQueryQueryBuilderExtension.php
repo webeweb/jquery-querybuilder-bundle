@@ -21,7 +21,7 @@ use WBW\Bundle\CoreBundle\DependencyInjection\ConfigurationHelper;
 /**
  * jQuery QueryBuilder extension.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection
  */
 class WBWJQueryQueryBuilderExtension extends Extension {

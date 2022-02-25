@@ -17,7 +17,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorFactory;
 /**
  * Test QueryBuilder decorator factory.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Decorator
  */
 class TestQueryBuilderDecoratorFactory extends QueryBuilderDecoratorFactory {

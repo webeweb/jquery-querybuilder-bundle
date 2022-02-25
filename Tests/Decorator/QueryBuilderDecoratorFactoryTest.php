@@ -24,7 +24,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Decorator\TestQueryBuild
 /**
  * QueryBuilder decorator factory test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Decorator
  */
 class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {

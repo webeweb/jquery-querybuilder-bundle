@@ -19,7 +19,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection\WBWJQueryQueryBuild
 /**
  * jQuery QueryBuilder bundle.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle
  */
 class WBWJQueryQueryBuilderBundle extends Bundle implements AssetsProviderInterface {

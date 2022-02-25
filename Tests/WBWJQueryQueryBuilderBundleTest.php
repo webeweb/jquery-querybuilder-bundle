@@ -18,7 +18,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\WBWJQueryQueryBuilderBundle;
 /**
  * jQuery QueryBuilder bundle test.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Tests
  */
 class WBWJQueryQueryBuilderBundleTest extends AbstractTestCase {

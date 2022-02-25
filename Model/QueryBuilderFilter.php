@@ -21,7 +21,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Serializer\JsonSerializer;
 /**
  * QueryBuilder filter.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Model
  */
 class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFilterInterface, QueryBuilderOperatorInterface {

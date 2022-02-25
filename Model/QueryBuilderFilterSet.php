@@ -19,7 +19,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Serializer\JsonSerializer;
 /**
  * QueryBuilder filter set.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Model
  */
 class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {

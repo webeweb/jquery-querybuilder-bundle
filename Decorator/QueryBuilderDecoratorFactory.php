@@ -20,7 +20,7 @@ use WBW\Library\Types\Helper\ArrayHelper;
 /**
  * QueryBuilder decorator factory.
  *
- * @author webeweb <https://github.com/webeweb/>
+ * @author webeweb <https://github.com/webeweb>
  * @package WBW\Bundle\JQuery\QueryBuilderBundle\Decorator
  */
 class QueryBuilderDecoratorFactory implements QueryBuilderOperatorInterface, QueryBuilderTypeInterface {
