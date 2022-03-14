@@ -29,7 +29,7 @@ class LayoutControllerTest extends AbstractWebTestCase {
     public function testJavascriptsAction(): void {
 
         // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
         // Make a GET request.
         $client->request("GET", "/javascripts");
@@ -53,7 +53,7 @@ class LayoutControllerTest extends AbstractWebTestCase {
     public function testStylesheetsAction(): void {
 
         // Create a client.
-        $client = static::createClient();
+        $client = $this->client;
 
         // Make a GET request.
         $client->request("GET", "/stylesheets");
