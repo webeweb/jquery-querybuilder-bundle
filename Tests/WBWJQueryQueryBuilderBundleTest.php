@@ -11,9 +11,12 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests;
 
+use Exception;
+use WBW\Bundle\CoreBundle\Config\ConfigurationHelper;
 use WBW\Bundle\CoreBundle\Provider\AssetsProviderInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection\WBWJQueryQueryBuilderExtension;
 use WBW\Bundle\JQuery\QueryBuilderBundle\WBWJQueryQueryBuilderBundle;
+use WBW\Library\Symfony\Helper\AssetsHelper;
 
 /**
  * jQuery QueryBuilder bundle test.
@@ -57,5 +60,28 @@ class WBWJQueryQueryBuilderBundleTest extends AbstractTestCase {
         $obj = new WBWJQueryQueryBuilderBundle();
 
         $this->assertInstanceOf(WBWJQueryQueryBuilderExtension::class, $obj->getContainerExtension());
+    }
+
+    /**
+     * Tests listAssets()
+     *
+     * @return void
+     * @throws Exception Throws an exception if an error occurs.
+     */
+    public function testListAssets(): void {
+
+        $directory = realpath(__DIR__ . "/../DependencyInjection");
+
+        // Load the YAML configuration.
+        $config  = ConfigurationHelper::loadYamlConfig($directory, "assets");
+        $plugins = $config["assets"]["wbw.jquery_querybuilder.asset.jquery_querybuilder"];
+
+        $res = AssetsHelper::listAssets(__DIR__ . "/../Resources/assets");
+        $this->assertCount(2, $res);
+
+        $i = -1;
+
+        $this->assertRegexp("/interactjs\-" . preg_quote($plugins["requires"]["interactjs"]["version"]) . "\.zip$/", $res[++$i]);
+        $this->assertRegexp("/jquery\-querybuilder\-" . preg_quote($plugins["version"]) . "\.zip$/", $res[++$i]);
     }
 }
