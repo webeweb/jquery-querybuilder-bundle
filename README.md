@@ -5,7 +5,6 @@ jquery-querybuilder-bundle
 [![Coverage Status](https://img.shields.io/coveralls/webeweb/jquery-querybuilder-bundle/master.svg?style=flat-square)](https://coveralls.io/github/webeweb/jquery-querybuilder-bundle?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/quality/g/webeweb/jquery-querybuilder-bundle/master.svg?style=flat-square)](https://scrutinizer-ci.com/g/webeweb/jquery-querybuilder-bundle/?branch=master)
 [![Latest Stable Version](https://img.shields.io/packagist/v/webeweb/jquery-querybuilder-bundle.svg?style=flat-square)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle)
-[![Latest Unstable Version](https://img.shields.io/packagist/vpre/webeweb/jquery-querybuilder-bundle.svg?style=flat-square)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle)
 [![License](https://img.shields.io/packagist/l/webeweb/jquery-querybuilder-bundle.svg?style=flat-square)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle)
 [![composer.lock](https://img.shields.io/badge/.lock-uncommited-important.svg?style=flat-square)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle)
 
