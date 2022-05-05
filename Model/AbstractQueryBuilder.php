@@ -60,28 +60,28 @@ abstract class AbstractQueryBuilder implements QueryBuilderInputInterface, Query
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getField(): ?string {
         return $this->field;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getId(): ?string {
         return $this->id;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getInput(): ?string {
         return $this->input;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getType(): ?string {
         return $this->type;

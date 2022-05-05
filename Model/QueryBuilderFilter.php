@@ -87,49 +87,49 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getDecorator(): ?QueryBuilderDecoratorInterface {
         return $this->decorator;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getLabel(): string {
         return $this->label;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMultiple(): bool {
         return $this->multiple;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getOperators(): array {
         return $this->operators;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getValidation(): ?QueryBuilderValidationInterface {
         return $this->validation;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getValues(): ?array {
         return $this->values;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializeQueryBuilderFilter($this);

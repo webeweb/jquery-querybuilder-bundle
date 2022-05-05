@@ -53,21 +53,21 @@ class QueryBuilderRule extends AbstractQueryBuilder implements QueryBuilderOpera
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getDecorator(): ?QueryBuilderDecoratorInterface {
         return $this->decorator;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getOperator(): ?string {
         return $this->operator;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getValue() {
         return $this->value;

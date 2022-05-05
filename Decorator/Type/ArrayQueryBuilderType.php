@@ -31,7 +31,7 @@ class ArrayQueryBuilderType extends AbstractQueryBuilderType {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
 

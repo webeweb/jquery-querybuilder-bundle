@@ -30,7 +30,7 @@ class BooleanQueryBuilderType extends AbstractQueryBuilderType {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
         return sprintf("%d", IntegerHelper::parseBoolean($rule->getValue()));

@@ -34,7 +34,7 @@ class WBWJQueryQueryBuilderExtension extends Extension {
     const EXTENSION_ALIAS = "wbw_jquery_querybuilder";
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getAlias(): string {
         return self::EXTENSION_ALIAS;

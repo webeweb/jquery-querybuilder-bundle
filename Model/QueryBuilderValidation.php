@@ -79,56 +79,56 @@ class QueryBuilderValidation implements QueryBuilderValidationInterface {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getAllowEmptyValue(): ?bool {
         return $this->allowEmptyValue;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getCallback(): ?string {
         return $this->callback;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getFormat() {
         return $this->format;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMax() {
         return $this->max;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMessages(): ?array {
         return $this->messages;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getMin() {
         return $this->min;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getStep() {
         return $this->step;
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function jsonSerialize(): array {
         return JsonSerializer::serializeQueryBuilderValidation($this);

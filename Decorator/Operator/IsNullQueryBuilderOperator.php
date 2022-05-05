@@ -29,7 +29,7 @@ class IsNullQueryBuilderOperator extends AbstractQueryBuilderOperator {
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
         return parent::toSql($rule, $wrap);

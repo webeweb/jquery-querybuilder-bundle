@@ -23,14 +23,14 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Operator\AbstractQueryBuilder
 class TestQueryBuilderOperator extends AbstractQueryBuilderOperator {
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function __construct($operator) {
         parent::__construct($operator);
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
         return "";
