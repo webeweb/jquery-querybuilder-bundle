@@ -14,6 +14,8 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 use Exception;
 use InvalidArgumentException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderDecoratorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderOperatorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderTypeInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderValidationInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilter;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
@@ -33,7 +35,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      */
     public function testJsonSerialize(): void {
 
-        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_STRING, [QueryBuilderFilter::OPERATOR_EQUAL]);
+        $obj = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_STRING, [QueryBuilderOperatorInterface::OPERATOR_EQUAL]);
 
         $this->assertTrue(is_array($obj->jsonSerialize()));
     }
@@ -48,7 +50,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
         // Set a QueryBuilder decorator mock.
         $decorator = $this->getMockBuilder(QueryBuilderDecoratorInterface::class)->getMock();
 
-        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+        $obj = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_BOOLEAN, []);
 
         $obj->setDecorator($decorator);
         $this->assertSame($decorator, $obj->getDecorator());
@@ -61,7 +63,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      */
     public function testSetLabel(): void {
 
-        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+        $obj = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_BOOLEAN, []);
 
         $obj->setLabel("label");
         $this->assertEquals("label", $obj->getLabel());
@@ -74,7 +76,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      */
     public function testSetMultiple(): void {
 
-        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+        $obj = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_BOOLEAN, []);
 
         $obj->setMultiple(true);
         $this->assertTrue($obj->getMultiple());
@@ -87,10 +89,10 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      */
     public function testSetOperators(): void {
 
-        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+        $obj = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_BOOLEAN, []);
 
-        $obj->setOperators([QueryBuilderFilter::OPERATOR_EQUAL]);
-        $this->assertEquals([QueryBuilderFilter::OPERATOR_EQUAL], $obj->getOperators());
+        $obj->setOperators([QueryBuilderOperatorInterface::OPERATOR_EQUAL]);
+        $this->assertEquals([QueryBuilderOperatorInterface::OPERATOR_EQUAL], $obj->getOperators());
     }
 
     /**
@@ -100,7 +102,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      */
     public function testSetOperatorsWithInvalidArgumentException(): void {
 
-        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+        $obj = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_BOOLEAN, []);
 
         try {
 
@@ -122,7 +124,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
         // Set a QueryBuilder validation mock.
         $validation = $this->getMockBuilder(QueryBuilderValidationInterface::class)->getMock();
 
-        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+        $obj = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_BOOLEAN, []);
 
         $obj->setValidation($validation);
         $this->assertSame($validation, $obj->getValidation());
@@ -135,7 +137,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      */
     public function testSetValues(): void {
 
-        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+        $obj = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_BOOLEAN, []);
 
         $obj->setValues(["values"]);
         $this->assertEquals(["values"], $obj->getValues());
@@ -148,12 +150,12 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      */
     public function test__construct(): void {
 
-        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_BOOLEAN, []);
+        $obj = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_BOOLEAN, []);
 
         $this->assertEquals("id", $obj->getId());
         $this->assertNull($obj->getField());
         $this->assertNull($obj->getInput());
-        $this->assertEquals(QueryBuilderFilter::TYPE_BOOLEAN, $obj->getType());
+        $this->assertEquals(QueryBuilderTypeInterface::TYPE_BOOLEAN, $obj->getType());
 
         $this->assertNull($obj->getDecorator());
         $this->assertEquals("", $obj->getLabel());

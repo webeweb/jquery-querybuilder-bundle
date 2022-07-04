@@ -14,6 +14,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 use Exception;
 use InvalidArgumentException;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderDecoratorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
@@ -50,8 +51,8 @@ class QueryBuilderRuleTest extends AbstractTestCase {
 
         $obj = new QueryBuilderRule();
 
-        $obj->setOperator(QueryBuilderRule::OPERATOR_BEGINS_WITH);
-        $this->assertEquals(QueryBuilderRule::OPERATOR_BEGINS_WITH, $obj->getOperator());
+        $obj->setOperator(QueryBuilderOperatorInterface::OPERATOR_BEGINS_WITH);
+        $this->assertEquals(QueryBuilderOperatorInterface::OPERATOR_BEGINS_WITH, $obj->getOperator());
     }
 
     /**

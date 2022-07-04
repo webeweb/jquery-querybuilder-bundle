@@ -13,6 +13,7 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 
 use Exception;
 use InvalidArgumentException;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderConditionInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRuleSet;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
@@ -33,8 +34,8 @@ class QueryBuilderRuleSetTest extends AbstractTestCase {
 
         $obj = new QueryBuilderRuleSet();
 
-        $obj->setCondition(QueryBuilderRuleSet::CONDITION_AND);
-        $this->assertEquals(QueryBuilderRuleSet::CONDITION_AND, $obj->getCondition());
+        $obj->setCondition(QueryBuilderConditionInterface::CONDITION_AND);
+        $this->assertEquals(QueryBuilderConditionInterface::CONDITION_AND, $obj->getCondition());
     }
 
     /**

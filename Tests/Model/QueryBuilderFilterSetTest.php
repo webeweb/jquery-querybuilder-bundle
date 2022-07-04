@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderOperatorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderTypeInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilter;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilterSet;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
@@ -31,7 +33,7 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
     public function testAddFilter(): void {
 
         // Set a QueryBuilder filter mock.
-        $filter = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
+        $filter = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_INTEGER, [QueryBuilderOperatorInterface::OPERATOR_EQUAL]);
 
         $obj = new QueryBuilderFilterSet();
 
@@ -49,7 +51,7 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
     public function testAddFilterWithSameId(): void {
 
         // Set a QueryBuilder filter mock.
-        $filter = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
+        $filter = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_INTEGER, [QueryBuilderOperatorInterface::OPERATOR_EQUAL]);
 
         $obj = new QueryBuilderFilterSet();
 
@@ -66,7 +68,7 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
     public function testJsonSerialize(): void {
 
         // Set a QueryBuilder filter mock.
-        $filter = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
+        $filter = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_INTEGER, [QueryBuilderOperatorInterface::OPERATOR_EQUAL]);
 
         $obj = new QueryBuilderFilterSet();
         $obj->addFilter($filter);
@@ -82,12 +84,12 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
     public function testRemoveFilter(): void {
 
         // Set a QueryBuilder filter mock.
-        $filter = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
+        $filter = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_INTEGER, [QueryBuilderOperatorInterface::OPERATOR_EQUAL]);
 
         $obj = new QueryBuilderFilterSet();
         $obj->addFilter($filter);
 
-        $this->assertSame($obj, $obj->removeFilter(new QueryBuilderFilter("bad", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL])));
+        $this->assertSame($obj, $obj->removeFilter(new QueryBuilderFilter("bad", QueryBuilderTypeInterface::TYPE_INTEGER, [QueryBuilderOperatorInterface::OPERATOR_EQUAL])));
         $this->assertCount(1, $obj->getFilters());
 
         $this->assertSame($obj, $obj->removeFilter($filter));

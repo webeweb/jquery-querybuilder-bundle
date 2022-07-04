@@ -12,6 +12,7 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Decorator\Operator;
 
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderOperatorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderTypeInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Operator\LessQueryBuilderOperator;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
@@ -34,7 +35,7 @@ class LessQueryBuilderOperatorTest extends AbstractTestCase {
         // Set a QueryBuilder rule mock.
         $rule = new QueryBuilderRule();
         $rule->setField("field");
-        $rule->setType(QueryBuilderRule::TYPE_STRING);
+        $rule->setType(QueryBuilderTypeInterface::TYPE_STRING);
         $rule->setValue("value");
 
         $obj = new LessQueryBuilderOperator();

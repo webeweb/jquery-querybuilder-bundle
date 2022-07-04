@@ -11,6 +11,9 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Serializer;
 
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderInputInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderOperatorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderTypeInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderValidationInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilter;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilterSet;
@@ -37,9 +40,9 @@ class JsonSerializerTest extends AbstractTestCase {
         $validation = $this->getMockBuilder(QueryBuilderValidationInterface::class)->getMock();
         $validation->expects($this->any())->method("jsonSerialize")->willReturn([]);
 
-        $obj = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_STRING, [QueryBuilderFilter::OPERATOR_EQUAL]);
+        $obj = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_STRING, [QueryBuilderOperatorInterface::OPERATOR_EQUAL]);
         $obj->setField("field");
-        $obj->setInput(QueryBuilderFilter::INPUT_NUMBER);
+        $obj->setInput(QueryBuilderInputInterface::INPUT_NUMBER);
         $obj->setLabel("label");
         $obj->setMultiple(true);
         $obj->setValidation($validation);
@@ -68,7 +71,7 @@ class JsonSerializerTest extends AbstractTestCase {
     public function testSerializeQueryBuilderFilterSet(): void {
 
         // Set a QueryBuilder filter mock.
-        $filter = new QueryBuilderFilter("id", QueryBuilderFilter::TYPE_INTEGER, [QueryBuilderFilter::OPERATOR_EQUAL]);
+        $filter = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_INTEGER, [QueryBuilderOperatorInterface::OPERATOR_EQUAL]);
 
         $obj = new QueryBuilderFilterSet();
 
@@ -77,9 +80,9 @@ class JsonSerializerTest extends AbstractTestCase {
             [
                 "id"        => "id",
                 "label"     => "",
-                "type"      => QueryBuilderFilter::TYPE_INTEGER,
+                "type"      => QueryBuilderTypeInterface::TYPE_INTEGER,
                 "operators" => [
-                    QueryBuilderFilter::OPERATOR_EQUAL,
+                    QueryBuilderOperatorInterface::OPERATOR_EQUAL,
                 ],
             ],
         ];
