@@ -82,7 +82,7 @@ class WBWJQueryQueryBuilderBundleTest extends AbstractTestCase {
 
         $i = -1;
 
-        $this->assertRegexp("/interactjs\-" . preg_quote($plugins["requires"]["interactjs"]["version"]) . "\.zip$/", $res[++$i]);
-        $this->assertRegexp("/jquery\-querybuilder\-" . preg_quote($plugins["version"]) . "\.zip$/", $res[++$i]);
+        $this->assertRegexp("/interactjs-" . preg_quote($plugins["requires"]["interactjs"]["version"]) . "\.zip$/", $res[++$i]);
+        $this->assertRegexp("/jquery-querybuilder-" . preg_quote($plugins["version"]) . "\.zip$/", $res[++$i]);
     }
 }
