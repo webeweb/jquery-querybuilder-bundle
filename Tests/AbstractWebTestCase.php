@@ -36,11 +36,9 @@ abstract class AbstractWebTestCase extends WebTestCase {
         $config  = ConfigurationHelper::loadYamlConfig($directory, "assets");
         $version = $config["assets"]["wbw.jquery_querybuilder.asset.jquery_querybuilder"]["version"];
 
-        $assets = [
+        return [
             'href="/bundles/wbwjqueryquerybuilder/jquery-querybuilder-' . $version . '/css/query-builder.dark.min.css"',
         ];
-
-        return $assets;
     }
 
     /**
@@ -57,12 +55,10 @@ abstract class AbstractWebTestCase extends WebTestCase {
         $version  = $config["assets"]["wbw.jquery_querybuilder.asset.jquery_querybuilder"]["version"];
         $requires = $config["assets"]["wbw.jquery_querybuilder.asset.jquery_querybuilder"]["requires"];
 
-        $assets = [
+        return [
             'src="/bundles/wbwjqueryquerybuilder/interactjs-' . $requires["interactjs"]["version"] . '/interact.min.js"',
             'src="/bundles/wbwjqueryquerybuilder/jquery-querybuilder-' . $version . '/js/query-builder.standalone.min.js"',
             'src="/bundles/wbwjqueryquerybuilder/jquery-querybuilder-' . $version . '/i18n/query-builder.fr.js',
         ];
-
-        return $assets;
     }
 }
