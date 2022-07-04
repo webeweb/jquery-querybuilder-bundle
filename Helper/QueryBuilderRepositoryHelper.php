@@ -35,12 +35,12 @@ class QueryBuilderRepositoryHelper implements QueryBuilderConditionInterface, Qu
     public static function queryBuilderRule2Sql(QueryBuilderRuleInterface $rule): ?string {
 
         if (null !== $rule->getDecorator()) {
-            return $rule->getDecorator()->toSql($rule, false);
+            return $rule->getDecorator()->toSql($rule);
         }
 
         $qbo = QueryBuilderDecoratorFactory::newQueryBuilderOperator($rule->getOperator());
 
-        return $qbo->toSql($rule, false);
+        return $qbo->toSql($rule);
     }
 
     /**

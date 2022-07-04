@@ -38,7 +38,7 @@ class BeginsWithQueryBuilderOperator extends AbstractQueryBuilderOperator {
 
         $sql = [
             parent::toSql($rule, $wrap),
-            sprintf("'%s%%'", $qbt->toSql($rule, false)),
+            sprintf("'%s%%'", $qbt->toSql($rule)),
         ];
 
         return implode(" ", $sql);

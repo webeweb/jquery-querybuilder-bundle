@@ -61,7 +61,7 @@ class JsonDeserializer {
     public static function deserializeQueryBuilderRuleSet(QueryBuilderFilterSetInterface $filterSet, array $data): QueryBuilderRuleSetInterface {
 
         $model = new QueryBuilderRuleSet();
-        $model->setCondition(ArrayHelper::get($data, "condition", null));
+        $model->setCondition(ArrayHelper::get($data, "condition"));
         $model->setValid(ArrayHelper::get($data, "valid", false));
 
         foreach (ArrayHelper::get($data, "rules", []) as $current) {
