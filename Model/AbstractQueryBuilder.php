@@ -60,28 +60,36 @@ abstract class AbstractQueryBuilder implements QueryBuilderInputInterface, Query
     }
 
     /**
-     * {@inheritdoc}
+     * Get the field.
+     *
+     * @return string|null Returns the field.
      */
     public function getField(): ?string {
         return $this->field;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the id.
+     *
+     * @return string|null Returns the id.
      */
     public function getId(): ?string {
         return $this->id;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the input.
+     *
+     * @return string|null Returns the input.
      */
     public function getInput(): ?string {
         return $this->input;
     }
 
     /**
-     * {@inheritdoc}
+     * Get the label.
+     *
+     * @return string Returns the label.
      */
     public function getType(): ?string {
         return $this->type;
@@ -117,9 +125,11 @@ abstract class AbstractQueryBuilder implements QueryBuilderInputInterface, Query
      * @throws InvalidArgumentException Throws an invalid argument exception if the input is invalid.
      */
     public function setInput(?string $input): AbstractQueryBuilder {
+
         if (false === in_array($input, QueryBuilderEnumerator::enumInputs())) {
             throw new InvalidArgumentException(sprintf('The input "%s" is invalid', $input));
         }
+
         $this->input = $input;
         return $this;
     }
@@ -132,9 +142,11 @@ abstract class AbstractQueryBuilder implements QueryBuilderInputInterface, Query
      * @throws InvalidArgumentException Throws an invalid argument exception if the type is invalid.
      */
     public function setType(?string $type): AbstractQueryBuilder {
+
         if (null !== $type && false === in_array($type, QueryBuilderEnumerator::enumTypes())) {
             throw new InvalidArgumentException(sprintf('The type "%s" is invalid', $type));
         }
+
         $this->type = $type;
         return $this;
     }
