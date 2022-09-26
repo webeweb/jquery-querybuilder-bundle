@@ -110,6 +110,7 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
         }
 
         $this->condition = $condition;
+
         return $this;
     }
 

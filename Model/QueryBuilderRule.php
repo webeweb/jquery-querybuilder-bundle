@@ -98,6 +98,7 @@ class QueryBuilderRule extends AbstractQueryBuilder implements QueryBuilderOpera
         }
 
         $this->operator = $operator;
+
         return $this;
     }
 

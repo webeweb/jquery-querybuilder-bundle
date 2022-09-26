@@ -178,13 +178,16 @@ class QueryBuilderFilter extends AbstractQueryBuilder implements QueryBuilderFil
     public function setOperators(array $operators): QueryBuilderFilterInterface {
 
         $enum = QueryBuilderEnumerator::enumOperators();
+
         foreach ($operators as $current) {
+
             if (null !== $current && false === array_key_exists($current, $enum)) {
                 throw new InvalidArgumentException(sprintf('The operator "%s" is invalid', $current));
             }
         }
 
         $this->operators = $operators;
+
         return $this;
     }
 

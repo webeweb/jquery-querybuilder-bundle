@@ -91,9 +91,11 @@ class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
      * {@inheritdoc}
      */
     public function removeFilter(QueryBuilderFilterInterface $filter): QueryBuilderFilterSetInterface {
+
         if (true === array_key_exists($filter->getId(), $this->filters)) {
             unset($this->filters[$filter->getId()]);
         }
+
         return $this;
     }
 

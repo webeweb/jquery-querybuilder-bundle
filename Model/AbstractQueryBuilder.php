@@ -56,7 +56,7 @@ abstract class AbstractQueryBuilder implements QueryBuilderInputInterface, Query
      * Constructor.
      */
     protected function __construct() {
-        // NOTHING TO TO
+        // NOTHING TO DO
     }
 
     /**
