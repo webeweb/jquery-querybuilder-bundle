@@ -32,6 +32,9 @@ class DateQueryBuilderType extends AbstractQueryBuilderType {
      * {@inheritdoc}
      */
     public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
-        return true === $wrap ? "'" . addslashes($rule->getValue()) . "'" : addslashes($rule->getValue());
+
+        $str = addslashes($rule->getValue());
+
+        return true === $wrap ? "'$str'" : $str;
     }
 }
