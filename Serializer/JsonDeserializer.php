@@ -38,12 +38,12 @@ class JsonDeserializer {
     public static function deserializeQueryBuilderRule(QueryBuilderFilterSetInterface $filterSet, array $data): QueryBuilderRuleInterface {
 
         $model = new QueryBuilderRule();
-        $model->setId(ArrayHelper::get($data, "id"));
-        $model->setField(ArrayHelper::get($data, "field"));
-        $model->setInput(ArrayHelper::get($data, "input"));
-        $model->setOperator(ArrayHelper::get($data, "operator"));
-        $model->setType(ArrayHelper::get($data, "type"));
-        $model->setValue(ArrayHelper::get($data, "value"));
+        $model->setId(ArrayHelper::get($data, SerializerKeys::ID));
+        $model->setField(ArrayHelper::get($data, SerializerKeys::FIELD));
+        $model->setInput(ArrayHelper::get($data, SerializerKeys::INPUT));
+        $model->setOperator(ArrayHelper::get($data, SerializerKeys::OPERATOR));
+        $model->setType(ArrayHelper::get($data, SerializerKeys::TYPE));
+        $model->setValue(ArrayHelper::get($data, SerializerKeys::VALUE));
 
         $model->setDecorator($filterSet->getDecorator($model->getId()));
 
@@ -61,13 +61,13 @@ class JsonDeserializer {
     public static function deserializeQueryBuilderRuleSet(QueryBuilderFilterSetInterface $filterSet, array $data): QueryBuilderRuleSetInterface {
 
         $model = new QueryBuilderRuleSet();
-        $model->setCondition(ArrayHelper::get($data, "condition"));
-        $model->setValid(ArrayHelper::get($data, "valid", false));
+        $model->setCondition(ArrayHelper::get($data, SerializerKeys::CONDITION));
+        $model->setValid(ArrayHelper::get($data, SerializerKeys::VALID, false));
 
-        foreach (ArrayHelper::get($data, "rules", []) as $current) {
+        foreach (ArrayHelper::get($data, SerializerKeys::RULES, []) as $current) {
 
             // Rule set ?
-            if (true === array_key_exists("condition", $current)) {
+            if (true === array_key_exists(SerializerKeys::CONDITION, $current)) {
                 $model->addRuleSet(JsonDeserializer::deserializeQueryBuilderRuleSet($filterSet, $current));
                 continue;
             }

@@ -34,19 +34,19 @@ class JsonSerializer {
 
         $output = [];
 
-        ArrayHelper::set($output, "id", $filter->getId(), [null]);
-        ArrayHelper::set($output, "field", $filter->getField(), [null]);
-        ArrayHelper::set($output, "label", $filter->getLabel(), [null]);
-        ArrayHelper::set($output, "type", $filter->getType(), [null]);
-        ArrayHelper::set($output, "input", $filter->getInput(), [null]);
-        ArrayHelper::set($output, "values", $filter->getValues(), [null]);
-        ArrayHelper::set($output, "multiple", $filter->getMultiple(), [null, false]);
+        ArrayHelper::set($output, SerializerKeys::ID, $filter->getId(), [null]);
+        ArrayHelper::set($output, SerializerKeys::FIELD, $filter->getField(), [null]);
+        ArrayHelper::set($output, SerializerKeys::LABEL, $filter->getLabel(), [null]);
+        ArrayHelper::set($output, SerializerKeys::TYPE, $filter->getType(), [null]);
+        ArrayHelper::set($output, SerializerKeys::INPUT, $filter->getInput(), [null]);
+        ArrayHelper::set($output, SerializerKeys::VALUES, $filter->getValues(), [null]);
+        ArrayHelper::set($output, SerializerKeys::MULTIPLE, $filter->getMultiple(), [null, false]);
 
         if (null !== $filter->getValues()) {
-            $output["validation"] = $filter->getValidation()->jsonSerialize();
+            $output[SerializerKeys::VALIDATION] = $filter->getValidation()->jsonSerialize();
         }
 
-        ArrayHelper::set($output, "operators", $filter->getOperators(), [null, []]);
+        ArrayHelper::set($output, SerializerKeys::OPERATORS, $filter->getOperators(), [null, []]);
 
         return $output;
     }
@@ -78,13 +78,13 @@ class JsonSerializer {
 
         $output = [];
 
-        ArrayHelper::set($output, "format", $validation->getFormat(), [null]);
-        ArrayHelper::set($output, "min", $validation->getMin(), [null]);
-        ArrayHelper::set($output, "max", $validation->getMax(), [null]);
-        ArrayHelper::set($output, "step", $validation->getStep(), [null]);
-        ArrayHelper::set($output, "messages", $validation->getMessages(), [null]);
-        ArrayHelper::set($output, "allow_empty_value", $validation->getAllowEmptyValue(), [null]);
-        ArrayHelper::set($output, "callback", $validation->getCallback(), [null]);
+        ArrayHelper::set($output, SerializerKeys::FORMAT, $validation->getFormat(), [null]);
+        ArrayHelper::set($output, SerializerKeys::MIN, $validation->getMin(), [null]);
+        ArrayHelper::set($output, SerializerKeys::MAX, $validation->getMax(), [null]);
+        ArrayHelper::set($output, SerializerKeys::STEP, $validation->getStep(), [null]);
+        ArrayHelper::set($output, SerializerKeys::MESSAGES, $validation->getMessages(), [null]);
+        ArrayHelper::set($output, SerializerKeys::ALLOW_EMPTY_VALUE, $validation->getAllowEmptyValue(), [null]);
+        ArrayHelper::set($output, SerializerKeys::CALLBACK, $validation->getCallback(), [null]);
 
         return $output;
     }
