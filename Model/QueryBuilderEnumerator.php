@@ -30,6 +30,7 @@ class QueryBuilderEnumerator {
      * @return string[] Returns the conditions enumeration.
      */
     public static function enumConditions(): array {
+
         return [
             QueryBuilderConditionInterface::CONDITION_AND,
             QueryBuilderConditionInterface::CONDITION_OR,
@@ -42,6 +43,7 @@ class QueryBuilderEnumerator {
      * @return string[] Returns the inputs enumeration.
      */
     public static function enumInputs(): array {
+
         return [
             QueryBuilderInputInterface::INPUT_CHECKBOX,
             QueryBuilderInputInterface::INPUT_NUMBER,
@@ -58,6 +60,7 @@ class QueryBuilderEnumerator {
      * @return array Returns the operators enumeration.
      */
     public static function enumOperators(): array {
+
         return [
             QueryBuilderOperatorInterface::OPERATOR_BEGINS_WITH      => "LIKE",
             QueryBuilderOperatorInterface::OPERATOR_BETWEEN          => "BETWEEN",
@@ -88,6 +91,7 @@ class QueryBuilderEnumerator {
      * @return string[] Returns the types enumeration.
      */
     public static function enumTypes(): array {
+
         return [
             QueryBuilderTypeInterface::TYPE_BOOLEAN,
             QueryBuilderTypeInterface::TYPE_DATE,

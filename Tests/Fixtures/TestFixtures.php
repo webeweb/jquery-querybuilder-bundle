@@ -30,6 +30,7 @@ class TestFixtures {
      * @return array Returns a rule.
      */
     public static function getRule(): array {
+
         return [
             "id"       => "age",
             "field"    => "age",

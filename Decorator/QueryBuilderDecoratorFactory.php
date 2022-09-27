@@ -31,6 +31,7 @@ class QueryBuilderDecoratorFactory implements QueryBuilderOperatorInterface, Que
      * @return array Returns the QueryBuilder operators enumeration.
      */
     protected static function enumQueryBuilderOperators(): array {
+
         return [
             self::OPERATOR_BEGINS_WITH      => __NAMESPACE__ . "\\Operator\\BeginsWithQueryBuilderOperator",
             self::OPERATOR_BETWEEN          => __NAMESPACE__ . "\\Operator\\BetweenQueryBuilderOperator",
@@ -61,6 +62,7 @@ class QueryBuilderDecoratorFactory implements QueryBuilderOperatorInterface, Que
      * @return array Returns the QueryBuilder types enumeration.
      */
     protected static function enumQueryBuilderTypes(): array {
+
         return [
             self::TYPE_BOOLEAN  => __NAMESPACE__ . "\\Type\\BooleanQueryBuilderType",
             self::TYPE_DATE     => __NAMESPACE__ . "\\Type\\DateQueryBuilderType",

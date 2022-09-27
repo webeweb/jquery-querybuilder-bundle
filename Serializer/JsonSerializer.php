@@ -27,26 +27,26 @@ class JsonSerializer {
     /**
      * Serialize a filter.
      *
-     * @param QueryBuilderFilterInterface $filter The filter.
+     * @param QueryBuilderFilterInterface $model The filter.
      * @return array Returns the serialized filter.
      */
-    public static function serializeQueryBuilderFilter(QueryBuilderFilterInterface $filter): array {
+    public static function serializeQueryBuilderFilter(QueryBuilderFilterInterface $model): array {
 
         $output = [];
 
-        ArrayHelper::set($output, SerializerKeys::ID, $filter->getId(), [null]);
-        ArrayHelper::set($output, SerializerKeys::FIELD, $filter->getField(), [null]);
-        ArrayHelper::set($output, SerializerKeys::LABEL, $filter->getLabel(), [null]);
-        ArrayHelper::set($output, SerializerKeys::TYPE, $filter->getType(), [null]);
-        ArrayHelper::set($output, SerializerKeys::INPUT, $filter->getInput(), [null]);
-        ArrayHelper::set($output, SerializerKeys::VALUES, $filter->getValues(), [null]);
-        ArrayHelper::set($output, SerializerKeys::MULTIPLE, $filter->getMultiple(), [null, false]);
+        ArrayHelper::set($output, SerializerKeys::ID, $model->getId(), [null]);
+        ArrayHelper::set($output, SerializerKeys::FIELD, $model->getField(), [null]);
+        ArrayHelper::set($output, SerializerKeys::LABEL, $model->getLabel(), [null]);
+        ArrayHelper::set($output, SerializerKeys::TYPE, $model->getType(), [null]);
+        ArrayHelper::set($output, SerializerKeys::INPUT, $model->getInput(), [null]);
+        ArrayHelper::set($output, SerializerKeys::VALUES, $model->getValues(), [null]);
+        ArrayHelper::set($output, SerializerKeys::MULTIPLE, $model->getMultiple(), [null, false]);
 
-        if (null !== $filter->getValues()) {
-            $output[SerializerKeys::VALIDATION] = $filter->getValidation()->jsonSerialize();
+        if (null !== $model->getValues()) {
+            $output[SerializerKeys::VALIDATION] = $model->getValidation()->jsonSerialize();
         }
 
-        ArrayHelper::set($output, SerializerKeys::OPERATORS, $filter->getOperators(), [null, []]);
+        ArrayHelper::set($output, SerializerKeys::OPERATORS, $model->getOperators(), [null, []]);
 
         return $output;
     }
@@ -54,14 +54,14 @@ class JsonSerializer {
     /**
      * Serialize a filter set.
      *
-     * @param QueryBuilderFilterSetInterface $filterSet The filter set.
+     * @param QueryBuilderFilterSetInterface $model The filter set.
      * @return array Returns the serialized filter set.
      */
-    public static function serializeQueryBuilderFilterSet(QueryBuilderFilterSetInterface $filterSet): array {
+    public static function serializeQueryBuilderFilterSet(QueryBuilderFilterSetInterface $model): array {
 
         $output = [];
 
-        foreach ($filterSet->getFilters() as $current) {
+        foreach ($model->getFilters() as $current) {
             $output[] = static::serializeQueryBuilderFilter($current);
         }
 
