@@ -1,0 +1,9 @@
+{
+    "format": "format",
+    "min": "min",
+    "max": "max",
+    "step": 0,
+    "messages": [],
+    "allow_empty_value": true,
+    "callback": "callback"
+}

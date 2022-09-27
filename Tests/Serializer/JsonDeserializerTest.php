@@ -12,7 +12,6 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Serializer;
 
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderConditionInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderFilterSetInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderInputInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderRuleInterface;
@@ -20,7 +19,6 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderRuleSetInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderTypeInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Serializer\JsonDeserializer;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\TestFixtures;
 
 /**
  * JSON deserializer test.
@@ -37,12 +35,10 @@ class JsonDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeQueryBuilderRule(): void {
 
-        // Set a QueryBuilder filter set mock.
-        $filterSet = $this->getMockBuilder(QueryBuilderFilterSetInterface::class)->getMock();
+        $data = file_get_contents(__DIR__ . "/JsonDeserializerTest.testDeserializeQueryBuilderRule.json");
+        $json = json_decode($data, true);
 
-        $arg = TestFixtures::getRule();
-
-        $res = JsonDeserializer::deserializeQueryBuilderRule($filterSet, $arg);
+        $res = JsonDeserializer::deserializeQueryBuilderRule($this->qbFilterSet, $json);
         $this->assertInstanceOf(QueryBuilderRuleInterface::class, $res);
 
         $this->assertEquals("age", $res->getId());
@@ -60,12 +56,10 @@ class JsonDeserializerTest extends AbstractTestCase {
      */
     public function testDeserializeQueryBuilderRuleSet(): void {
 
-        // Set a QueryBuilder filter set mock.
-        $filterSet = $this->getMockBuilder(QueryBuilderFilterSetInterface::class)->getMock();
+        $data = file_get_contents(__DIR__ . "/JsonDeserializerTest.testDeserializeQueryBuilderRuleSet.json");
+        $json = json_decode($data, true);
 
-        $arg = TestFixtures::getRules();
-
-        $res = JsonDeserializer::deserializeQueryBuilderRuleSet($filterSet, $arg);
+        $res = JsonDeserializer::deserializeQueryBuilderRuleSet($this->qbFilterSet, $json);
         $this->assertInstanceOf(QueryBuilderRuleSetInterface::class, $res);
 
         $this->assertEquals(QueryBuilderConditionInterface::CONDITION_OR, $res->getCondition());

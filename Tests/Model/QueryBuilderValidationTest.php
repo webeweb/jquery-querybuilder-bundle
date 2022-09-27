@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 
+use JsonSerializable;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderValidationInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderValidation;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
@@ -31,7 +33,7 @@ class QueryBuilderValidationTest extends AbstractTestCase {
 
         $obj = new QueryBuilderValidation();
 
-        $this->assertTrue(is_array($obj->jsonSerialize()));
+        $this->assertIsArray($obj->jsonSerialize());
     }
 
     /**
@@ -133,6 +135,9 @@ class QueryBuilderValidationTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new QueryBuilderValidation();
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(QueryBuilderValidationInterface::class, $obj);
 
         $this->assertNull($obj->getAllowEmptyValue());
         $this->assertNull($obj->getCallback());

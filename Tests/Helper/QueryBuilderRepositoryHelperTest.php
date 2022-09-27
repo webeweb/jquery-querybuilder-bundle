@@ -11,8 +11,6 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Helper;
 
-use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderDecoratorInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderFilterSetInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderTypeInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Helper\QueryBuilderRepositoryHelper;
@@ -52,11 +50,8 @@ class QueryBuilderRepositoryHelperTest extends AbstractTestCase {
      */
     public function testQueryBuilderRule2SqlWithDecorator(): void {
 
-        // Set a QueryBuilder decorator mock.
-        $decorator = $this->getMockBuilder(QueryBuilderDecoratorInterface::class)->getMock();
-
         $obj = new QueryBuilderRule();
-        $obj->setDecorator($decorator);
+        $obj->setDecorator($this->qbDecorator);
 
         $this->assertEquals("", QueryBuilderRepositoryHelper::queryBuilderRule2Sql($obj));
     }
@@ -68,12 +63,9 @@ class QueryBuilderRepositoryHelperTest extends AbstractTestCase {
      */
     public function testQueryBuilderRuleSet2Sql(): void {
 
-        // Set a QueryBuilder filter set mock.
-        $filterSet = $this->getMockBuilder(QueryBuilderFilterSetInterface::class)->getMock();
-
         $arg = TestFixtures::getRules();
 
-        $obj = JsonDeserializer::deserializeQueryBuilderRuleSet($filterSet, $arg);
+        $obj = JsonDeserializer::deserializeQueryBuilderRuleSet($this->qbFilterSet, $arg);
 
         $res = "(age > 21 OR (firstname = 'John' AND lastname = 'DOE'))";
         $this->assertEquals($res, QueryBuilderRepositoryHelper::queryBuilderRuleSet2Sql($obj));
@@ -86,10 +78,7 @@ class QueryBuilderRepositoryHelperTest extends AbstractTestCase {
      */
     public function testQueryBuilderRuleSet2SqlWithoutRules(): void {
 
-        // Set a QueryBuilder filter set mock.
-        $filterSet = $this->getMockBuilder(QueryBuilderFilterSetInterface::class)->getMock();
-
-        $obj = JsonDeserializer::deserializeQueryBuilderRuleSet($filterSet, []);
+        $obj = JsonDeserializer::deserializeQueryBuilderRuleSet($this->qbFilterSet, []);
 
         $this->assertEquals("", QueryBuilderRepositoryHelper::queryBuilderRuleSet2Sql($obj));
     }

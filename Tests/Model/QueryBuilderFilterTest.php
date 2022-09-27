@@ -13,10 +13,10 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 
 use Exception;
 use InvalidArgumentException;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderDecoratorInterface;
+use JsonSerializable;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderFilterInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderTypeInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderValidationInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilter;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
@@ -37,7 +37,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
 
         $obj = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_STRING, [QueryBuilderOperatorInterface::OPERATOR_EQUAL]);
 
-        $this->assertTrue(is_array($obj->jsonSerialize()));
+        $this->assertIsArray($obj->jsonSerialize());
     }
 
     /**
@@ -47,13 +47,10 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      */
     public function testSetDecorator(): void {
 
-        // Set a QueryBuilder decorator mock.
-        $decorator = $this->getMockBuilder(QueryBuilderDecoratorInterface::class)->getMock();
-
         $obj = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_BOOLEAN, []);
 
-        $obj->setDecorator($decorator);
-        $this->assertSame($decorator, $obj->getDecorator());
+        $obj->setDecorator($this->qbDecorator);
+        $this->assertSame($this->qbDecorator, $obj->getDecorator());
     }
 
     /**
@@ -121,13 +118,10 @@ class QueryBuilderFilterTest extends AbstractTestCase {
      */
     public function testSetValidation(): void {
 
-        // Set a QueryBuilder validation mock.
-        $validation = $this->getMockBuilder(QueryBuilderValidationInterface::class)->getMock();
-
         $obj = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_BOOLEAN, []);
 
-        $obj->setValidation($validation);
-        $this->assertSame($validation, $obj->getValidation());
+        $obj->setValidation($this->qbValidation);
+        $this->assertSame($this->qbValidation, $obj->getValidation());
     }
 
     /**
@@ -151,6 +145,9 @@ class QueryBuilderFilterTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_BOOLEAN, []);
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(QueryBuilderFilterInterface::class, $obj);
 
         $this->assertEquals("id", $obj->getId());
         $this->assertNull($obj->getField());

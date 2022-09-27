@@ -13,8 +13,8 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 
 use Exception;
 use InvalidArgumentException;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderDecoratorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderOperatorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderRuleInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRule;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
@@ -33,13 +33,10 @@ class QueryBuilderRuleTest extends AbstractTestCase {
      */
     public function testSetDecorator(): void {
 
-        // Set a QueryBuilder decorator mock.
-        $decorator = $this->getMockBuilder(QueryBuilderDecoratorInterface::class)->getMock();
-
         $obj = new QueryBuilderRule();
 
-        $obj->setDecorator($decorator);
-        $this->assertSame($decorator, $obj->getDecorator());
+        $obj->setDecorator($this->qbDecorator);
+        $this->assertSame($this->qbDecorator, $obj->getDecorator());
     }
 
     /**
@@ -95,6 +92,8 @@ class QueryBuilderRuleTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new QueryBuilderRule();
+
+        $this->assertInstanceOf(QueryBuilderRuleInterface::class, $obj);
 
         $this->assertNull($obj->getDecorator());
         $this->assertNull($obj->getField());

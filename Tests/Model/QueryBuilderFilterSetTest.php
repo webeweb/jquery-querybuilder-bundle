@@ -11,6 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 
+use JsonSerializable;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderFilterSetInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderTypeInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilter;
@@ -67,13 +69,9 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
      */
     public function testJsonSerialize(): void {
 
-        // Set a QueryBuilder filter mock.
-        $filter = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_INTEGER, [QueryBuilderOperatorInterface::OPERATOR_EQUAL]);
-
         $obj = new QueryBuilderFilterSet();
-        $obj->addFilter($filter);
 
-        $this->assertTrue(is_array($obj->jsonSerialize()));
+        $this->assertIsArray($obj->jsonSerialize());
     }
 
     /**
@@ -104,6 +102,9 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
     public function test__construct(): void {
 
         $obj = new QueryBuilderFilterSet();
+
+        $this->assertInstanceOf(JsonSerializable::class, $obj);
+        $this->assertInstanceOf(QueryBuilderFilterSetInterface::class, $obj);
 
         $this->assertNull($obj->getDecorator("id"));
         $this->assertNull($obj->getFilter("id"));

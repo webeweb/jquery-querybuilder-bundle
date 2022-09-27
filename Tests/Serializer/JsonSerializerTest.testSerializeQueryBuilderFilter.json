@@ -1,0 +1,15 @@
+{
+    "id": "id",
+    "field": "field",
+    "label": "label",
+    "type": "string",
+    "input": "number",
+    "values": [
+        "values"
+    ],
+    "multiple": true,
+    "validation": [],
+    "operators": [
+        "equal"
+    ]
+}

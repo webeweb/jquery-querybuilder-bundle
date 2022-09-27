@@ -12,6 +12,9 @@
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests;
 
 use WBW\Bundle\CoreBundle\Tests\AbstractTestCase as TestCase;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderDecoratorInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderFilterSetInterface;
+use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderValidationInterface;
 
 /**
  * Abstract test case.
@@ -22,4 +25,40 @@ use WBW\Bundle\CoreBundle\Tests\AbstractTestCase as TestCase;
  */
 abstract class AbstractTestCase extends TestCase {
 
+    /**
+     * Query builder decorator.
+     *
+     * @var QueryBuilderDecoratorInterface
+     */
+    protected $qbDecorator;
+
+    /**
+     * Query builder filter set.
+     *
+     * @var QueryBuilderFilterSetInterface
+     */
+    protected $qbFilterSet;
+
+    /**
+     * Query builder validation.
+     *
+     * @var QueryBuilderValidationInterface
+     */
+    protected $qbValidation;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function setUp(): void {
+        parent::setUp();
+
+        // Set a QueryBuilder decorator mock.
+        $this->qbDecorator = $this->getMockBuilder(QueryBuilderDecoratorInterface::class)->getMock();
+
+        // Set a QueryBuilder filter set mock.
+        $this->qbFilterSet = $this->getMockBuilder(QueryBuilderFilterSetInterface::class)->getMock();
+
+        // Set a QueryBuilder validation mock.
+        $this->qbValidation = $this->getMockBuilder(QueryBuilderValidationInterface::class)->getMock();
+    }
 }

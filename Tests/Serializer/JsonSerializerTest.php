@@ -14,11 +14,9 @@ namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Serializer;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderInputInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderTypeInterface;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderValidationInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilter;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderFilterSet;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderValidation;
-use WBW\Bundle\JQuery\QueryBuilderBundle\Serializer\JsonSerializer;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 
 /**
@@ -36,31 +34,24 @@ class JsonSerializerTest extends AbstractTestCase {
      */
     public function testSerializeQueryBuilderFilter(): void {
 
-        // Set a QueryBuilder validation mock.
-        $validation = $this->getMockBuilder(QueryBuilderValidationInterface::class)->getMock();
-        $validation->expects($this->any())->method("jsonSerialize")->willReturn([]);
+        // Set the QueryBuilder validation mock.
+        $this->qbValidation->expects($this->any())->method("jsonSerialize")->willReturn([]);
+
+        $data = file_get_contents(__DIR__ . "/JsonSerializerTest.testSerializeQueryBuilderFilter.json");
+        $json = json_decode($data, true);
 
         $obj = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_STRING, [QueryBuilderOperatorInterface::OPERATOR_EQUAL]);
         $obj->setField("field");
         $obj->setInput(QueryBuilderInputInterface::INPUT_NUMBER);
         $obj->setLabel("label");
         $obj->setMultiple(true);
-        $obj->setValidation($validation);
+        $obj->setValidation($this->qbValidation);
         $obj->setValues(["values"]);
 
-        $res = [
-            "id"         => "id",
-            "field"      => "field",
-            "label"      => "label",
-            "type"       => "string",
-            "input"      => "number",
-            "values"     => ["values"],
-            "multiple"   => true,
-            "validation" => [],
-            "operators"  => ["equal"],
-        ];
+        $res = $obj->jsonSerialize();
+        $this->assertCount(9, $res);
 
-        $this->assertEquals($res, JsonSerializer::serializeQueryBuilderFilter($obj));
+        $this->assertEquals($json, $res);
     }
 
     /**
@@ -73,20 +64,16 @@ class JsonSerializerTest extends AbstractTestCase {
         // Set a QueryBuilder filter mock.
         $filter = new QueryBuilderFilter("id", QueryBuilderTypeInterface::TYPE_INTEGER, [QueryBuilderOperatorInterface::OPERATOR_EQUAL]);
 
-        $obj = new QueryBuilderFilterSet();
+        $data = file_get_contents(__DIR__ . "/JsonSerializerTest.testSerializeQueryBuilderFilterSet.json");
+        $json = json_decode($data, true);
 
+        $obj = new QueryBuilderFilterSet();
         $obj->addFilter($filter);
-        $res = [
-            [
-                "id"        => "id",
-                "label"     => "",
-                "type"      => QueryBuilderTypeInterface::TYPE_INTEGER,
-                "operators" => [
-                    QueryBuilderOperatorInterface::OPERATOR_EQUAL,
-                ],
-            ],
-        ];
-        $this->assertEquals($res, JsonSerializer::serializeQueryBuilderFilterSet($obj));
+
+        $res = $obj->jsonSerialize();
+        $this->assertCount(4, $res[0]);
+
+        $this->assertEquals($json, $res);
     }
 
     /**
@@ -95,6 +82,9 @@ class JsonSerializerTest extends AbstractTestCase {
      * @return void
      */
     public function testSerializeQueryBuilderValidation(): void {
+
+        $data = file_get_contents(__DIR__ . "/JsonSerializerTest.testSerializeQueryBuilderValidation.json");
+        $json = json_decode($data, true);
 
         $obj = new QueryBuilderValidation();
         $obj->setAllowEmptyValue(true);
@@ -105,15 +95,9 @@ class JsonSerializerTest extends AbstractTestCase {
         $obj->setMin("min");
         $obj->setStep(0);
 
-        $res = [
-            "format"            => "format",
-            "min"               => "min",
-            "max"               => "max",
-            "step"              => 0,
-            "messages"          => [],
-            "allow_empty_value" => true,
-            "callback"          => "callback",
-        ];
-        $this->assertEquals($res, JsonSerializer::serializeQueryBuilderValidation($obj));
+        $res = $obj->jsonSerialize();
+        $this->assertCount(7, $res);
+
+        $this->assertEquals($json, $res);
     }
 }
