@@ -1,11 +1,11 @@
 # Tests/Fixtures/App/config/services_test.yml
 services:
 
-    WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Controller\TestLayoutController:
-        alias:  "wbw.jquery_querybuilder.tests.fixtures.controller.test_layout"
+    WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Controller\TestViewsController:
+        alias:  "wbw.jquery_querybuilder.tests.fixtures.controller.test_views"
         public: true
 
-    wbw.jquery_querybuilder.tests.fixtures.controller.test_layout:
-        class: WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Controller\TestLayoutController
+    wbw.jquery_querybuilder.tests.fixtures.controller.test_views:
+        class: WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Controller\TestViewsController
         calls:
             - [ "setContainer", [ "@service_container" ] ]
