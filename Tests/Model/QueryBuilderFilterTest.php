@@ -11,9 +11,9 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 
-use Exception;
 use InvalidArgumentException;
 use JsonSerializable;
+use Throwable;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderFilterInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderTypeInterface;
@@ -104,7 +104,7 @@ class QueryBuilderFilterTest extends AbstractTestCase {
         try {
 
             $obj->setOperators(["exception"]);
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The operator "exception" is invalid', $ex->getMessage());

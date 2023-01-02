@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderRuleInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRule;
@@ -64,7 +64,7 @@ class QueryBuilderRuleTest extends AbstractTestCase {
         try {
 
             $obj->setOperator("operator");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The operator "operator" is invalid', $ex->getMessage());

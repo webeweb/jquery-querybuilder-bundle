@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderConditionInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderRuleSetInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Model\QueryBuilderRuleSet;
@@ -51,7 +51,7 @@ class QueryBuilderRuleSetTest extends AbstractTestCase {
         try {
 
             $obj->setCondition("condition");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The condition "condition" is invalid', $ex->getMessage());

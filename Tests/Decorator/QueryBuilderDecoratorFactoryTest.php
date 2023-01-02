@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Decorator;
 
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderDecoratorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderOperatorInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderTypeInterface;
@@ -110,7 +110,7 @@ class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
         try {
 
             QueryBuilderDecoratorFactory::newQueryBuilderOperator("operator");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The decorator "operator" is invalid', $ex->getMessage());
@@ -145,7 +145,7 @@ class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
         try {
 
             QueryBuilderDecoratorFactory::newQueryBuilderType("type");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The decorator "type" is invalid', $ex->getMessage());

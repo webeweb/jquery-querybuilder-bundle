@@ -11,8 +11,8 @@
 
 namespace WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Model;
 
-use Exception;
 use InvalidArgumentException;
+use Throwable;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderInputInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderTypeInterface;
 use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
@@ -77,7 +77,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
         try {
 
             $obj->setInput("input");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The input "input" is invalid', $ex->getMessage());
@@ -109,7 +109,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
         try {
 
             $obj->setType("type");
-        } catch (Exception $ex) {
+        } catch (Throwable $ex) {
 
             $this->assertInstanceOf(InvalidArgumentException::class, $ex);
             $this->assertEquals('The type "type" is invalid', $ex->getMessage());
@@ -120,7 +120,7 @@ class AbstractQueryBuilderTest extends AbstractTestCase {
      * Tests __construct()
      *
      * @return void
-     * @throws Exception Throws an exception if an error occurs.
+     * @throws Throwable Throws an exception if an error occurs.
      */
     public function test__construct(): void {
 
