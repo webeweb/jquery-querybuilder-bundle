@@ -8,7 +8,7 @@ jquery-querybuilder-bundle
 [![License](https://img.shields.io/packagist/l/webeweb/jquery-querybuilder-bundle.svg?style=flat-square)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle)
 [![composer.lock](https://img.shields.io/badge/.lock-uncommited-important.svg?style=flat-square)](https://packagist.org/packages/webeweb/jquery-querybuilder-bundle)
 
-Integrate jQuery QueryBuilder with Symfony 2 and more.
+Integrate jQuery QueryBuilder with Symfony 4 and more.
 
 `jquery-querybuilder-bundle` eases the use of jQuery QueryBuilder in your
 Symfony application by providing Twig extensions and PHP objects to do the
