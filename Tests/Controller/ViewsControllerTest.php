@@ -28,18 +28,14 @@ class ViewsControllerTest extends AbstractWebTestCase {
      */
     public function testAssetsJavascriptsAction(): void {
 
-        // Create a client.
         $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/assets/javascripts");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
 
-        // Get the response content.
         $content = $client->getResponse()->getContent();
 
-        // Check the Javascript.
         foreach (static::listJavascriptAssets() as $current) {
             $this->assertRegExp("/" . preg_quote($current, "/") . "/", $content);
         }
@@ -52,18 +48,14 @@ class ViewsControllerTest extends AbstractWebTestCase {
      */
     public function testAssetsStylesheetsAction(): void {
 
-        // Create a client.
         $client = $this->client;
 
-        // Make a GET request.
         $client->request("GET", "/assets/stylesheets");
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertEquals("text/html; charset=UTF-8", $client->getResponse()->headers->get("Content-Type"));
 
-        // Get the response content.
         $content = $client->getResponse()->getContent();
 
-        // Check the CSS.
         foreach (static::listCSSAssets() as $current) {
             $this->assertRegExp("/" . preg_quote($current, "/") . "/", $content);
         }
