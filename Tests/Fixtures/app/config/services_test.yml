@@ -2,10 +2,8 @@
 services:
 
     WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Controller\TestViewsController:
-        alias:  "wbw.jquery_querybuilder.tests.fixtures.controller.test_views"
         public: true
-
-    wbw.jquery_querybuilder.tests.fixtures.controller.test_views:
-        class: WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Controller\TestViewsController
         calls:
-            - [ "setContainer", [ "@service_container" ] ]
+            - [ "setContainer", [ "@Psr\\Container\\ContainerInterface" ] ]
+        tags:
+            - { name: "container.service_subscriber" }
