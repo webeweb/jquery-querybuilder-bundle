@@ -27,7 +27,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class QueryBuilderEnumeratorTest extends AbstractTestCase {
 
     /**
-     * Tests enumConditions()
+     * Test enumConditions()
      *
      * @return void
      */
@@ -43,7 +43,7 @@ class QueryBuilderEnumeratorTest extends AbstractTestCase {
     }
 
     /**
-     * Tests enumInputs()
+     * Test enumInputs()
      *
      * @return void
      */
@@ -62,7 +62,7 @@ class QueryBuilderEnumeratorTest extends AbstractTestCase {
     }
 
     /**
-     * Tests enumOperators()
+     * Test enumOperators()
      *
      * @return void
      */
@@ -95,7 +95,7 @@ class QueryBuilderEnumeratorTest extends AbstractTestCase {
     }
 
     /**
-     * Tests enumTypes()
+     * Test enumTypes()
      *
      * @return void
      */

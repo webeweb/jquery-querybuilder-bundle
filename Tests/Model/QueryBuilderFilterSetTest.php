@@ -28,7 +28,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class QueryBuilderFilterSetTest extends AbstractTestCase {
 
     /**
-     * Tests addFilter()
+     * Test addFilter()
      *
      * @return void
      */
@@ -46,7 +46,7 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
     }
 
     /**
-     * Tests addFilter()
+     * Test addFilter()
      *
      * @return void
      */
@@ -63,7 +63,7 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
     }
 
     /**
-     * Tests jsonSerialize()
+     * Test jsonSerialize()
      *
      * @return void
      */
@@ -75,7 +75,7 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
     }
 
     /**
-     * Tests removeFilter()
+     * Test removeFilter()
      *
      * @return void
      */
@@ -95,7 +95,7 @@ class QueryBuilderFilterSetTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

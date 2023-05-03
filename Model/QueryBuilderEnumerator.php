@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Api\QueryBuilderTypeInterface;
 class QueryBuilderEnumerator {
 
     /**
-     * Enumerates the conditions.
+     * Enumerate the conditions.
      *
      * @return string[] Returns the conditions enumeration.
      */
@@ -38,7 +38,7 @@ class QueryBuilderEnumerator {
     }
 
     /**
-     * Enumerates the inputs.
+     * Enumerate the inputs.
      *
      * @return string[] Returns the inputs enumeration.
      */
@@ -55,7 +55,7 @@ class QueryBuilderEnumerator {
     }
 
     /**
-     * Enumerates the operators.
+     * Enumerate the operators.
      *
      * @return array Returns the operators enumeration.
      */
@@ -86,7 +86,7 @@ class QueryBuilderEnumerator {
     }
 
     /**
-     * Enumerates the types.
+     * Enumerate the types.
      *
      * @return string[] Returns the types enumeration.
      */

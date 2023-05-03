@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class DateTimeQueryBuilderTypeTest extends AbstractTestCase {
 
     /**
-     * Tests toSql()
+     * Test toSql()
      *
      * @return void
      */
@@ -41,7 +41,7 @@ class DateTimeQueryBuilderTypeTest extends AbstractTestCase {
     }
 
     /**
-     * Tests toSql()
+     * Test toSql()
      *
      * @return void
      */
@@ -57,7 +57,7 @@ class DateTimeQueryBuilderTypeTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

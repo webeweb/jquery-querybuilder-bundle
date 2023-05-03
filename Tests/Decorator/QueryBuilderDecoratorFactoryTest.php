@@ -30,7 +30,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Decorator\TestQueryBuild
 class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
 
     /**
-     * Tests enumQueryBuilderOperators()
+     * Test enumQueryBuilderOperators()
      *
      * @return void
      */
@@ -63,7 +63,7 @@ class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests enumQueryBuilderTypes()
+     * Test enumQueryBuilderTypes()
      *
      * @return void
      */
@@ -83,7 +83,7 @@ class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests newQueryBuilderOperator()
+     * Test newQueryBuilderOperator()
      *
      * @return void
      */
@@ -101,7 +101,7 @@ class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests newQueryBuilderOperator()
+     * Test newQueryBuilderOperator()
      *
      * @return void
      */
@@ -118,7 +118,7 @@ class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests newQueryBuilderType()
+     * Test newQueryBuilderType()
      *
      * @return void
      */
@@ -136,7 +136,7 @@ class QueryBuilderDecoratorFactoryTest extends AbstractTestCase {
     }
 
     /**
-     * Tests newQueryBuilderType()
+     * Test newQueryBuilderType()
      *
      * @return void
      */

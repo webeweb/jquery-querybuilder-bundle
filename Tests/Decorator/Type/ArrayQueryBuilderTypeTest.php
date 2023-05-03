@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class ArrayQueryBuilderTypeTest extends AbstractTestCase {
 
     /**
-     * Tests toSql()
+     * Test toSql()
      *
      * @return void
      */
@@ -42,7 +42,7 @@ class ArrayQueryBuilderTypeTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

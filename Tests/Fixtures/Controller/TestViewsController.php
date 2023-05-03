@@ -32,7 +32,7 @@ class TestViewsController extends AbstractController {
     }
 
     /**
-     * Displays assets/_stylesheets.html.twig
+     * Display assets/_stylesheets.html.twig
      *
      * @return Response Returns the response.
      */

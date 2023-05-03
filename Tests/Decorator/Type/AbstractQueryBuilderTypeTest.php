@@ -23,7 +23,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\Decorator\Type\TestQuery
 class AbstractQueryBuilderTypeTest extends AbstractTestCase {
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */

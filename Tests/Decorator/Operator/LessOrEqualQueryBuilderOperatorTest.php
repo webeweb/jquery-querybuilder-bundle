@@ -26,7 +26,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class LessOrEqualQueryBuilderOperatorTest extends AbstractTestCase {
 
     /**
-     * Tests toSql()
+     * Test toSql()
      *
      * @return void
      */
@@ -44,7 +44,7 @@ class LessOrEqualQueryBuilderOperatorTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      */
     public function test__construct(): void {
 

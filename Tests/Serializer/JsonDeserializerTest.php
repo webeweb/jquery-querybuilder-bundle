@@ -29,7 +29,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class JsonDeserializerTest extends AbstractTestCase {
 
     /**
-     * Tests deserializeQueryBuilderRule()
+     * Test deserializeQueryBuilderRule()
      *
      * @return void
      */
@@ -50,7 +50,7 @@ class JsonDeserializerTest extends AbstractTestCase {
     }
 
     /**
-     * Tests deserializeQueryBuilderRuleSet()
+     * Test deserializeQueryBuilderRuleSet()
      *
      * @return void
      */

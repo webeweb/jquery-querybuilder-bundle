@@ -28,7 +28,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\Fixtures\TestFixtures;
 class QueryBuilderRepositoryHelperTest extends AbstractTestCase {
 
     /**
-     * Tests queryBuilderRule2Sql()
+     * Test queryBuilderRule2Sql()
      *
      * @returns void
      */
@@ -44,7 +44,7 @@ class QueryBuilderRepositoryHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests queryBuilderRule2Sql()
+     * Test queryBuilderRule2Sql()
      *
      * @returns void
      */
@@ -57,7 +57,7 @@ class QueryBuilderRepositoryHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests queryBuilderRuleSet2Sql()
+     * Test queryBuilderRuleSet2Sql()
      *
      * @returns void
      */
@@ -72,7 +72,7 @@ class QueryBuilderRepositoryHelperTest extends AbstractTestCase {
     }
 
     /**
-     * Tests queryBuilderRuleSet2Sql()
+     * Test queryBuilderRuleSet2Sql()
      *
      * @returns void
      */

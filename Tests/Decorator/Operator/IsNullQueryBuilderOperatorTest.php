@@ -25,7 +25,7 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Tests\AbstractTestCase;
 class IsNullQueryBuilderOperatorTest extends AbstractTestCase {
 
     /**
-     * Tests toSql()
+     * Test toSql()
      *
      * @return void
      */
@@ -41,7 +41,7 @@ class IsNullQueryBuilderOperatorTest extends AbstractTestCase {
     }
 
     /**
-     * Tests __construct()
+     * Test __construct()
      *
      * @return void
      */
