@@ -39,7 +39,7 @@ class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function addFilter(QueryBuilderFilterInterface $filter): QueryBuilderFilterSetInterface {
         $this->filters[$filter->getId()] = $filter;
@@ -47,7 +47,7 @@ class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getDecorator(string $id): ?QueryBuilderDecoratorInterface {
 
@@ -60,7 +60,7 @@ class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getFilter(string $id): ?QueryBuilderFilterInterface {
 
@@ -72,7 +72,7 @@ class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getFilters(): array {
         return $this->filters;
@@ -88,7 +88,7 @@ class QueryBuilderFilterSet implements QueryBuilderFilterSetInterface {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function removeFilter(QueryBuilderFilterInterface $filter): QueryBuilderFilterSetInterface {
 

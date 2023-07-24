@@ -23,21 +23,21 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\QueryBuilderDecoratorFactory;
 class TestQueryBuilderDecoratorFactory extends QueryBuilderDecoratorFactory {
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function enumQueryBuilderOperators(): array {
         return parent::enumQueryBuilderOperators();
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function enumQueryBuilderTypes(): array {
         return parent::enumQueryBuilderTypes();
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public static function newQueryBuilderDecorator(array $enum, string $key): ?QueryBuilderDecoratorInterface {
         return parent::newQueryBuilderDecorator($enum, $key);

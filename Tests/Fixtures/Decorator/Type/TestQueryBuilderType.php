@@ -23,14 +23,14 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\Decorator\Type\AbstractQueryBuilderType
 class TestQueryBuilderType extends AbstractQueryBuilderType {
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function __construct($type) {
         parent::__construct($type);
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
         return "";

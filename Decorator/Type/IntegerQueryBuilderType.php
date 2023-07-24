@@ -29,7 +29,7 @@ class IntegerQueryBuilderType extends AbstractQueryBuilderType {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
         return sprintf("%d", $rule->getValue());

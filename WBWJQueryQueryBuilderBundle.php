@@ -25,14 +25,14 @@ use WBW\Bundle\JQuery\QueryBuilderBundle\DependencyInjection\WBWJQueryQueryBuild
 class WBWJQueryQueryBuilderBundle extends Bundle implements AssetsProviderInterface {
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getAssetsRelativeDirectory(): string {
         return self::ASSETS_RELATIVE_DIRECTORY;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getContainerExtension(): Extension {
         return new WBWJQueryQueryBuilderExtension();

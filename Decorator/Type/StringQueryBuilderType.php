@@ -29,7 +29,7 @@ class StringQueryBuilderType extends AbstractQueryBuilderType {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
 

@@ -31,7 +31,7 @@ class BetweenQueryBuilderOperator extends AbstractQueryBuilderOperator implement
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
 

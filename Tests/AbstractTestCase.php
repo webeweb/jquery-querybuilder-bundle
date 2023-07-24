@@ -47,7 +47,7 @@ abstract class AbstractTestCase extends TestCase {
     protected $qbValidation;
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     protected function setUp(): void {
         parent::setUp();

@@ -76,21 +76,21 @@ class QueryBuilderRuleSet implements QueryBuilderConditionInterface, QueryBuilde
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getCondition(): ?string {
         return $this->condition;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getRules(): array {
         return $this->rules;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function getValid(): bool {
         return $this->valid;

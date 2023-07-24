@@ -31,7 +31,7 @@ class NotBetweenQueryBuilderOperator extends AbstractQueryBuilderOperator implem
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
 

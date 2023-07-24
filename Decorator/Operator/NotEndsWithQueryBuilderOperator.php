@@ -30,7 +30,7 @@ class NotEndsWithQueryBuilderOperator extends AbstractQueryBuilderOperator {
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function toSql(QueryBuilderRuleInterface $rule, bool $wrap = false): string {
 
